@@ -230,6 +230,12 @@
 		AFBEF3341A63ABDD00623B1A /* MattMead_Portrait_2011_large.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AFBEF2B51A63ABDD00623B1A /* MattMead_Portrait_2011_large.jpg */; };
 		AFBEF3351A63ABDD00623B1A /* max2006.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AFBEF2B61A63ABDD00623B1A /* max2006.jpg */; };
 		AFC926A61614408D009538FD /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AFC926A51614408D009538FD /* Default-568h@2x.png */; };
+		CE7CADC01C1C750A004042F8 /* BonerBS02.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE7CADBF1C1C750A004042F8 /* BonerBS02.jpg */; };
+		CE7CADC41C1CE85E004042F8 /* KinnerMH29.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE7CADC31C1CE85E004042F8 /* KinnerMH29.jpg */; };
+		CE7CADC61C1CF3E5004042F8 /* dp_logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE7CADC51C1CF3E5004042F8 /* dp_logo.jpg */; };
+		CE7CADC81C1CFA0C004042F8 /* Deseret.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE7CADC71C1CFA0C004042F8 /* Deseret.jpg */; };
+		CE7CADD01C1D2B41004042F8 /* Basin_small.gif in Resources */ = {isa = PBXBuildFile; fileRef = CE7CADCF1C1D2B41004042F8 /* Basin_small.gif */; };
+		CE7CADD21C1D2D2A004042F8 /* TriState.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE7CADD11C1D2D2A004042F8 /* TriState.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -491,6 +497,12 @@
 		AFBEF2B51A63ABDD00623B1A /* MattMead_Portrait_2011_large.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MattMead_Portrait_2011_large.jpg; sourceTree = "<group>"; };
 		AFBEF2B61A63ABDD00623B1A /* max2006.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = max2006.jpg; sourceTree = "<group>"; };
 		AFC926A51614408D009538FD /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		CE7CADBF1C1C750A004042F8 /* BonerBS02.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = BonerBS02.jpg; sourceTree = "<group>"; };
+		CE7CADC31C1CE85E004042F8 /* KinnerMH29.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = KinnerMH29.jpg; sourceTree = "<group>"; };
+		CE7CADC51C1CF3E5004042F8 /* dp_logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dp_logo.jpg; sourceTree = "<group>"; };
+		CE7CADC71C1CFA0C004042F8 /* Deseret.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Deseret.jpg; sourceTree = "<group>"; };
+		CE7CADCF1C1D2B41004042F8 /* Basin_small.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Basin_small.gif; sourceTree = "<group>"; };
+		CE7CADD11C1D2D2A004042F8 /* TriState.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = TriState.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -803,6 +815,10 @@
 		AFBEF2361A63ABDD00623B1A /* Member Logos */ = {
 			isa = PBXGroup;
 			children = (
+				CE7CADD11C1D2D2A004042F8 /* TriState.jpg */,
+				CE7CADCF1C1D2B41004042F8 /* Basin_small.gif */,
+				CE7CADC71C1CFA0C004042F8 /* Deseret.jpg */,
+				CE7CADC51C1CF3E5004042F8 /* dp_logo.jpg */,
 				AFBEF2371A63ABDD00623B1A /* bhrec.jpg */,
 				AFBEF2381A63ABDD00623B1A /* BVEA.jpg */,
 				AFBEF2391A63ABDD00623B1A /* CPL_Logo.jpg */,
@@ -835,6 +851,7 @@
 		AFBEF2461A63ABDD00623B1A /* State Representatives */ = {
 			isa = PBXGroup;
 			children = (
+				CE7CADC31C1CE85E004042F8 /* KinnerMH29.jpg */,
 				AFA36F521A78BE9B00A5D2E6 /* edwardsrH53.jpg */,
 				AFA36F531A78BE9B00A5D2E6 /* PownallBH52.jpg */,
 				AF85557B1A65115400130E89 /* steinmetzcH05.jpg */,
@@ -915,6 +932,7 @@
 		AFBEF28D1A63ABDD00623B1A /* State Senators */ = {
 			isa = PBXGroup;
 			children = (
+				CE7CADBF1C1C750A004042F8 /* BonerBS02.jpg */,
 				AFBEF28E1A63ABDD00623B1A /* AndersonJS02.jpg */,
 				AFBEF28F1A63ABDD00623B1A /* AndersonS28.jpg */,
 				AFBEF2901A63ABDD00623B1A /* BarnardS15.jpg */,
@@ -1040,6 +1058,7 @@
 				AF2B11DB16AF9D0800A3A7F4 /* About@2x.png in Resources */,
 				AF2B11DD16AF9D0800A3A7F4 /* AboutBackground.png in Resources */,
 				AFBEF3151A63ABDD00623B1A /* CoeHS18.jpg in Resources */,
+				CE7CADD21C1D2D2A004042F8 /* TriState.jpg in Resources */,
 				AF2B11DE16AF9D0800A3A7F4 /* AboutBackground@2x.png in Resources */,
 				AFBEF2E81A63ABDD00623B1A /* HuntH2.jpg in Resources */,
 				AFBEF3211A63ABDD00623B1A /* KinskeyDS22.jpg in Resources */,
@@ -1158,6 +1177,7 @@
 				AFBEF31B1A63ABDD00623B1A /* EsquibelFS08.jpg in Resources */,
 				AF2B130416AF9D0800A3A7F4 /* PersonViewAddressCell-iPhone.xib in Resources */,
 				AF2B130516AF9D0800A3A7F4 /* PersonViewAddressLACell-iPhone.xib in Resources */,
+				CE7CADC41C1CE85E004042F8 /* KinnerMH29.jpg in Resources */,
 				AFBEF3331A63ABDD00623B1A /* markgordon.jpg in Resources */,
 				AFBEF2FD1A63ABDD00623B1A /* PaxtonH47.jpg in Resources */,
 				AFBEF2CB1A63ABDD00623B1A /* BarlowH03.jpg in Resources */,
@@ -1165,6 +1185,7 @@
 				AF2B130616AF9D0800A3A7F4 /* PersonViewCommitteeCell-iPhone.xib in Resources */,
 				AFBEF3001A63ABDD00623B1A /* PiiparinenH49.jpg in Resources */,
 				AFBEF32E1A63ABDD00623B1A /* WasserburgerJH32.jpg in Resources */,
+				CE7CADC61C1CF3E5004042F8 /* dp_logo.jpg in Resources */,
 				AFBEF2DD1A63ABDD00623B1A /* EsquibelKH41.jpg in Resources */,
 				AFBEF3341A63ABDD00623B1A /* MattMead_Portrait_2011_large.jpg in Resources */,
 				AFBEF2BA1A63ABDD00623B1A /* m.csv in Resources */,
@@ -1174,11 +1195,13 @@
 				AF2B151516AFBC9200A3A7F4 /* Counties.json in Resources */,
 				AFBEF3301A63ABDD00623B1A /* Ed_Murray.jpg in Resources */,
 				AF2B151616AFBC9200A3A7F4 /* data.csv in Resources */,
+				CE7CADC01C1C750A004042F8 /* BonerBS02.jpg in Resources */,
 				AFBEF3221A63ABDD00623B1A /* LandenBS27.jpg in Resources */,
 				AFBEF2CF1A63ABDD00623B1A /* BlevinsH25.jpg in Resources */,
 				AFBEF2D31A63ABDD00623B1A /* ByrdJH44.jpg in Resources */,
 				AFBEF30D1A63ABDD00623B1A /* ZwonitzerDvH09.jpg in Resources */,
 				AFBEF2DC1A63ABDD00623B1A /* EklundH10.jpg in Resources */,
+				CE7CADC81C1CFA0C004042F8 /* Deseret.jpg in Resources */,
 				AFBEF2C91A63ABDD00623B1A /* BakerH48.jpg in Resources */,
 				AF2B151816AFBC9200A3A7F4 /* getdata.sh in Resources */,
 				AFBEF3061A63ABDD00623B1A /* TeetersMH05.jpg in Resources */,
@@ -1207,6 +1230,7 @@
 				AFBEF3291A63ABDD00623B1A /* RossTS04.jpg in Resources */,
 				AFBEF2EB1A63ABDD00623B1A /* jenningsmH30.jpg in Resources */,
 				AFBEF3241A63ABDD00623B1A /* NicholasPS10.jpg in Resources */,
+				CE7CADD01C1D2B41004042F8 /* Basin_small.gif in Resources */,
 				AFBEF2D91A63ABDD00623B1A /* DavisonKH20.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1298,9 +1322,10 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
-				SDKROOT = iphoneos;
+				SDKROOT = iphoneos9.2;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1332,26 +1357,33 @@
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PROVISIONING_PROFILE = "777C488B-C5F9-434B-AF1D-4D3CC5E189F7";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "777C488B-C5F9-434B-AF1D-4D3CC5E189F7";
-				SDKROOT = iphoneos;
+				SDKROOT = iphoneos9.2;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "";
 			};
 			name = Release;
 		};
 		AF2481CC15BB6A260070924E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ARCHS = "$(ARCHS_STANDARD)";
+				"ARCHS[sdk=*]" = "$(ARCHS_STANDARD)";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LegGuide/LegGuide-Prefix.pch";
 				INFOPLIST_FILE = "LegGuide/LegGuide-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.wyomingrea.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
-				VALID_ARCHS = "";
+				VALID_ARCHS = "armv7s armv7 arm64";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1359,17 +1391,22 @@
 		AF2481CD15BB6A260070924E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Wyoming Rural Electric Association (9FH8259N92)";
+				ARCHS = "$(ARCHS_STANDARD)";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LegGuide/LegGuide-Prefix.pch";
 				INFOPLIST_FILE = "LegGuide/LegGuide-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.wyomingrea.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
-				VALID_ARCHS = "armv7 armv7s arm64";
+				VALID_ARCHS = "";
+				"VALID_ARCHS[sdk=*]" = "armv7s armv7 arm64";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
