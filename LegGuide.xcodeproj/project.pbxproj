@@ -230,10 +230,10 @@
 		AFBEF3341A63ABDD00623B1A /* MattMead_Portrait_2011_large.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AFBEF2B51A63ABDD00623B1A /* MattMead_Portrait_2011_large.jpg */; };
 		AFBEF3351A63ABDD00623B1A /* max2006.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AFBEF2B61A63ABDD00623B1A /* max2006.jpg */; };
 		AFC926A61614408D009538FD /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AFC926A51614408D009538FD /* Default-568h@2x.png */; };
+		CE39B2691C3756E700ABFD81 /* deseret.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE39B2681C3756E700ABFD81 /* deseret.jpg */; };
 		CE7CADC01C1C750A004042F8 /* BonerBS02.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE7CADBF1C1C750A004042F8 /* BonerBS02.jpg */; };
 		CE7CADC41C1CE85E004042F8 /* KinnerMH29.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE7CADC31C1CE85E004042F8 /* KinnerMH29.jpg */; };
 		CE7CADC61C1CF3E5004042F8 /* dp_logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE7CADC51C1CF3E5004042F8 /* dp_logo.jpg */; };
-		CE7CADC81C1CFA0C004042F8 /* Deseret.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE7CADC71C1CFA0C004042F8 /* Deseret.jpg */; };
 		CE7CADD01C1D2B41004042F8 /* Basin_small.gif in Resources */ = {isa = PBXBuildFile; fileRef = CE7CADCF1C1D2B41004042F8 /* Basin_small.gif */; };
 		CE7CADD21C1D2D2A004042F8 /* TriState.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE7CADD11C1D2D2A004042F8 /* TriState.jpg */; };
 /* End PBXBuildFile section */
@@ -497,10 +497,10 @@
 		AFBEF2B51A63ABDD00623B1A /* MattMead_Portrait_2011_large.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MattMead_Portrait_2011_large.jpg; sourceTree = "<group>"; };
 		AFBEF2B61A63ABDD00623B1A /* max2006.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = max2006.jpg; sourceTree = "<group>"; };
 		AFC926A51614408D009538FD /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		CE39B2681C3756E700ABFD81 /* deseret.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = deseret.jpg; sourceTree = "<group>"; };
 		CE7CADBF1C1C750A004042F8 /* BonerBS02.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = BonerBS02.jpg; sourceTree = "<group>"; };
 		CE7CADC31C1CE85E004042F8 /* KinnerMH29.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = KinnerMH29.jpg; sourceTree = "<group>"; };
 		CE7CADC51C1CF3E5004042F8 /* dp_logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dp_logo.jpg; sourceTree = "<group>"; };
-		CE7CADC71C1CFA0C004042F8 /* Deseret.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Deseret.jpg; sourceTree = "<group>"; };
 		CE7CADCF1C1D2B41004042F8 /* Basin_small.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Basin_small.gif; sourceTree = "<group>"; };
 		CE7CADD11C1D2D2A004042F8 /* TriState.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = TriState.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -815,9 +815,9 @@
 		AFBEF2361A63ABDD00623B1A /* Member Logos */ = {
 			isa = PBXGroup;
 			children = (
+				CE39B2681C3756E700ABFD81 /* deseret.jpg */,
 				CE7CADD11C1D2D2A004042F8 /* TriState.jpg */,
 				CE7CADCF1C1D2B41004042F8 /* Basin_small.gif */,
-				CE7CADC71C1CFA0C004042F8 /* Deseret.jpg */,
 				CE7CADC51C1CF3E5004042F8 /* dp_logo.jpg */,
 				AFBEF2371A63ABDD00623B1A /* bhrec.jpg */,
 				AFBEF2381A63ABDD00623B1A /* BVEA.jpg */,
@@ -1078,6 +1078,7 @@
 				AFBEF2C51A63ABDD00623B1A /* wyrulec.jpg in Resources */,
 				AFBEF31F1A63ABDD00623B1A /* HinesJS23.jpg in Resources */,
 				AFBEF2FF1A63ABDD00623B1A /* PetroffH16.jpg in Resources */,
+				CE39B2691C3756E700ABFD81 /* deseret.jpg in Resources */,
 				AF2B11E716AF9D0800A3A7F4 /* backButton.png in Resources */,
 				AFBEF2D11A63ABDD00623B1A /* BrownKH14.jpg in Resources */,
 				AFBEF31E1A63ABDD00623B1A /* HicksS11.jpg in Resources */,
@@ -1201,7 +1202,6 @@
 				AFBEF2D31A63ABDD00623B1A /* ByrdJH44.jpg in Resources */,
 				AFBEF30D1A63ABDD00623B1A /* ZwonitzerDvH09.jpg in Resources */,
 				AFBEF2DC1A63ABDD00623B1A /* EklundH10.jpg in Resources */,
-				CE7CADC81C1CFA0C004042F8 /* Deseret.jpg in Resources */,
 				AFBEF2C91A63ABDD00623B1A /* BakerH48.jpg in Resources */,
 				AF2B151816AFBC9200A3A7F4 /* getdata.sh in Resources */,
 				AFBEF3061A63ABDD00623B1A /* TeetersMH05.jpg in Resources */,
