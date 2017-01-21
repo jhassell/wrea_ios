@@ -236,6 +236,8 @@
 		CE7CADC61C1CF3E5004042F8 /* dp_logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE7CADC51C1CF3E5004042F8 /* dp_logo.jpg */; };
 		CE7CADD01C1D2B41004042F8 /* Basin_small.gif in Resources */ = {isa = PBXBuildFile; fileRef = CE7CADCF1C1D2B41004042F8 /* Basin_small.gif */; };
 		CE7CADD21C1D2D2A004042F8 /* TriState.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE7CADD11C1D2D2A004042F8 /* TriState.jpg */; };
+		CEF8760B1E33999F00BEEAEF /* AboutBackground_2017.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CEF876091E33999F00BEEAEF /* AboutBackground_2017.jpg */; };
+		CEF8760C1E33999F00BEEAEF /* AboutBackground_2017@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CEF8760A1E33999F00BEEAEF /* AboutBackground_2017@2x.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -503,6 +505,8 @@
 		CE7CADC51C1CF3E5004042F8 /* dp_logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dp_logo.jpg; sourceTree = "<group>"; };
 		CE7CADCF1C1D2B41004042F8 /* Basin_small.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Basin_small.gif; sourceTree = "<group>"; };
 		CE7CADD11C1D2D2A004042F8 /* TriState.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = TriState.jpg; sourceTree = "<group>"; };
+		CEF876091E33999F00BEEAEF /* AboutBackground_2017.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = AboutBackground_2017.jpg; sourceTree = "<group>"; };
+		CEF8760A1E33999F00BEEAEF /* AboutBackground_2017@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "AboutBackground_2017@2x.jpg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -682,6 +686,8 @@
 		AF2B107916AF9D0700A3A7F4 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				CEF876091E33999F00BEEAEF /* AboutBackground_2017.jpg */,
+				CEF8760A1E33999F00BEEAEF /* AboutBackground_2017@2x.jpg */,
 				AFBEF22E1A63ABDD00623B1A /* People */,
 				AF1D28E118BDBE420093CE11 /* StateButtons.png */,
 				AF1D28E218BDBE420093CE11 /* StateButtons@2x.png */,
@@ -1096,6 +1102,7 @@
 				AF2B11F016AF9D0800A3A7F4 /* Federal.png in Resources */,
 				AFA36F541A78BE9B00A5D2E6 /* edwardsrH53.jpg in Resources */,
 				AFBEF3261A63ABDD00623B1A /* pappassS07.jpg in Resources */,
+				CEF8760C1E33999F00BEEAEF /* AboutBackground_2017@2x.jpg in Resources */,
 				AF2B11F116AF9D0800A3A7F4 /* Federal@2x.png in Resources */,
 				AF2B11FC16AF9D0800A3A7F4 /* logo.png in Resources */,
 				AFBEF2EA1A63ABDD00623B1A /* JaggiAH18.jpg in Resources */,
@@ -1103,6 +1110,7 @@
 				AF2B11FD16AF9D0800A3A7F4 /* logo@2x.png in Resources */,
 				AFBEF3321A63ABDD00623B1A /* Jillian-bio.jpg in Resources */,
 				AFBEF2FC1A63ABDD00623B1A /* PattonJH29.jpg in Resources */,
+				CEF8760B1E33999F00BEEAEF /* AboutBackground_2017.jpg in Resources */,
 				AF85557C1A65115400130E89 /* steinmetzcH05.jpg in Resources */,
 				AF2B11FE16AF9D0800A3A7F4 /* MapPin.png in Resources */,
 				AFBEF3051A63ABDD00623B1A /* StubsonTH56.jpg in Resources */,
