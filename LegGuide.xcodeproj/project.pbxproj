@@ -236,6 +236,35 @@
 		CE7CADC61C1CF3E5004042F8 /* dp_logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE7CADC51C1CF3E5004042F8 /* dp_logo.jpg */; };
 		CE7CADD01C1D2B41004042F8 /* Basin_small.gif in Resources */ = {isa = PBXBuildFile; fileRef = CE7CADCF1C1D2B41004042F8 /* Basin_small.gif */; };
 		CE7CADD21C1D2D2A004042F8 /* TriState.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE7CADD11C1D2D2A004042F8 /* TriState.jpg */; };
+		CE824D5A1E3EF2AE0091AE97 /* BitemanDH51.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE824D461E3EF2AE0091AE97 /* BitemanDH51.jpg */; };
+		CE824D5B1E3EF2AE0091AE97 /* BoveeDH36.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE824D471E3EF2AE0091AE97 /* BoveeDH36.jpg */; };
+		CE824D5C1E3EF2AE0091AE97 /* BrownLH09.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE824D481E3EF2AE0091AE97 /* BrownLH09.jpg */; };
+		CE824D5D1E3EF2AE0091AE97 /* ClausenRH06.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE824D491E3EF2AE0091AE97 /* ClausenRH06.jpg */; };
+		CE824D5E1E3EF2AE0091AE97 /* CourtSH24.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE824D4A1E3EF2AE0091AE97 /* CourtSH24.jpg */; };
+		CE824D5F1E3EF2AE0091AE97 /* CrankTH18.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE824D4B1E3EF2AE0091AE97 /* CrankTH18.jpg */; };
+		CE824D601E3EF2AE0091AE97 /* EyreDH19.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE824D4C1E3EF2AE0091AE97 /* EyreDH19.jpg */; };
+		CE824D611E3EF2AE0091AE97 /* FlitnerJH26.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE824D4D1E3EF2AE0091AE97 /* FlitnerJH26.jpg */; };
+		CE824D621E3EF2AE0091AE97 /* FurphyDH14.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE824D4E1E3EF2AE0091AE97 /* FurphyDH14.jpg */; };
+		CE824D631E3EF2AE0091AE97 /* GierauMH16.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE824D4F1E3EF2AE0091AE97 /* GierauMH16.jpg */; };
+		CE824D641E3EF2AE0091AE97 /* GrayCH57.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE824D501E3EF2AE0091AE97 /* GrayCH57.jpg */; };
+		CE824D651E3EF2AE0091AE97 /* HaleyWH46.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE824D511E3EF2AE0091AE97 /* HaleyWH46.jpg */; };
+		CE824D661E3EF2AE0091AE97 /* HallinanTH32.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE824D521E3EF2AE0091AE97 /* HallinanTH32.jpg */; };
+		CE824D671E3EF2AE0091AE97 /* HendersonWH41.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE824D531E3EF2AE0091AE97 /* HendersonWH41.jpg */; };
+		CE824D681E3EF2AE0091AE97 /* LoneLH12.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE824D541E3EF2AE0091AE97 /* LoneLH12.jpg */; };
+		CE824D691E3EF2AE0091AE97 /* MacGuireJH35.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE824D551E3EF2AE0091AE97 /* MacGuireJH35.jpg */; };
+		CE824D6A1E3EF2AE0091AE97 /* ObermuellerJH56.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE824D561E3EF2AE0091AE97 /* ObermuellerJH56.jpg */; };
+		CE824D6B1E3EF2AE0091AE97 /* OlsenJH11.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE824D571E3EF2AE0091AE97 /* OlsenJH11.jpg */; };
+		CE824D6C1E3EF2AE0091AE97 /* SalazarTH34.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE824D581E3EF2AE0091AE97 /* SalazarTH34.jpg */; };
+		CE824D6D1E3EF2AE0091AE97 /* SweeneyPH58.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE824D591E3EF2AE0091AE97 /* SweeneyPH58.jpg */; };
+		CE824D761E3EF2CB0091AE97 /* Agar.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE824D6E1E3EF2CB0091AE97 /* Agar.jpg */; };
+		CE824D771E3EF2CB0091AE97 /* AgarWS20.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE824D6F1E3EF2CB0091AE97 /* AgarWS20.jpg */; };
+		CE824D781E3EF2CB0091AE97 /* Anselmi-DaltonLS12.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE824D701E3EF2CB0091AE97 /* Anselmi-DaltonLS12.jpg */; };
+		CE824D791E3EF2CB0091AE97 /* baldwinFH18.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE824D711E3EF2CB0091AE97 /* baldwinFH18.jpg */; };
+		CE824D7A1E3EF2CB0091AE97 /* BouchardAS06.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE824D721E3EF2CB0091AE97 /* BouchardAS06.jpg */; };
+		CE824D7B1E3EF2CB0091AE97 /* EllisAS08.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE824D731E3EF2CB0091AE97 /* EllisAS08.jpg */; };
+		CE824D7C1E3EF2CB0091AE97 /* MonizH46.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE824D741E3EF2CB0091AE97 /* MonizH46.jpg */; };
+		CE824D7D1E3EF2CB0091AE97 /* NethercottTS04.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE824D751E3EF2CB0091AE97 /* NethercottTS04.jpg */; };
+		CE824D7F1E3EF2E40091AE97 /* Cheney.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE824D7E1E3EF2E40091AE97 /* Cheney.jpg */; };
 		CEF8760B1E33999F00BEEAEF /* AboutBackground_2017.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CEF876091E33999F00BEEAEF /* AboutBackground_2017.jpg */; };
 		CEF8760C1E33999F00BEEAEF /* AboutBackground_2017@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CEF8760A1E33999F00BEEAEF /* AboutBackground_2017@2x.jpg */; };
 /* End PBXBuildFile section */
@@ -505,6 +534,35 @@
 		CE7CADC51C1CF3E5004042F8 /* dp_logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dp_logo.jpg; sourceTree = "<group>"; };
 		CE7CADCF1C1D2B41004042F8 /* Basin_small.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Basin_small.gif; sourceTree = "<group>"; };
 		CE7CADD11C1D2D2A004042F8 /* TriState.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = TriState.jpg; sourceTree = "<group>"; };
+		CE824D461E3EF2AE0091AE97 /* BitemanDH51.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = BitemanDH51.jpg; sourceTree = "<group>"; };
+		CE824D471E3EF2AE0091AE97 /* BoveeDH36.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = BoveeDH36.jpg; sourceTree = "<group>"; };
+		CE824D481E3EF2AE0091AE97 /* BrownLH09.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = BrownLH09.jpg; sourceTree = "<group>"; };
+		CE824D491E3EF2AE0091AE97 /* ClausenRH06.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ClausenRH06.jpg; sourceTree = "<group>"; };
+		CE824D4A1E3EF2AE0091AE97 /* CourtSH24.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = CourtSH24.jpg; sourceTree = "<group>"; };
+		CE824D4B1E3EF2AE0091AE97 /* CrankTH18.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = CrankTH18.jpg; sourceTree = "<group>"; };
+		CE824D4C1E3EF2AE0091AE97 /* EyreDH19.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = EyreDH19.jpg; sourceTree = "<group>"; };
+		CE824D4D1E3EF2AE0091AE97 /* FlitnerJH26.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = FlitnerJH26.jpg; sourceTree = "<group>"; };
+		CE824D4E1E3EF2AE0091AE97 /* FurphyDH14.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = FurphyDH14.jpg; sourceTree = "<group>"; };
+		CE824D4F1E3EF2AE0091AE97 /* GierauMH16.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = GierauMH16.jpg; sourceTree = "<group>"; };
+		CE824D501E3EF2AE0091AE97 /* GrayCH57.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = GrayCH57.jpg; sourceTree = "<group>"; };
+		CE824D511E3EF2AE0091AE97 /* HaleyWH46.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = HaleyWH46.jpg; sourceTree = "<group>"; };
+		CE824D521E3EF2AE0091AE97 /* HallinanTH32.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = HallinanTH32.jpg; sourceTree = "<group>"; };
+		CE824D531E3EF2AE0091AE97 /* HendersonWH41.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = HendersonWH41.jpg; sourceTree = "<group>"; };
+		CE824D541E3EF2AE0091AE97 /* LoneLH12.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = LoneLH12.jpg; sourceTree = "<group>"; };
+		CE824D551E3EF2AE0091AE97 /* MacGuireJH35.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MacGuireJH35.jpg; sourceTree = "<group>"; };
+		CE824D561E3EF2AE0091AE97 /* ObermuellerJH56.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ObermuellerJH56.jpg; sourceTree = "<group>"; };
+		CE824D571E3EF2AE0091AE97 /* OlsenJH11.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = OlsenJH11.jpg; sourceTree = "<group>"; };
+		CE824D581E3EF2AE0091AE97 /* SalazarTH34.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = SalazarTH34.jpg; sourceTree = "<group>"; };
+		CE824D591E3EF2AE0091AE97 /* SweeneyPH58.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = SweeneyPH58.jpg; sourceTree = "<group>"; };
+		CE824D6E1E3EF2CB0091AE97 /* Agar.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Agar.jpg; sourceTree = "<group>"; };
+		CE824D6F1E3EF2CB0091AE97 /* AgarWS20.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = AgarWS20.jpg; sourceTree = "<group>"; };
+		CE824D701E3EF2CB0091AE97 /* Anselmi-DaltonLS12.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Anselmi-DaltonLS12.jpg"; sourceTree = "<group>"; };
+		CE824D711E3EF2CB0091AE97 /* baldwinFH18.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = baldwinFH18.jpg; sourceTree = "<group>"; };
+		CE824D721E3EF2CB0091AE97 /* BouchardAS06.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = BouchardAS06.jpg; sourceTree = "<group>"; };
+		CE824D731E3EF2CB0091AE97 /* EllisAS08.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = EllisAS08.jpg; sourceTree = "<group>"; };
+		CE824D741E3EF2CB0091AE97 /* MonizH46.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MonizH46.jpg; sourceTree = "<group>"; };
+		CE824D751E3EF2CB0091AE97 /* NethercottTS04.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = NethercottTS04.jpg; sourceTree = "<group>"; };
+		CE824D7E1E3EF2E40091AE97 /* Cheney.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Cheney.jpg; sourceTree = "<group>"; };
 		CEF876091E33999F00BEEAEF /* AboutBackground_2017.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = AboutBackground_2017.jpg; sourceTree = "<group>"; };
 		CEF8760A1E33999F00BEEAEF /* AboutBackground_2017@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "AboutBackground_2017@2x.jpg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -797,6 +855,7 @@
 		AFBEF22F1A63ABDD00623B1A /* Federal Representatives */ = {
 			isa = PBXGroup;
 			children = (
+				CE824D7E1E3EF2E40091AE97 /* Cheney.jpg */,
 				AFBEF2301A63ABDD00623B1A /* Lummis.jpg */,
 			);
 			path = "Federal Representatives";
@@ -857,6 +916,26 @@
 		AFBEF2461A63ABDD00623B1A /* State Representatives */ = {
 			isa = PBXGroup;
 			children = (
+				CE824D461E3EF2AE0091AE97 /* BitemanDH51.jpg */,
+				CE824D471E3EF2AE0091AE97 /* BoveeDH36.jpg */,
+				CE824D481E3EF2AE0091AE97 /* BrownLH09.jpg */,
+				CE824D491E3EF2AE0091AE97 /* ClausenRH06.jpg */,
+				CE824D4A1E3EF2AE0091AE97 /* CourtSH24.jpg */,
+				CE824D4B1E3EF2AE0091AE97 /* CrankTH18.jpg */,
+				CE824D4C1E3EF2AE0091AE97 /* EyreDH19.jpg */,
+				CE824D4D1E3EF2AE0091AE97 /* FlitnerJH26.jpg */,
+				CE824D4E1E3EF2AE0091AE97 /* FurphyDH14.jpg */,
+				CE824D4F1E3EF2AE0091AE97 /* GierauMH16.jpg */,
+				CE824D501E3EF2AE0091AE97 /* GrayCH57.jpg */,
+				CE824D511E3EF2AE0091AE97 /* HaleyWH46.jpg */,
+				CE824D521E3EF2AE0091AE97 /* HallinanTH32.jpg */,
+				CE824D531E3EF2AE0091AE97 /* HendersonWH41.jpg */,
+				CE824D541E3EF2AE0091AE97 /* LoneLH12.jpg */,
+				CE824D551E3EF2AE0091AE97 /* MacGuireJH35.jpg */,
+				CE824D561E3EF2AE0091AE97 /* ObermuellerJH56.jpg */,
+				CE824D571E3EF2AE0091AE97 /* OlsenJH11.jpg */,
+				CE824D581E3EF2AE0091AE97 /* SalazarTH34.jpg */,
+				CE824D591E3EF2AE0091AE97 /* SweeneyPH58.jpg */,
 				CE7CADC31C1CE85E004042F8 /* KinnerMH29.jpg */,
 				AFA36F521A78BE9B00A5D2E6 /* edwardsrH53.jpg */,
 				AFA36F531A78BE9B00A5D2E6 /* PownallBH52.jpg */,
@@ -938,6 +1017,14 @@
 		AFBEF28D1A63ABDD00623B1A /* State Senators */ = {
 			isa = PBXGroup;
 			children = (
+				CE824D6E1E3EF2CB0091AE97 /* Agar.jpg */,
+				CE824D6F1E3EF2CB0091AE97 /* AgarWS20.jpg */,
+				CE824D701E3EF2CB0091AE97 /* Anselmi-DaltonLS12.jpg */,
+				CE824D711E3EF2CB0091AE97 /* baldwinFH18.jpg */,
+				CE824D721E3EF2CB0091AE97 /* BouchardAS06.jpg */,
+				CE824D731E3EF2CB0091AE97 /* EllisAS08.jpg */,
+				CE824D741E3EF2CB0091AE97 /* MonizH46.jpg */,
+				CE824D751E3EF2CB0091AE97 /* NethercottTS04.jpg */,
 				CE7CADBF1C1C750A004042F8 /* BonerBS02.jpg */,
 				AFBEF28E1A63ABDD00623B1A /* AndersonJS02.jpg */,
 				AFBEF28F1A63ABDD00623B1A /* AndersonS28.jpg */,
@@ -1046,9 +1133,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE824D781E3EF2CB0091AE97 /* Anselmi-DaltonLS12.jpg in Resources */,
 				AF092D4115DA0FD200AA4B6B /* Default.png in Resources */,
 				AF092D4315DA0FDC00AA4B6B /* Default@2x.png in Resources */,
+				CE824D771E3EF2CB0091AE97 /* AgarWS20.jpg in Resources */,
 				AFBEF3071A63ABDD00623B1A /* ThroneMH11.jpg in Resources */,
+				CE824D6D1E3EF2AE0091AE97 /* SweeneyPH58.jpg in Resources */,
 				AFBEF2CA1A63ABDD00623B1A /* baldwinFH18.jpg in Resources */,
 				AFBEF2F41A63ABDD00623B1A /* LoucksH59.jpg in Resources */,
 				AFC926A61614408D009538FD /* Default-568h@2x.png in Resources */,
@@ -1057,6 +1147,7 @@
 				AFBEF3181A63ABDD00623B1A /* DockstaderDS16.jpg in Resources */,
 				AF2B11DA16AF9D0800A3A7F4 /* About.png in Resources */,
 				AFBEF2F71A63ABDD00623B1A /* McKimRH21.jpg in Resources */,
+				CE824D681E3EF2AE0091AE97 /* LoneLH12.jpg in Resources */,
 				AFBEF2F81A63ABDD00623B1A /* MillerDH55.jpg in Resources */,
 				AFBEF2DA1A63ABDD00623B1A /* DaytonJH17.jpg in Resources */,
 				AFBEF3281A63ABDD00623B1A /* PetersonRS19.jpg in Resources */,
@@ -1071,15 +1162,20 @@
 				AF2B11E316AF9D0800A3A7F4 /* Arrow_Left.png in Resources */,
 				AFBEF2B71A63ABDD00623B1A /* Lummis.jpg in Resources */,
 				AFBEF2F51A63ABDD00623B1A /* LubnauTH31.jpg in Resources */,
+				CE824D7B1E3EF2CB0091AE97 /* EllisAS08.jpg in Resources */,
 				AFBEF31A1A63ABDD00623B1A /* EmerichS5.jpg in Resources */,
 				AFBEF3011A63ABDD00623B1A /* ReederH58.jpg in Resources */,
 				AFBEF2E21A63ABDD00623B1A /* GogglesPH33.jpg in Resources */,
 				AFBEF3171A63ABDD00623B1A /* CraftBH17.jpg in Resources */,
 				AF2B11E416AF9D0800A3A7F4 /* Arrow_Left@2x.png in Resources */,
+				CE824D5B1E3EF2AE0091AE97 /* BoveeDH36.jpg in Resources */,
+				CE824D5A1E3EF2AE0091AE97 /* BitemanDH51.jpg in Resources */,
 				AFBEF3111A63ABDD00623B1A /* BeboutES26.jpg in Resources */,
 				AFBEF3311A63ABDD00623B1A /* Hill.jpg in Resources */,
 				AFBEF2EC1A63ABDD00623B1A /* KasperikH32.jpg in Resources */,
+				CE824D5E1E3EF2AE0091AE97 /* CourtSH24.jpg in Resources */,
 				AF2B11E516AF9D0800A3A7F4 /* Arrow_Right.png in Resources */,
+				CE824D691E3EF2AE0091AE97 /* MacGuireJH35.jpg in Resources */,
 				AF2B11E616AF9D0800A3A7F4 /* Arrow_Right@2x.png in Resources */,
 				AFBEF2C51A63ABDD00623B1A /* wyrulec.jpg in Resources */,
 				AFBEF31F1A63ABDD00623B1A /* HinesJS23.jpg in Resources */,
@@ -1130,11 +1226,13 @@
 				AF2B12EE16AF9D0800A3A7F4 /* linkedin.png in Resources */,
 				AFBEF2FB1A63ABDD00623B1A /* NorthrupH50.jpg in Resources */,
 				AFBEF2F61A63ABDD00623B1A /* MaddenMH40.jpg in Resources */,
+				CE824D5C1E3EF2AE0091AE97 /* BrownLH09.jpg in Resources */,
 				AF2B12EF16AF9D0800A3A7F4 /* map.png in Resources */,
 				AF2B12F016AF9D0800A3A7F4 /* phone.png in Resources */,
 				AFBEF3231A63ABDD00623B1A /* MeierCS03.jpg in Resources */,
 				AFBEF2C01A63ABDD00623B1A /* HWE.jpg in Resources */,
 				AF2B12F116AF9D0800A3A7F4 /* twitter.png in Resources */,
+				CE824D6A1E3EF2AE0091AE97 /* ObermuellerJH56.jpg in Resources */,
 				AFBEF2E41A63ABDD00623B1A /* GreeneH45.jpg in Resources */,
 				AF2B12F416AF9D0800A3A7F4 /* State.png in Resources */,
 				AFBEF3041A63ABDD00623B1A /* SommersH20.jpg in Resources */,
@@ -1164,20 +1262,31 @@
 				AFBEF2C81A63ABDD00623B1A /* AllenJH33.jpg in Resources */,
 				AFBEF32F1A63ABDD00623B1A /* Cynthia-Portrait.jpg in Resources */,
 				AFBEF2D61A63ABDD00623B1A /* clemsH31.jpg in Resources */,
+				CE824D631E3EF2AE0091AE97 /* GierauMH16.jpg in Resources */,
 				AFBEF2B91A63ABDD00623B1A /* Enzi.jpg in Resources */,
 				AF2B12FF16AF9D0800A3A7F4 /* MapView-iPhone.xib in Resources */,
 				AFBEF32B1A63ABDD00623B1A /* SchifferJS22.jpg in Resources */,
+				CE824D641E3EF2AE0091AE97 /* GrayCH57.jpg in Resources */,
 				AFBEF2D21A63ABDD00623B1A /* BurkhartH15.jpg in Resources */,
 				AFBEF2CD1A63ABDD00623B1A /* blackburnJH42.jpg in Resources */,
 				AFBEF30A1A63ABDD00623B1A /* WilsonH07.jpg in Resources */,
+				CE824D791E3EF2CB0091AE97 /* baldwinFH18.jpg in Resources */,
 				AFBEF2CE1A63ABDD00623B1A /* BlakeSH39.jpg in Resources */,
 				AFBEF2BD1A63ABDD00623B1A /* CPL_Logo.jpg in Resources */,
 				AFBEF3251A63ABDD00623B1A /* NuttingS7.jpg in Resources */,
+				CE824D761E3EF2CB0091AE97 /* Agar.jpg in Resources */,
+				CE824D7D1E3EF2CB0091AE97 /* NethercottTS04.jpg in Resources */,
+				CE824D621E3EF2AE0091AE97 /* FurphyDH14.jpg in Resources */,
+				CE824D661E3EF2AE0091AE97 /* HallinanTH32.jpg in Resources */,
 				AFBEF2E01A63ABDD00623B1A /* GayH36.jpg in Resources */,
 				AF1D28E318BDBE420093CE11 /* StateButtons.png in Resources */,
+				CE824D651E3EF2AE0091AE97 /* HaleyWH46.jpg in Resources */,
+				CE824D7C1E3EF2CB0091AE97 /* MonizH46.jpg in Resources */,
+				CE824D671E3EF2AE0091AE97 /* HendersonWH41.jpg in Resources */,
 				AF2B130016AF9D0800A3A7F4 /* PeopleListCell-iPhone.xib in Resources */,
 				AF2B130116AF9D0800A3A7F4 /* PeopleListSearchCell-iPhone.xib in Resources */,
 				AFBEF3191A63ABDD00623B1A /* DriskillS1.jpg in Resources */,
+				CE824D6B1E3EF2AE0091AE97 /* OlsenJH11.jpg in Resources */,
 				AFBEF2C11A63ABDD00623B1A /* lowervalley.jpg in Resources */,
 				AF2B130216AF9D0800A3A7F4 /* PeopleListView-iPhone.xib in Resources */,
 				AFBEF2C71A63ABDD00623B1A /* silhouette_head_small.png in Resources */,
@@ -1186,7 +1295,9 @@
 				AFBEF31B1A63ABDD00623B1A /* EsquibelFS08.jpg in Resources */,
 				AF2B130416AF9D0800A3A7F4 /* PersonViewAddressCell-iPhone.xib in Resources */,
 				AF2B130516AF9D0800A3A7F4 /* PersonViewAddressLACell-iPhone.xib in Resources */,
+				CE824D5F1E3EF2AE0091AE97 /* CrankTH18.jpg in Resources */,
 				CE7CADC41C1CE85E004042F8 /* KinnerMH29.jpg in Resources */,
+				CE824D6C1E3EF2AE0091AE97 /* SalazarTH34.jpg in Resources */,
 				AFBEF3331A63ABDD00623B1A /* markgordon.jpg in Resources */,
 				AFBEF2FD1A63ABDD00623B1A /* PaxtonH47.jpg in Resources */,
 				AFBEF2CB1A63ABDD00623B1A /* BarlowH03.jpg in Resources */,
@@ -1198,6 +1309,7 @@
 				AFBEF2DD1A63ABDD00623B1A /* EsquibelKH41.jpg in Resources */,
 				AFBEF3341A63ABDD00623B1A /* MattMead_Portrait_2011_large.jpg in Resources */,
 				AFBEF2BA1A63ABDD00623B1A /* m.csv in Resources */,
+				CE824D7F1E3EF2E40091AE97 /* Cheney.jpg in Resources */,
 				AFBEF30F1A63ABDD00623B1A /* AndersonS28.jpg in Resources */,
 				AFBEF2F21A63ABDD00623B1A /* lindholmtH01.jpg in Resources */,
 				AFBEF2C41A63ABDD00623B1A /* Wheatland.jpg in Resources */,
@@ -1210,6 +1322,7 @@
 				AFBEF2D31A63ABDD00623B1A /* ByrdJH44.jpg in Resources */,
 				AFBEF30D1A63ABDD00623B1A /* ZwonitzerDvH09.jpg in Resources */,
 				AFBEF2DC1A63ABDD00623B1A /* EklundH10.jpg in Resources */,
+				CE824D7A1E3EF2CB0091AE97 /* BouchardAS06.jpg in Resources */,
 				AFBEF2C91A63ABDD00623B1A /* BakerH48.jpg in Resources */,
 				AF2B151816AFBC9200A3A7F4 /* getdata.sh in Resources */,
 				AFBEF3061A63ABDD00623B1A /* TeetersMH05.jpg in Resources */,
@@ -1234,10 +1347,13 @@
 				AFBEF2BB1A63ABDD00623B1A /* bhrec.jpg in Resources */,
 				AF866C4316B6F85300E9DF01 /* PersonViewPhoneCell-iPhone.xib in Resources */,
 				AF805B2818BB017500A70A45 /* Background2@2x.png in Resources */,
+				CE824D601E3EF2AE0091AE97 /* EyreDH19.jpg in Resources */,
 				AF334CCB18AE586A00219F26 /* AppIcon-120.png in Resources */,
 				AFBEF3291A63ABDD00623B1A /* RossTS04.jpg in Resources */,
+				CE824D611E3EF2AE0091AE97 /* FlitnerJH26.jpg in Resources */,
 				AFBEF2EB1A63ABDD00623B1A /* jenningsmH30.jpg in Resources */,
 				AFBEF3241A63ABDD00623B1A /* NicholasPS10.jpg in Resources */,
+				CE824D5D1E3EF2AE0091AE97 /* ClausenRH06.jpg in Resources */,
 				CE7CADD01C1D2B41004042F8 /* Basin_small.gif in Resources */,
 				AFBEF2D91A63ABDD00623B1A /* DavisonKH20.jpg in Resources */,
 			);
