@@ -8,6 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
+#define STATE_SENATE    @"Wyoming Senate"
+#define STATE_HOUSE     @"Wyoming House"
+#define STATE_JUDICIARY @"Wyoming Judiciary"
+#define FEDERAL_SENATE  @"US Senate"
+#define FEDERAL_HOUSE   @"US House"
+#define STATEWIDE       @"Statewide"
+#define OAEC_MEMBER    @"OAEC Member System"
+#define LEGISLATIVE_CONTACT @"WREA Leadership"
+
+#define STANDING        @"Standing Committee"
+#define APPROPRIATIONS  @"Appropriations Subcommittee"
+
 @interface AppDelegate : UIResponder <UIApplicationDelegate> {
     
     BOOL mapDataLoaded;

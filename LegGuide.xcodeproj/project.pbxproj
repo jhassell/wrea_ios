@@ -265,9 +265,76 @@
 		CE824D7C1E3EF2CB0091AE97 /* MonizH46.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE824D741E3EF2CB0091AE97 /* MonizH46.jpg */; };
 		CE824D7D1E3EF2CB0091AE97 /* NethercottTS04.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE824D751E3EF2CB0091AE97 /* NethercottTS04.jpg */; };
 		CE824D7F1E3EF2E40091AE97 /* Cheney.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE824D7E1E3EF2E40091AE97 /* Cheney.jpg */; };
+		CECFF8F11EF23307007BEF92 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CECFF8F01EF23307007BEF92 /* Realm.framework */; };
+		CECFF8F21EF23307007BEF92 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CECFF8F01EF23307007BEF92 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CECFF9071EF233D0007BEF92 /* RollCallListDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CECFF8F51EF233D0007BEF92 /* RollCallListDelegate.m */; };
+		CECFF9091EF233D0007BEF92 /* Tally.m in Sources */ = {isa = PBXBuildFile; fileRef = CECFF8FA1EF233D0007BEF92 /* Tally.m */; };
+		CECFF90A1EF233D0007BEF92 /* TallyGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = CECFF8FC1EF233D0007BEF92 /* TallyGroup.m */; };
+		CECFF90B1EF233D0007BEF92 /* voteButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CECFF8FE1EF233D0007BEF92 /* voteButton.m */; };
+		CECFF90C1EF233D0007BEF92 /* voteSet.m in Sources */ = {isa = PBXBuildFile; fileRef = CECFF9001EF233D0007BEF92 /* voteSet.m */; };
+		CECFF90D1EF233D0007BEF92 /* VoteView.m in Sources */ = {isa = PBXBuildFile; fileRef = CECFF9021EF233D0007BEF92 /* VoteView.m */; };
+		CECFF90F1EF233D0007BEF92 /* CommitteeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = CECFF9061EF233D0007BEF92 /* CommitteeHeaderView.m */; };
+		CECFF9201EF233ED007BEF92 /* CLLocation+Strings.m in Sources */ = {isa = PBXBuildFile; fileRef = CECFF9111EF233ED007BEF92 /* CLLocation+Strings.m */; };
+		CECFF9211EF233ED007BEF92 /* CommitteeVoteListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CECFF9131EF233ED007BEF92 /* CommitteeVoteListViewController.m */; };
+		CECFF9221EF233ED007BEF92 /* GetLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CECFF9151EF233ED007BEF92 /* GetLocationViewController.m */; };
+		CECFF9231EF233ED007BEF92 /* LocationDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CECFF9171EF233ED007BEF92 /* LocationDetailViewController.m */; };
+		CECFF9241EF233ED007BEF92 /* SetupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CECFF9191EF233ED007BEF92 /* SetupViewController.m */; };
+		CECFF9251EF233ED007BEF92 /* VoteCheckViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CECFF91B1EF233ED007BEF92 /* VoteCheckViewController.m */; };
+		CECFF9381EF23426007BEF92 /* All_VoteTallyIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = CECFF9281EF23426007BEF92 /* All_VoteTallyIcon.png */; };
+		CECFF9391EF23426007BEF92 /* BlankNay.png in Resources */ = {isa = PBXBuildFile; fileRef = CECFF9291EF23426007BEF92 /* BlankNay.png */; };
+		CECFF93A1EF23426007BEF92 /* BlankYea.png in Resources */ = {isa = PBXBuildFile; fileRef = CECFF92A1EF23426007BEF92 /* BlankYea.png */; };
+		CECFF93B1EF23426007BEF92 /* BlankYeaSlice.png in Resources */ = {isa = PBXBuildFile; fileRef = CECFF92B1EF23426007BEF92 /* BlankYeaSlice.png */; };
+		CECFF93C1EF23426007BEF92 /* CheckNay.png in Resources */ = {isa = PBXBuildFile; fileRef = CECFF92C1EF23426007BEF92 /* CheckNay.png */; };
+		CECFF93D1EF23426007BEF92 /* CheckYea.png in Resources */ = {isa = PBXBuildFile; fileRef = CECFF92D1EF23426007BEF92 /* CheckYea.png */; };
+		CECFF93E1EF23426007BEF92 /* House__VoteTallyIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = CECFF92E1EF23426007BEF92 /* House__VoteTallyIcon.png */; };
+		CECFF93F1EF23426007BEF92 /* houseCommittee.png in Resources */ = {isa = PBXBuildFile; fileRef = CECFF92F1EF23426007BEF92 /* houseCommittee.png */; };
+		CECFF9401EF23426007BEF92 /* houseCommittee@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CECFF9301EF23426007BEF92 /* houseCommittee@2x.png */; };
+		CECFF9411EF23426007BEF92 /* HouseCommittees_VoteTallyIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = CECFF9311EF23426007BEF92 /* HouseCommittees_VoteTallyIcon.png */; };
+		CECFF9421EF23426007BEF92 /* houseIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = CECFF9321EF23426007BEF92 /* houseIcon.png */; };
+		CECFF9431EF23426007BEF92 /* houseIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CECFF9331EF23426007BEF92 /* houseIcon@2x.png */; };
+		CECFF9441EF23426007BEF92 /* Senate_VoteTallyIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = CECFF9341EF23426007BEF92 /* Senate_VoteTallyIcon.png */; };
+		CECFF9451EF23426007BEF92 /* senateCommittee.png in Resources */ = {isa = PBXBuildFile; fileRef = CECFF9351EF23426007BEF92 /* senateCommittee.png */; };
+		CECFF9461EF23426007BEF92 /* senateCommittee@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CECFF9361EF23426007BEF92 /* senateCommittee@2x.png */; };
+		CECFF9471EF23426007BEF92 /* SenateCommittees__VoteTallyIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = CECFF9371EF23426007BEF92 /* SenateCommittees__VoteTallyIcon.png */; };
+		CECFF9491EF23447007BEF92 /* VoteTallIcon-09.png in Resources */ = {isa = PBXBuildFile; fileRef = CECFF9481EF23447007BEF92 /* VoteTallIcon-09.png */; };
+		CECFF9501EF23486007BEF92 /* CommitteeHeaderView-iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = CECFF94A1EF23486007BEF92 /* CommitteeHeaderView-iPhone.xib */; };
+		CECFF9511EF23486007BEF92 /* OutlinkCell-iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = CECFF94B1EF23486007BEF92 /* OutlinkCell-iPhone.xib */; };
+		CECFF9521EF23486007BEF92 /* PersonViewBioCell-iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = CECFF94C1EF23486007BEF92 /* PersonViewBioCell-iPhone.xib */; };
+		CECFF9531EF23486007BEF92 /* VoteListView-iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = CECFF94D1EF23486007BEF92 /* VoteListView-iPhone.xib */; };
+		CECFF9541EF23486007BEF92 /* VoteTallyHeaderView-iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = CECFF94E1EF23486007BEF92 /* VoteTallyHeaderView-iPhone.xib */; };
+		CECFF9551EF23486007BEF92 /* VotingListCell-iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = CECFF94F1EF23486007BEF92 /* VotingListCell-iPhone.xib */; };
+		CECFF95D1EF23ACC007BEF92 /* VotingListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CECFF95C1EF23ACC007BEF92 /* VotingListViewController.m */; };
+		CECFF9601EF35380007BEF92 /* BackgroundLight.png in Resources */ = {isa = PBXBuildFile; fileRef = CECFF95E1EF35380007BEF92 /* BackgroundLight.png */; };
+		CECFF9611EF35380007BEF92 /* BackgroundLight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CECFF95F1EF35380007BEF92 /* BackgroundLight@2x.png */; };
+		CECFF96E1EF38BF0007BEF92 /* VoteTallyIcons_Vote@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CECFF9621EF38BF0007BEF92 /* VoteTallyIcons_Vote@2x.png */; };
+		CECFF96F1EF38BF0007BEF92 /* VoteTallyIcons_Vote.png in Resources */ = {isa = PBXBuildFile; fileRef = CECFF9631EF38BF0007BEF92 /* VoteTallyIcons_Vote.png */; };
+		CECFF9701EF38BF0007BEF92 /* VoteTallyIcons_SC@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CECFF9641EF38BF0007BEF92 /* VoteTallyIcons_SC@2x.png */; };
+		CECFF9711EF38BF0007BEF92 /* VoteTallyIcons_SC.png in Resources */ = {isa = PBXBuildFile; fileRef = CECFF9651EF38BF0007BEF92 /* VoteTallyIcons_SC.png */; };
+		CECFF9721EF38BF0007BEF92 /* VoteTallyIcons_S@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CECFF9661EF38BF0007BEF92 /* VoteTallyIcons_S@2x.png */; };
+		CECFF9731EF38BF0007BEF92 /* VoteTallyIcons_S.png in Resources */ = {isa = PBXBuildFile; fileRef = CECFF9671EF38BF0007BEF92 /* VoteTallyIcons_S.png */; };
+		CECFF9741EF38BF0007BEF92 /* VoteTallyIcons_HC@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CECFF9681EF38BF0007BEF92 /* VoteTallyIcons_HC@2x.png */; };
+		CECFF9751EF38BF0007BEF92 /* VoteTallyIcons_HC.png in Resources */ = {isa = PBXBuildFile; fileRef = CECFF9691EF38BF0007BEF92 /* VoteTallyIcons_HC.png */; };
+		CECFF9761EF38BF0007BEF92 /* VoteTallyIcons_H@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CECFF96A1EF38BF0007BEF92 /* VoteTallyIcons_H@2x.png */; };
+		CECFF9771EF38BF0007BEF92 /* VoteTallyIcons_H.png in Resources */ = {isa = PBXBuildFile; fileRef = CECFF96B1EF38BF0007BEF92 /* VoteTallyIcons_H.png */; };
+		CECFF9781EF38BF0007BEF92 /* VoteTallyIcons_All@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CECFF96C1EF38BF0007BEF92 /* VoteTallyIcons_All@2x.png */; };
+		CECFF9791EF38BF0007BEF92 /* VoteTallyIcons_All.png in Resources */ = {isa = PBXBuildFile; fileRef = CECFF96D1EF38BF0007BEF92 /* VoteTallyIcons_All.png */; };
 		CEF8760B1E33999F00BEEAEF /* AboutBackground_2017.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CEF876091E33999F00BEEAEF /* AboutBackground_2017.jpg */; };
 		CEF8760C1E33999F00BEEAEF /* AboutBackground_2017@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CEF8760A1E33999F00BEEAEF /* AboutBackground_2017@2x.jpg */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CECFF8F31EF23307007BEF92 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				CECFF8F21EF23307007BEF92 /* Realm.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		AF092D4015DA0FD100AA4B6B /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
@@ -563,6 +630,72 @@
 		CE824D741E3EF2CB0091AE97 /* MonizH46.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MonizH46.jpg; sourceTree = "<group>"; };
 		CE824D751E3EF2CB0091AE97 /* NethercottTS04.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = NethercottTS04.jpg; sourceTree = "<group>"; };
 		CE824D7E1E3EF2E40091AE97 /* Cheney.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Cheney.jpg; sourceTree = "<group>"; };
+		CECFF8F01EF23307007BEF92 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
+		CECFF8F51EF233D0007BEF92 /* RollCallListDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RollCallListDelegate.m; sourceTree = "<group>"; };
+		CECFF8F81EF233D0007BEF92 /* RollCallListDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RollCallListDelegate.h; sourceTree = "<group>"; };
+		CECFF8F91EF233D0007BEF92 /* Tally.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tally.h; sourceTree = "<group>"; };
+		CECFF8FA1EF233D0007BEF92 /* Tally.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tally.m; sourceTree = "<group>"; };
+		CECFF8FB1EF233D0007BEF92 /* TallyGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TallyGroup.h; sourceTree = "<group>"; };
+		CECFF8FC1EF233D0007BEF92 /* TallyGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TallyGroup.m; sourceTree = "<group>"; };
+		CECFF8FD1EF233D0007BEF92 /* voteButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = voteButton.h; sourceTree = "<group>"; };
+		CECFF8FE1EF233D0007BEF92 /* voteButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = voteButton.m; sourceTree = "<group>"; };
+		CECFF8FF1EF233D0007BEF92 /* voteSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = voteSet.h; sourceTree = "<group>"; };
+		CECFF9001EF233D0007BEF92 /* voteSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = voteSet.m; sourceTree = "<group>"; };
+		CECFF9011EF233D0007BEF92 /* VoteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VoteView.h; sourceTree = "<group>"; };
+		CECFF9021EF233D0007BEF92 /* VoteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VoteView.m; sourceTree = "<group>"; };
+		CECFF9051EF233D0007BEF92 /* CommitteeHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommitteeHeaderView.h; sourceTree = "<group>"; };
+		CECFF9061EF233D0007BEF92 /* CommitteeHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommitteeHeaderView.m; sourceTree = "<group>"; };
+		CECFF9101EF233ED007BEF92 /* CLLocation+Strings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CLLocation+Strings.h"; sourceTree = "<group>"; };
+		CECFF9111EF233ED007BEF92 /* CLLocation+Strings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CLLocation+Strings.m"; sourceTree = "<group>"; };
+		CECFF9121EF233ED007BEF92 /* CommitteeVoteListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommitteeVoteListViewController.h; sourceTree = "<group>"; };
+		CECFF9131EF233ED007BEF92 /* CommitteeVoteListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommitteeVoteListViewController.m; sourceTree = "<group>"; };
+		CECFF9141EF233ED007BEF92 /* GetLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetLocationViewController.h; sourceTree = "<group>"; };
+		CECFF9151EF233ED007BEF92 /* GetLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetLocationViewController.m; sourceTree = "<group>"; };
+		CECFF9161EF233ED007BEF92 /* LocationDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationDetailViewController.h; sourceTree = "<group>"; };
+		CECFF9171EF233ED007BEF92 /* LocationDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationDetailViewController.m; sourceTree = "<group>"; };
+		CECFF9181EF233ED007BEF92 /* SetupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetupViewController.h; sourceTree = "<group>"; };
+		CECFF9191EF233ED007BEF92 /* SetupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetupViewController.m; sourceTree = "<group>"; };
+		CECFF91A1EF233ED007BEF92 /* VoteCheckViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VoteCheckViewController.h; sourceTree = "<group>"; };
+		CECFF91B1EF233ED007BEF92 /* VoteCheckViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VoteCheckViewController.m; sourceTree = "<group>"; };
+		CECFF9281EF23426007BEF92 /* All_VoteTallyIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = All_VoteTallyIcon.png; sourceTree = "<group>"; };
+		CECFF9291EF23426007BEF92 /* BlankNay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BlankNay.png; sourceTree = "<group>"; };
+		CECFF92A1EF23426007BEF92 /* BlankYea.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BlankYea.png; sourceTree = "<group>"; };
+		CECFF92B1EF23426007BEF92 /* BlankYeaSlice.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BlankYeaSlice.png; sourceTree = "<group>"; };
+		CECFF92C1EF23426007BEF92 /* CheckNay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CheckNay.png; sourceTree = "<group>"; };
+		CECFF92D1EF23426007BEF92 /* CheckYea.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CheckYea.png; sourceTree = "<group>"; };
+		CECFF92E1EF23426007BEF92 /* House__VoteTallyIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = House__VoteTallyIcon.png; sourceTree = "<group>"; };
+		CECFF92F1EF23426007BEF92 /* houseCommittee.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = houseCommittee.png; sourceTree = "<group>"; };
+		CECFF9301EF23426007BEF92 /* houseCommittee@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "houseCommittee@2x.png"; sourceTree = "<group>"; };
+		CECFF9311EF23426007BEF92 /* HouseCommittees_VoteTallyIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HouseCommittees_VoteTallyIcon.png; sourceTree = "<group>"; };
+		CECFF9321EF23426007BEF92 /* houseIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = houseIcon.png; sourceTree = "<group>"; };
+		CECFF9331EF23426007BEF92 /* houseIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "houseIcon@2x.png"; sourceTree = "<group>"; };
+		CECFF9341EF23426007BEF92 /* Senate_VoteTallyIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Senate_VoteTallyIcon.png; sourceTree = "<group>"; };
+		CECFF9351EF23426007BEF92 /* senateCommittee.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = senateCommittee.png; sourceTree = "<group>"; };
+		CECFF9361EF23426007BEF92 /* senateCommittee@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "senateCommittee@2x.png"; sourceTree = "<group>"; };
+		CECFF9371EF23426007BEF92 /* SenateCommittees__VoteTallyIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SenateCommittees__VoteTallyIcon.png; sourceTree = "<group>"; };
+		CECFF9481EF23447007BEF92 /* VoteTallIcon-09.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "VoteTallIcon-09.png"; path = "Buttons/VoteTallIcon-09.png"; sourceTree = "<group>"; };
+		CECFF94A1EF23486007BEF92 /* CommitteeHeaderView-iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "CommitteeHeaderView-iPhone.xib"; sourceTree = "<group>"; };
+		CECFF94B1EF23486007BEF92 /* OutlinkCell-iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "OutlinkCell-iPhone.xib"; sourceTree = "<group>"; };
+		CECFF94C1EF23486007BEF92 /* PersonViewBioCell-iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "PersonViewBioCell-iPhone.xib"; sourceTree = "<group>"; };
+		CECFF94D1EF23486007BEF92 /* VoteListView-iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "VoteListView-iPhone.xib"; sourceTree = "<group>"; };
+		CECFF94E1EF23486007BEF92 /* VoteTallyHeaderView-iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "VoteTallyHeaderView-iPhone.xib"; sourceTree = "<group>"; };
+		CECFF94F1EF23486007BEF92 /* VotingListCell-iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "VotingListCell-iPhone.xib"; sourceTree = "<group>"; };
+		CECFF95B1EF23ACC007BEF92 /* VotingListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VotingListViewController.h; sourceTree = "<group>"; };
+		CECFF95C1EF23ACC007BEF92 /* VotingListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VotingListViewController.m; sourceTree = "<group>"; };
+		CECFF95E1EF35380007BEF92 /* BackgroundLight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BackgroundLight.png; sourceTree = "<group>"; };
+		CECFF95F1EF35380007BEF92 /* BackgroundLight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BackgroundLight@2x.png"; sourceTree = "<group>"; };
+		CECFF9621EF38BF0007BEF92 /* VoteTallyIcons_Vote@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VoteTallyIcons_Vote@2x.png"; sourceTree = "<group>"; };
+		CECFF9631EF38BF0007BEF92 /* VoteTallyIcons_Vote.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VoteTallyIcons_Vote.png; sourceTree = "<group>"; };
+		CECFF9641EF38BF0007BEF92 /* VoteTallyIcons_SC@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VoteTallyIcons_SC@2x.png"; sourceTree = "<group>"; };
+		CECFF9651EF38BF0007BEF92 /* VoteTallyIcons_SC.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VoteTallyIcons_SC.png; sourceTree = "<group>"; };
+		CECFF9661EF38BF0007BEF92 /* VoteTallyIcons_S@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VoteTallyIcons_S@2x.png"; sourceTree = "<group>"; };
+		CECFF9671EF38BF0007BEF92 /* VoteTallyIcons_S.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VoteTallyIcons_S.png; sourceTree = "<group>"; };
+		CECFF9681EF38BF0007BEF92 /* VoteTallyIcons_HC@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VoteTallyIcons_HC@2x.png"; sourceTree = "<group>"; };
+		CECFF9691EF38BF0007BEF92 /* VoteTallyIcons_HC.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VoteTallyIcons_HC.png; sourceTree = "<group>"; };
+		CECFF96A1EF38BF0007BEF92 /* VoteTallyIcons_H@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VoteTallyIcons_H@2x.png"; sourceTree = "<group>"; };
+		CECFF96B1EF38BF0007BEF92 /* VoteTallyIcons_H.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VoteTallyIcons_H.png; sourceTree = "<group>"; };
+		CECFF96C1EF38BF0007BEF92 /* VoteTallyIcons_All@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VoteTallyIcons_All@2x.png"; sourceTree = "<group>"; };
+		CECFF96D1EF38BF0007BEF92 /* VoteTallyIcons_All.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VoteTallyIcons_All.png; sourceTree = "<group>"; };
 		CEF876091E33999F00BEEAEF /* AboutBackground_2017.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = AboutBackground_2017.jpg; sourceTree = "<group>"; };
 		CEF8760A1E33999F00BEEAEF /* AboutBackground_2017@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "AboutBackground_2017@2x.jpg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -576,6 +709,7 @@
 				AF3DEE5215DD3AA500151661 /* CoreLocation.framework in Frameworks */,
 				AF2482DA15BDE2AE0070924E /* MapKit.framework in Frameworks */,
 				AF2481A415BB6A260070924E /* UIKit.framework in Frameworks */,
+				CECFF8F11EF23307007BEF92 /* Realm.framework in Frameworks */,
 				AF2481A615BB6A260070924E /* Foundation.framework in Frameworks */,
 				AF2481A815BB6A260070924E /* CoreGraphics.framework in Frameworks */,
 			);
@@ -587,6 +721,7 @@
 		AF24819415BB6A250070924E = {
 			isa = PBXGroup;
 			children = (
+				CECFF8F01EF23307007BEF92 /* Realm.framework */,
 				AF334CCA18AE586A00219F26 /* AppIcon-120.png */,
 				AFA73A7416B33E7500D13F1E /* AppIcon.png */,
 				AFA73A7516B33E7500D13F1E /* AppIcon@2x.png */,
@@ -679,7 +814,6 @@
 		AF2B103C16AF9D0700A3A7F4 /* Miscellaneous */ = {
 			isa = PBXGroup;
 			children = (
-				AF334CBE18ACA44500219F26 /* OSVersionCheckMacros.h */,
 				AF2B103D16AF9D0700A3A7F4 /* Address.h */,
 				AF2B103E16AF9D0700A3A7F4 /* Address.m */,
 				AF2B103F16AF9D0700A3A7F4 /* AddressLAViewCell.h */,
@@ -688,6 +822,8 @@
 				AF2B104216AF9D0700A3A7F4 /* AddressViewCell.m */,
 				AF2B104316AF9D0700A3A7F4 /* Committee.h */,
 				AF2B104416AF9D0700A3A7F4 /* Committee.m */,
+				CECFF9051EF233D0007BEF92 /* CommitteeHeaderView.h */,
+				CECFF9061EF233D0007BEF92 /* CommitteeHeaderView.m */,
 				AF2B104516AF9D0700A3A7F4 /* CommitteeListViewCell.h */,
 				AF2B104616AF9D0700A3A7F4 /* CommitteeListViewCell.m */,
 				AF2B104716AF9D0700A3A7F4 /* CommitteeMember.h */,
@@ -704,14 +840,27 @@
 				AF2B105216AF9D0700A3A7F4 /* NSDictionary+People.m */,
 				AF2B105316AF9D0700A3A7F4 /* NSString+Stuff.h */,
 				AF2B105416AF9D0700A3A7F4 /* NSString+Stuff.m */,
+				AF334CBE18ACA44500219F26 /* OSVersionCheckMacros.h */,
 				AF2B105516AF9D0700A3A7F4 /* PeopleListDelegate.h */,
 				AF2B105616AF9D0700A3A7F4 /* PeopleListDelegate.m */,
 				AF2B105716AF9D0700A3A7F4 /* RedButton.h */,
 				AF2B105816AF9D0700A3A7F4 /* RedButton.m */,
+				CECFF8F81EF233D0007BEF92 /* RollCallListDelegate.h */,
+				CECFF8F51EF233D0007BEF92 /* RollCallListDelegate.m */,
 				AF2B105916AF9D0700A3A7F4 /* SearchViewCell.h */,
 				AF2B105A16AF9D0700A3A7F4 /* SearchViewCell.m */,
+				CECFF8F91EF233D0007BEF92 /* Tally.h */,
+				CECFF8FA1EF233D0007BEF92 /* Tally.m */,
+				CECFF8FB1EF233D0007BEF92 /* TallyGroup.h */,
+				CECFF8FC1EF233D0007BEF92 /* TallyGroup.m */,
 				AF2B105B16AF9D0700A3A7F4 /* UIColor-Expanded.h */,
 				AF2B105C16AF9D0700A3A7F4 /* UIColor-Expanded.m */,
+				CECFF8FD1EF233D0007BEF92 /* voteButton.h */,
+				CECFF8FE1EF233D0007BEF92 /* voteButton.m */,
+				CECFF8FF1EF233D0007BEF92 /* voteSet.h */,
+				CECFF9001EF233D0007BEF92 /* voteSet.m */,
+				CECFF9011EF233D0007BEF92 /* VoteView.h */,
+				CECFF9021EF233D0007BEF92 /* VoteView.m */,
 			);
 			path = Miscellaneous;
 			sourceTree = "<group>";
@@ -719,24 +868,38 @@
 		AF2B105D16AF9D0700A3A7F4 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				AF334CBF18ACAF0D00219F26 /* CustomTabBarController.h */,
-				AF334CC018ACAF0D00219F26 /* CustomTabBarController.m */,
-				AF334CBB18ACA1C400219F26 /* IOS7AdjustmentViewController.h */,
-				AF334CBC18ACA1C400219F26 /* IOS7AdjustmentViewController.m */,
 				AF2B105E16AF9D0700A3A7F4 /* AboutViewController.h */,
 				AF2B105F16AF9D0700A3A7F4 /* AboutViewController.m */,
+				CECFF9101EF233ED007BEF92 /* CLLocation+Strings.h */,
+				CECFF9111EF233ED007BEF92 /* CLLocation+Strings.m */,
 				AF2B106016AF9D0700A3A7F4 /* CommitteeListViewController.h */,
 				AF2B106116AF9D0700A3A7F4 /* CommitteeListViewController.m */,
+				CECFF9121EF233ED007BEF92 /* CommitteeVoteListViewController.h */,
+				CECFF9131EF233ED007BEF92 /* CommitteeVoteListViewController.m */,
+				AF334CBF18ACAF0D00219F26 /* CustomTabBarController.h */,
+				AF334CC018ACAF0D00219F26 /* CustomTabBarController.m */,
 				AF2B106216AF9D0700A3A7F4 /* FederalTabViewController.h */,
 				AF2B106316AF9D0700A3A7F4 /* FederalTabViewController.m */,
+				CECFF9141EF233ED007BEF92 /* GetLocationViewController.h */,
+				CECFF9151EF233ED007BEF92 /* GetLocationViewController.m */,
+				AF334CBB18ACA1C400219F26 /* IOS7AdjustmentViewController.h */,
+				AF334CBC18ACA1C400219F26 /* IOS7AdjustmentViewController.m */,
+				CECFF9161EF233ED007BEF92 /* LocationDetailViewController.h */,
+				CECFF9171EF233ED007BEF92 /* LocationDetailViewController.m */,
 				AF2B106416AF9D0700A3A7F4 /* MapsViewController.h */,
 				AF2B106516AF9D0700A3A7F4 /* MapsViewController.m */,
 				AF2B106616AF9D0700A3A7F4 /* PeopleListViewController.h */,
 				AF2B106716AF9D0700A3A7F4 /* PeopleListViewController.m */,
 				AF2B106816AF9D0700A3A7F4 /* PersonViewController.h */,
 				AF2B106916AF9D0700A3A7F4 /* PersonViewController.m */,
+				CECFF9181EF233ED007BEF92 /* SetupViewController.h */,
+				CECFF9191EF233ED007BEF92 /* SetupViewController.m */,
 				AF2B106A16AF9D0700A3A7F4 /* StateTabViewController.h */,
 				AF2B106B16AF9D0700A3A7F4 /* StateTabViewController.m */,
+				CECFF91A1EF233ED007BEF92 /* VoteCheckViewController.h */,
+				CECFF91B1EF233ED007BEF92 /* VoteCheckViewController.m */,
+				CECFF95B1EF23ACC007BEF92 /* VotingListViewController.h */,
+				CECFF95C1EF23ACC007BEF92 /* VotingListViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -744,17 +907,27 @@
 		AF2B107916AF9D0700A3A7F4 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				CEF876091E33999F00BEEAEF /* AboutBackground_2017.jpg */,
-				CEF8760A1E33999F00BEEAEF /* AboutBackground_2017@2x.jpg */,
-				AFBEF22E1A63ABDD00623B1A /* People */,
-				AF1D28E118BDBE420093CE11 /* StateButtons.png */,
-				AF1D28E218BDBE420093CE11 /* StateButtons@2x.png */,
-				AF805B2518BB017500A70A45 /* Background2.png */,
-				AF805B2618BB017500A70A45 /* Background2@2x.png */,
+				CECFF9621EF38BF0007BEF92 /* VoteTallyIcons_Vote@2x.png */,
+				CECFF9631EF38BF0007BEF92 /* VoteTallyIcons_Vote.png */,
+				CECFF9641EF38BF0007BEF92 /* VoteTallyIcons_SC@2x.png */,
+				CECFF9651EF38BF0007BEF92 /* VoteTallyIcons_SC.png */,
+				CECFF9661EF38BF0007BEF92 /* VoteTallyIcons_S@2x.png */,
+				CECFF9671EF38BF0007BEF92 /* VoteTallyIcons_S.png */,
+				CECFF9681EF38BF0007BEF92 /* VoteTallyIcons_HC@2x.png */,
+				CECFF9691EF38BF0007BEF92 /* VoteTallyIcons_HC.png */,
+				CECFF96A1EF38BF0007BEF92 /* VoteTallyIcons_H@2x.png */,
+				CECFF96B1EF38BF0007BEF92 /* VoteTallyIcons_H.png */,
+				CECFF96C1EF38BF0007BEF92 /* VoteTallyIcons_All@2x.png */,
+				CECFF96D1EF38BF0007BEF92 /* VoteTallyIcons_All.png */,
+				CECFF95E1EF35380007BEF92 /* BackgroundLight.png */,
+				CECFF95F1EF35380007BEF92 /* BackgroundLight@2x.png */,
 				AF2B107A16AF9D0700A3A7F4 /* About.png */,
 				AF2B107B16AF9D0700A3A7F4 /* About@2x.png */,
+				CEF876091E33999F00BEEAEF /* AboutBackground_2017.jpg */,
+				CEF8760A1E33999F00BEEAEF /* AboutBackground_2017@2x.jpg */,
 				AF2B107D16AF9D0700A3A7F4 /* AboutBackground.png */,
 				AF2B107E16AF9D0700A3A7F4 /* AboutBackground@2x.png */,
+				CECFF9281EF23426007BEF92 /* All_VoteTallyIcon.png */,
 				AF2B108316AF9D0700A3A7F4 /* Arrow_Left.png */,
 				AF2B108416AF9D0700A3A7F4 /* Arrow_Left@2x.png */,
 				AF2B108516AF9D0700A3A7F4 /* Arrow_Right.png */,
@@ -762,15 +935,36 @@
 				AF2B108716AF9D0700A3A7F4 /* backButton.png */,
 				AF2B108816AF9D0700A3A7F4 /* Background.png */,
 				AF2B108916AF9D0700A3A7F4 /* Background@2x.png */,
+				AF805B2518BB017500A70A45 /* Background2.png */,
+				AF805B2618BB017500A70A45 /* Background2@2x.png */,
+				CECFF9291EF23426007BEF92 /* BlankNay.png */,
+				CECFF92A1EF23426007BEF92 /* BlankYea.png */,
+				CECFF92B1EF23426007BEF92 /* BlankYeaSlice.png */,
+				CECFF92C1EF23426007BEF92 /* CheckNay.png */,
+				CECFF92D1EF23426007BEF92 /* CheckYea.png */,
 				AF2B109016AF9D0700A3A7F4 /* Federal.png */,
 				AF2B109116AF9D0700A3A7F4 /* Federal@2x.png */,
+				CECFF92E1EF23426007BEF92 /* House__VoteTallyIcon.png */,
+				CECFF92F1EF23426007BEF92 /* houseCommittee.png */,
+				CECFF9301EF23426007BEF92 /* houseCommittee@2x.png */,
+				CECFF9311EF23426007BEF92 /* HouseCommittees_VoteTallyIcon.png */,
+				CECFF9321EF23426007BEF92 /* houseIcon.png */,
+				CECFF9331EF23426007BEF92 /* houseIcon@2x.png */,
 				AF2B109C16AF9D0700A3A7F4 /* logo.png */,
 				AF2B109D16AF9D0700A3A7F4 /* logo@2x.png */,
 				AF2B109E16AF9D0700A3A7F4 /* MapPin.png */,
 				AF2B109F16AF9D0700A3A7F4 /* MapPin@2x.png */,
+				AFBEF22E1A63ABDD00623B1A /* People */,
+				CECFF9341EF23426007BEF92 /* Senate_VoteTallyIcon.png */,
+				CECFF9351EF23426007BEF92 /* senateCommittee.png */,
+				CECFF9361EF23426007BEF92 /* senateCommittee@2x.png */,
+				CECFF9371EF23426007BEF92 /* SenateCommittees__VoteTallyIcon.png */,
 				AF2B119316AF9D0800A3A7F4 /* Social Meida Icons */,
 				AF2B119D16AF9D0800A3A7F4 /* State.png */,
 				AF2B119E16AF9D0800A3A7F4 /* State@2x.png */,
+				AF1D28E118BDBE420093CE11 /* StateButtons.png */,
+				AF1D28E218BDBE420093CE11 /* StateButtons@2x.png */,
+				CECFF9481EF23447007BEF92 /* VoteTallIcon-09.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -792,6 +986,12 @@
 		AF2B11A416AF9D0800A3A7F4 /* NIBs */ = {
 			isa = PBXGroup;
 			children = (
+				CECFF94A1EF23486007BEF92 /* CommitteeHeaderView-iPhone.xib */,
+				CECFF94B1EF23486007BEF92 /* OutlinkCell-iPhone.xib */,
+				CECFF94C1EF23486007BEF92 /* PersonViewBioCell-iPhone.xib */,
+				CECFF94D1EF23486007BEF92 /* VoteListView-iPhone.xib */,
+				CECFF94E1EF23486007BEF92 /* VoteTallyHeaderView-iPhone.xib */,
+				CECFF94F1EF23486007BEF92 /* VotingListCell-iPhone.xib */,
 				AF866C4216B6F85300E9DF01 /* PersonViewPhoneCell-iPhone.xib */,
 				AF2B11A516AF9D0800A3A7F4 /* CommitteeListCell-iPhone.xib */,
 				AF2B11A616AF9D0800A3A7F4 /* CommitteeListView-iPhone.xib */,
@@ -1087,6 +1287,8 @@
 				AF24819B15BB6A250070924E /* Sources */,
 				AF24819C15BB6A250070924E /* Frameworks */,
 				AF24819D15BB6A250070924E /* Resources */,
+				CECFF8F31EF23307007BEF92 /* Embed Frameworks */,
+				CECFF8F41EF2335B007BEF92 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1149,7 +1351,9 @@
 				AFBEF2F71A63ABDD00623B1A /* McKimRH21.jpg in Resources */,
 				CE824D681E3EF2AE0091AE97 /* LoneLH12.jpg in Resources */,
 				AFBEF2F81A63ABDD00623B1A /* MillerDH55.jpg in Resources */,
+				CECFF9461EF23426007BEF92 /* senateCommittee@2x.png in Resources */,
 				AFBEF2DA1A63ABDD00623B1A /* DaytonJH17.jpg in Resources */,
+				CECFF9751EF38BF0007BEF92 /* VoteTallyIcons_HC.png in Resources */,
 				AFBEF3281A63ABDD00623B1A /* PetersonRS19.jpg in Resources */,
 				AFBEF2FA1A63ABDD00623B1A /* NicholasH8.jpg in Resources */,
 				AF2B11DB16AF9D0800A3A7F4 /* About@2x.png in Resources */,
@@ -1167,10 +1371,12 @@
 				AFBEF3011A63ABDD00623B1A /* ReederH58.jpg in Resources */,
 				AFBEF2E21A63ABDD00623B1A /* GogglesPH33.jpg in Resources */,
 				AFBEF3171A63ABDD00623B1A /* CraftBH17.jpg in Resources */,
+				CECFF96E1EF38BF0007BEF92 /* VoteTallyIcons_Vote@2x.png in Resources */,
 				AF2B11E416AF9D0800A3A7F4 /* Arrow_Left@2x.png in Resources */,
 				CE824D5B1E3EF2AE0091AE97 /* BoveeDH36.jpg in Resources */,
 				CE824D5A1E3EF2AE0091AE97 /* BitemanDH51.jpg in Resources */,
 				AFBEF3111A63ABDD00623B1A /* BeboutES26.jpg in Resources */,
+				CECFF93E1EF23426007BEF92 /* House__VoteTallyIcon.png in Resources */,
 				AFBEF3311A63ABDD00623B1A /* Hill.jpg in Resources */,
 				AFBEF2EC1A63ABDD00623B1A /* KasperikH32.jpg in Resources */,
 				CE824D5E1E3EF2AE0091AE97 /* CourtSH24.jpg in Resources */,
@@ -1189,27 +1395,36 @@
 				AFBEF3161A63ABDD00623B1A /* CooperSS14.jpg in Resources */,
 				AF2B11E816AF9D0800A3A7F4 /* Background.png in Resources */,
 				AFBEF2FE1A63ABDD00623B1A /* pelkeycH45.jpg in Resources */,
+				CECFF9411EF23426007BEF92 /* HouseCommittees_VoteTallyIcon.png in Resources */,
 				AF2B11E916AF9D0800A3A7F4 /* Background@2x.png in Resources */,
 				AFBEF2E51A63ABDD00623B1A /* HalversonH22.jpg in Resources */,
 				AFBEF2F01A63ABDD00623B1A /* LarsenH54.jpg in Resources */,
 				AFBEF2D41A63ABDD00623B1A /* CampbellH34.jpg in Resources */,
 				AFBEF2CC1A63ABDD00623B1A /* BergerRH51.jpg in Resources */,
+				CECFF9771EF38BF0007BEF92 /* VoteTallyIcons_H.png in Resources */,
 				AFBEF32A1A63ABDD00623B1A /* RothfussS9.jpg in Resources */,
 				AF2B11F016AF9D0800A3A7F4 /* Federal.png in Resources */,
+				CECFF93D1EF23426007BEF92 /* CheckYea.png in Resources */,
 				AFA36F541A78BE9B00A5D2E6 /* edwardsrH53.jpg in Resources */,
+				CECFF9541EF23486007BEF92 /* VoteTallyHeaderView-iPhone.xib in Resources */,
 				AFBEF3261A63ABDD00623B1A /* pappassS07.jpg in Resources */,
+				CECFF9781EF38BF0007BEF92 /* VoteTallyIcons_All@2x.png in Resources */,
 				CEF8760C1E33999F00BEEAEF /* AboutBackground_2017@2x.jpg in Resources */,
 				AF2B11F116AF9D0800A3A7F4 /* Federal@2x.png in Resources */,
 				AF2B11FC16AF9D0800A3A7F4 /* logo.png in Resources */,
 				AFBEF2EA1A63ABDD00623B1A /* JaggiAH18.jpg in Resources */,
 				AFBEF2BE1A63ABDD00623B1A /* garland.jpg in Resources */,
+				CECFF9701EF38BF0007BEF92 /* VoteTallyIcons_SC@2x.png in Resources */,
 				AF2B11FD16AF9D0800A3A7F4 /* logo@2x.png in Resources */,
 				AFBEF3321A63ABDD00623B1A /* Jillian-bio.jpg in Resources */,
 				AFBEF2FC1A63ABDD00623B1A /* PattonJH29.jpg in Resources */,
+				CECFF9721EF38BF0007BEF92 /* VoteTallyIcons_S@2x.png in Resources */,
 				CEF8760B1E33999F00BEEAEF /* AboutBackground_2017.jpg in Resources */,
 				AF85557C1A65115400130E89 /* steinmetzcH05.jpg in Resources */,
 				AF2B11FE16AF9D0800A3A7F4 /* MapPin.png in Resources */,
+				CECFF9421EF23426007BEF92 /* houseIcon.png in Resources */,
 				AFBEF3051A63ABDD00623B1A /* StubsonTH56.jpg in Resources */,
+				CECFF9381EF23426007BEF92 /* All_VoteTallyIcon.png in Resources */,
 				AFBEF3021A63ABDD00623B1A /* schwartzaH23.jpg in Resources */,
 				AF2B11FF16AF9D0800A3A7F4 /* MapPin@2x.png in Resources */,
 				AF2B12EB16AF9D0800A3A7F4 /* browser.png in Resources */,
@@ -1221,6 +1436,7 @@
 				AF2B12ED16AF9D0800A3A7F4 /* facebook.png in Resources */,
 				AFBEF2D51A63ABDD00623B1A /* CannadyRH06.jpg in Resources */,
 				AFBEF2D81A63ABDD00623B1A /* ConnollyCH13.jpg in Resources */,
+				CECFF9521EF23486007BEF92 /* PersonViewBioCell-iPhone.xib in Resources */,
 				AFBEF2E61A63ABDD00623B1A /* HarshmanSH37.jpg in Resources */,
 				AFBEF2E11A63ABDD00623B1A /* GingeryKH23.jpg in Resources */,
 				AF2B12EE16AF9D0800A3A7F4 /* linkedin.png in Resources */,
@@ -1236,9 +1452,12 @@
 				AFBEF2E41A63ABDD00623B1A /* GreeneH45.jpg in Resources */,
 				AF2B12F416AF9D0800A3A7F4 /* State.png in Resources */,
 				AFBEF3041A63ABDD00623B1A /* SommersH20.jpg in Resources */,
+				CECFF9511EF23486007BEF92 /* OutlinkCell-iPhone.xib in Resources */,
 				AFBEF3081A63ABDD00623B1A /* WaltersH38.jpg in Resources */,
 				AFBEF2DF1A63ABDD00623B1A /* FreemanH60.jpg in Resources */,
+				CECFF9431EF23426007BEF92 /* houseIcon@2x.png in Resources */,
 				AF2B12F516AF9D0800A3A7F4 /* State@2x.png in Resources */,
+				CECFF9401EF23426007BEF92 /* houseCommittee@2x.png in Resources */,
 				AFBEF2E71A63ABDD00623B1A /* HarveyEH26.jpg in Resources */,
 				AF2B12FB16AF9D0800A3A7F4 /* CommitteeListCell-iPhone.xib in Resources */,
 				AFBEF2BC1A63ABDD00623B1A /* BVEA.jpg in Resources */,
@@ -1246,18 +1465,23 @@
 				AF2B12FC16AF9D0800A3A7F4 /* CommitteeListView-iPhone.xib in Resources */,
 				AFBEF2D01A63ABDD00623B1A /* BlikreGH53.jpg in Resources */,
 				AFBEF2BF1A63ABDD00623B1A /* HPlogoR.jpg in Resources */,
+				CECFF9731EF38BF0007BEF92 /* VoteTallyIcons_S.png in Resources */,
 				AFBEF2ED1A63ABDD00623B1A /* KirikbrideH04.jpg in Resources */,
 				AFBEF2E91A63ABDD00623B1A /* HutchingsH42.jpg in Resources */,
 				AFBEF2B81A63ABDD00623B1A /* Barrasso.jpg in Resources */,
 				AFBEF3201A63ABDD00623B1A /* JohnsonWS06.jpg in Resources */,
+				CECFF9601EF35380007BEF92 /* BackgroundLight.png in Resources */,
 				AFBEF3101A63ABDD00623B1A /* BarnardS15.jpg in Resources */,
+				CECFF9791EF38BF0007BEF92 /* VoteTallyIcons_All.png in Resources */,
 				AFBEF30C1A63ABDD00623B1A /* ZwonitzerDnH43.jpg in Resources */,
 				AFBEF3271A63ABDD00623B1A /* PerkinsDS29.jpg in Resources */,
 				AFBEF30B1A63ABDD00623B1A /* WintersH28.jpg in Resources */,
 				AF1D28E418BDBE420093CE11 /* StateButtons@2x.png in Resources */,
 				AFBEF2F11A63ABDD00623B1A /* laursendH25.jpg in Resources */,
+				CECFF9711EF38BF0007BEF92 /* VoteTallyIcons_SC.png in Resources */,
 				AF2B12FD16AF9D0800A3A7F4 /* MainStoryboard_iPad.storyboard in Resources */,
 				AFBEF2EE1A63ABDD00623B1A /* KroekerH35.jpg in Resources */,
+				CECFF9471EF23426007BEF92 /* SenateCommittees__VoteTallyIcon.png in Resources */,
 				AF2B12FE16AF9D0800A3A7F4 /* MainStoryboard_iPhone.storyboard in Resources */,
 				AFBEF2C81A63ABDD00623B1A /* AllenJH33.jpg in Resources */,
 				AFBEF32F1A63ABDD00623B1A /* Cynthia-Portrait.jpg in Resources */,
@@ -1267,6 +1491,7 @@
 				AF2B12FF16AF9D0800A3A7F4 /* MapView-iPhone.xib in Resources */,
 				AFBEF32B1A63ABDD00623B1A /* SchifferJS22.jpg in Resources */,
 				CE824D641E3EF2AE0091AE97 /* GrayCH57.jpg in Resources */,
+				CECFF9761EF38BF0007BEF92 /* VoteTallyIcons_H@2x.png in Resources */,
 				AFBEF2D21A63ABDD00623B1A /* BurkhartH15.jpg in Resources */,
 				AFBEF2CD1A63ABDD00623B1A /* blackburnJH42.jpg in Resources */,
 				AFBEF30A1A63ABDD00623B1A /* WilsonH07.jpg in Resources */,
@@ -1283,28 +1508,37 @@
 				CE824D651E3EF2AE0091AE97 /* HaleyWH46.jpg in Resources */,
 				CE824D7C1E3EF2CB0091AE97 /* MonizH46.jpg in Resources */,
 				CE824D671E3EF2AE0091AE97 /* HendersonWH41.jpg in Resources */,
+				CECFF9391EF23426007BEF92 /* BlankNay.png in Resources */,
 				AF2B130016AF9D0800A3A7F4 /* PeopleListCell-iPhone.xib in Resources */,
+				CECFF9451EF23426007BEF92 /* senateCommittee.png in Resources */,
 				AF2B130116AF9D0800A3A7F4 /* PeopleListSearchCell-iPhone.xib in Resources */,
+				CECFF93A1EF23426007BEF92 /* BlankYea.png in Resources */,
 				AFBEF3191A63ABDD00623B1A /* DriskillS1.jpg in Resources */,
 				CE824D6B1E3EF2AE0091AE97 /* OlsenJH11.jpg in Resources */,
 				AFBEF2C11A63ABDD00623B1A /* lowervalley.jpg in Resources */,
 				AF2B130216AF9D0800A3A7F4 /* PeopleListView-iPhone.xib in Resources */,
 				AFBEF2C71A63ABDD00623B1A /* silhouette_head_small.png in Resources */,
 				AF2B130316AF9D0800A3A7F4 /* PersonView-iPhone.xib in Resources */,
+				CECFF93C1EF23426007BEF92 /* CheckNay.png in Resources */,
 				AFBEF30E1A63ABDD00623B1A /* AndersonJS02.jpg in Resources */,
+				CECFF9501EF23486007BEF92 /* CommitteeHeaderView-iPhone.xib in Resources */,
 				AFBEF31B1A63ABDD00623B1A /* EsquibelFS08.jpg in Resources */,
 				AF2B130416AF9D0800A3A7F4 /* PersonViewAddressCell-iPhone.xib in Resources */,
 				AF2B130516AF9D0800A3A7F4 /* PersonViewAddressLACell-iPhone.xib in Resources */,
+				CECFF96F1EF38BF0007BEF92 /* VoteTallyIcons_Vote.png in Resources */,
 				CE824D5F1E3EF2AE0091AE97 /* CrankTH18.jpg in Resources */,
+				CECFF9491EF23447007BEF92 /* VoteTallIcon-09.png in Resources */,
 				CE7CADC41C1CE85E004042F8 /* KinnerMH29.jpg in Resources */,
 				CE824D6C1E3EF2AE0091AE97 /* SalazarTH34.jpg in Resources */,
 				AFBEF3331A63ABDD00623B1A /* markgordon.jpg in Resources */,
 				AFBEF2FD1A63ABDD00623B1A /* PaxtonH47.jpg in Resources */,
 				AFBEF2CB1A63ABDD00623B1A /* BarlowH03.jpg in Resources */,
 				AFBEF2D71A63ABDD00623B1A /* ColemanH30.jpg in Resources */,
+				CECFF9441EF23426007BEF92 /* Senate_VoteTallyIcon.png in Resources */,
 				AF2B130616AF9D0800A3A7F4 /* PersonViewCommitteeCell-iPhone.xib in Resources */,
 				AFBEF3001A63ABDD00623B1A /* PiiparinenH49.jpg in Resources */,
 				AFBEF32E1A63ABDD00623B1A /* WasserburgerJH32.jpg in Resources */,
+				CECFF9741EF38BF0007BEF92 /* VoteTallyIcons_HC@2x.png in Resources */,
 				CE7CADC61C1CF3E5004042F8 /* dp_logo.jpg in Resources */,
 				AFBEF2DD1A63ABDD00623B1A /* EsquibelKH41.jpg in Resources */,
 				AFBEF3341A63ABDD00623B1A /* MattMead_Portrait_2011_large.jpg in Resources */,
@@ -1312,13 +1546,16 @@
 				CE824D7F1E3EF2E40091AE97 /* Cheney.jpg in Resources */,
 				AFBEF30F1A63ABDD00623B1A /* AndersonS28.jpg in Resources */,
 				AFBEF2F21A63ABDD00623B1A /* lindholmtH01.jpg in Resources */,
+				CECFF93F1EF23426007BEF92 /* houseCommittee.png in Resources */,
 				AFBEF2C41A63ABDD00623B1A /* Wheatland.jpg in Resources */,
 				AF2B151516AFBC9200A3A7F4 /* Counties.json in Resources */,
 				AFBEF3301A63ABDD00623B1A /* Ed_Murray.jpg in Resources */,
+				CECFF9611EF35380007BEF92 /* BackgroundLight@2x.png in Resources */,
 				AF2B151616AFBC9200A3A7F4 /* data.csv in Resources */,
 				CE7CADC01C1C750A004042F8 /* BonerBS02.jpg in Resources */,
 				AFBEF3221A63ABDD00623B1A /* LandenBS27.jpg in Resources */,
 				AFBEF2CF1A63ABDD00623B1A /* BlevinsH25.jpg in Resources */,
+				CECFF9531EF23486007BEF92 /* VoteListView-iPhone.xib in Resources */,
 				AFBEF2D31A63ABDD00623B1A /* ByrdJH44.jpg in Resources */,
 				AFBEF30D1A63ABDD00623B1A /* ZwonitzerDvH09.jpg in Resources */,
 				AFBEF2DC1A63ABDD00623B1A /* EklundH10.jpg in Resources */,
@@ -1335,7 +1572,9 @@
 				AFBEF2F31A63ABDD00623B1A /* LockhartTH57.jpg in Resources */,
 				AF2B151916AFBC9200A3A7F4 /* StateHouseDistricts.json in Resources */,
 				AF2B151A16AFBC9200A3A7F4 /* StateSenateDistricts.json in Resources */,
+				CECFF9551EF23486007BEF92 /* VotingListCell-iPhone.xib in Resources */,
 				AF1D28FD18BF0C570093CE11 /* MemberSystems.json in Resources */,
+				CECFF93B1EF23426007BEF92 /* BlankYeaSlice.png in Resources */,
 				AFBEF2DB1A63ABDD00623B1A /* edmondshH12.jpg in Resources */,
 				AFBEF2EF1A63ABDD00623B1A /* KroneH24.jpg in Resources */,
 				AFBEF31D1A63ABDD00623B1A /* HastertJS13.jpg in Resources */,
@@ -1361,26 +1600,50 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		CECFF8F41EF2335B007BEF92 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "bash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework/strip-frameworks.sh\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		AF24819B15BB6A250070924E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CECFF9091EF233D0007BEF92 /* Tally.m in Sources */,
 				AF2B11B316AF9D0800A3A7F4 /* AppDelegate.m in Sources */,
 				AF2B11B416AF9D0800A3A7F4 /* CSVParser.m in Sources */,
 				AF2B11B516AF9D0800A3A7F4 /* DataLoader.m in Sources */,
+				CECFF90D1EF233D0007BEF92 /* VoteView.m in Sources */,
 				AF2B11B616AF9D0800A3A7F4 /* Boundary.m in Sources */,
 				AF2B11B716AF9D0800A3A7F4 /* BoundaryPolygon.m in Sources */,
 				AF2B11B816AF9D0800A3A7F4 /* Address.m in Sources */,
 				AF2B11B916AF9D0800A3A7F4 /* AddressLAViewCell.m in Sources */,
 				AF2B11BA16AF9D0800A3A7F4 /* AddressViewCell.m in Sources */,
+				CECFF90B1EF233D0007BEF92 /* voteButton.m in Sources */,
+				CECFF90C1EF233D0007BEF92 /* voteSet.m in Sources */,
 				AF2B11BB16AF9D0800A3A7F4 /* Committee.m in Sources */,
+				CECFF90A1EF233D0007BEF92 /* TallyGroup.m in Sources */,
 				AF2B11BC16AF9D0800A3A7F4 /* CommitteeListViewCell.m in Sources */,
+				CECFF9211EF233ED007BEF92 /* CommitteeVoteListViewController.m in Sources */,
+				CECFF9221EF233ED007BEF92 /* GetLocationViewController.m in Sources */,
 				AF2B11BD16AF9D0800A3A7F4 /* CommitteeMember.m in Sources */,
 				AF2B11BE16AF9D0800A3A7F4 /* CommitteeViewCell.m in Sources */,
 				AF2B11BF16AF9D0800A3A7F4 /* GradientButton.m in Sources */,
 				AF334CC118ACAF0D00219F26 /* CustomTabBarController.m in Sources */,
 				AF2B11C016AF9D0800A3A7F4 /* ListSection.m in Sources */,
+				CECFF95D1EF23ACC007BEF92 /* VotingListViewController.m in Sources */,
 				AF2B11C116AF9D0800A3A7F4 /* ModalAlert.m in Sources */,
 				AF2B11C216AF9D0800A3A7F4 /* NSDictionary+People.m in Sources */,
 				AF2B11C316AF9D0800A3A7F4 /* NSString+Stuff.m in Sources */,
@@ -1394,8 +1657,14 @@
 				AF2B11CB16AF9D0800A3A7F4 /* MapsViewController.m in Sources */,
 				AF2B11CC16AF9D0800A3A7F4 /* PeopleListViewController.m in Sources */,
 				AF2B11CD16AF9D0800A3A7F4 /* PersonViewController.m in Sources */,
+				CECFF9231EF233ED007BEF92 /* LocationDetailViewController.m in Sources */,
+				CECFF90F1EF233D0007BEF92 /* CommitteeHeaderView.m in Sources */,
 				AF2B11CE16AF9D0800A3A7F4 /* StateTabViewController.m in Sources */,
+				CECFF9201EF233ED007BEF92 /* CLLocation+Strings.m in Sources */,
+				CECFF9251EF233ED007BEF92 /* VoteCheckViewController.m in Sources */,
+				CECFF9071EF233D0007BEF92 /* RollCallListDelegate.m in Sources */,
 				AF2B12FA16AF9D0800A3A7F4 /* main.m in Sources */,
+				CECFF9241EF233ED007BEF92 /* SetupViewController.m in Sources */,
 				AF334CBD18ACA1C400219F26 /* IOS7AdjustmentViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1500,10 +1769,15 @@
 				CODE_SIGN_IDENTITY = "Developer ID Application";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LegGuide/LegGuide-Prefix.pch";
 				INFOPLIST_FILE = "LegGuide/LegGuide-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.wyomingrea.${PRODUCT_NAME:rfc1034identifier}";
@@ -1521,10 +1795,15 @@
 				CODE_SIGN_IDENTITY = "Developer ID Application";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LegGuide/LegGuide-Prefix.pch";
 				INFOPLIST_FILE = "LegGuide/LegGuide-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.wyomingrea.${PRODUCT_NAME:rfc1034identifier}";

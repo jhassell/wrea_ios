@@ -14,8 +14,10 @@
 @property (nonatomic, retain) NSMutableArray *members;
 @property (nonatomic, retain) NSString *body;
 @property (nonatomic, retain) NSString *type;
-
-
-
+@property (nonatomic, retain) NSString *dow;
+@property (nonatomic, retain) NSString *time;
+@property (nonatomic, retain) NSString *room;
+@property (nonatomic, retain) NSString *key;
+@property (nonatomic, retain) NSString *website;
 
 @end
