@@ -36,17 +36,5 @@
 }
 
 
-- (void)dealloc
-{
-    [_name release];
-    [_address release];
-    [_roomNumber release];
-    [_city release];
-    [_state release];
-    [_zip release];
-    [_phone release];
-    [_email release];
-    [super dealloc];
-}
 
 @end

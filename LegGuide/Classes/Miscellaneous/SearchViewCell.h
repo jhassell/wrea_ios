@@ -10,6 +10,6 @@
 
 @interface SearchViewCell : UITableViewCell
 
-@property (retain, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (strong, nonatomic) IBOutlet UISearchBar *searchBar;
 
 @end

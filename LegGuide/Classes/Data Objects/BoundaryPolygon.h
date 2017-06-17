@@ -12,8 +12,8 @@
 
 @interface BoundaryPolygon: NSObject <MKOverlay>
 
-@property (nonatomic, assign) Boundary *boundary;
-@property (nonatomic, retain) MKPolygon *polygon;
+@property (nonatomic, weak) Boundary *boundary;
+@property (nonatomic, strong) MKPolygon *polygon;
 
 
 @end

@@ -10,12 +10,12 @@
 #import "AppDelegate.h"
 #import "ListSection.h"
 #import "PeopleListDelegate.h"
-#import "Definitions.h"
+//#import "Definitions.h"
 
 @interface FederalTabViewController ()
 
-@property (nonatomic, retain) PeopleListDelegate *peopleListDelegate;
-@property (retain, nonatomic) IBOutlet UITableView *peopleTable;
+@property (nonatomic, strong) PeopleListDelegate *peopleListDelegate;
+@property (strong, nonatomic) IBOutlet UITableView *peopleTable;
 
 @end
 
@@ -57,9 +57,9 @@
     [super viewWillAppear:animated];
     self.navigationController.navigationBarHidden=YES;
     
-    AppDelegate *ad = [[UIApplication sharedApplication] delegate];
+    AppDelegate *ad = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     
-    self.peopleListDelegate = [[[PeopleListDelegate alloc] init] autorelease];
+    self.peopleListDelegate = [[PeopleListDelegate alloc] init];
     
     NSArray *sections = [ListSection buildSectionsFrom:ad.all dividedBy:@"Type" catchAllKey:nil includeKeys:[NSArray arrayWithObjects:FEDERAL_SENATE, FEDERAL_HOUSE, nil]];
         
@@ -80,11 +80,5 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-- (void)dealloc
-{
-    [_peopleListDelegate release];
-    [_peopleTable release];
-    [super dealloc];
-}
 
 @end

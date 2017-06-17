@@ -24,7 +24,7 @@
                                                                            options:NSRegularExpressionCaseInsensitive
                                                                              error:&error];
 
-    int numberOfMatched = [regex numberOfMatchesInString:self options:0 range:NSMakeRange(0, [self length])];
+    int numberOfMatched = (int)[regex numberOfMatchesInString:self options:0 range:NSMakeRange(0, [self length])];
 
     return numberOfMatched==0;
 }
@@ -37,7 +37,6 @@
     
     long long size = fileInfo.fileSize;
 
-    [fm release];
     return size;
 }
 

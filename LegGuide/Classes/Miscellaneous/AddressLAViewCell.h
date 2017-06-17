@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface AddressLAViewCell : UITableViewCell
-@property (retain, nonatomic) IBOutlet UILabel *assistantTitleLabel;
-@property (retain, nonatomic) IBOutlet UILabel *laNameLabel;
+@property (strong, nonatomic) IBOutlet UILabel *assistantTitleLabel;
+@property (strong, nonatomic) IBOutlet UILabel *laNameLabel;
 @end

@@ -31,7 +31,6 @@
 - (IBAction)houseVoteCommitteesButtonPressed:(id)sender;
 - (IBAction)allButtonPressed:(id)sender;
 - (IBAction)allVoteButtonPressed:(id)sender;
-- (IBAction)judicialButtonPressed:(id)sender;
 - (IBAction)voteTallyButtonPressed:(id)sender;
 
 @end
@@ -47,9 +46,9 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 - (IBAction)statewideButtonPressed:(id)sender {
-    AppDelegate *ad = [[UIApplication sharedApplication] delegate];
+    AppDelegate *ad = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     
-    PeopleListViewController *plvc = [[[PeopleListViewController alloc] initWithNibName:@"PeopleListView-iPhone" bundle:nil] autorelease];
+    PeopleListViewController *plvc = [[PeopleListViewController alloc] initWithNibName:@"PeopleListView-iPhone" bundle:nil];
     plvc.sections = [ListSection buildSectionsFrom:ad.all dividedBy:@"Type" catchAllKey:nil includeKeys:[NSArray arrayWithObjects:STATEWIDE, nil]];    
     
     [self.navigationController pushViewController:plvc animated:YES];
@@ -57,18 +56,18 @@
 }
 
 - (IBAction)judiciaryButtonPressed:(id)sender {
-    AppDelegate *ad = [[UIApplication sharedApplication] delegate];
+    AppDelegate *ad = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     
-    PeopleListViewController *plvc = [[[PeopleListViewController alloc] initWithNibName:@"PeopleListView-iPhone" bundle:nil] autorelease];
+    PeopleListViewController *plvc = [[PeopleListViewController alloc] initWithNibName:@"PeopleListView-iPhone" bundle:nil];
     plvc.sections = [ListSection buildSectionsFrom:ad.all dividedBy:@"Type" catchAllKey:nil includeKeys:[NSArray arrayWithObjects:JUDICIARY1, JUDICIARY2, nil]];
     
     [self.navigationController pushViewController:plvc animated:YES];
 }
 
 - (IBAction)senateButtonPressed:(id)sender {
-    AppDelegate *ad = [[UIApplication sharedApplication] delegate];
+    AppDelegate *ad = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     
-    PeopleListViewController *plvc = [[[PeopleListViewController alloc] initWithNibName:@"PeopleListView-iPhone" bundle:nil] autorelease];
+    PeopleListViewController *plvc = [[PeopleListViewController alloc] initWithNibName:@"PeopleListView-iPhone" bundle:nil];
     plvc.sections = [ListSection buildSectionsFrom:ad.stateSenate dividedBy:@"Type" catchAllKey:nil includeKeys:[NSArray arrayWithObjects:STATE_SENATE, nil]];
     
     [self.navigationController pushViewController:plvc animated:YES];
@@ -78,7 +77,7 @@
 - (IBAction)senateVoteButtonPressed:(id)sender {
     AppDelegate *ad = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     
-    VotingListViewController *vlvc = [[[VotingListViewController alloc] initWithNibName:@"VoteListView-iPhone" bundle:nil] autorelease];
+    VotingListViewController *vlvc = [[VotingListViewController alloc] initWithNibName:@"VoteListView-iPhone" bundle:nil];
     vlvc.rc_sections = [ListSection buildSectionsFrom:ad.stateSenate dividedBy:@"Type" catchAllKey:nil includeKeys:[NSArray arrayWithObjects:STATE_SENATE, nil]];
     
     UIImage *backgroundImage = [UIImage imageNamed:@"BackgroundLight.png"];
@@ -93,7 +92,7 @@
 - (IBAction)houseVoteButtonPressed:(id)sender {
     AppDelegate *ad = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     
-    VotingListViewController *vlvc = [[[VotingListViewController alloc] initWithNibName:@"VoteListView-iPhone" bundle:nil] autorelease];
+    VotingListViewController *vlvc = [[VotingListViewController alloc] initWithNibName:@"VoteListView-iPhone" bundle:nil];
     vlvc.rc_sections = [ListSection buildSectionsFrom:ad.stateHouse dividedBy:@"Type" catchAllKey:nil includeKeys:[NSArray arrayWithObjects:STATE_HOUSE, nil]];
     
     [self.navigationController pushViewController:vlvc animated:YES];
@@ -101,9 +100,9 @@
 }
 
 - (IBAction)senateLeadershipButtonPressed:(id)sender {
-    AppDelegate *ad = [[UIApplication sharedApplication] delegate];
+    AppDelegate *ad = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     
-    PeopleListViewController *plvc = [[[PeopleListViewController alloc] initWithNibName:@"PeopleListView-iPhone" bundle:nil] autorelease];
+    PeopleListViewController *plvc = [[PeopleListViewController alloc] initWithNibName:@"PeopleListView-iPhone" bundle:nil];
     plvc.sections = [ListSection buildSectionsFrom:ad.all dividedBy:@"Type" catchAllKey:nil includeKeys:[NSArray arrayWithObjects: STATE_SENATE, nil] withTitlesOnly:YES];    
     
     [self.navigationController pushViewController:plvc animated:YES];
@@ -111,15 +110,15 @@
 
 - (IBAction)senateCommitteesButtonPressed:(id)sender {
     
-    AppDelegate *ad = [[UIApplication sharedApplication] delegate];
+    AppDelegate *ad = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     
-    CommitteeListViewController *clvc = [[[CommitteeListViewController alloc] initWithNibName:@"CommitteeListView-iPhone" bundle:nil] autorelease];
+    CommitteeListViewController *clvc = [[CommitteeListViewController alloc] initWithNibName:@"CommitteeListView-iPhone" bundle:nil];
     
-    ListSection *ls1 = [[[ListSection alloc] init] autorelease];
+    ListSection *ls1 = [[ListSection alloc] init];
     ls1.title=STANDING;
     ls1.children=[[NSArray arrayWithArray:ad.stateSenateStandingCommittees] mutableCopy];
     
-    ListSection *ls2 = [[[ListSection alloc] init] autorelease];
+    ListSection *ls2 = [[ListSection alloc] init];
     ls2.title=APPROPRIATIONS;
     ls2.children=[[NSArray arrayWithArray:ad.stateSenateAppropriationsSubcommittees] mutableCopy];
     
@@ -140,13 +139,13 @@
     
     AppDelegate *ad = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     
-    CommitteeVoteListViewController *clvc = [[[CommitteeVoteListViewController alloc] initWithNibName:@"CommitteeListView-iPhone" bundle:nil] autorelease];
+    CommitteeVoteListViewController *clvc = [[CommitteeVoteListViewController alloc] initWithNibName:@"CommitteeListView-iPhone" bundle:nil];
     
-    ListSection *ls1 = [[[ListSection alloc] init] autorelease];
+    ListSection *ls1 = [[ListSection alloc] init];
     ls1.title=STANDING;
     ls1.children=[[NSArray arrayWithArray:ad.stateSenateStandingCommittees] mutableCopy];
     
-    ListSection *ls2 = [[[ListSection alloc] init] autorelease];
+    ListSection *ls2 = [[ListSection alloc] init];
     ls2.title=APPROPRIATIONS;
     ls2.children=[[NSArray arrayWithArray:ad.stateSenateAppropriationsSubcommittees] mutableCopy];
     
@@ -161,9 +160,9 @@
 
 
 - (IBAction)houseButtonPressed:(id)sender {
-    AppDelegate *ad = [[UIApplication sharedApplication] delegate];
+    AppDelegate *ad = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     
-    PeopleListViewController *plvc = [[[PeopleListViewController alloc] initWithNibName:@"PeopleListView-iPhone" bundle:nil] autorelease];
+    PeopleListViewController *plvc = [[PeopleListViewController alloc] initWithNibName:@"PeopleListView-iPhone" bundle:nil];
     plvc.sections = [ListSection buildSectionsFrom:ad.stateHouse dividedBy:@"Type" catchAllKey:nil includeKeys:[NSArray arrayWithObjects: STATE_HOUSE, nil]];
     
     [self.navigationController pushViewController:plvc animated:YES];
@@ -171,9 +170,9 @@
 }
 
 - (IBAction)houseLeadershipButtonPressed:(id)sender {
-    AppDelegate *ad = [[UIApplication sharedApplication] delegate];
+    AppDelegate *ad = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     
-    PeopleListViewController *plvc = [[[PeopleListViewController alloc] initWithNibName:@"PeopleListView-iPhone" bundle:nil] autorelease];
+    PeopleListViewController *plvc = [[PeopleListViewController alloc] initWithNibName:@"PeopleListView-iPhone" bundle:nil];
     plvc.sections = [ListSection buildSectionsFrom:ad.all dividedBy:@"Type" catchAllKey:nil includeKeys:[NSArray arrayWithObjects: STATE_HOUSE, nil] withTitlesOnly:YES];    
     
     [self.navigationController pushViewController:plvc animated:YES];
@@ -182,15 +181,15 @@
 
 - (IBAction)houseCommitteesButtonpressed:(id)sender {
     
-    AppDelegate *ad = [[UIApplication sharedApplication] delegate];
+    AppDelegate *ad = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     
-    CommitteeListViewController *clvc = [[[CommitteeListViewController alloc] initWithNibName:@"CommitteeListView-iPhone" bundle:nil] autorelease];
+    CommitteeListViewController *clvc = [[CommitteeListViewController alloc] initWithNibName:@"CommitteeListView-iPhone" bundle:nil];
     
-    ListSection *ls1 = [[[ListSection alloc] init] autorelease];
+    ListSection *ls1 = [[ListSection alloc] init];
     ls1.title=STANDING;
     ls1.children=[[NSArray arrayWithArray:ad.stateHouseStandingCommittees] mutableCopy];
 
-    ListSection *ls2 = [[[ListSection alloc] init] autorelease];
+    ListSection *ls2 = [[ListSection alloc] init];
     ls2.title=APPROPRIATIONS;
     ls2.children=[[NSArray arrayWithArray:ad.stateHouseAppropriationsSubcommittees] mutableCopy];
     
@@ -209,13 +208,13 @@
     
     AppDelegate *ad = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     
-    CommitteeVoteListViewController *clvc = [[[CommitteeVoteListViewController alloc] initWithNibName:@"CommitteeListView-iPhone" bundle:nil] autorelease];
+    CommitteeVoteListViewController *clvc = [[CommitteeVoteListViewController alloc] initWithNibName:@"CommitteeListView-iPhone" bundle:nil];
     
-    ListSection *ls1 = [[[ListSection alloc] init] autorelease];
+    ListSection *ls1 = [[ListSection alloc] init];
     ls1.title=STANDING;
     ls1.children=[[NSArray arrayWithArray:ad.stateHouseStandingCommittees] mutableCopy];
     
-    ListSection *ls2 = [[[ListSection alloc] init] autorelease];
+    ListSection *ls2 = [[ListSection alloc] init];
     ls2.title=APPROPRIATIONS;
     ls2.children=[[NSArray arrayWithArray:ad.stateHouseAppropriationsSubcommittees] mutableCopy];
     
@@ -229,11 +228,11 @@
 
 - (IBAction)allButtonPressed:(id)sender {
     
-    AppDelegate *ad = [[UIApplication sharedApplication] delegate];
+    AppDelegate *ad = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     
-    PeopleListViewController *plvc = [[[PeopleListViewController alloc] initWithNibName:@"PeopleListView-iPhone" bundle:nil] autorelease];
+    PeopleListViewController *plvc = [[PeopleListViewController alloc] initWithNibName:@"PeopleListView-iPhone" bundle:nil];
     
-    ListSection *ls1 = [[[ListSection alloc] init] autorelease];
+    ListSection *ls1 = [[ListSection alloc] init];
     ls1.title=[NSString stringWithFormat:@"All %@",STATE_NAME];
     
     NSMutableArray *all = [NSMutableArray arrayWithArray:ad.stateHouse];
@@ -269,7 +268,7 @@
     
     VotingListViewController *vlvc = [[VotingListViewController alloc] initWithNibName:@"VoteListView-iPhone" bundle:nil];
     
-    ListSection *ls1 = [[[ListSection alloc] init] autorelease];
+    ListSection *ls1 = [[ListSection alloc] init];
     ls1.title=@"All Wyoming";
     
     NSMutableArray *all = [NSMutableArray arrayWithArray:ad.stateHouse];
@@ -305,7 +304,7 @@
     
     VotingListViewController *vlvc = [[VotingListViewController alloc] initWithNibName:@"PeopleListView-iPhone" bundle:nil];
     
-    ListSection *ls1 = [[[ListSection alloc] init] autorelease];
+    ListSection *ls1 = [[ListSection alloc] init];
     ls1.title=@"All Wyoming";
     
     NSMutableArray *all = [NSMutableArray arrayWithArray:ad.stateHouse];

@@ -379,7 +379,7 @@ static NSLock *crayolaNameCacheLock;
 		[colors addObject:[UIColor colorWithHue:h2 saturation:s brightness:v alpha:a]];
 	}
 	
-	return [[colors copy] autorelease];
+	return [colors copy];
 }
 
 #pragma mark String utilities
@@ -401,57 +401,57 @@ static NSLock *crayolaNameCacheLock;
 }
 
 - (NSString *)hexStringFromColor {
-	return [NSString stringWithFormat:@"%0.6lX", self.rgbHex];
+	return [NSString stringWithFormat:@"%0.6X", (unsigned int)self.rgbHex];
 }
 
-- (NSString *)closestColorNameFor: (const char *) aColorDatabase {
-	NSAssert(self.canProvideRGBComponents, @"Must be a RGB color to use closestColorName");
-	
-	int targetHex = self.rgbHex;
-	int rInt = (targetHex >> 16) & 0x0ff;
-	int gInt = (targetHex >> 8) & 0x0ff;
-	int bInt = (targetHex >> 0) & 0x0ff;
-	
-	float bestScore = MAXFLOAT;
-	const char* bestPos = nil;
-	
-	// Walk the name db string looking for the name with closest match
-	for (const char* p = aColorDatabase; (p = strchr(p, '#')); ++p) {
-		int r,g,b;
-		if (sscanf(p+1, "%2x%2x%2x", &r, &g, &b) == 3) {
-			// Calculate difference between this color and the target color
-			int rDiff = abs(rInt - r);
-			int gDiff = abs(gInt - g);
-			int bDiff = abs(bInt - b);
-			float score = logf(rDiff+1) + logf(gDiff+1) + logf(bDiff+1);
-			
-			// Track the best score/name seen
-			if (score < bestScore) {
-				bestScore = score;
-				bestPos = p;
-			}
-		}
-	}
-	
-	// bestPos now points to the # following the best name seen
-	// Backup to the start of the name and return it
-	const char* name;
-	for (name = bestPos-1; *name != ','; --name)
-		;
-	++name;
-	NSString *result = [[[NSString alloc] initWithBytes:name length:bestPos - name encoding:NSUTF8StringEncoding] autorelease];
-	
-	return result;
-}
+//- (NSString *)closestColorNameFor: (const char *) aColorDatabase {
+//	NSAssert(self.canProvideRGBComponents, @"Must be a RGB color to use closestColorName");
+//	
+//	int targetHex = self.rgbHex;
+//	int rInt = (targetHex >> 16) & 0x0ff;
+//	int gInt = (targetHex >> 8) & 0x0ff;
+//	int bInt = (targetHex >> 0) & 0x0ff;
+//	
+//	float bestScore = MAXFLOAT;
+//	const char* bestPos = nil;
+//	
+//	// Walk the name db string looking for the name with closest match
+//	for (const char* p = aColorDatabase; (p = strchr(p, '#')); ++p) {
+//		int r,g,b;
+//		if (sscanf(p+1, "%2x%2x%2x", &r, &g, &b) == 3) {
+//			// Calculate difference between this color and the target color
+//			int rDiff = abs(rInt - r);
+//			int gDiff = abs(gInt - g);
+//			int bDiff = abs(bInt - b);
+//			float score = logf(rDiff+1) + logf(gDiff+1) + logf(bDiff+1);
+//			
+//			// Track the best score/name seen
+//			if (score < bestScore) {
+//				bestScore = score;
+//				bestPos = p;
+//			}
+//		}
+//	}
+//	
+//	// bestPos now points to the # following the best name seen
+//	// Backup to the start of the name and return it
+//	const char* name;
+//	for (name = bestPos-1; *name != ','; --name)
+//		;
+//	++name;
+//	NSString *result = [[NSString alloc] initWithBytes:name length:bestPos - name encoding:NSUTF8StringEncoding];
+//	
+//	return result;
+//}
 
 
-- (NSString *)closestColorName {
-	return [self closestColorNameFor:colorNameDB];
-}
+//- (NSString *)closestColorName {
+//	return [self closestColorNameFor:colorNameDB];
+//}
 
-- (NSString *)closestCrayonName {
-	return [self closestColorNameFor:crayolaNameDB];
-}
+//- (NSString *)closestCrayonName {
+//	return [self closestColorNameFor:crayolaNameDB];
+//}
 
 + (UIColor *)colorWithString:(NSString *)stringToConvert {
 	NSScanner *scanner = [NSScanner scannerWithString:stringToConvert];
@@ -459,12 +459,12 @@ static NSLock *crayolaNameCacheLock;
 	const NSUInteger kMaxComponents = 4;
 	CGFloat c[kMaxComponents];
 	NSUInteger i = 0;
-	if (![scanner scanFloat:&c[i++]]) return nil;
+	if (![scanner scanFloat:(float *)&c[i++]]) return nil;
 	while (1) {
 		if ([scanner scanString:@"}" intoString:NULL]) break;
 		if (i >= kMaxComponents) return nil;
 		if ([scanner scanString:@"," intoString:NULL]) {
-			if (![scanner scanFloat:&c[i++]]) return nil;
+			if (![scanner scanFloat:(float *)&c[i++]]) return nil;
 		} else {
 			// either we're at the end of there's an unexpected character here
 			// both cases are error conditions
@@ -554,7 +554,7 @@ static NSLock *crayolaNameCacheLock;
 #pragma mark Color Space Conversions
 
 + (void)hue:(CGFloat)h saturation:(CGFloat)s brightness:(CGFloat)v toRed:(CGFloat *)pR green:(CGFloat *)pG blue:(CGFloat *)pB {
-	CGFloat r,g,b;
+	CGFloat r=0,g=0,b=0;
 	
 	// From Foley and Van Dam
 	
@@ -755,11 +755,10 @@ static const char *crayolaNameDB = ","
 		
 		// Get the color, and add to the dictionary
 		int hex, increment;
-		if (sscanf(++h, "%x%n", &hex, &increment) != 1) {[name release]; break;} // thanks Curtis Duhn
+		if (sscanf(++h, "%x%n", &hex, &increment) != 1) { break;} // thanks Curtis Duhn
 		[cache setObject:[self colorWithRGBHex:hex] forKey:name];
 		
 		// Cleanup and move to the next item
-		[name release];
 		entry = h + increment;
 	}
 	colorNameCache = [cache copy];
@@ -782,11 +781,10 @@ static const char *crayolaNameDB = ","
 		
 		// Get the color, and add to the dictionary
 		int hex, increment;
-		if (sscanf(++h, "%x%n", &hex, &increment) != 1) {[name release]; break;} // thanks Curtis Duhn
+		if (sscanf(++h, "%x%n", &hex, &increment) != 1) { break;} // thanks Curtis Duhn
 		[cache setObject:[self colorWithRGBHex:hex] forKey:name];
 		
 		// Cleanup and move to the next item
-		[name release];
 		entry = h + increment;
 	}
 	crayolaNameCache = [cache copy];

@@ -11,9 +11,9 @@ See LICENSE.txt for this sample’s licensing information
 
 @interface GetLocationViewController () <SetupViewControllerDelegate, CLLocationManagerDelegate>
 
-@property (nonatomic, assign) IBOutlet UIButton *startButton;
-@property (nonatomic, assign) IBOutlet UILabel *descriptionLabel;
-@property (nonatomic, assign) IBOutlet UITableView *tableView;
+@property (nonatomic, weak) IBOutlet UIButton *startButton;
+@property (nonatomic, weak) IBOutlet UILabel *descriptionLabel;
+@property (nonatomic, weak) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) SetupViewController* setupViewController;
 @property (nonatomic, copy) NSString *stateString;
 

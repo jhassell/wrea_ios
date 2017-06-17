@@ -11,9 +11,9 @@
 
 @interface CommitteeMember : NSObject
 
-@property (nonatomic, retain) NSDictionary *person;
-@property (nonatomic, retain) NSString *title;
-@property (nonatomic, retain) NSString *sortTitle;
-@property (nonatomic, retain) Committee *committee;
+@property (nonatomic, strong) NSDictionary *person;
+@property (nonatomic, strong) NSString *title;
+@property (nonatomic, strong) NSString *sortTitle;
+@property (nonatomic, strong) Committee *committee;
 
 @end

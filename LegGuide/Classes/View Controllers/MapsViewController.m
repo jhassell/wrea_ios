@@ -32,31 +32,31 @@
     BOOL didDismissInstruction;
 }
 
-@property (retain, nonatomic) IBOutlet MKMapView *mapView;
-@property (retain, nonatomic) IBOutlet UILabel *personNameLabel;
-@property (retain, nonatomic) IBOutlet UILabel *personTitleLabel;
-@property (retain, nonatomic) IBOutlet UIImageView *personImageView;
-@property (retain, nonatomic) IBOutlet UIView *nameBackgroundView;
-@property (retain, nonatomic) IBOutlet UIButton *leftArrowButton;
-@property (retain, nonatomic) IBOutlet UIButton *rightArrowButton;
-@property (retain, nonatomic) IBOutlet UILabel *mapTitleLabel;
-@property (retain, nonatomic) IBOutlet UIView *mapTitleBackgroundView;
+@property (strong, nonatomic) IBOutlet MKMapView *mapView;
+@property (strong, nonatomic) IBOutlet UILabel *personNameLabel;
+@property (strong, nonatomic) IBOutlet UILabel *personTitleLabel;
+@property (strong, nonatomic) IBOutlet UIImageView *personImageView;
+@property (strong, nonatomic) IBOutlet UIView *nameBackgroundView;
+@property (strong, nonatomic) IBOutlet UIButton *leftArrowButton;
+@property (strong, nonatomic) IBOutlet UIButton *rightArrowButton;
+@property (strong, nonatomic) IBOutlet UILabel *mapTitleLabel;
+@property (strong, nonatomic) IBOutlet UIView *mapTitleBackgroundView;
 
-@property (retain, nonatomic) NSMutableArray *countyBoundaries;
-@property (retain, nonatomic) NSMutableArray *districtBoundaries;
-@property (retain, nonatomic) Boundary       *districtBoundary;
+@property (strong, nonatomic) NSMutableArray *countyBoundaries;
+@property (strong, nonatomic) NSMutableArray *districtBoundaries;
+@property (strong, nonatomic) Boundary       *districtBoundary;
 @property (assign) int mapSelectIndex;
 @property (nonatomic, strong) CLLocationManager *locationManager;
 @property (nonatomic, strong) NSDateFormatter *dateFormatter;
 @property (nonatomic, strong) NSMutableArray *locationMeasurements;
 @property (nonatomic, strong) CLLocation *bestEffortAtLocation;
-@property (nonatomic, assign) IBOutlet UIButton *startButton;
-@property (nonatomic, assign) IBOutlet UILabel *descriptionLabel;
-@property (nonatomic, assign) IBOutlet UITableView *tableView;
+@property (nonatomic, weak) IBOutlet UIButton *startButton;
+@property (nonatomic, weak) IBOutlet UILabel *descriptionLabel;
+@property (nonatomic, weak) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) SetupViewController* setupViewController;
 @property (nonatomic, copy) NSString *stateString;
 
-@property (retain, nonatomic) UIAlertView *instructionView;
+@property (strong, nonatomic) UIAlertView *instructionView;
 
 - (IBAction)rightArrowButtonPressed:(id)sender;
 - (IBAction)leftArrowButtonPressed:(id)sender;
@@ -116,8 +116,8 @@
     if (!pinView)
     {
         // if an existing pin view was not available, create one
-        MKPinAnnotationView* customPinView = [[[MKPinAnnotationView alloc]
-                                               initWithAnnotation:annotation reuseIdentifier:@"pin"] autorelease];
+        MKPinAnnotationView* customPinView = [[MKPinAnnotationView alloc]
+                                               initWithAnnotation:annotation reuseIdentifier:@"pin"];
         customPinView.pinColor = MKPinAnnotationColorGreen;            
         customPinView.animatesDrop = YES;
         customPinView.canShowCallout = NO;        
@@ -130,15 +130,15 @@
 }
 
 
-- (MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id <MKOverlay>)overlay
+- (MKPolygonRenderer *)mapView:(MKMapView *)mapView viewForOverlay:(id <MKOverlay>)overlay
 {
     BoundaryPolygon *boundaryPolygon = (BoundaryPolygon *) overlay;
     
-    MKPolygonView *view = [[MKPolygonView alloc] initWithPolygon:boundaryPolygon.polygon];
+    MKPolygonRenderer *view = [[MKPolygonRenderer alloc] initWithPolygon:boundaryPolygon.polygon];
     view.lineWidth=1;
     view.fillColor=[boundaryPolygon.boundary.color colorWithAlphaComponent:0.3];
     view.strokeColor=[boundaryPolygon.boundary.color colorWithAlphaComponent:1.0];
-    return [view autorelease];
+    return view;
 }
 
 #pragma mark - IB Hooks
@@ -184,7 +184,7 @@
     if (self.person==nil) return;
     
     if (isMapPage) {
-        PersonViewController *pvc = [[[PersonViewController alloc] initWithNibName:@"PersonView-iPhone" bundle:nil] autorelease];
+        PersonViewController *pvc = [[PersonViewController alloc] initWithNibName:@"PersonView-iPhone" bundle:nil];
         pvc.person=self.person;
         [self.navigationController pushViewController:pvc animated:YES];
     } else {
@@ -225,7 +225,7 @@
         [self.districtBoundaries removeAllObjects];
     }
     
-    AppDelegate *ad = [[UIApplication sharedApplication] delegate];
+    AppDelegate *ad = (AppDelegate *)[[UIApplication sharedApplication] delegate];
 
     for(Boundary *boundary in [ad.stateHouseBoundaries allValues]) {
         if ([boundary pointInside:coordinate]) {
@@ -267,7 +267,7 @@
         
         [self.mapView removeOverlays:self.mapView.overlays];
 
-        if (self.mapSelectIndex<0) self.mapSelectIndex=[self.countyBoundaries count];
+        if (self.mapSelectIndex<0) self.mapSelectIndex=(int)[self.countyBoundaries count];
         if (self.mapSelectIndex>[self.countyBoundaries count]) self.mapSelectIndex=0;
         
         Boundary *boundaryToFrame = self.districtBoundary;
@@ -303,13 +303,13 @@
         
         [self.mapView removeOverlays:self.mapView.overlays];
 
-        if (self.mapSelectIndex<0) self.mapSelectIndex=[self.districtBoundaries count]-1;
+        if (self.mapSelectIndex<0) self.mapSelectIndex=(int)[self.districtBoundaries count] - 1;
 
         if (self.mapSelectIndex>=[self.districtBoundaries count]) self.mapSelectIndex=0;
 
         Boundary *boundaryToFrame = [self.districtBoundaries objectAtIndex:self.mapSelectIndex];
         
-        AppDelegate *ad = [[UIApplication sharedApplication] delegate];
+        AppDelegate *ad = (AppDelegate *)[[UIApplication sharedApplication] delegate];
         
         NSString *districtNumber = nil;
         NSArray *peopleList=nil;
@@ -413,7 +413,7 @@
 }
 
 -(void) displayDistrictForPerson {
-    AppDelegate *ad = [[UIApplication sharedApplication] delegate];
+    AppDelegate *ad = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     
     if (self.person!=nil) {
         NSString *districtNumber = nil;
@@ -467,11 +467,11 @@
             
             // NEED TO SORT COUNTIES BY NAME
             
-            NSSortDescriptor *sortByName = [[[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES] autorelease];
+            NSSortDescriptor *sortByName = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
             NSArray *sortDescriptors = [NSArray arrayWithObject:sortByName];
             [self.countyBoundaries sortUsingDescriptors:sortDescriptors];
             
-            self.mapSelectIndex = [self.countyBoundaries count];
+            self.mapSelectIndex = (int)[self.countyBoundaries count];
             self.districtBoundary = [districtBoundaries objectForKey:districtNumber];
             self.districtBoundary.color=self.nameBackgroundView.backgroundColor;
             
@@ -494,40 +494,40 @@
         
         NSString *prefix=@"";
         NSString *office=@"";
-        NSString *title=@"";
+        //NSString *title=@"";
         NSString *partyAndDistrict=@"";
         NSString *personTitle=@"";
-        NSString *districtNumber = nil;
+        //NSString *districtNumber = nil;
         
         if ([self.person.type isEqualToString:STATE_HOUSE]) {
             prefix = @"Rep. ";
-            office=STATE_REPRESENTATIVE_TITLE;
-            title=self.person.titleLeadership;            
+            //office=STATE_REPRESENTATIVE_TITLE;
+            //title=self.person.titleLeadership;
             partyAndDistrict = [NSString stringWithFormat:@"State House District %@",self.person.districtNumber ];            
             personTitle=partyAndDistrict;
-            districtNumber = [NSString stringWithFormat:@"%03i",[self.person.districtNumber intValue]];
+            //districtNumber = [NSString stringWithFormat:@"%03i",[self.person.districtNumber intValue]];
         } else if ([self.person.type isEqualToString:STATE_SENATE]) {
             prefix = @"Sen. ";
-            office=STATE_SENATOR_TITLE;
-            title=self.person.titleLeadership;
+            //office=STATE_SENATOR_TITLE;
+            //title=self.person.titleLeadership;
             partyAndDistrict = [NSString stringWithFormat:@"State Senate District %@",self.person.districtNumber ];
             personTitle=partyAndDistrict;
-            districtNumber = [NSString stringWithFormat:@"%03i",[self.person.districtNumber intValue]];
+            //districtNumber = [NSString stringWithFormat:@"%03i",[self.person.districtNumber intValue]];
         } else if ([self.person.type isEqualToString:STATEWIDE]) {
             office=self.person.titleLeadership;
-            partyAndDistrict = self.person.party;
+            //partyAndDistrict = self.person.party;
             personTitle=[NSString stringWithFormat:@"%@ (%@)",office,self.person.party];
         } else if ([self.person.type isEqualToString:FEDERAL_HOUSE]) {
             prefix = @"Rep. ";
-            office = @"US Representative";
-            title = self.person.titleLeadership;
+            //office = @"US Representative";
+            //title = self.person.titleLeadership;
             partyAndDistrict = [NSString stringWithFormat:@"US House District %@",self.person.districtNumber ];
             personTitle=partyAndDistrict;
-            districtNumber = [NSString stringWithFormat:@"%02i",[self.person.districtNumber intValue]];
+            //districtNumber = [NSString stringWithFormat:@"%02i",[self.person.districtNumber intValue]];
         } else if ([self.person.type isEqualToString:FEDERAL_SENATE]) {
             prefix = @"Sen. ";
-            office = @"US Senator";
-            title = self.person.titleLeadership;
+            //office = @"US Senator";
+            //title = self.person.titleLeadership;
             partyAndDistrict = self.person.party;
             personTitle=partyAndDistrict;
         } else if ([self.person.type isEqualToString:OAEC_MEMBER]) {
@@ -608,7 +608,6 @@
             tgr.numberOfTapsRequired = 1;
             tgr.numberOfTouchesRequired = 1;
             [self.mapView addGestureRecognizer:tgr];
-            [tgr release];
             
             [self reframeButtonPressed];
             
@@ -690,7 +689,7 @@
     if (self.bestEffortAtLocation == nil || self.bestEffortAtLocation.horizontalAccuracy > newLocation.horizontalAccuracy) {
         // store the location as the "best effort"
         _bestEffortAtLocation = newLocation;
-        NSLog(@"bestEfforLocation: %@", self.bestEffortAtLocation);
+        //NSLog(@"bestEfforLocation: %@", self.bestEffortAtLocation);
         
         // test the measurement to see if it meets the desired accuracy
         //
@@ -728,6 +727,7 @@
 
 -(void) viewDidAppear:(BOOL)animated {
     
+    [super viewDidAppear:animated];
     if (!didDismissInstruction && isMapPage) {
         
         [ModalAlert okWithTitle:@"Map Instructions" message:[NSString stringWithFormat:@"Tap anywhere in %@ to see the legislative districts.",STATE_NAME]];
@@ -763,21 +763,5 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-- (void)dealloc {
-    [_mapView release];
-    [_personNameLabel release];
-    [_personTitleLabel release];
-    [_personImageView release];
-    [_nameBackgroundView release];
-    [_leftArrowButton release];
-    [_rightArrowButton release];
-    [_mapTitleLabel release];
-    [_mapTitleBackgroundView release];
-    [_districtBoundary release];
-    [_districtBoundaries release];
-    [_countyBoundaries release];
-    [_instructionView release];
-    [super dealloc];
-}
 
 @end

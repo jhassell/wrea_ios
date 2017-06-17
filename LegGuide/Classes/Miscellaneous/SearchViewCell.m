@@ -33,8 +33,4 @@
     // Configure the view for the selected state
 }
 
-- (void)dealloc {
-    [searchBar release];
-    [super dealloc];
-}
 @end

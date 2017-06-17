@@ -31,12 +31,11 @@
 	
 	
 	CSVParser *parser =
-    [[[CSVParser alloc]
+    [[CSVParser alloc]
       initWithString:csvString
       separator:@","
       hasHeader:YES
-      fieldNames:nil]
-     autorelease];
+      fieldNames:nil];
     
     NSArray *rows = [parser arrayOfParsedRows];
     
@@ -65,10 +64,10 @@
         }
     }
     
-    NSSortDescriptor *sortByType = [[[NSSortDescriptor alloc] initWithKey:@"Type" ascending:YES] autorelease];
-    NSSortDescriptor *sortBySortOrder = [[[NSSortDescriptor alloc] initWithKey:@"Sort Order Number" ascending:YES] autorelease];
-    NSSortDescriptor *sortByLastName = [[[NSSortDescriptor alloc] initWithKey:@"Last Name" ascending:YES] autorelease];
-    NSSortDescriptor *sortByFirstName = [[[NSSortDescriptor alloc] initWithKey:@"First Name" ascending:YES] autorelease];
+    NSSortDescriptor *sortByType = [[NSSortDescriptor alloc] initWithKey:@"Type" ascending:YES];
+    NSSortDescriptor *sortBySortOrder = [[NSSortDescriptor alloc] initWithKey:@"Sort Order Number" ascending:YES];
+    NSSortDescriptor *sortByLastName = [[NSSortDescriptor alloc] initWithKey:@"Last Name" ascending:YES];
+    NSSortDescriptor *sortByFirstName = [[NSSortDescriptor alloc] initWithKey:@"First Name" ascending:YES];
     
     NSArray *sortDescriptors = [NSArray arrayWithObjects:sortByType,sortBySortOrder,sortByLastName,sortByFirstName, nil];
     
@@ -140,14 +139,14 @@
                 Committee *committee = [committees objectForKey:committeeDictKeyString];
                 
                 if (committee == nil ) {
-                    committee = [[[Committee alloc] init] autorelease];
+                    committee = [[Committee alloc] init];
                     committee.name=trimmedCommitteeString;
                     committee.body=person.type;
                     committee.type=committeeKey;
                     [committees setObject:committee forKey:committeeDictKeyString];
                 }    
                 
-                CommitteeMember *member = [[[CommitteeMember alloc] init] autorelease];
+                CommitteeMember *member = [[CommitteeMember alloc] init];
         
                 member.committee = committee;
                 member.person = person;
@@ -177,9 +176,9 @@
     
     NSArray *committeeArray = [committees allValues];
 
-    NSSortDescriptor *sortByTitle = [[[NSSortDescriptor alloc] initWithKey:@"sortTitle" ascending:YES] autorelease];
-    NSSortDescriptor *sortByLastName = [[[NSSortDescriptor alloc] initWithKey:@"person.lastName" ascending:YES] autorelease];
-    NSSortDescriptor *sortByFirstName = [[[NSSortDescriptor alloc] initWithKey:@"person.firstName" ascending:YES] autorelease];
+    NSSortDescriptor *sortByTitle = [[NSSortDescriptor alloc] initWithKey:@"sortTitle" ascending:YES];
+    NSSortDescriptor *sortByLastName = [[NSSortDescriptor alloc] initWithKey:@"person.lastName" ascending:YES];
+    NSSortDescriptor *sortByFirstName = [[NSSortDescriptor alloc] initWithKey:@"person.firstName" ascending:YES];
     
     NSArray *memberSortDescriptors = [NSArray arrayWithObjects:sortByTitle,sortByLastName,sortByFirstName, nil];
     
@@ -187,7 +186,7 @@
         [c.members sortUsingDescriptors:memberSortDescriptors];
     }
 
-    NSSortDescriptor *sortByCommitteeName = [[[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES] autorelease];
+    NSSortDescriptor *sortByCommitteeName = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
     
     NSArray *sortDescriptors = [NSArray arrayWithObjects:sortByCommitteeName, nil];
     

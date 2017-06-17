@@ -11,7 +11,7 @@
 
 @interface PersonViewController : UIViewController <MFMailComposeViewControllerDelegate, UITableViewDelegate, UITableViewDataSource>
 
-@property (retain, nonatomic) NSDictionary *person;
+@property (strong, nonatomic) NSDictionary *person;
 - (IBAction)emailButtonPressed:(id)sender;
 
 

@@ -118,9 +118,9 @@
     ListSection *listSection = [self.sections objectAtIndex:indexPath.section];
     Committee *committee = [listSection.children objectAtIndex:indexPath.row];
     
-    PeopleListViewController *plvc = [[[PeopleListViewController alloc] initWithNibName:@"PeopleListView-iPhone" bundle:nil] autorelease];
+    PeopleListViewController *plvc = [[PeopleListViewController alloc] initWithNibName:@"PeopleListView-iPhone" bundle:nil];
     
-    ListSection *ls1 = [[[ListSection alloc] init] autorelease];
+    ListSection *ls1 = [[ListSection alloc] init];
     
     ls1.title = committee.name;
     ls1.children = committee.members;
@@ -131,9 +131,4 @@
 
 }
 
-- (void)dealloc {
-    [_sections release];
-    [_table release];
-    [super dealloc];
-}
 @end

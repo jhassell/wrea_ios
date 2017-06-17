@@ -57,8 +57,6 @@
 	
 	// Retrieve answer
 	NSUInteger answer = madelegate.index;
-	[alertView release];
-	[madelegate release];
 	return answer;
 }
 
@@ -73,20 +71,19 @@
 }
 
 + (void) okWithTitle:(NSString *)title message:(NSString *)message {
-    UIAlertView *alertView = [[[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] autorelease];
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
     [alertView show];
 }
 
 +(UIAlertView *) noButtonAlertWithTitle:(NSString *) title message:(NSString *) message {
     
-    UIAlertView *av =[[[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:nil otherButtonTitles:nil] autorelease];
+    UIAlertView *av =[[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:nil otherButtonTitles:nil];
     [av show];
     
     UIActivityIndicatorView *aiv = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
     aiv.center = CGPointMake(av.bounds.size.width / 2.0f, av.bounds.size.height - 40.0f);
     [aiv startAnimating];
     [av addSubview:aiv];
-    [aiv release];
     return av;
 }
 

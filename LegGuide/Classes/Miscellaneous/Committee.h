@@ -10,14 +10,14 @@
 
 @interface Committee : NSObject
 
-@property (nonatomic, retain) NSString *name;
-@property (nonatomic, retain) NSMutableArray *members;
-@property (nonatomic, retain) NSString *body;
-@property (nonatomic, retain) NSString *type;
-@property (nonatomic, retain) NSString *dow;
-@property (nonatomic, retain) NSString *time;
-@property (nonatomic, retain) NSString *room;
-@property (nonatomic, retain) NSString *key;
-@property (nonatomic, retain) NSString *website;
+@property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSMutableArray *members;
+@property (nonatomic, strong) NSString *body;
+@property (nonatomic, strong) NSString *type;
+@property (nonatomic, strong) NSString *dow;
+@property (nonatomic, strong) NSString *time;
+@property (nonatomic, strong) NSString *room;
+@property (nonatomic, strong) NSString *key;
+@property (nonatomic, strong) NSString *website;
 
 @end

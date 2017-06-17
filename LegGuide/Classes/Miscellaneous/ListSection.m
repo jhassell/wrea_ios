@@ -55,7 +55,7 @@
             
             ListSection *section = [sectionsDict objectForKey:keyValue];
             if (section==nil) {
-                section = [[[ListSection alloc] init] autorelease];
+                section = [[ListSection alloc] init];
                 section.title = keyValue;
                 section.children = [NSMutableArray arrayWithCapacity:1];
                 [sectionsDict setValue:section forKey:keyValue];
@@ -68,7 +68,7 @@
     NSArray *sortedSections = nil;
     if (includeKeys==nil) {
         NSArray *unsortedSections = [sectionsDict allValues];
-        NSSortDescriptor *sortByTitle = [[[NSSortDescriptor alloc] initWithKey:@"title" ascending:YES] autorelease];
+        NSSortDescriptor *sortByTitle = [[NSSortDescriptor alloc] initWithKey:@"title" ascending:YES];
         sortedSections = [unsortedSections sortedArrayUsingDescriptors:[NSArray arrayWithObject:sortByTitle]];
     } else {
         NSMutableArray *mutableSortedSections = [NSMutableArray arrayWithCapacity:[includeKeys count]];
@@ -84,12 +84,5 @@
     return sortedSections;
 }
 
-- (void)dealloc
-{
-    [_subtitle release];
-    [_title release];
-    [_children release];
-    [super dealloc];
-}
 
 @end

@@ -14,6 +14,7 @@
 #import "PersonViewController.h"
 #import "NSString+Stuff.h"
 #import "SearchViewCell.h"
+#import "AppDelegate.h"
 
 #define CELL_HEADSHOT       ((UIImageView *)[cell viewWithTag:100])
 #define CELL_NAME           ((UILabel *)[cell viewWithTag:101])
@@ -77,7 +78,7 @@
     // called when keyboard search button pressed
     
     if (searchBar.text!=nil && [searchBar.text length]>0) {
-        [self buildDisplaySectionsWithFilterType:searchBar.selectedScopeButtonIndex filterText:[searchBar.text trim]];
+        [self buildDisplaySectionsWithFilterType:(int)searchBar.selectedScopeButtonIndex filterText:[searchBar.text trim]];
     } else {
         [self buildDisplaySections];
     }
@@ -106,7 +107,7 @@
 
 - (void)searchBar:(UISearchBar *)searchBar selectedScopeButtonIndexDidChange:(NSInteger)selectedScope {
     if (searchBar.text!=nil && [searchBar.text length]>0) {
-        [self buildDisplaySectionsWithFilterType:searchBar.selectedScopeButtonIndex filterText:[searchBar.text trim]];
+        [self buildDisplaySectionsWithFilterType:(int)searchBar.selectedScopeButtonIndex filterText:[searchBar.text trim]];
     } else {
         [self buildDisplaySections];
     }
@@ -118,11 +119,10 @@
 -(void)setSections:(NSArray *)sections {
 
     if (_sections!=nil) {
-        [_sections release];
         _sections=nil; 
     }
     
-    _sections = [sections retain];
+    _sections = sections;
     [self buildDisplaySections];
 }
 
@@ -179,7 +179,7 @@
             }
             
             if (filteredChildren!=nil && [filteredChildren count]>0) {
-                ListSection *filteredListSection = [[[ListSection alloc] init] autorelease];
+                ListSection *filteredListSection = [[ListSection alloc] init];
                 
                 filteredListSection.title = section.title;
                 filteredListSection.rowHeight = section.rowHeight;
@@ -199,7 +199,7 @@
 -(SearchViewCell *) searchViewCell {
     
     if (_searchViewCell==nil) {
-        _searchViewCell = [[[[NSBundle mainBundle] loadNibNamed:@"PeopleListSearchCell-iPhone" owner:self options:nil] objectAtIndex:0] retain];
+        _searchViewCell = [[[NSBundle mainBundle] loadNibNamed:@"PeopleListSearchCell-iPhone" owner:self options:nil] objectAtIndex:0];
         _searchViewCell.searchBar.delegate=self;
         _searchViewCell.searchBar.showsCancelButton=NO;
     }
@@ -405,7 +405,7 @@
         person = [section.children objectAtIndex:indexPath.row];
     }
 
-    PersonViewController *pvc = [[[PersonViewController alloc] initWithNibName:@"PersonView-iPhone" bundle:nil] autorelease];
+    PersonViewController *pvc = [[PersonViewController alloc] initWithNibName:@"PersonView-iPhone" bundle:nil];
     
     pvc.person=person;
     
@@ -416,9 +416,6 @@
 - (void)dealloc
 {
     if (_searchViewCell!=nil) _searchViewCell.searchBar.delegate=nil;
-    [_searchViewCell release];
-    [_sections release];
-    [super dealloc];
 }
 
 @end

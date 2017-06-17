@@ -9,8 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface CommitteeViewCell : UITableViewCell
-@property (retain, nonatomic) IBOutlet UILabel *titleLabel;
-@property (retain, nonatomic) IBOutlet UILabel *committeeNameLabel;
-@property (retain, nonatomic) IBOutlet UIView *grayBarView;
+@property (strong, nonatomic) IBOutlet UILabel *titleLabel;
+@property (strong, nonatomic) IBOutlet UILabel *committeeNameLabel;
+@property (strong, nonatomic) IBOutlet UIView *grayBarView;
 
 @end

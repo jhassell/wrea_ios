@@ -10,14 +10,4 @@
 
 @implementation CommitteeHeaderView
 
-- (void)dealloc {
-    [_chamberLabel release];
-    [_committeeNameLabel release];
-    [_meetsLabel release];
-    [_roomLabel release];
-    [_meetsLabelLabel release];
-    [_roomLabelLabel release];
-    [_committeeSubtypeLabel release];
-    [super dealloc];
-}
 @end

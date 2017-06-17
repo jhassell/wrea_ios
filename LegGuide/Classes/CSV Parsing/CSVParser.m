@@ -45,8 +45,8 @@
 	self = [super init];
 	if (self)
 	{
-		csvString = [aCSVString retain];
-		separator = [aSeparatorString retain];
+		csvString = aCSVString;
+		separator = aSeparatorString;
 		
 		NSAssert([separator length] > 0 &&
 			[separator rangeOfString:@"\""].location == NSNotFound &&
@@ -76,14 +76,6 @@
 //
 // Releases instance memory.
 //
-- (void)dealloc
-{
-	[csvString release];
-	[separator release];
-	[fieldNames release];
-	[endTextCharacterSet release];
-	[super dealloc];
-}
 
 
 //
@@ -96,10 +88,9 @@
 - (NSArray *)arrayOfParsedRows
 {
 	scanner = [[NSScanner alloc] initWithString:csvString];
-	[scanner setCharactersToBeSkipped:[[[NSCharacterSet alloc] init] autorelease]];
+	[scanner setCharactersToBeSkipped:[[NSCharacterSet alloc] init]];
 	
 	NSArray *result = [self parseFile];
-	[scanner release];
 	scanner = nil;
 	
 	return result;
@@ -119,15 +110,13 @@
 - (void)parseRowsForReceiver:(id)aReceiver selector:(SEL)aSelector
 {
 	scanner = [[NSScanner alloc] initWithString:csvString];
-	[scanner setCharactersToBeSkipped:[[[NSCharacterSet alloc] init] autorelease]];
-	receiver = [aReceiver retain];
+	[scanner setCharactersToBeSkipped:[[NSCharacterSet alloc] init]];
+	receiver = aReceiver;
 	receiverSelector = aSelector;
 	
 	[self parseFile];
 	
-	[scanner release];
 	scanner = nil;
-	[receiver release];
 	receiver = nil;
 }
 
@@ -143,12 +132,8 @@
 {
 	if (hasHeader)
 	{
-		if (fieldNames)
-		{
-			[fieldNames release];
-		}
 		
-		fieldNames = [[self parseHeader] retain];
+		fieldNames = [self parseHeader];
 		if (!fieldNames || ![self parseLineSeparator])
 		{
 			return nil;
@@ -161,7 +146,7 @@
 		records = [NSMutableArray array];
 	}
 	
-	NSDictionary *record = [[self parseRecord] retain];
+	NSDictionary *record = [self parseRecord];
 	if (!record)
 	{
 		return nil;
@@ -169,26 +154,29 @@
 	
 	while (record)
 	{
-		NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+		@autoreleasepool {
 		
-		if (receiver)
-		{
-			[receiver performSelector:receiverSelector withObject:record];
+			if (receiver)
+			{
+// Removed warning via: https://stackoverflow.com/questions/7017281   Legacy code, *(void) solution in artcle did not work
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+                [receiver performSelector:receiverSelector withObject:record];
+#pragma clang diagnostic pop
+			}
+			else
+			{
+				[records addObject:record];
+			}
+			
+			if (![self parseLineSeparator])
+			{
+				break;
+			}
+			
+			record = [self parseRecord];
+		
 		}
-		else
-		{
-			[records addObject:record];
-		}
-		[record release];
-		
-		if (![self parseLineSeparator])
-		{
-			break;
-		}
-		
-		record = [[self parseRecord] retain];
-		
-		[pool drain];
 	}
 	
 	return records;
@@ -264,7 +252,7 @@
 		}
 		else
 		{
-			fieldName = [NSString stringWithFormat:@"FIELD_%d", fieldCount + 1];
+			fieldName = [NSString stringWithFormat:@"FIELD_%d", (int)fieldCount + 1];
 			[fieldNames addObject:fieldName];
 			fieldNamesCount++;
 		}

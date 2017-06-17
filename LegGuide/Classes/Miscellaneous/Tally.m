@@ -17,9 +17,9 @@
 
     int i;
     self = [super init];
-    self.votes = [[NSMutableArray alloc] init];
-    self.yeaButtonRef = [[NSMutableArray alloc] init];
-    self.nayButtonRef = [[NSMutableArray alloc] init];
+    self.votes = nil;
+    self.yeaButtonRef = nil;
+    self.nayButtonRef = nil;
     if (self) {
         for (i=0; i< voteCount; i++)
         {

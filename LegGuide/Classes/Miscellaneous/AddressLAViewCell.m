@@ -27,9 +27,4 @@
     // Configure the view for the selected state
 }
 
-- (void)dealloc {
-    [laNameLabel release];
-    [_assistantTitleLabel release];
-    [super dealloc];
-}
 @end

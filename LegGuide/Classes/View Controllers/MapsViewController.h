@@ -13,7 +13,7 @@
 
 -(IBAction) reframeButtonPressed;
 
-@property (nonatomic, assign) NSDictionary *person;
+@property (nonatomic, weak) NSDictionary *person;
 
 
 @end

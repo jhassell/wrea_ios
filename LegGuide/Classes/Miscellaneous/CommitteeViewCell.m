@@ -29,11 +29,5 @@
     // Configure the view for the selected state
 }
 
-- (void)dealloc {
-    [titleLabel release];
-    [committeeNameLabel release];
-    [grayBarView release];
-    [super dealloc];
-}
 
 @end

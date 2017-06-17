@@ -8,6 +8,7 @@
 
 #import "NSDictionary+People.h"
 #import "Definitions.h"
+#import "AppDelegate.h"
 
 @implementation NSDictionary (People)
 

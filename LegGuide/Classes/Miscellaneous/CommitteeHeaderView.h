@@ -10,15 +10,15 @@
 
 @interface CommitteeHeaderView : UITableViewCell;
 
-@property (retain, nonatomic) IBOutlet UILabel *chamberLabel;
-@property (retain, nonatomic) IBOutlet UILabel *committeeNameLabel;
-@property (retain, nonatomic) IBOutlet UILabel *meetsLabel;
-@property (retain, nonatomic) IBOutlet UILabel *roomLabel;
-@property (retain, nonatomic) IBOutlet UILabel *committeeSubtypeLabel;
+@property (strong, nonatomic) IBOutlet UILabel *chamberLabel;
+@property (strong, nonatomic) IBOutlet UILabel *committeeNameLabel;
+@property (strong, nonatomic) IBOutlet UILabel *meetsLabel;
+@property (strong, nonatomic) IBOutlet UILabel *roomLabel;
+@property (strong, nonatomic) IBOutlet UILabel *committeeSubtypeLabel;
 
 
-@property (retain, nonatomic) IBOutlet UILabel *meetsLabelLabel;
-@property (retain, nonatomic) IBOutlet UILabel *roomLabelLabel;
+@property (strong, nonatomic) IBOutlet UILabel *meetsLabelLabel;
+@property (strong, nonatomic) IBOutlet UILabel *roomLabelLabel;
 
 
 

@@ -17,8 +17,8 @@
 #define OAEC_MEMBER    @"OAEC Member System"
 #define LEGISLATIVE_CONTACT @"WREA Leadership"
 
-#define STANDING        @"Standing Committee"
-#define APPROPRIATIONS  @"Appropriations Subcommittee"
+//#define STANDING        @"Standing Committee"
+//#define APPROPRIATIONS  @"Appropriations Subcommittee"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate> {
     

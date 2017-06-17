@@ -78,16 +78,16 @@
 
     // alpha order senate, house
     
-    NSSortDescriptor *sortByLastName = [[[NSSortDescriptor alloc] initWithKey:@"Last Name" ascending:YES] autorelease];
-    NSSortDescriptor *sortByFirstName = [[[NSSortDescriptor alloc] initWithKey:@"First Name" ascending:YES] autorelease];
+    NSSortDescriptor *sortByLastName = [[NSSortDescriptor alloc] initWithKey:@"Last Name" ascending:YES];
+    NSSortDescriptor *sortByFirstName = [[NSSortDescriptor alloc] initWithKey:@"First Name" ascending:YES];
     
     NSArray *sortDescriptors = [NSArray arrayWithObjects:sortByLastName,sortByFirstName, nil];
     
     self.stateSenate = [self.stateSenate sortedArrayUsingDescriptors:sortDescriptors];
     self.stateHouse = [self.stateHouse sortedArrayUsingDescriptors:sortDescriptors];
     
-    NSLog(@"all count %i",[self.all count]);
-    NSLog(@"state senate count %i",[self.stateSenate count]);
+    NSLog(@"all count %lu",(unsigned long)[self.all count]);
+    NSLog(@"state senate count %lu",(unsigned long)[self.stateSenate count]);
     
     
     self.stateSenateStandingCommittees = [DataLoader buildCommitteesFromPeople:self.stateSenate committeeKey:STANDING];
@@ -196,7 +196,7 @@
         button2Text=@"Ok";
     }
     
-    int answer = [ModalAlert queryWith:messageText title:messageTitle button1:buttonText button2:button2Text];
+    int answer = (int)[ModalAlert queryWith:messageText title:messageTitle button1:buttonText button2:button2Text];
     
     NSLog(@"Answer == %i",answer);
 
@@ -229,7 +229,7 @@
     NSData * data = [NSURLConnection sendSynchronousRequest:urlRequest returningResponse:&response error:&error];
     
     NSHTTPURLResponse* httpResponse = (NSHTTPURLResponse*)response;
-    int code = [httpResponse statusCode];
+    int code = (int)[httpResponse statusCode];
     
     if (code==200) {
         
@@ -286,35 +286,6 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
-- (void)dealloc
-{
- 
-    
-    [_countyBoundaries release];
-    [_municipalBoundaries release];
-    [_congressionalBoundaries release];
-    [_stateSenateBoundaries release];
-    [_stateHouseBoundaries release];
-    [_coopBoundaries release];
-    [_stateSenateStandingCommittees release]; 
-    [_stateHouseStandingCommittees release]; 
-    [_stateSenateAppropriationsSubcommittees release];
-    [_stateHouseAppropriationsSubcommittees release];
-    [_window release];
-    [_all release];
-    [_stateSenate release];
-    [_stateHouse release];
-    [_federalSenate release];
-    [_federalHouse release];
-    [_statewide release];
-    [_oaecMembers release];
-    [_legislativeContacts release];
-    [_alertView release];
-    [_judiciary1 release];
-    [_judiciary2 release];
-    
-    [super dealloc];
-}
 
 
 @end

@@ -26,11 +26,6 @@
     return [self.polygon intersectsMapRect:mapRect];
 }
 
-- (void)dealloc
-{
-    [_polygon release];
-    [super dealloc];
-}
 
 
 

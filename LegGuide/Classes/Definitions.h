@@ -6,17 +6,17 @@
 //  Copyright (c) 2013 Architactile LLC. All rights reserved.
 //
 
-#define STATE_SENATE        @"Wyoming Senate"
-#define STATE_HOUSE         @"Wyoming House"
+//#define STATE_SENATE        @"Wyoming Senate"
+//#define STATE_HOUSE         @"Wyoming House"
 #define STATE_REPRESENTATIVE_TITLE @"Wyoming Representative"
 #define STATE_SENATOR_TITLE @"Wyoming Senator"
-#define FEDERAL_SENATE      @"US Senate"
-#define FEDERAL_HOUSE       @"US House"
-#define STATEWIDE           @"Statewide"
+//#define FEDERAL_SENATE      @"US Senate"
+//#define FEDERAL_HOUSE       @"US House"
+//#define STATEWIDE           @"Statewide"
 #define JUDICIARY1          @"Wyoming Supreme Court"
 #define JUDICIARY2          @"Wyoming Court of Appeals"
 
-#define OAEC_MEMBER         @"Member System"
+//#define OAEC_MEMBER         @"Member System"
 #define LEGISLATIVE_CONTACT @"WREA Leadership"
 #define STATE_NAME          @"Wyoming"
 #define STATE_ABBR          @"WY"

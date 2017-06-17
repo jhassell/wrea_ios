@@ -26,7 +26,7 @@
 {
     if (normalGradient == NULL)
     {
-        int locCount = [normalGradientLocations count];
+        int locCount = (int)[normalGradientLocations count];
         CGFloat locations[locCount];
         for (int i = 0; i < [normalGradientLocations count]; i++)
         {
@@ -562,11 +562,6 @@
 #pragma mark -
 - (void)dealloc 
 {
-    [normalGradientColors release];
-    [normalGradientLocations release];
-    [highlightGradientColors release];
-    [highlightGradientLocations release];
-    [strokeColor release];
     
     if (normalGradient != NULL)
         CGGradientRelease(normalGradient);
@@ -574,7 +569,6 @@
         CGGradientRelease(highlightGradient);
     
     
-    [super dealloc];
 }
 
 @end

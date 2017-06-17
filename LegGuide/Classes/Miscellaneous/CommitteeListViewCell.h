@@ -10,6 +10,6 @@
 
 @interface CommitteeListViewCell : UITableViewCell
 
-@property (retain, nonatomic) IBOutlet UILabel *committeeNameLabel;
+@property (strong, nonatomic) IBOutlet UILabel *committeeNameLabel;
 
 @end

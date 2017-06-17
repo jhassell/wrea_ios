@@ -24,9 +24,9 @@
 
 
 @property (nonatomic, strong) NSArray *rc_sections;
-@property (nonatomic, assign) UIViewController<UISearchBarDelegate> *rc_viewController;
-@property (nonatomic, assign) UITableView *rc_peopleTable;
-@property (nonatomic, assign) Committee *rc_committee;
+@property (nonatomic, weak) UIViewController<UISearchBarDelegate> *rc_viewController;
+@property (nonatomic, weak) UITableView *rc_peopleTable;
+@property (nonatomic, weak) Committee *rc_committee;
 @property (nonatomic, strong) NSString *rc_yeaVoteEntry;
 @property (nonatomic, strong) NSString *rc_nayVoteEntry;
 @property (nonatomic, strong) CustomTableViewHeaderCell * rc_customHeaderCell;

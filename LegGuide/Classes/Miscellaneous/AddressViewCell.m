@@ -30,7 +30,6 @@
     } else {
         UIAlertView *Notpermitted=[[UIAlertView alloc] initWithTitle:@"Alert" message:@"Sorry, but I can't seem to figure out how to dial the phone on this device." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [Notpermitted show];
-        [Notpermitted release];
     }
 }
 
@@ -74,18 +73,4 @@
     // Configure the view for the selected state
 }
 
-- (void)dealloc {
-    [name release];
-    [addressLine1 release];
-    [addressLine2 release];
-    [phoneNumber release];
-    [emailAddress release];
-    [phoneInvisibleButton release];
-    [emailInvisibleButton release];
-    [phoneButton release];
-    [emailButton release];
-    [mapButton release];
-    [_phoneNumberToDial release];
-    [super dealloc];
-}
 @end

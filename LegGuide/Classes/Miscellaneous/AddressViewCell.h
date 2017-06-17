@@ -10,21 +10,21 @@
 #import "PersonViewController.h"
 
 @interface AddressViewCell : UITableViewCell
-@property (retain, nonatomic) IBOutlet UILabel *name;
-@property (retain, nonatomic) IBOutlet UILabel *addressLine1;
-@property (retain, nonatomic) IBOutlet UILabel *addressLine2;
-@property (retain, nonatomic) IBOutlet UILabel *phoneNumber;
-@property (retain, nonatomic) IBOutlet UILabel *emailAddress;
+@property (strong, nonatomic) IBOutlet UILabel *name;
+@property (strong, nonatomic) IBOutlet UILabel *addressLine1;
+@property (strong, nonatomic) IBOutlet UILabel *addressLine2;
+@property (strong, nonatomic) IBOutlet UILabel *phoneNumber;
+@property (strong, nonatomic) IBOutlet UILabel *emailAddress;
 
-@property (retain, nonatomic) IBOutlet UIButton *phoneInvisibleButton;
-@property (retain, nonatomic) IBOutlet UIButton *emailInvisibleButton;
-@property (retain, nonatomic) IBOutlet UIButton *phoneButton;
-@property (retain, nonatomic) IBOutlet UIButton *emailButton;
-@property (retain, nonatomic) IBOutlet UIButton *mapButton;
+@property (strong, nonatomic) IBOutlet UIButton *phoneInvisibleButton;
+@property (strong, nonatomic) IBOutlet UIButton *emailInvisibleButton;
+@property (strong, nonatomic) IBOutlet UIButton *phoneButton;
+@property (strong, nonatomic) IBOutlet UIButton *emailButton;
+@property (strong, nonatomic) IBOutlet UIButton *mapButton;
 
-@property (retain, nonatomic) NSString *phoneNumberToDial;
+@property (strong, nonatomic) NSString *phoneNumberToDial;
 
-@property (nonatomic, assign) PersonViewController *pvc;
+@property (nonatomic, weak) PersonViewController *pvc;
 
 - (IBAction)dial:(id)sender;
 - (IBAction)email:(id)sender;

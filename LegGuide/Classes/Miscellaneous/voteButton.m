@@ -9,7 +9,7 @@
 #import "voteButton.h"
 
 @implementation voteButton
-@synthesize otherButton;
+//@synthesize otherButton;
 
 /*
 // Only override drawRect: if you perform custom drawing.

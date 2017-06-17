@@ -16,13 +16,13 @@
     BOOL firstLaunch;
 }
 
-@property (retain, nonatomic) IBOutlet UIImageView *backgroundImage;
+@property (strong, nonatomic) IBOutlet UIImageView *backgroundImage;
 
 
-@property (retain, nonatomic) IBOutlet UIButton *websiteButton;
-@property (retain, nonatomic) IBOutlet UIButton *electedOfficialsButton;
-@property (retain, nonatomic) IBOutlet UIButton *ourMembersButton;
-@property (retain, nonatomic) IBOutlet UIButton *ourStaffButton;
+@property (strong, nonatomic) IBOutlet UIButton *websiteButton;
+@property (strong, nonatomic) IBOutlet UIButton *electedOfficialsButton;
+@property (strong, nonatomic) IBOutlet UIButton *ourMembersButton;
+@property (strong, nonatomic) IBOutlet UIButton *ourStaffButton;
 
 - (IBAction)backButtonPressed:(id)sender;
 - (IBAction)legislatureButtonPressed:(id)sender;
@@ -51,9 +51,9 @@
 }
 
 - (IBAction)memberSystemsButtonPressed:(id)sender {
-    AppDelegate *ad = [[UIApplication sharedApplication] delegate];
+    AppDelegate *ad = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     
-    PeopleListViewController *plvc = [[[PeopleListViewController alloc] initWithNibName:@"PeopleListView-iPhone" bundle:nil] autorelease];
+    PeopleListViewController *plvc = [[PeopleListViewController alloc] initWithNibName:@"PeopleListView-iPhone" bundle:nil];
     plvc.sections = [ListSection buildSectionsFrom:ad.all dividedBy:@"Type" catchAllKey:nil includeKeys:[NSArray arrayWithObjects:OAEC_MEMBER, nil]];
     
     [self.navigationController pushViewController:plvc animated:YES];
@@ -62,9 +62,9 @@
 
 - (IBAction)legContactsButtonPressed:(id)sender {
         
-    AppDelegate *ad = [[UIApplication sharedApplication] delegate];
+    AppDelegate *ad = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     
-    PeopleListViewController *plvc = [[[PeopleListViewController alloc] initWithNibName:@"PeopleListView-iPhone" bundle:nil] autorelease];
+    PeopleListViewController *plvc = [[PeopleListViewController alloc] initWithNibName:@"PeopleListView-iPhone" bundle:nil];
     plvc.sections = [ListSection buildSectionsFrom:ad.all dividedBy:@"Type" catchAllKey:nil includeKeys:[NSArray arrayWithObjects:LEGISLATIVE_CONTACT, nil]];
     
     [self.navigationController pushViewController:plvc animated:YES];
@@ -102,7 +102,7 @@
     [super viewDidAppear:animated];
     if (firstLaunch) {
         firstLaunch=NO;
-        AppDelegate *ap = [[UIApplication sharedApplication] delegate];
+        AppDelegate *ap = (AppDelegate *)[[UIApplication sharedApplication] delegate];
         [ap loadBoundaries];
     }
 }
@@ -139,12 +139,4 @@
 }
 
 
-- (void)dealloc {
-    [_backgroundImage release];
-    [_electedOfficialsButton release];
-    [_ourMembersButton release];
-    [_ourStaffButton release];
-    [_websiteButton release];
-    [super dealloc];
-}
 @end

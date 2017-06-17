@@ -15,13 +15,5 @@
 @synthesize sortTitle=_sortTitle;
 @synthesize committee=_committee;
 
-- (void)dealloc
-{
-    [_person release];
-    [_committee release];
-    [_title release];
-    [_sortTitle release];
-    [super dealloc];
-}
 
 @end

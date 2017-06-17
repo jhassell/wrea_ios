@@ -10,8 +10,8 @@
 
 @interface voteSet : NSObject
 
-@property (nonatomic) NSString *yeaVoteEntry;
-@property (nonatomic) NSString *nayVoteEntry;
+@property (nonatomic, weak) NSString *yeaVoteEntry;
+@property (nonatomic, weak) NSString *nayVoteEntry;
 - (void)setYeaVote:(NSString *)yeaVoteStatus;
 - (void)setNayVote:(NSString *)nayVoteStatus;
 

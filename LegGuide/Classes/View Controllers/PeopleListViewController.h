@@ -11,6 +11,6 @@
 @interface PeopleListViewController : UIViewController <UISearchBarDelegate>
 
 
-@property (nonatomic, retain) NSArray *sections;
+@property (nonatomic, strong) NSArray *sections;
 
 @end

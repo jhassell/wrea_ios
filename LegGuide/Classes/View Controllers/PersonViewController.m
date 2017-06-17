@@ -40,56 +40,56 @@
 
 @interface PersonViewController ()
 
-@property (retain, nonatomic) IBOutlet UIButton *backButton;
-@property (retain, nonatomic) IBOutlet UITableView *table;
-@property (retain, nonatomic) IBOutlet UIView *personHeaderView;
-@property (retain, nonatomic) IBOutlet UILabel *officeLabel;
-@property (retain, nonatomic) IBOutlet UILabel *nameLabel;
-@property (retain, nonatomic) IBOutlet UILabel *titleLabel;
-@property (retain, nonatomic) IBOutlet UILabel *partyAndDistrictLabel;
-@property (retain, nonatomic) IBOutlet UILabel *termLimitLabel;
+@property (strong, nonatomic) IBOutlet UIButton *backButton;
+@property (strong, nonatomic) IBOutlet UITableView *table;
+@property (strong, nonatomic) IBOutlet UIView *personHeaderView;
+@property (strong, nonatomic) IBOutlet UILabel *officeLabel;
+@property (strong, nonatomic) IBOutlet UILabel *nameLabel;
+@property (strong, nonatomic) IBOutlet UILabel *titleLabel;
+@property (strong, nonatomic) IBOutlet UILabel *partyAndDistrictLabel;
+@property (strong, nonatomic) IBOutlet UILabel *termLimitLabel;
 
-@property (retain, nonatomic) IBOutlet UIButton *mainEmailButton;
-@property (retain, nonatomic) IBOutlet UIButton *facebookButton;
-@property (retain, nonatomic) IBOutlet UIButton *twitterButton;
-@property (retain, nonatomic) IBOutlet UIButton *linkedInButton;
-@property (retain, nonatomic) IBOutlet UIButton *webpageButton;
+@property (strong, nonatomic) IBOutlet UIButton *mainEmailButton;
+@property (strong, nonatomic) IBOutlet UIButton *facebookButton;
+@property (strong, nonatomic) IBOutlet UIButton *twitterButton;
+@property (strong, nonatomic) IBOutlet UIButton *linkedInButton;
+@property (strong, nonatomic) IBOutlet UIButton *webpageButton;
 
-@property (retain, nonatomic) IBOutlet UIView *photoNAView;
-@property (retain, nonatomic) IBOutlet UIImageView *headshotView;
-@property (retain, nonatomic) IBOutlet UITableViewCell *countiesCell;
-@property (retain, nonatomic) IBOutlet UITableViewCell *committeeHeaderCell;
-@property (retain, nonatomic) IBOutlet UITableViewCell *notesHeaderCell;
-@property (retain, nonatomic) IBOutlet UITableViewCell *notesCell;
-@property (retain, nonatomic) IBOutlet UITableViewCell *coopProfileCell;
-@property (retain, nonatomic) IBOutlet UITableViewCell *bioButtonCell;
-@property (retain, nonatomic) IBOutlet UITableViewCell *boardMembersCell;
+@property (strong, nonatomic) IBOutlet UIView *photoNAView;
+@property (strong, nonatomic) IBOutlet UIImageView *headshotView;
+@property (strong, nonatomic) IBOutlet UITableViewCell *countiesCell;
+@property (strong, nonatomic) IBOutlet UITableViewCell *committeeHeaderCell;
+@property (strong, nonatomic) IBOutlet UITableViewCell *notesHeaderCell;
+@property (strong, nonatomic) IBOutlet UITableViewCell *notesCell;
+@property (strong, nonatomic) IBOutlet UITableViewCell *coopProfileCell;
+@property (strong, nonatomic) IBOutlet UITableViewCell *bioButtonCell;
+@property (strong, nonatomic) IBOutlet UITableViewCell *boardMembersCell;
 
 
-@property (retain, nonatomic) IBOutlet UITextView *countiesListLabel;
-@property (retain, nonatomic) IBOutlet UILabel *countiesListTitleLabel;
-@property (retain, nonatomic) IBOutlet UIButton *countyMapButton;
+@property (strong, nonatomic) IBOutlet UITextView *countiesListLabel;
+@property (strong, nonatomic) IBOutlet UILabel *countiesListTitleLabel;
+@property (strong, nonatomic) IBOutlet UIButton *countyMapButton;
 
-@property (retain, nonatomic) IBOutlet UILabel *typeOfCoopLabel;
-@property (retain, nonatomic) IBOutlet UILabel *milesOfLineLabel;
-@property (retain, nonatomic) IBOutlet UILabel *activeMetersLabel;
-@property (retain, nonatomic) IBOutlet UILabel *activeMetersPerMileLabel;
-@property (retain, nonatomic) IBOutlet UILabel *numberOfEmployeesLabel;
+@property (strong, nonatomic) IBOutlet UILabel *typeOfCoopLabel;
+@property (strong, nonatomic) IBOutlet UILabel *milesOfLineLabel;
+@property (strong, nonatomic) IBOutlet UILabel *activeMetersLabel;
+@property (strong, nonatomic) IBOutlet UILabel *activeMetersPerMileLabel;
+@property (strong, nonatomic) IBOutlet UILabel *numberOfEmployeesLabel;
 
-@property (retain, nonatomic) IBOutlet UIView *headshotModalView;
-@property (retain, nonatomic) IBOutlet UIImageView *headshotImageView;
-@property (retain, nonatomic) IBOutlet UIButton *headshotButton;
+@property (strong, nonatomic) IBOutlet UIView *headshotModalView;
+@property (strong, nonatomic) IBOutlet UIImageView *headshotImageView;
+@property (strong, nonatomic) IBOutlet UIButton *headshotButton;
 
-@property (retain, nonatomic) IBOutlet BlueButton *bioButton;
+@property (strong, nonatomic) IBOutlet BlueButton *bioButton;
 
-@property (retain, nonatomic) NSMutableArray *sections;
+@property (strong, nonatomic) NSMutableArray *sections;
 
-@property (retain, nonatomic) IBOutlet UIView *bioView;
-@property (retain, nonatomic) IBOutlet UIWebView *bioWebView;
-@property (retain, nonatomic) IBOutlet UILabel *bioLabel;
+@property (strong, nonatomic) IBOutlet UIView *bioView;
+@property (strong, nonatomic) IBOutlet UIWebView *bioWebView;
+@property (strong, nonatomic) IBOutlet UILabel *bioLabel;
 
-@property (retain, nonatomic) IBOutlet UILabel *boardMembersTitleLabel;
-@property (retain, nonatomic) IBOutlet UITextView *boardMembersTextView;
+@property (strong, nonatomic) IBOutlet UILabel *boardMembersTitleLabel;
+@property (strong, nonatomic) IBOutlet UITextView *boardMembersTextView;
 
 - (IBAction)headshotButtonPressed:(id)sender;
 - (IBAction)headshotModelCloseButtonPressed:(id)sender;
@@ -287,7 +287,6 @@
         
 //        [self presentModalViewController:mailer animated:YES];
         [self presentViewController:mailer animated:YES completion:nil];
-        [mailer release];
         
     }
     else
@@ -298,7 +297,6 @@
                                               cancelButtonTitle:@"OK"
                                               otherButtonTitles:nil];
         [alert show];
-        [alert release];
     }
     
 }
@@ -331,7 +329,7 @@
     
     //NSLog(@"district map button pressed");
     
-    MapsViewController *mvp = [[[MapsViewController alloc] initWithNibName:@"MapView-iPhone" bundle:nil] autorelease];
+    MapsViewController *mvp = [[MapsViewController alloc] initWithNibName:@"MapView-iPhone" bundle:nil];
     
     mvp.person = self.person;
     
@@ -425,8 +423,8 @@
 
     UITableViewCell *cell=nil;
     
-    //static NSString *CellIdentifier = @"Cell";
-    //UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    static NSString *CellIdentifier = @"Cell";
+    cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     ListSection *listSection = [self.sections objectAtIndex:indexPath.section];
     
@@ -436,7 +434,7 @@
 
     } else if ([listSection.title isEqualToString:SECTION_COOP_PROFILE]) {
 
-        NSNumberFormatter *numberFormat = [[[NSNumberFormatter alloc] init] autorelease];
+        NSNumberFormatter *numberFormat = [[NSNumberFormatter alloc] init];
         numberFormat.usesGroupingSeparator = YES;
         numberFormat.groupingSeparator = @",";
         numberFormat.groupingSize = 3;
@@ -679,9 +677,9 @@
         
         Committee *committee = [listSection.children objectAtIndex:indexPath.row];
         
-        PeopleListViewController *plvc = [[[PeopleListViewController alloc] initWithNibName:@"PeopleListView-iPhone" bundle:nil] autorelease];
+        PeopleListViewController *plvc = [[PeopleListViewController alloc] initWithNibName:@"PeopleListView-iPhone" bundle:nil];
         
-        ListSection *ls1 = [[[ListSection alloc] init] autorelease];
+        ListSection *ls1 = [[ListSection alloc] init];
         
         ls1.title = committee.name;
         ls1.children = committee.members;
@@ -826,7 +824,7 @@
     self.sections=[NSMutableArray arrayWithCapacity:5];
     
     if ([self.person.type isEqualToString:OAEC_MEMBER] && COOP_PROFILE) {
-        ListSection *section = [[[ListSection alloc] init] autorelease];
+        ListSection *section = [[ListSection alloc] init];
         section.title = SECTION_COOP_PROFILE;
         section.children = [NSMutableArray arrayWithCapacity:1];
         [section.children addObject:SECTION_COOP_PROFILE];
@@ -837,7 +835,7 @@
     }
 
     if ([self.person.type isEqualToString:OAEC_MEMBER] && self.person.coopBoard!=nil && [self.person.coopBoard length]>0) {
-        ListSection *section = [[[ListSection alloc] init] autorelease];
+        ListSection *section = [[ListSection alloc] init];
         section.title = SECTION_COOP_BOARD;
         section.children = [NSMutableArray arrayWithCapacity:1];
         [section.children addObject:self.person.coopBoard];
@@ -849,7 +847,7 @@
     
     if (self.person.countiesCovered!=nil && [[self.person.countiesCovered trim] length]>0) {
         
-        ListSection *section = [[[ListSection alloc] init] autorelease];
+        ListSection *section = [[ListSection alloc] init];
         
         section.title = SECTION_COUNTIES;
         section.children = [NSMutableArray arrayWithCapacity:1];
@@ -861,7 +859,7 @@
     }
     
     if (self.person.bio!=nil && [[self.person.bio trim] length]>0) {
-        ListSection *bioButtonSection = [[[ListSection alloc] init] autorelease];
+        ListSection *bioButtonSection = [[ListSection alloc] init];
         bioButtonSection.title = SECTION_BIO;
         bioButtonSection.rowHeight=55.0f;
         bioButtonSection.firstRowHeight=55.0f;
@@ -876,14 +874,14 @@
         email = [self.person.email trim];
     }
 
-    ListSection *addressSection = [[[ListSection alloc] init] autorelease];
+    ListSection *addressSection = [[ListSection alloc] init];
     
     addressSection.title = SECTION_ADDRESSES;
     addressSection.children = [NSMutableArray arrayWithCapacity:1];
     addressSection.rowHeight=165.0f;
     addressSection.firstRowHeight=0.0f;
     
-    Address *address1 = [[[Address alloc] init] autorelease];
+    Address *address1 = [[Address alloc] init];
     
     address1.name = workAddressName;
     address1.address = self.person.officeAddress;
@@ -920,7 +918,7 @@
     }
 
 
-    Address *address2 = [[[Address alloc] init] autorelease];
+    Address *address2 = [[Address alloc] init];
 
     address2.name = homeAddressName;
     address2.address = self.person.homeAddress;
@@ -961,7 +959,7 @@
     }
     
     if (self.person.committees!=nil && [self.person.committees count]>0) {
-        ListSection *committeeSection = [[[ListSection alloc] init] autorelease];
+        ListSection *committeeSection = [[ListSection alloc] init];
         
         committeeSection.title = SECTION_COMMITTEE;
         committeeSection.children = [NSMutableArray arrayWithCapacity:1];
@@ -1005,46 +1003,4 @@
 }
 
 
-- (void)dealloc {
-    [_backButton release];
-    [_table release];
-    [_personHeaderView release];
-    [_officeLabel release];
-    [_nameLabel release];
-    [_titleLabel release];
-    [_partyAndDistrictLabel release];
-    [_mainEmailButton release];
-    [_facebookButton release];
-    [_twitterButton release];
-    [_linkedInButton release];
-    [_webpageButton release];
-    [_photoNAView release];
-    [_headshotView release];
-    [_countiesCell release];
-    [_committeeHeaderCell release];
-    [_notesHeaderCell release];
-    [_notesCell release];
-    [_countiesListLabel release];
-    [_countiesListTitleLabel release];
-    [_termLimitLabel release];
-    [_countyMapButton release];
-    [_coopProfileCell release];
-    [_typeOfCoopLabel release];
-    [_milesOfLineLabel release];
-    [_activeMetersLabel release];
-    [_activeMetersPerMileLabel release];
-    [_numberOfEmployeesLabel release];
-    [_headshotModalView release];
-    [_headshotImageView release];
-    [_headshotButton release];
-    [_bioButtonCell release];
-    [_bioButton release];
-    [_bioView release];
-    [_bioWebView release];
-    [_bioLabel release];
-    [_boardMembersCell release];
-    [_boardMembersTitleLabel release];
-    [_boardMembersTextView release];
-    [super dealloc];
-}
 @end

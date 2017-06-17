@@ -12,8 +12,8 @@
 
 @interface PeopleListViewController ()
 
-@property (nonatomic, retain) PeopleListDelegate *peopleListDelegate;
-@property (retain, nonatomic) IBOutlet UITableView *peopleTable;
+@property (nonatomic, strong) PeopleListDelegate *peopleListDelegate;
+@property (strong, nonatomic) IBOutlet UITableView *peopleTable;
 
 - (IBAction)backButtonPushed:(id)sender;
 
@@ -70,7 +70,7 @@
 -(void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     if (self.peopleListDelegate==nil) {
-        self.peopleListDelegate = [[[PeopleListDelegate alloc] init] autorelease];
+        self.peopleListDelegate = [[PeopleListDelegate alloc] init];
         self.peopleListDelegate.viewController = self;
         self.peopleListDelegate.sections = self.sections;   
         self.peopleTable.delegate=self.peopleListDelegate;
@@ -87,12 +87,5 @@
 }
 
 
-- (void)dealloc
-{
-    [_sections release];
-    [_peopleTable release];
-    [_peopleListDelegate release];
-    [super dealloc];
-}
 
 @end

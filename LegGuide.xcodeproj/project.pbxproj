@@ -121,7 +121,6 @@
 		AFBEF2C71A63ABDD00623B1A /* silhouette_head_small.png in Resources */ = {isa = PBXBuildFile; fileRef = AFBEF2451A63ABDD00623B1A /* silhouette_head_small.png */; };
 		AFBEF2C81A63ABDD00623B1A /* AllenJH33.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AFBEF2471A63ABDD00623B1A /* AllenJH33.jpg */; };
 		AFBEF2C91A63ABDD00623B1A /* BakerH48.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AFBEF2481A63ABDD00623B1A /* BakerH48.jpg */; };
-		AFBEF2CA1A63ABDD00623B1A /* baldwinFH18.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AFBEF2491A63ABDD00623B1A /* baldwinFH18.jpg */; };
 		AFBEF2CB1A63ABDD00623B1A /* BarlowH03.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AFBEF24A1A63ABDD00623B1A /* BarlowH03.jpg */; };
 		AFBEF2CC1A63ABDD00623B1A /* BergerRH51.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AFBEF24B1A63ABDD00623B1A /* BergerRH51.jpg */; };
 		AFBEF2CD1A63ABDD00623B1A /* blackburnJH42.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AFBEF24C1A63ABDD00623B1A /* blackburnJH42.jpg */; };
@@ -168,7 +167,6 @@
 		AFBEF2F61A63ABDD00623B1A /* MaddenMH40.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AFBEF2751A63ABDD00623B1A /* MaddenMH40.jpg */; };
 		AFBEF2F71A63ABDD00623B1A /* McKimRH21.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AFBEF2761A63ABDD00623B1A /* McKimRH21.jpg */; };
 		AFBEF2F81A63ABDD00623B1A /* MillerDH55.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AFBEF2771A63ABDD00623B1A /* MillerDH55.jpg */; };
-		AFBEF2F91A63ABDD00623B1A /* MonizH46.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AFBEF2781A63ABDD00623B1A /* MonizH46.jpg */; };
 		AFBEF2FA1A63ABDD00623B1A /* NicholasH8.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AFBEF2791A63ABDD00623B1A /* NicholasH8.jpg */; };
 		AFBEF2FB1A63ABDD00623B1A /* NorthrupH50.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AFBEF27A1A63ABDD00623B1A /* NorthrupH50.jpg */; };
 		AFBEF2FC1A63ABDD00623B1A /* PattonJH29.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AFBEF27B1A63ABDD00623B1A /* PattonJH29.jpg */; };
@@ -270,9 +268,7 @@
 		CECFF9071EF233D0007BEF92 /* RollCallListDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CECFF8F51EF233D0007BEF92 /* RollCallListDelegate.m */; };
 		CECFF9091EF233D0007BEF92 /* Tally.m in Sources */ = {isa = PBXBuildFile; fileRef = CECFF8FA1EF233D0007BEF92 /* Tally.m */; };
 		CECFF90A1EF233D0007BEF92 /* TallyGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = CECFF8FC1EF233D0007BEF92 /* TallyGroup.m */; };
-		CECFF90B1EF233D0007BEF92 /* voteButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CECFF8FE1EF233D0007BEF92 /* voteButton.m */; };
 		CECFF90C1EF233D0007BEF92 /* voteSet.m in Sources */ = {isa = PBXBuildFile; fileRef = CECFF9001EF233D0007BEF92 /* voteSet.m */; };
-		CECFF90D1EF233D0007BEF92 /* VoteView.m in Sources */ = {isa = PBXBuildFile; fileRef = CECFF9021EF233D0007BEF92 /* VoteView.m */; };
 		CECFF90F1EF233D0007BEF92 /* CommitteeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = CECFF9061EF233D0007BEF92 /* CommitteeHeaderView.m */; };
 		CECFF9201EF233ED007BEF92 /* CLLocation+Strings.m in Sources */ = {isa = PBXBuildFile; fileRef = CECFF9111EF233ED007BEF92 /* CLLocation+Strings.m */; };
 		CECFF9211EF233ED007BEF92 /* CommitteeVoteListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CECFF9131EF233ED007BEF92 /* CommitteeVoteListViewController.m */; };
@@ -637,12 +633,8 @@
 		CECFF8FA1EF233D0007BEF92 /* Tally.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tally.m; sourceTree = "<group>"; };
 		CECFF8FB1EF233D0007BEF92 /* TallyGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TallyGroup.h; sourceTree = "<group>"; };
 		CECFF8FC1EF233D0007BEF92 /* TallyGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TallyGroup.m; sourceTree = "<group>"; };
-		CECFF8FD1EF233D0007BEF92 /* voteButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = voteButton.h; sourceTree = "<group>"; };
-		CECFF8FE1EF233D0007BEF92 /* voteButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = voteButton.m; sourceTree = "<group>"; };
 		CECFF8FF1EF233D0007BEF92 /* voteSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = voteSet.h; sourceTree = "<group>"; };
 		CECFF9001EF233D0007BEF92 /* voteSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = voteSet.m; sourceTree = "<group>"; };
-		CECFF9011EF233D0007BEF92 /* VoteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VoteView.h; sourceTree = "<group>"; };
-		CECFF9021EF233D0007BEF92 /* VoteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VoteView.m; sourceTree = "<group>"; };
 		CECFF9051EF233D0007BEF92 /* CommitteeHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommitteeHeaderView.h; sourceTree = "<group>"; };
 		CECFF9061EF233D0007BEF92 /* CommitteeHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommitteeHeaderView.m; sourceTree = "<group>"; };
 		CECFF9101EF233ED007BEF92 /* CLLocation+Strings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CLLocation+Strings.h"; sourceTree = "<group>"; };
@@ -855,12 +847,8 @@
 				CECFF8FC1EF233D0007BEF92 /* TallyGroup.m */,
 				AF2B105B16AF9D0700A3A7F4 /* UIColor-Expanded.h */,
 				AF2B105C16AF9D0700A3A7F4 /* UIColor-Expanded.m */,
-				CECFF8FD1EF233D0007BEF92 /* voteButton.h */,
-				CECFF8FE1EF233D0007BEF92 /* voteButton.m */,
 				CECFF8FF1EF233D0007BEF92 /* voteSet.h */,
 				CECFF9001EF233D0007BEF92 /* voteSet.m */,
-				CECFF9011EF233D0007BEF92 /* VoteView.h */,
-				CECFF9021EF233D0007BEF92 /* VoteView.m */,
 			);
 			path = Miscellaneous;
 			sourceTree = "<group>";
@@ -1341,7 +1329,6 @@
 				CE824D771E3EF2CB0091AE97 /* AgarWS20.jpg in Resources */,
 				AFBEF3071A63ABDD00623B1A /* ThroneMH11.jpg in Resources */,
 				CE824D6D1E3EF2AE0091AE97 /* SweeneyPH58.jpg in Resources */,
-				AFBEF2CA1A63ABDD00623B1A /* baldwinFH18.jpg in Resources */,
 				AFBEF2F41A63ABDD00623B1A /* LoucksH59.jpg in Resources */,
 				AFC926A61614408D009538FD /* Default-568h@2x.png in Resources */,
 				AFBEF3351A63ABDD00623B1A /* max2006.jpg in Resources */,
@@ -1582,7 +1569,6 @@
 				AFA73A7616B33E7500D13F1E /* AppIcon.png in Resources */,
 				AFBEF31C1A63ABDD00623B1A /* GeisGS20.jpg in Resources */,
 				AFA73A7716B33E7500D13F1E /* AppIcon@2x.png in Resources */,
-				AFBEF2F91A63ABDD00623B1A /* MonizH46.jpg in Resources */,
 				AFBEF2BB1A63ABDD00623B1A /* bhrec.jpg in Resources */,
 				AF866C4316B6F85300E9DF01 /* PersonViewPhoneCell-iPhone.xib in Resources */,
 				AF805B2818BB017500A70A45 /* Background2@2x.png in Resources */,
@@ -1625,13 +1611,11 @@
 				AF2B11B316AF9D0800A3A7F4 /* AppDelegate.m in Sources */,
 				AF2B11B416AF9D0800A3A7F4 /* CSVParser.m in Sources */,
 				AF2B11B516AF9D0800A3A7F4 /* DataLoader.m in Sources */,
-				CECFF90D1EF233D0007BEF92 /* VoteView.m in Sources */,
 				AF2B11B616AF9D0800A3A7F4 /* Boundary.m in Sources */,
 				AF2B11B716AF9D0800A3A7F4 /* BoundaryPolygon.m in Sources */,
 				AF2B11B816AF9D0800A3A7F4 /* Address.m in Sources */,
 				AF2B11B916AF9D0800A3A7F4 /* AddressLAViewCell.m in Sources */,
 				AF2B11BA16AF9D0800A3A7F4 /* AddressViewCell.m in Sources */,
-				CECFF90B1EF233D0007BEF92 /* voteButton.m in Sources */,
 				CECFF90C1EF233D0007BEF92 /* voteSet.m in Sources */,
 				AF2B11BB16AF9D0800A3A7F4 /* Committee.m in Sources */,
 				CECFF90A1EF233D0007BEF92 /* TallyGroup.m in Sources */,
@@ -1766,6 +1750,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				"ARCHS[sdk=*]" = "$(ARCHS_STANDARD)";
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "Developer ID Application";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
@@ -1792,6 +1777,7 @@
 		AF2481CD15BB6A260070924E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "Developer ID Application";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;

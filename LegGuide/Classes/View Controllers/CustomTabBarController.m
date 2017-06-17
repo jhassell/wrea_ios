@@ -39,9 +39,5 @@
     }
 }
 
--(void) dealloc {
-    [_navControllers release];
-    [super dealloc];
-}
 
 @end

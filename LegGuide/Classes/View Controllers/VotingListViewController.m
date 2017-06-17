@@ -21,8 +21,8 @@
 
 @interface VotingListViewController ()
 
-@property (nonatomic, retain) RollCallListDelegate *rollCallListDelegate;
-@property (retain, nonatomic) IBOutlet UITableView *rc_peopleTable;
+@property (nonatomic, strong) RollCallListDelegate *rollCallListDelegate;
+@property (strong, nonatomic) IBOutlet UITableView *rc_peopleTable;
 
 - (IBAction)backButtonPushed:(id)sender;
 
@@ -34,6 +34,9 @@
 //@synthesize rc_peopleTable=_rc_peopleTable;
 //@synthesize rc_sections=_rc_sections;
 //@synthesize rc_committee=_rc_committee;
+
+
+
 
 #pragma mark - UI Hooks
 
@@ -81,7 +84,7 @@
 -(void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     if (self.rollCallListDelegate==nil) {
-        self.rollCallListDelegate = [[[RollCallListDelegate alloc] init] autorelease];
+        self.rollCallListDelegate = [[RollCallListDelegate alloc] init];
         self.rollCallListDelegate.rc_viewController = self;
         self.rollCallListDelegate.rc_committee=self.rc_committee;
         self.rollCallListDelegate.rc_sections = self.rc_sections;
@@ -99,13 +102,5 @@
 }
 
 
-- (void)dealloc
-{
-    [_rc_committee release];
-    [_rc_sections release];
-    [_rc_peopleTable release];
-    [_rollCallListDelegate release];
-    [super dealloc];
-}
 
 @end

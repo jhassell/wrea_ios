@@ -58,8 +58,8 @@
 - (NSString *)hexStringFromColor;
 
 // The named color that matches this one most closely
-- (NSString *)closestColorName;
-- (NSString *)closestCrayonName;
+//- (NSString *)closestColorName;
+//- (NSString *)closestCrayonName;
 
 // Color builders
 + (UIColor *)randomColor;

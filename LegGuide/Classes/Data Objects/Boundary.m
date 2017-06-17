@@ -25,7 +25,7 @@
     BOOL isInside = NO; 
     for(BoundaryPolygon *boundaryPolygon in self.polygons) {
         MKPolygon *polygon = boundaryPolygon.polygon;
-        MKPolygonView *polygonView = [[MKPolygonView alloc] initWithPolygon:polygon];
+        MKPolygonRenderer *polygonView = [[MKPolygonRenderer alloc] initWithPolygon:polygon];
         MKMapPoint mapPoint = MKMapPointForCoordinate(point);        
         CGPoint polygonViewPoint = [polygonView pointForMapPoint:mapPoint];
         BOOL mapCoordinateIsInPolygon = CGPathContainsPoint(polygonView.path, NULL, 
@@ -76,11 +76,11 @@
         
         [self addPolygons:polygons];
         
-        _name=[name retain];
-        _type=[type retain];
-        _metadata=[metadata retain];
-        _color = [[UIColor randomColor] retain];
-        _set = [set retain];
+        _name=name;
+        _type=type;
+        _metadata=metadata;
+        _color = [UIColor randomColor];
+        _set = set;
     }
     return self;
 }
@@ -91,7 +91,7 @@
     } 
     
     if (_polygons==nil) {
-        _polygons = [polygons retain];
+        _polygons = polygons;
     } else {
         [_polygons addObjectsFromArray:polygons];
     }
@@ -133,7 +133,7 @@
                 CLLocationCoordinate2D *polygonCoordinates = [Boundary makeCLLocationCoordinate2DArrayFrom:polygon];
                 if (index==0) {
                     outerPolygonCoordinates = polygonCoordinates;
-                    outerPolygonPointCount = [polygon count];
+                    outerPolygonPointCount = (int)[polygon count];
                 } else {
                     MKPolygon *innerPolygon = [MKPolygon polygonWithCoordinates:polygonCoordinates count:[polygon count]];
                     [innerPolygons addObject:innerPolygon];
@@ -172,7 +172,7 @@
                           set:set
                           ];
 
-    return [boundary autorelease];
+    return boundary;
 }
 
 -(NSDictionary *) metadata {
@@ -180,15 +180,5 @@
 }
 
 
-- (void)dealloc
-{
-    [_color release];
-    [_set release];
-    [_polygons release];
-    [_metadata release];
-    [_name release];
-    [_type release];
-    [super dealloc];
-}
 
 @end

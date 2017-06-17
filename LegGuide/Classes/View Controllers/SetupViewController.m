@@ -21,8 +21,8 @@ static NSString * const kAccuracyValueKey = @"AccuracyValueKey";
 @property (nonatomic, strong) NSArray *accuracyOptions;
 @property (nonatomic, assign) BOOL configureForTracking;
 
-@property (nonatomic, assign) IBOutlet UIPickerView *accuracyPicker;
-@property (nonatomic, assign) IBOutlet UISlider *slider;
+@property (nonatomic, weak) IBOutlet UIPickerView *accuracyPicker;
+@property (nonatomic, weak) IBOutlet UISlider *slider;
 
 @end
 

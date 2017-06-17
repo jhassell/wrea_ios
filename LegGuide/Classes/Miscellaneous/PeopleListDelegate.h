@@ -13,7 +13,7 @@
 @interface PeopleListDelegate : NSObject <UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate>
 
 @property (nonatomic, strong) NSArray *sections;
-@property (nonatomic, assign) UIViewController<UISearchBarDelegate> *viewController;
-@property (nonatomic, assign) UITableView *peopleTable;
+@property (nonatomic, weak) UIViewController<UISearchBarDelegate> *viewController;
+@property (nonatomic, weak) UITableView *peopleTable;
 
 @end

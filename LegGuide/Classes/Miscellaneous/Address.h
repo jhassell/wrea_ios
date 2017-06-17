@@ -10,14 +10,14 @@
 
 @interface Address : NSObject
 
-@property (nonatomic, retain) NSString *name;
-@property (nonatomic, retain) NSString *address;
-@property (nonatomic, retain) NSString *roomNumber;
-@property (nonatomic, retain) NSString *city;
-@property (nonatomic, retain) NSString *state;
-@property (nonatomic, retain) NSString *zip;
-@property (nonatomic, retain) NSString *phone;
-@property (nonatomic, retain) NSString *email;
+@property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSString *address;
+@property (nonatomic, strong) NSString *roomNumber;
+@property (nonatomic, strong) NSString *city;
+@property (nonatomic, strong) NSString *state;
+@property (nonatomic, strong) NSString *zip;
+@property (nonatomic, strong) NSString *phone;
+@property (nonatomic, strong) NSString *email;
 
 
 -(BOOL) isEmpty;

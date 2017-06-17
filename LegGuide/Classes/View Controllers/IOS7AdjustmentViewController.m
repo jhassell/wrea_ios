@@ -10,8 +10,8 @@
 #import "OSVersionCheckMacros.h"
 
 @interface IOS7AdjustmentViewController ()
-@property (retain, nonatomic) IBOutlet UIView *adjustmentContainerView;
-@property (retain, nonatomic) UINavigationController *navController;
+@property (strong, nonatomic) IBOutlet UIView *adjustmentContainerView;
+@property (strong, nonatomic) UINavigationController *navController;
 
 @end
 
@@ -73,10 +73,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)dealloc {
-    [_adjustmentContainerView release];
-    [super dealloc];
-}
 - (void)viewDidUnload {
     [self setAdjustmentContainerView:nil];
     [super viewDidUnload];

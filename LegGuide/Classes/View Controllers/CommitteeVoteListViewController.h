@@ -10,7 +10,7 @@
 
 @interface CommitteeVoteListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
-@property (retain, nonatomic) IBOutlet UITableView *table;
-@property (nonatomic, retain) NSArray *sections;
+@property (strong, nonatomic) IBOutlet UITableView *table;
+@property (nonatomic, strong) NSArray *sections;
 
 @end
