@@ -336,8 +336,8 @@ RLM_ARRAY_TYPE(Realm_tally)
         rowCount+=1;
     }
 
-    //self.sectionTally = [Tally new];
-    //[self.sectionTally initWithParams:rowCount];
+    self.sectionTally = [Tally new];
+    self.sectionTally = [self.sectionTally initWithParams:rowCount];
 
     NSString *listSectionTitle = listSection.title;
     Realm_tally *realmTally = [[Realm_tally objectsWhere:@"name == %@ AND body == %@", listSectionTitle, self.rc_committee.body] firstObject];

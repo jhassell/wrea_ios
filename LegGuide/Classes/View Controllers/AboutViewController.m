@@ -41,8 +41,8 @@
 }
 
 - (IBAction)legislatureButtonPressed:(id)sender {
-    UINavigationController *nc = [self.tabBarController.viewControllers objectAtIndex:1];
-    [nc popToRootViewControllerAnimated:NO];
+    //UINavigationController *nc = [self.tabBarController.viewControllers objectAtIndex:1];
+    //[nc popToRootViewControllerAnimated:NO];
     [self.tabBarController setSelectedIndex:1];
 }
 
