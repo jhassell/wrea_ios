@@ -54,7 +54,7 @@
     AppDelegate *ad = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     
     PeopleListViewController *plvc = [[PeopleListViewController alloc] initWithNibName:@"PeopleListView-iPhone" bundle:nil];
-    plvc.sections = [ListSection buildSectionsFrom:ad.all dividedBy:@"Type" catchAllKey:nil includeKeys:[NSArray arrayWithObjects:OAEC_MEMBER, nil]];
+    plvc.sections = [ListSection buildSectionsFrom:ad.all dividedBy:@"Type" catchAllKey:nil includeKeys:[NSArray arrayWithObjects:WREA_MEMBER, nil]];
     
     [self.navigationController pushViewController:plvc animated:YES];
     

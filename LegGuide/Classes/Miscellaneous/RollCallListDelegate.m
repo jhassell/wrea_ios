@@ -695,7 +695,7 @@ RLM_ARRAY_TYPE(Realm_tally)
         CELL_TITLE.text=@"US Senator";
         CELL_SUBTITLE.text=person.titleLeadership;
         CELL_DISTRICT.text = person.party;
-    } else if ([person.type isEqualToString:OAEC_MEMBER]) {
+    } else if ([person.type isEqualToString:WREA_MEMBER]) {
         CELL_TITLE.frame = CGRectMake(CELL_TITLE.frame.origin.x, CELL_TITLE.frame.origin.y, 222.0f, CELL_TITLE.frame.size.height);
         CELL_TITLE.text=person.coopName;
         CELL_SUBTITLE.text=person.titleLeadership;

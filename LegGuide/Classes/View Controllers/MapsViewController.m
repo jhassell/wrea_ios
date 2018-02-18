@@ -530,7 +530,7 @@
             //title = self.person.titleLeadership;
             partyAndDistrict = self.person.party;
             personTitle=partyAndDistrict;
-        } else if ([self.person.type isEqualToString:OAEC_MEMBER]) {
+        } else if ([self.person.type isEqualToString:WREA_MEMBER]) {
             personTitle = self.person.titleLeadership;
         }
         

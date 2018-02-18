@@ -786,7 +786,7 @@
         self.officeLabel.text=@"US Senator";
         self.titleLabel.text=self.person.titleLeadership;
         self.partyAndDistrictLabel.text = self.person.party;
-    } else if ([self.person.type isEqualToString:OAEC_MEMBER]) {
+    } else if ([self.person.type isEqualToString:WREA_MEMBER]) {
         workAddressName = @"Contact Info";
         self.countiesListTitleLabel.text=@"Counties Covered";
         self.countyMapButton.hidden=YES;
@@ -823,7 +823,7 @@
     
     self.sections=[NSMutableArray arrayWithCapacity:5];
     
-    if ([self.person.type isEqualToString:OAEC_MEMBER] && COOP_PROFILE) {
+    if ([self.person.type isEqualToString:WREA_MEMBER] && COOP_PROFILE) {
         ListSection *section = [[ListSection alloc] init];
         section.title = SECTION_COOP_PROFILE;
         section.children = [NSMutableArray arrayWithCapacity:1];
@@ -834,7 +834,7 @@
         [self.sections addObject:section];
     }
 
-    if ([self.person.type isEqualToString:OAEC_MEMBER] && self.person.coopBoard!=nil && [self.person.coopBoard length]>0) {
+    if ([self.person.type isEqualToString:WREA_MEMBER] && self.person.coopBoard!=nil && [self.person.coopBoard length]>0) {
         ListSection *section = [[ListSection alloc] init];
         section.title = SECTION_COOP_BOARD;
         section.children = [NSMutableArray arrayWithCapacity:1];

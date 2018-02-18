@@ -1,13 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" colorMatched="YES" initialViewController="4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" colorMatched="YES" initialViewController="4">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Helvetica.ttc">
+            <string>Helvetica-BoldOblique</string>
+        </array>
+        <array key="TimesNewRoman.ttf">
+            <string>TimesNewRomanPSMT</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--First-->
         <scene sceneID="11">
@@ -26,7 +34,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" textAlignment="center" id="c9p-RB-SSg">
-                                <rect key="frame" x="5" y="142.5" width="364" height="221"/>
+                                <rect key="frame" x="5" y="143" width="364" height="221"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <string key="text">The Electric Power Associations of Mississippi serves as the unified voice of all electric cooperatives in Mississippi. While we do not generate or distribute power, we represent the people who do, the 25 electric power associations and one generation-and-transmission electric power association. These associations distribute electricity to more than 1.8 million Mississippians and serve more than 753,000 meters.</string>
@@ -45,7 +53,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="IMb-jp-abE" customClass="GreenButton">
-                                <rect key="frame" x="83" y="585.5" width="210" height="37"/>
+                                <rect key="frame" x="83" y="586" width="210" height="37"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                 <state key="normal" title="Legislative Contacts">
@@ -110,8 +118,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" image="AboutBackground_2017.jpg" id="Wte-gY-Ubc">
-                                <rect key="frame" x="27.5" y="0.0" width="320" height="600"/>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" image="AboutBackground_2018.jpg" id="Wte-gY-Ubc">
+                                <rect key="frame" x="28" y="0.0" width="320" height="600"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="7Bw-PO-Sg6">
@@ -198,7 +206,6 @@
                 <navigationController storyboardIdentifier="About" definesPresentationContext="YES" navigationBarHidden="YES" id="w78-Lv-si3" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="About" image="About.png" id="jRW-ad-rNe"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="nQQ-WZ-7HC">
-                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
@@ -238,7 +245,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" id="0Ex-Od-Msq">
-                                <rect key="frame" x="27.5" y="72" width="320" height="589"/>
+                                <rect key="frame" x="28" y="72" width="320" height="589"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="StateButtons.png" id="o2B-T6-IU9">
@@ -362,7 +369,6 @@
                     <tabBarItem key="tabBarItem" title="  State" image="State.png" id="xUS-M6-Mjm"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="dsG-5k-TPq">
-                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -425,7 +431,6 @@
                 <navigationController storyboardIdentifier="Map" definesPresentationContext="YES" navigationBarHidden="YES" id="VIV-G0-KR5" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Map" image="MapPin.png" id="4aO-zl-xV0"/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="tdV-6X-tNl">
-                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
@@ -444,7 +449,6 @@
                     <tabBarItem key="tabBarItem" title="Federal" image="Federal.png" id="cgZ-jk-9dO"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="TBR-nz-EJn">
-                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -880,7 +884,7 @@
     </scenes>
     <resources>
         <image name="About.png" width="30" height="30"/>
-        <image name="AboutBackground_2017.jpg" width="320" height="504"/>
+        <image name="AboutBackground_2018.jpg" width="320" height="504"/>
         <image name="Arrow_Left.png" width="50" height="47"/>
         <image name="Arrow_Right.png" width="50" height="47"/>
         <image name="Background.png" width="320" height="600"/>
@@ -898,11 +902,6 @@
         <image name="backButton.png" width="43" height="30"/>
         <image name="logo.png" width="320" height="50"/>
     </resources>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
-    </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="T6U-YE-eeX"/>
     </inferredMetricsTieBreakers>

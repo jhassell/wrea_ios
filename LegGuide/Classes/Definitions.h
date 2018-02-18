@@ -16,7 +16,7 @@
 #define JUDICIARY1          @"Wyoming Supreme Court"
 #define JUDICIARY2          @"Wyoming Court of Appeals"
 
-//#define OAEC_MEMBER         @"Member System"
+#define WREA_MEMBER         @"Member System"
 #define LEGISLATIVE_CONTACT @"WREA Leadership"
 #define STATE_NAME          @"Wyoming"
 #define STATE_ABBR          @"WY"

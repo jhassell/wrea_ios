@@ -229,6 +229,12 @@
 		AFBEF3351A63ABDD00623B1A /* max2006.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AFBEF2B61A63ABDD00623B1A /* max2006.jpg */; };
 		AFC926A61614408D009538FD /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AFC926A51614408D009538FD /* Default-568h@2x.png */; };
 		CE39B2691C3756E700ABFD81 /* deseret.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE39B2681C3756E700ABFD81 /* deseret.jpg */; };
+		CE6E89222035D138008EC7FA /* SimpsonEH21.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE6E89202035D137008EC7FA /* SimpsonEH21.jpg */; };
+		CE6E89232035D138008EC7FA /* stithH48.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE6E89212035D137008EC7FA /* stithH48.jpg */; };
+		CE6E89252035D4E6008EC7FA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE6E89242035D4E6008EC7FA /* Images.xcassets */; };
+		CE6E892720387433008EC7FA /* AboutBackground_2018@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE6E892620387432008EC7FA /* AboutBackground_2018@2x.jpg */; };
+		CE6E892920387444008EC7FA /* AboutBackground_2018.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE6E892820387444008EC7FA /* AboutBackground_2018.jpg */; };
+		CE6E892B20387622008EC7FA /* AppIcon-1024.png in Resources */ = {isa = PBXBuildFile; fileRef = CE6E892A20387622008EC7FA /* AppIcon-1024.png */; };
 		CE7CADC01C1C750A004042F8 /* BonerBS02.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE7CADBF1C1C750A004042F8 /* BonerBS02.jpg */; };
 		CE7CADC41C1CE85E004042F8 /* KinnerMH29.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE7CADC31C1CE85E004042F8 /* KinnerMH29.jpg */; };
 		CE7CADC61C1CF3E5004042F8 /* dp_logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE7CADC51C1CF3E5004042F8 /* dp_logo.jpg */; };
@@ -314,8 +320,6 @@
 		CECFF9771EF38BF0007BEF92 /* VoteTallyIcons_H.png in Resources */ = {isa = PBXBuildFile; fileRef = CECFF96B1EF38BF0007BEF92 /* VoteTallyIcons_H.png */; };
 		CECFF9781EF38BF0007BEF92 /* VoteTallyIcons_All@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CECFF96C1EF38BF0007BEF92 /* VoteTallyIcons_All@2x.png */; };
 		CECFF9791EF38BF0007BEF92 /* VoteTallyIcons_All.png in Resources */ = {isa = PBXBuildFile; fileRef = CECFF96D1EF38BF0007BEF92 /* VoteTallyIcons_All.png */; };
-		CEF8760B1E33999F00BEEAEF /* AboutBackground_2017.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CEF876091E33999F00BEEAEF /* AboutBackground_2017.jpg */; };
-		CEF8760C1E33999F00BEEAEF /* AboutBackground_2017@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CEF8760A1E33999F00BEEAEF /* AboutBackground_2017@2x.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -592,6 +596,12 @@
 		AFBEF2B61A63ABDD00623B1A /* max2006.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = max2006.jpg; sourceTree = "<group>"; };
 		AFC926A51614408D009538FD /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		CE39B2681C3756E700ABFD81 /* deseret.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = deseret.jpg; sourceTree = "<group>"; };
+		CE6E89202035D137008EC7FA /* SimpsonEH21.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = SimpsonEH21.jpg; sourceTree = "<group>"; };
+		CE6E89212035D137008EC7FA /* stithH48.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = stithH48.jpg; sourceTree = "<group>"; };
+		CE6E89242035D4E6008EC7FA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = wrealeg/Images.xcassets; sourceTree = "<group>"; };
+		CE6E892620387432008EC7FA /* AboutBackground_2018@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "AboutBackground_2018@2x.jpg"; sourceTree = "<group>"; };
+		CE6E892820387444008EC7FA /* AboutBackground_2018.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = AboutBackground_2018.jpg; sourceTree = "<group>"; };
+		CE6E892A20387622008EC7FA /* AppIcon-1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon-1024.png"; sourceTree = "<group>"; };
 		CE7CADBF1C1C750A004042F8 /* BonerBS02.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = BonerBS02.jpg; sourceTree = "<group>"; };
 		CE7CADC31C1CE85E004042F8 /* KinnerMH29.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = KinnerMH29.jpg; sourceTree = "<group>"; };
 		CE7CADC51C1CF3E5004042F8 /* dp_logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dp_logo.jpg; sourceTree = "<group>"; };
@@ -688,8 +698,6 @@
 		CECFF96B1EF38BF0007BEF92 /* VoteTallyIcons_H.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VoteTallyIcons_H.png; sourceTree = "<group>"; };
 		CECFF96C1EF38BF0007BEF92 /* VoteTallyIcons_All@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VoteTallyIcons_All@2x.png"; sourceTree = "<group>"; };
 		CECFF96D1EF38BF0007BEF92 /* VoteTallyIcons_All.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VoteTallyIcons_All.png; sourceTree = "<group>"; };
-		CEF876091E33999F00BEEAEF /* AboutBackground_2017.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = AboutBackground_2017.jpg; sourceTree = "<group>"; };
-		CEF8760A1E33999F00BEEAEF /* AboutBackground_2017@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "AboutBackground_2017@2x.jpg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -713,6 +721,7 @@
 		AF24819415BB6A250070924E = {
 			isa = PBXGroup;
 			children = (
+				CE6E89242035D4E6008EC7FA /* Images.xcassets */,
 				CECFF8F01EF23307007BEF92 /* Realm.framework */,
 				AF334CCA18AE586A00219F26 /* AppIcon-120.png */,
 				AFA73A7416B33E7500D13F1E /* AppIcon.png */,
@@ -750,6 +759,7 @@
 		AF2B102D16AF9D0700A3A7F4 /* LegGuide */ = {
 			isa = PBXGroup;
 			children = (
+				CE6E892A20387622008EC7FA /* AppIcon-1024.png */,
 				AF2B150C16AFBC9200A3A7F4 /* Data */,
 				AF2B102E16AF9D0700A3A7F4 /* Classes */,
 				AF2B107916AF9D0700A3A7F4 /* Images */,
@@ -895,6 +905,8 @@
 		AF2B107916AF9D0700A3A7F4 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				CE6E892820387444008EC7FA /* AboutBackground_2018.jpg */,
+				CE6E892620387432008EC7FA /* AboutBackground_2018@2x.jpg */,
 				CECFF9621EF38BF0007BEF92 /* VoteTallyIcons_Vote@2x.png */,
 				CECFF9631EF38BF0007BEF92 /* VoteTallyIcons_Vote.png */,
 				CECFF9641EF38BF0007BEF92 /* VoteTallyIcons_SC@2x.png */,
@@ -911,8 +923,6 @@
 				CECFF95F1EF35380007BEF92 /* BackgroundLight@2x.png */,
 				AF2B107A16AF9D0700A3A7F4 /* About.png */,
 				AF2B107B16AF9D0700A3A7F4 /* About@2x.png */,
-				CEF876091E33999F00BEEAEF /* AboutBackground_2017.jpg */,
-				CEF8760A1E33999F00BEEAEF /* AboutBackground_2017@2x.jpg */,
 				AF2B107D16AF9D0700A3A7F4 /* AboutBackground.png */,
 				AF2B107E16AF9D0700A3A7F4 /* AboutBackground@2x.png */,
 				CECFF9281EF23426007BEF92 /* All_VoteTallyIcon.png */,
@@ -1104,6 +1114,8 @@
 		AFBEF2461A63ABDD00623B1A /* State Representatives */ = {
 			isa = PBXGroup;
 			children = (
+				CE6E89202035D137008EC7FA /* SimpsonEH21.jpg */,
+				CE6E89212035D137008EC7FA /* stithH48.jpg */,
 				CE824D461E3EF2AE0091AE97 /* BitemanDH51.jpg */,
 				CE824D471E3EF2AE0091AE97 /* BoveeDH36.jpg */,
 				CE824D481E3EF2AE0091AE97 /* BrownLH09.jpg */,
@@ -1337,6 +1349,7 @@
 				AF2B11DA16AF9D0800A3A7F4 /* About.png in Resources */,
 				AFBEF2F71A63ABDD00623B1A /* McKimRH21.jpg in Resources */,
 				CE824D681E3EF2AE0091AE97 /* LoneLH12.jpg in Resources */,
+				CE6E892920387444008EC7FA /* AboutBackground_2018.jpg in Resources */,
 				AFBEF2F81A63ABDD00623B1A /* MillerDH55.jpg in Resources */,
 				CECFF9461EF23426007BEF92 /* senateCommittee@2x.png in Resources */,
 				AFBEF2DA1A63ABDD00623B1A /* DaytonJH17.jpg in Resources */,
@@ -1355,6 +1368,7 @@
 				AFBEF2F51A63ABDD00623B1A /* LubnauTH31.jpg in Resources */,
 				CE824D7B1E3EF2CB0091AE97 /* EllisAS08.jpg in Resources */,
 				AFBEF31A1A63ABDD00623B1A /* EmerichS5.jpg in Resources */,
+				CE6E892B20387622008EC7FA /* AppIcon-1024.png in Resources */,
 				AFBEF3011A63ABDD00623B1A /* ReederH58.jpg in Resources */,
 				AFBEF2E21A63ABDD00623B1A /* GogglesPH33.jpg in Resources */,
 				AFBEF3171A63ABDD00623B1A /* CraftBH17.jpg in Resources */,
@@ -1396,7 +1410,6 @@
 				CECFF9541EF23486007BEF92 /* VoteTallyHeaderView-iPhone.xib in Resources */,
 				AFBEF3261A63ABDD00623B1A /* pappassS07.jpg in Resources */,
 				CECFF9781EF38BF0007BEF92 /* VoteTallyIcons_All@2x.png in Resources */,
-				CEF8760C1E33999F00BEEAEF /* AboutBackground_2017@2x.jpg in Resources */,
 				AF2B11F116AF9D0800A3A7F4 /* Federal@2x.png in Resources */,
 				AF2B11FC16AF9D0800A3A7F4 /* logo.png in Resources */,
 				AFBEF2EA1A63ABDD00623B1A /* JaggiAH18.jpg in Resources */,
@@ -1404,9 +1417,9 @@
 				CECFF9701EF38BF0007BEF92 /* VoteTallyIcons_SC@2x.png in Resources */,
 				AF2B11FD16AF9D0800A3A7F4 /* logo@2x.png in Resources */,
 				AFBEF3321A63ABDD00623B1A /* Jillian-bio.jpg in Resources */,
+				CE6E892720387433008EC7FA /* AboutBackground_2018@2x.jpg in Resources */,
 				AFBEF2FC1A63ABDD00623B1A /* PattonJH29.jpg in Resources */,
 				CECFF9721EF38BF0007BEF92 /* VoteTallyIcons_S@2x.png in Resources */,
-				CEF8760B1E33999F00BEEAEF /* AboutBackground_2017.jpg in Resources */,
 				AF85557C1A65115400130E89 /* steinmetzcH05.jpg in Resources */,
 				AF2B11FE16AF9D0800A3A7F4 /* MapPin.png in Resources */,
 				CECFF9421EF23426007BEF92 /* houseIcon.png in Resources */,
@@ -1458,6 +1471,7 @@
 				AFBEF2B81A63ABDD00623B1A /* Barrasso.jpg in Resources */,
 				AFBEF3201A63ABDD00623B1A /* JohnsonWS06.jpg in Resources */,
 				CECFF9601EF35380007BEF92 /* BackgroundLight.png in Resources */,
+				CE6E89222035D138008EC7FA /* SimpsonEH21.jpg in Resources */,
 				AFBEF3101A63ABDD00623B1A /* BarnardS15.jpg in Resources */,
 				CECFF9791EF38BF0007BEF92 /* VoteTallyIcons_All.png in Resources */,
 				AFBEF30C1A63ABDD00623B1A /* ZwonitzerDnH43.jpg in Resources */,
@@ -1485,6 +1499,7 @@
 				CE824D791E3EF2CB0091AE97 /* baldwinFH18.jpg in Resources */,
 				AFBEF2CE1A63ABDD00623B1A /* BlakeSH39.jpg in Resources */,
 				AFBEF2BD1A63ABDD00623B1A /* CPL_Logo.jpg in Resources */,
+				CE6E89232035D138008EC7FA /* stithH48.jpg in Resources */,
 				AFBEF3251A63ABDD00623B1A /* NuttingS7.jpg in Resources */,
 				CE824D761E3EF2CB0091AE97 /* Agar.jpg in Resources */,
 				CE824D7D1E3EF2CB0091AE97 /* NethercottTS04.jpg in Resources */,
@@ -1492,6 +1507,7 @@
 				CE824D661E3EF2AE0091AE97 /* HallinanTH32.jpg in Resources */,
 				AFBEF2E01A63ABDD00623B1A /* GayH36.jpg in Resources */,
 				AF1D28E318BDBE420093CE11 /* StateButtons.png in Resources */,
+				CE6E89252035D4E6008EC7FA /* Images.xcassets in Resources */,
 				CE824D651E3EF2AE0091AE97 /* HaleyWH46.jpg in Resources */,
 				CE824D7C1E3EF2CB0091AE97 /* MonizH46.jpg in Resources */,
 				CE824D671E3EF2AE0091AE97 /* HendersonWH41.jpg in Resources */,
@@ -1750,6 +1766,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				"ARCHS[sdk=*]" = "$(ARCHS_STANDARD)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "Developer ID Application";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -1777,6 +1795,8 @@
 		AF2481CD15BB6A260070924E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "Developer ID Application";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";

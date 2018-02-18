@@ -73,7 +73,7 @@
     self.judiciary1     = [self.all filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"Type=%@",JUDICIARY1]];
     self.judiciary2     = [self.all filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"Type=%@",JUDICIARY2]];
     
-    self.oaecMembers     = [self.all filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"Type=%@",OAEC_MEMBER]];
+    self.oaecMembers     = [self.all filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"Type=%@",WREA_MEMBER]];
     self.legislativeContacts = [self.all filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"Type=%@",LEGISLATIVE_CONTACT]];
 
     // alpha order senate, house
