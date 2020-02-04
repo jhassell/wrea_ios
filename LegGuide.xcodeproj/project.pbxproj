@@ -168,6 +168,28 @@
 		AFBEF3341A63ABDD00623B1A /* MattMead_Portrait_2011_large.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AFBEF2B51A63ABDD00623B1A /* MattMead_Portrait_2011_large.jpg */; };
 		AFBEF3351A63ABDD00623B1A /* max2006.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AFBEF2B61A63ABDD00623B1A /* max2006.jpg */; };
 		AFC926A61614408D009538FD /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AFC926A51614408D009538FD /* Default-568h@2x.png */; };
+		CE04FA1323E7B0E000B51AE0 /* CliffordAH33.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE04FA0A23E7B0E000B51AE0 /* CliffordAH33.jpg */; };
+		CE04FA1423E7B0E000B51AE0 /* NewsomeSH24.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE04FA0B23E7B0E000B51AE0 /* NewsomeSH24.jpg */; };
+		CE04FA1523E7B0E000B51AE0 /* YinMH16.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE04FA0C23E7B0E000B51AE0 /* YinMH16.jpg */; };
+		CE04FA1623E7B0E000B51AE0 /* TassRH40.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE04FA0D23E7B0E000B51AE0 /* TassRH40.jpg */; };
+		CE04FA1723E7B0E000B51AE0 /* DuncanSH05.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE04FA0E23E7B0E000B51AE0 /* DuncanSH05.jpg */; };
+		CE04FA1823E7B0E000B51AE0 /* WinterJH28.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE04FA0F23E7B0E000B51AE0 /* WinterJH28.jpg */; };
+		CE04FA1923E7B0E000B51AE0 /* WesternCH51.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE04FA1023E7B0E000B51AE0 /* WesternCH51.jpg */; };
+		CE04FA1A23E7B0E000B51AE0 /* BurlingameSH44.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE04FA1123E7B0E000B51AE0 /* BurlingameSH44.jpg */; };
+		CE04FA1B23E7B0E000B51AE0 /* WashutAH36.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE04FA1223E7B0E000B51AE0 /* WashutAH36.jpg */; };
+		CE04FA2323E7B12E00B51AE0 /* HutchingsLS05.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE04FA1C23E7B12E00B51AE0 /* HutchingsLS05.jpg */; };
+		CE04FA2423E7B12E00B51AE0 /* JamesTS13.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE04FA1D23E7B12E00B51AE0 /* JamesTS13.jpg */; };
+		CE04FA2523E7B12E00B51AE0 /* GierauMS17.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE04FA1E23E7B12E00B51AE0 /* GierauMS17.jpg */; };
+		CE04FA2623E7B12E00B51AE0 /* BitemanBS21.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE04FA1F23E7B12E00B51AE0 /* BitemanBS21.jpg */; };
+		CE04FA2723E7B12E00B51AE0 /* SchulerWS15.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE04FA2023E7B12E00B51AE0 /* SchulerWS15.jpg */; };
+		CE04FA2823E7B12E00B51AE0 /* SteinmetzCS03.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE04FA2123E7B12E00B51AE0 /* SteinmetzCS03.jpg */; };
+		CE04FA2923E7B12E00B51AE0 /* KostRS19.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE04FA2223E7B12E00B51AE0 /* KostRS19.jpg */; };
+		CE04FA2F23E7B13F00B51AE0 /* JBalow1 Sup of Pub Instruction.png in Resources */ = {isa = PBXBuildFile; fileRef = CE04FA2A23E7B13F00B51AE0 /* JBalow1 Sup of Pub Instruction.png */; };
+		CE04FA3023E7B13F00B51AE0 /* Treasurer Meier.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE04FA2B23E7B13F00B51AE0 /* Treasurer Meier.jpg */; };
+		CE04FA3123E7B13F00B51AE0 /* GovGordonOfficialPortrait_small.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE04FA2C23E7B13F00B51AE0 /* GovGordonOfficialPortrait_small.jpg */; };
+		CE04FA3223E7B13F00B51AE0 /* Auditor Racines Small.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE04FA2D23E7B13F00B51AE0 /* Auditor Racines Small.jpg */; };
+		CE04FA3323E7B13F00B51AE0 /* Ed_Buchanan Sec of State.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE04FA2E23E7B13F00B51AE0 /* Ed_Buchanan Sec of State.jpg */; };
+		CE04FA3523E8578B00B51AE0 /* AboutBackground_2020@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE04FA3423E8578B00B51AE0 /* AboutBackground_2020@2x.jpg */; };
 		CE2F310921FD77EB00F18CAE /* MonizGS10.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE2F30FE21FD77EA00F18CAE /* MonizGS10.jpg */; };
 		CE2F310A21FD77EB00F18CAE /* James.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE2F30FF21FD77EA00F18CAE /* James.jpg */; };
 		CE2F310B21FD77EB00F18CAE /* Schuler.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE2F310021FD77EA00F18CAE /* Schuler.jpg */; };
@@ -489,6 +511,28 @@
 		AFBEF2B51A63ABDD00623B1A /* MattMead_Portrait_2011_large.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MattMead_Portrait_2011_large.jpg; sourceTree = "<group>"; };
 		AFBEF2B61A63ABDD00623B1A /* max2006.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = max2006.jpg; sourceTree = "<group>"; };
 		AFC926A51614408D009538FD /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		CE04FA0A23E7B0E000B51AE0 /* CliffordAH33.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = CliffordAH33.jpg; sourceTree = "<group>"; };
+		CE04FA0B23E7B0E000B51AE0 /* NewsomeSH24.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = NewsomeSH24.jpg; sourceTree = "<group>"; };
+		CE04FA0C23E7B0E000B51AE0 /* YinMH16.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = YinMH16.jpg; sourceTree = "<group>"; };
+		CE04FA0D23E7B0E000B51AE0 /* TassRH40.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = TassRH40.jpg; sourceTree = "<group>"; };
+		CE04FA0E23E7B0E000B51AE0 /* DuncanSH05.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = DuncanSH05.jpg; sourceTree = "<group>"; };
+		CE04FA0F23E7B0E000B51AE0 /* WinterJH28.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = WinterJH28.jpg; sourceTree = "<group>"; };
+		CE04FA1023E7B0E000B51AE0 /* WesternCH51.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = WesternCH51.jpg; sourceTree = "<group>"; };
+		CE04FA1123E7B0E000B51AE0 /* BurlingameSH44.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = BurlingameSH44.jpg; sourceTree = "<group>"; };
+		CE04FA1223E7B0E000B51AE0 /* WashutAH36.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = WashutAH36.jpg; sourceTree = "<group>"; };
+		CE04FA1C23E7B12E00B51AE0 /* HutchingsLS05.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = HutchingsLS05.jpg; sourceTree = "<group>"; };
+		CE04FA1D23E7B12E00B51AE0 /* JamesTS13.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = JamesTS13.jpg; sourceTree = "<group>"; };
+		CE04FA1E23E7B12E00B51AE0 /* GierauMS17.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = GierauMS17.jpg; sourceTree = "<group>"; };
+		CE04FA1F23E7B12E00B51AE0 /* BitemanBS21.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = BitemanBS21.jpg; sourceTree = "<group>"; };
+		CE04FA2023E7B12E00B51AE0 /* SchulerWS15.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = SchulerWS15.jpg; sourceTree = "<group>"; };
+		CE04FA2123E7B12E00B51AE0 /* SteinmetzCS03.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = SteinmetzCS03.jpg; sourceTree = "<group>"; };
+		CE04FA2223E7B12E00B51AE0 /* KostRS19.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = KostRS19.jpg; sourceTree = "<group>"; };
+		CE04FA2A23E7B13F00B51AE0 /* JBalow1 Sup of Pub Instruction.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "JBalow1 Sup of Pub Instruction.png"; sourceTree = "<group>"; };
+		CE04FA2B23E7B13F00B51AE0 /* Treasurer Meier.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Treasurer Meier.jpg"; sourceTree = "<group>"; };
+		CE04FA2C23E7B13F00B51AE0 /* GovGordonOfficialPortrait_small.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = GovGordonOfficialPortrait_small.jpg; sourceTree = "<group>"; };
+		CE04FA2D23E7B13F00B51AE0 /* Auditor Racines Small.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Auditor Racines Small.jpg"; sourceTree = "<group>"; };
+		CE04FA2E23E7B13F00B51AE0 /* Ed_Buchanan Sec of State.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Ed_Buchanan Sec of State.jpg"; sourceTree = "<group>"; };
+		CE04FA3423E8578B00B51AE0 /* AboutBackground_2020@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "AboutBackground_2020@2x.jpg"; sourceTree = "<group>"; };
 		CE2F30FE21FD77EA00F18CAE /* MonizGS10.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = MonizGS10.jpg; sourceTree = "<group>"; };
 		CE2F30FF21FD77EA00F18CAE /* James.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = James.jpg; sourceTree = "<group>"; };
 		CE2F310021FD77EA00F18CAE /* Schuler.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Schuler.jpg; sourceTree = "<group>"; };
@@ -815,6 +859,7 @@
 		AF2B107916AF9D0700A3A7F4 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				CE04FA3423E8578B00B51AE0 /* AboutBackground_2020@2x.jpg */,
 				CE2F312C21FE37C200F18CAE /* AboutBackground_2019.jpg */,
 				CE2F312D21FE37C400F18CAE /* AboutBackground_2019@2x.jpg */,
 				CE6E892820387444008EC7FA /* AboutBackground_2018.jpg */,
@@ -1026,6 +1071,15 @@
 		AFBEF2461A63ABDD00623B1A /* State Representatives */ = {
 			isa = PBXGroup;
 			children = (
+				CE04FA1123E7B0E000B51AE0 /* BurlingameSH44.jpg */,
+				CE04FA0A23E7B0E000B51AE0 /* CliffordAH33.jpg */,
+				CE04FA0E23E7B0E000B51AE0 /* DuncanSH05.jpg */,
+				CE04FA0B23E7B0E000B51AE0 /* NewsomeSH24.jpg */,
+				CE04FA0D23E7B0E000B51AE0 /* TassRH40.jpg */,
+				CE04FA1223E7B0E000B51AE0 /* WashutAH36.jpg */,
+				CE04FA1023E7B0E000B51AE0 /* WesternCH51.jpg */,
+				CE04FA0F23E7B0E000B51AE0 /* WinterJH28.jpg */,
+				CE04FA0C23E7B0E000B51AE0 /* YinMH16.jpg */,
 				AFBEF24A1A63ABDD00623B1A /* BarlowH03.jpg */,
 				AFBEF24C1A63ABDD00623B1A /* blackburnJH42.jpg */,
 				AFBEF24D1A63ABDD00623B1A /* BlakeSH39.jpg */,
@@ -1093,6 +1147,13 @@
 		AFBEF28D1A63ABDD00623B1A /* State Senators */ = {
 			isa = PBXGroup;
 			children = (
+				CE04FA1F23E7B12E00B51AE0 /* BitemanBS21.jpg */,
+				CE04FA1E23E7B12E00B51AE0 /* GierauMS17.jpg */,
+				CE04FA1C23E7B12E00B51AE0 /* HutchingsLS05.jpg */,
+				CE04FA1D23E7B12E00B51AE0 /* JamesTS13.jpg */,
+				CE04FA2223E7B12E00B51AE0 /* KostRS19.jpg */,
+				CE04FA2023E7B12E00B51AE0 /* SchulerWS15.jpg */,
+				CE04FA2123E7B12E00B51AE0 /* SteinmetzCS03.jpg */,
 				CE2F310321FD77EA00F18CAE /* BaldwinFS14.jpg */,
 				CE2F310821FD77EB00F18CAE /* BitemanDH51.jpg */,
 				CE2F310121FD77EA00F18CAE /* BonerS02.jpg */,
@@ -1130,6 +1191,11 @@
 		AFBEF2AF1A63ABDD00623B1A /* Statewide Officials */ = {
 			isa = PBXGroup;
 			children = (
+				CE04FA2D23E7B13F00B51AE0 /* Auditor Racines Small.jpg */,
+				CE04FA2E23E7B13F00B51AE0 /* Ed_Buchanan Sec of State.jpg */,
+				CE04FA2C23E7B13F00B51AE0 /* GovGordonOfficialPortrait_small.jpg */,
+				CE04FA2A23E7B13F00B51AE0 /* JBalow1 Sup of Pub Instruction.png */,
+				CE04FA2B23E7B13F00B51AE0 /* Treasurer Meier.jpg */,
 				AFBEF2B01A63ABDD00623B1A /* Cynthia-Portrait.jpg */,
 				AFBEF2B11A63ABDD00623B1A /* Ed_Murray.jpg */,
 				AFBEF2B21A63ABDD00623B1A /* Hill.jpg */,
@@ -1173,7 +1239,7 @@
 				ORGANIZATIONNAME = "Architactile LLC";
 				TargetAttributes = {
 					AF24819E15BB6A250070924E = {
-						DevelopmentTeam = 9FH8259N92;
+						DevelopmentTeam = H4QR9NTX3Q;
 					};
 				};
 			};
@@ -1182,6 +1248,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = AF24819415BB6A250070924E;
@@ -1203,15 +1270,18 @@
 				AF092D4115DA0FD200AA4B6B /* Default.png in Resources */,
 				AF092D4315DA0FDC00AA4B6B /* Default@2x.png in Resources */,
 				CE824D771E3EF2CB0091AE97 /* AgarWS20.jpg in Resources */,
+				CE04FA2723E7B12E00B51AE0 /* SchulerWS15.jpg in Resources */,
 				CE824D6D1E3EF2AE0091AE97 /* SweeneyPH58.jpg in Resources */,
 				CE2F312221FD780200F18CAE /* KirkbrideH04.jpg in Resources */,
 				AFBEF2F41A63ABDD00623B1A /* LoucksH59.jpg in Resources */,
 				AFC926A61614408D009538FD /* Default-568h@2x.png in Resources */,
 				AFBEF3351A63ABDD00623B1A /* max2006.jpg in Resources */,
+				CE04FA1B23E7B0E000B51AE0 /* WashutAH36.jpg in Resources */,
 				AF2B11D916AF9D0800A3A7F4 /* InfoPlist.strings in Resources */,
 				AFBEF3181A63ABDD00623B1A /* DockstaderDS16.jpg in Resources */,
 				AF2B11DA16AF9D0800A3A7F4 /* About.png in Resources */,
 				CE6E892920387444008EC7FA /* AboutBackground_2018.jpg in Resources */,
+				CE04FA2823E7B12E00B51AE0 /* SteinmetzCS03.jpg in Resources */,
 				AFBEF2F81A63ABDD00623B1A /* MillerDH55.jpg in Resources */,
 				CECFF9461EF23426007BEF92 /* senateCommittee@2x.png in Resources */,
 				AFBEF2DA1A63ABDD00623B1A /* DaytonJH17.jpg in Resources */,
@@ -1221,6 +1291,7 @@
 				AF2B11DD16AF9D0800A3A7F4 /* AboutBackground.png in Resources */,
 				AFBEF3151A63ABDD00623B1A /* CoeHS18.jpg in Resources */,
 				CE7CADD21C1D2D2A004042F8 /* TriState.jpg in Resources */,
+				CE04FA1523E7B0E000B51AE0 /* YinMH16.jpg in Resources */,
 				AF2B11DE16AF9D0800A3A7F4 /* AboutBackground@2x.png in Resources */,
 				AFBEF2E81A63ABDD00623B1A /* HuntH2.jpg in Resources */,
 				AFBEF3211A63ABDD00623B1A /* KinskeyDS22.jpg in Resources */,
@@ -1228,6 +1299,7 @@
 				AFBEF2B71A63ABDD00623B1A /* Lummis.jpg in Resources */,
 				CE824D7B1E3EF2CB0091AE97 /* EllisAS08.jpg in Resources */,
 				CE6E892B20387622008EC7FA /* AppIcon-1024.png in Resources */,
+				CE04FA3323E7B13F00B51AE0 /* Ed_Buchanan Sec of State.jpg in Resources */,
 				CECFF96E1EF38BF0007BEF92 /* VoteTallyIcons_Vote@2x.png in Resources */,
 				AF2B11E416AF9D0800A3A7F4 /* Arrow_Left@2x.png in Resources */,
 				AFBEF3111A63ABDD00623B1A /* BeboutES26.jpg in Resources */,
@@ -1238,9 +1310,12 @@
 				CE824D691E3EF2AE0091AE97 /* MacGuireJH35.jpg in Resources */,
 				AF2B11E616AF9D0800A3A7F4 /* Arrow_Right@2x.png in Resources */,
 				AFBEF2C51A63ABDD00623B1A /* wyrulec.jpg in Resources */,
+				CE04FA1A23E7B0E000B51AE0 /* BurlingameSH44.jpg in Resources */,
 				CE39B2691C3756E700ABFD81 /* deseret.jpg in Resources */,
 				CE2F311221FD77EB00F18CAE /* GierauMH16.jpg in Resources */,
 				AF2B11E716AF9D0800A3A7F4 /* backButton.png in Resources */,
+				CE04FA2923E7B12E00B51AE0 /* KostRS19.jpg in Resources */,
+				CE04FA3123E7B13F00B51AE0 /* GovGordonOfficialPortrait_small.jpg in Resources */,
 				AFBEF31E1A63ABDD00623B1A /* HicksS11.jpg in Resources */,
 				AFA36F551A78BE9B00A5D2E6 /* PownallBH52.jpg in Resources */,
 				AFBEF3131A63ABDD00623B1A /* CaseCS25.jpg in Resources */,
@@ -1257,6 +1332,7 @@
 				AFA36F541A78BE9B00A5D2E6 /* edwardsrH53.jpg in Resources */,
 				CECFF9541EF23486007BEF92 /* VoteTallyHeaderView-iPhone.xib in Resources */,
 				AFBEF3261A63ABDD00623B1A /* pappassS07.jpg in Resources */,
+				CE04FA3523E8578B00B51AE0 /* AboutBackground_2020@2x.jpg in Resources */,
 				CECFF9781EF38BF0007BEF92 /* VoteTallyIcons_All@2x.png in Resources */,
 				AF2B11F116AF9D0800A3A7F4 /* Federal@2x.png in Resources */,
 				AF2B11FC16AF9D0800A3A7F4 /* logo.png in Resources */,
@@ -1266,6 +1342,7 @@
 				AFBEF3321A63ABDD00623B1A /* Jillian-bio.jpg in Resources */,
 				CE6E892720387433008EC7FA /* AboutBackground_2018@2x.jpg in Resources */,
 				CECFF9721EF38BF0007BEF92 /* VoteTallyIcons_S@2x.png in Resources */,
+				CE04FA1623E7B0E000B51AE0 /* TassRH40.jpg in Resources */,
 				AF2B11FE16AF9D0800A3A7F4 /* MapPin.png in Resources */,
 				CE2F310D21FD77EB00F18CAE /* steinmetzcH05.jpg in Resources */,
 				CECFF9421EF23426007BEF92 /* houseIcon.png in Resources */,
@@ -1313,6 +1390,7 @@
 				CE6E89222035D138008EC7FA /* SimpsonEH21.jpg in Resources */,
 				CE2F310C21FD77EB00F18CAE /* BonerS02.jpg in Resources */,
 				CECFF9791EF38BF0007BEF92 /* VoteTallyIcons_All.png in Resources */,
+				CE04FA2423E7B12E00B51AE0 /* JamesTS13.jpg in Resources */,
 				AFBEF30C1A63ABDD00623B1A /* ZwonitzerDnH43.jpg in Resources */,
 				AFBEF3271A63ABDD00623B1A /* PerkinsDS29.jpg in Resources */,
 				AF1D28E418BDBE420093CE11 /* StateButtons@2x.png in Resources */,
@@ -1320,6 +1398,8 @@
 				CECFF9711EF38BF0007BEF92 /* VoteTallyIcons_SC.png in Resources */,
 				AF2B12FD16AF9D0800A3A7F4 /* MainStoryboard_iPad.storyboard in Resources */,
 				CECFF9471EF23426007BEF92 /* SenateCommittees__VoteTallyIcon.png in Resources */,
+				CE04FA3023E7B13F00B51AE0 /* Treasurer Meier.jpg in Resources */,
+				CE04FA2323E7B12E00B51AE0 /* HutchingsLS05.jpg in Resources */,
 				AF2B12FE16AF9D0800A3A7F4 /* MainStoryboard_iPhone.storyboard in Resources */,
 				AFBEF32F1A63ABDD00623B1A /* Cynthia-Portrait.jpg in Resources */,
 				AFBEF2D61A63ABDD00623B1A /* clemsH31.jpg in Resources */,
@@ -1335,6 +1415,7 @@
 				CE6E89232035D138008EC7FA /* stithH48.jpg in Resources */,
 				CE2F312921FD780200F18CAE /* Yin.jpg in Resources */,
 				CE824D7D1E3EF2CB0091AE97 /* NethercottTS04.jpg in Resources */,
+				CE04FA1923E7B0E000B51AE0 /* WesternCH51.jpg in Resources */,
 				CE824D621E3EF2AE0091AE97 /* FurphyDH14.jpg in Resources */,
 				CE824D661E3EF2AE0091AE97 /* HallinanTH32.jpg in Resources */,
 				AF1D28E318BDBE420093CE11 /* StateButtons.png in Resources */,
@@ -1343,6 +1424,7 @@
 				CE824D671E3EF2AE0091AE97 /* HendersonWH41.jpg in Resources */,
 				CECFF9391EF23426007BEF92 /* BlankNay.png in Resources */,
 				AF2B130016AF9D0800A3A7F4 /* PeopleListCell-iPhone.xib in Resources */,
+				CE04FA1823E7B0E000B51AE0 /* WinterJH28.jpg in Resources */,
 				CECFF9451EF23426007BEF92 /* senateCommittee.png in Resources */,
 				AF2B130116AF9D0800A3A7F4 /* PeopleListSearchCell-iPhone.xib in Resources */,
 				CE2F311321FD77EB00F18CAE /* BitemanDH51.jpg in Resources */,
@@ -1354,8 +1436,10 @@
 				AFBEF2C71A63ABDD00623B1A /* silhouette_head_small.png in Resources */,
 				CE2F312E21FE37C400F18CAE /* AboutBackground_2019.jpg in Resources */,
 				AF2B130316AF9D0800A3A7F4 /* PersonView-iPhone.xib in Resources */,
+				CE04FA3223E7B13F00B51AE0 /* Auditor Racines Small.jpg in Resources */,
 				CECFF93C1EF23426007BEF92 /* CheckNay.png in Resources */,
 				CECFF9501EF23486007BEF92 /* CommitteeHeaderView-iPhone.xib in Resources */,
+				CE04FA1323E7B0E000B51AE0 /* CliffordAH33.jpg in Resources */,
 				AF2B130416AF9D0800A3A7F4 /* PersonViewAddressCell-iPhone.xib in Resources */,
 				AF2B130516AF9D0800A3A7F4 /* PersonViewAddressLACell-iPhone.xib in Resources */,
 				CECFF96F1EF38BF0007BEF92 /* VoteTallyIcons_Vote.png in Resources */,
@@ -1363,6 +1447,7 @@
 				CECFF9491EF23447007BEF92 /* VoteTallIcon-09.png in Resources */,
 				CE7CADC41C1CE85E004042F8 /* KinnerMH29.jpg in Resources */,
 				CE824D6C1E3EF2AE0091AE97 /* SalazarTH34.jpg in Resources */,
+				CE04FA1723E7B0E000B51AE0 /* DuncanSH05.jpg in Resources */,
 				AFBEF3331A63ABDD00623B1A /* markgordon.jpg in Resources */,
 				AFBEF2FD1A63ABDD00623B1A /* PaxtonH47.jpg in Resources */,
 				AFBEF2CB1A63ABDD00623B1A /* BarlowH03.jpg in Resources */,
@@ -1399,6 +1484,7 @@
 				AF2B151916AFBC9200A3A7F4 /* StateHouseDistricts.json in Resources */,
 				AF2B151A16AFBC9200A3A7F4 /* StateSenateDistricts.json in Resources */,
 				CE2F310921FD77EB00F18CAE /* MonizGS10.jpg in Resources */,
+				CE04FA2F23E7B13F00B51AE0 /* JBalow1 Sup of Pub Instruction.png in Resources */,
 				CECFF9551EF23486007BEF92 /* VotingListCell-iPhone.xib in Resources */,
 				AF1D28FD18BF0C570093CE11 /* MemberSystems.json in Resources */,
 				CECFF93B1EF23426007BEF92 /* BlankYeaSlice.png in Resources */,
@@ -1409,12 +1495,15 @@
 				AF805B2818BB017500A70A45 /* Background2@2x.png in Resources */,
 				CE2F312621FD780200F18CAE /* Clifford.jpg in Resources */,
 				CE2F312821FD780200F18CAE /* Western.jpg in Resources */,
+				CE04FA2623E7B12E00B51AE0 /* BitemanBS21.jpg in Resources */,
 				CE824D601E3EF2AE0091AE97 /* EyreDH19.jpg in Resources */,
 				AF334CCB18AE586A00219F26 /* AppIcon-120.png in Resources */,
 				CE824D611E3EF2AE0091AE97 /* FlitnerJH26.jpg in Resources */,
 				AFBEF2EB1A63ABDD00623B1A /* jenningsmH30.jpg in Resources */,
 				CE824D5D1E3EF2AE0091AE97 /* ClausenRH06.jpg in Resources */,
 				CE2F312421FD780200F18CAE /* Tass.jpg in Resources */,
+				CE04FA2523E7B12E00B51AE0 /* GierauMS17.jpg in Resources */,
+				CE04FA1423E7B0E000B51AE0 /* NewsomeSH24.jpg in Resources */,
 				CE7CADD01C1D2B41004042F8 /* Basin_small.gif in Resources */,
 				CE2F312321FD780200F18CAE /* Burlingame.jpg in Resources */,
 			);
@@ -1591,6 +1680,7 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "Developer ID Application";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = H4QR9NTX3Q;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1620,6 +1710,7 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "Developer ID Application";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = H4QR9NTX3Q;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
