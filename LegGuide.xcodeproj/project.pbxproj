@@ -321,7 +321,7 @@
 		AF1D28E118BDBE420093CE11 /* StateButtons.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StateButtons.png; sourceTree = "<group>"; };
 		AF1D28E218BDBE420093CE11 /* StateButtons@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "StateButtons@2x.png"; sourceTree = "<group>"; };
 		AF1D28FC18BF0C570093CE11 /* MemberSystems.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MemberSystems.json; sourceTree = "<group>"; };
-		AF24819F15BB6A250070924E /* wrealeg.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wrealeg.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF24819F15BB6A250070924E /* WY 2020.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WY 2020.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF2481A315BB6A260070924E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		AF2481A515BB6A260070924E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		AF2481A715BB6A260070924E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -692,7 +692,7 @@
 		AF2481A015BB6A250070924E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AF24819F15BB6A250070924E /* wrealeg.app */,
+				AF24819F15BB6A250070924E /* WY 2020.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1226,7 +1226,7 @@
 			);
 			name = wrealeg;
 			productName = OAECLegGuide;
-			productReference = AF24819F15BB6A250070924E /* wrealeg.app */;
+			productReference = AF24819F15BB6A250070924E /* WY 2020.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1680,7 +1680,7 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "Developer ID Application";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 0;
 				DEVELOPMENT_TEAM = 9FH8259N92;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1693,10 +1693,10 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				MARKETING_VERSION = 2.7;
+				MARKETING_VERSION = 2.8;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.wyomingrea.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = org.wyomingrea.wrealeg;
+				PRODUCT_NAME = "WY 2020";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "armv7s armv7 arm64";
@@ -1712,7 +1712,7 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "Developer ID Application";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 0;
 				DEVELOPMENT_TEAM = 9FH8259N92;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1725,10 +1725,10 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				MARKETING_VERSION = 2.7;
+				MARKETING_VERSION = 2.8;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.wyomingrea.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = org.wyomingrea.wrealeg;
+				PRODUCT_NAME = "WY 2020";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "";
