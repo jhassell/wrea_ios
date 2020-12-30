@@ -298,6 +298,7 @@
 		CECFF9791EF38BF0007BEF92 /* VoteTallyIcons_All.png in Resources */ = {isa = PBXBuildFile; fileRef = CECFF96D1EF38BF0007BEF92 /* VoteTallyIcons_All.png */; };
 		CED78B79259BE61700A8E3AE /* Realm.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = CED78B78259BE61700A8E3AE /* Realm.xcframework */; };
 		CED78B7A259BE76D00A8E3AE /* Realm.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CED78B78259BE61700A8E3AE /* Realm.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CED78B7C259BF8C700A8E3AE /* AboutBackground_2021@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CED78B7B259BF8C600A8E3AE /* AboutBackground_2021@2x.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -321,7 +322,7 @@
 		AF1D28E118BDBE420093CE11 /* StateButtons.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StateButtons.png; sourceTree = "<group>"; };
 		AF1D28E218BDBE420093CE11 /* StateButtons@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "StateButtons@2x.png"; sourceTree = "<group>"; };
 		AF1D28FC18BF0C570093CE11 /* MemberSystems.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MemberSystems.json; sourceTree = "<group>"; };
-		AF24819F15BB6A250070924E /* WY 2020.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WY 2020.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF24819F15BB6A250070924E /* WY 2021.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WY 2021.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF2481A315BB6A260070924E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		AF2481A515BB6A260070924E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		AF2481A715BB6A260070924E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -652,6 +653,7 @@
 		CECFF96C1EF38BF0007BEF92 /* VoteTallyIcons_All@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VoteTallyIcons_All@2x.png"; sourceTree = "<group>"; };
 		CECFF96D1EF38BF0007BEF92 /* VoteTallyIcons_All.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VoteTallyIcons_All.png; sourceTree = "<group>"; };
 		CED78B78259BE61700A8E3AE /* Realm.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = Realm.xcframework; sourceTree = "<group>"; };
+		CED78B7B259BF8C600A8E3AE /* AboutBackground_2021@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "AboutBackground_2021@2x.jpg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -691,7 +693,7 @@
 		AF2481A015BB6A250070924E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AF24819F15BB6A250070924E /* WY 2020.app */,
+				AF24819F15BB6A250070924E /* WY 2021.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -859,6 +861,7 @@
 		AF2B107916AF9D0700A3A7F4 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				CED78B7B259BF8C600A8E3AE /* AboutBackground_2021@2x.jpg */,
 				CE04FA3423E8578B00B51AE0 /* AboutBackground_2020@2x.jpg */,
 				CE2F312C21FE37C200F18CAE /* AboutBackground_2019.jpg */,
 				CE2F312D21FE37C400F18CAE /* AboutBackground_2019@2x.jpg */,
@@ -1225,7 +1228,7 @@
 			);
 			name = wrealeg;
 			productName = OAECLegGuide;
-			productReference = AF24819F15BB6A250070924E /* WY 2020.app */;
+			productReference = AF24819F15BB6A250070924E /* WY 2021.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1477,6 +1480,7 @@
 				CE2F310A21FD77EB00F18CAE /* James.jpg in Resources */,
 				AFBEF32D1A63ABDD00623B1A /* VonflaternMS24.jpg in Resources */,
 				CE2F312021FD780200F18CAE /* Duncan.jpg in Resources */,
+				CED78B7C259BF8C700A8E3AE /* AboutBackground_2021@2x.jpg in Resources */,
 				CE2F312121FD780200F18CAE /* Newsome.jpg in Resources */,
 				CE2F310E21FD77EB00F18CAE /* BaldwinFS14.jpg in Resources */,
 				AFBEF2C21A63ABDD00623B1A /* NEA.jpg in Resources */,
@@ -1673,16 +1677,16 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LegGuide/LegGuide-Prefix.pch";
 				INFOPLIST_FILE = "LegGuide/LegGuide-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				MARKETING_VERSION = 2.8;
+				MARKETING_VERSION = 2.9;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = org.wyomingrea.wrealeg;
-				PRODUCT_NAME = "WY 2020";
+				PRODUCT_NAME = "WY 2021";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "armv7s armv7 arm64";
@@ -1708,16 +1712,16 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LegGuide/LegGuide-Prefix.pch";
 				INFOPLIST_FILE = "LegGuide/LegGuide-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				MARKETING_VERSION = 2.8;
+				MARKETING_VERSION = 2.9;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = org.wyomingrea.wrealeg;
-				PRODUCT_NAME = "WY 2020";
+				PRODUCT_NAME = "WY 2021";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "";
