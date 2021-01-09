@@ -33,6 +33,21 @@
     }
 }
 
+
+- (IBAction)message:(id)sender {
+    UIDevice *device = [UIDevice currentDevice];
+    NSString *phoneString = [(NSString *)self.phoneNumberToDial stringByReplacingOccurrencesOfString:@"(" withString:@""];
+    phoneString = [phoneString stringByReplacingOccurrencesOfString:@")" withString:@"-"];
+    phoneString = [phoneString stringByReplacingOccurrencesOfString:@" " withString:@""];
+    if ([[device model] isEqualToString:@"iPhone"] ) {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"sms:%@", phoneString]]];
+    } else {
+        UIAlertView *Notpermitted=[[UIAlertView alloc] initWithTitle:@"Alert" message:@"Sorry, but I can't seem to figure out how to dial the phone on this device." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [Notpermitted show];
+    }
+}
+
+
 - (IBAction)email:(id)sender {
     [pvc emailButtonPressed:sender];
 }

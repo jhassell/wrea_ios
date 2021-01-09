@@ -12,6 +12,7 @@
 
 +(NSArray *) loadCSVFile:(NSString *) csvPath ;
 +(NSArray *) buildCommitteesFromPeople:(NSArray *) people committeeKey:(NSString *) committeeKey;
++(void) loadPhotosFile:(NSString *) zipPath;
 
 
 @end

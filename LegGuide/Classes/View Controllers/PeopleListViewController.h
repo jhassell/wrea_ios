@@ -12,5 +12,7 @@
 
 
 @property (nonatomic, strong) NSArray *sections;
+@property (strong, nonatomic) IBOutlet UIButton *committeeMessageButton;
+@property (strong, nonatomic) IBOutlet UITableView *listTable;
 
 @end

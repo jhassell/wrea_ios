@@ -34,6 +34,7 @@
 #define HOME_PHONE      @"Home"
 #define CELL_PHONE      @"Mobile"
 #define TOLL_FREE_PHONE @"Toll Free"
+#define TEXT_MESSAGE    @"Message"
 
 #define ADDRESS_LINE_HEIGHT 38.0f
 #define ADDRESS_LA_HEIGHT 55.0f;
@@ -512,6 +513,7 @@
             addressCell.phoneButton.hidden=YES;
             addressCell.phoneInvisibleButton.hidden=YES;
             addressCell.phoneNumber.textColor=[UIColor blackColor];
+            
         } else {
             addressCell.phoneNumber.textColor=addressCell.emailAddress.textColor;
         }
@@ -542,16 +544,32 @@
                    [[(NSArray *)[listSection.children objectAtIndex:indexPath.row] objectAtIndex:0] isEqualToString:OFFICE_PHONE])) {
                    
                    static NSString *PhoneNumberCellIdentifier = @"PhoneNumberCell";
-                   AddressViewCell *phoneCell = [tableView dequeueReusableCellWithIdentifier:PhoneNumberCellIdentifier];
+                   static NSString *MessageNumberCellIdentifier = @"MessageNumberCell";
+                   AddressViewCell *phoneCell;
                    
+                   if ([[(NSArray *)[listSection.children objectAtIndex:indexPath.row] objectAtIndex:0] isEqualToString:CELL_PHONE]) {
+                       phoneCell = [tableView dequeueReusableCellWithIdentifier:MessageNumberCellIdentifier];
+                   } else {
+                       phoneCell = [tableView dequeueReusableCellWithIdentifier:PhoneNumberCellIdentifier];
+                   }
+
                    if (phoneCell == nil) {
-                       phoneCell = [[[NSBundle mainBundle] loadNibNamed:@"PersonViewPhoneCell-iPhone" owner:nil options:nil] objectAtIndex:0];
+                       if ([[(NSArray *)[listSection.children objectAtIndex:indexPath.row] objectAtIndex:0] isEqualToString:CELL_PHONE]) {
+                           phoneCell = [[[NSBundle mainBundle] loadNibNamed:@"PersonViewMessageCell-iPhone" owner:nil options:nil] objectAtIndex:0];
+                       } else {
+                           phoneCell = [[[NSBundle mainBundle] loadNibNamed:@"PersonViewPhoneCell-iPhone" owner:nil options:nil] objectAtIndex:0];
+                       }
                    }
                    
                    NSString *phoneType = [[listSection.children objectAtIndex:indexPath.row] objectAtIndex:0];
                    NSString *phoneString = [[listSection.children objectAtIndex:indexPath.row] objectAtIndex:1];
                    
-                   phoneCell.phoneNumber.text = [NSString stringWithFormat:@"%@ (%@)",phoneString,phoneType];
+                   if ([phoneType isEqualToString:@"Mobile"]) {
+                       phoneCell.phoneNumber.text = [NSString stringWithFormat:@"%@ (%@)",phoneString,@"Text Message"];
+                   } else {
+                       phoneCell.phoneNumber.text = [NSString stringWithFormat:@"%@ (%@)",phoneString,phoneType];
+                   }
+        
                    phoneCell.phoneNumberToDial = phoneString;
                    
                    UIDevice *device = [UIDevice currentDevice];
@@ -808,7 +826,22 @@
                 self.headshotImageView.image=[UIImage imageNamed:self.person.photo];
                 self.headshotButton.enabled=YES;
         } else {
-            self.headshotButton.enabled=NO;
+            //Attempt retrieve for photo in device Documents folder
+            NSArray *dirPaths;
+            NSString *docsDir;
+            dirPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+            docsDir = [dirPaths objectAtIndex:0];
+            NSString *docsPhotoFilename = [NSString stringWithFormat:@"%@/%@", docsDir, self.person.photo];
+            self.headshotView.image = [UIImage imageNamed:docsPhotoFilename];
+            
+            if (self.headshotView.image != nil) {
+                hasPhoto=YES;
+                self.headshotImageView.image = [UIImage imageNamed:docsPhotoFilename];
+                self.headshotButton.enabled=YES;
+            } else {
+                hasPhoto=NO;
+                self.headshotButton.enabled=NO;
+            }
         }
     }
     

@@ -13,6 +13,7 @@
 #import "NSDictionary+People.h"
 #import "NSString+Stuff.h"
 #import "Definitions.h"
+#import "SSZipArchive.h"
 
 @implementation DataLoader
 
@@ -191,6 +192,21 @@
     NSArray *sortDescriptors = [NSArray arrayWithObjects:sortByCommitteeName, nil];
     
     return [committeeArray sortedArrayUsingDescriptors:sortDescriptors];
+}
+
+
++(void) loadPhotosFile:(NSString *) zipPath {
+    NSArray *dirPaths;
+    NSString *docsDir;
+    
+    dirPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
+                                                   NSUserDomainMask, YES);
+    docsDir = [dirPaths objectAtIndex:0];
+    
+    printf("Photo file path: %s\n", [zipPath UTF8String]);
+    
+    // Unzip
+    [SSZipArchive unzipFileAtPath:zipPath toDestination:docsDir];
 }
 
 @end

@@ -247,6 +247,8 @@
 		CE824D7B1E3EF2CB0091AE97 /* EllisAS08.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE824D731E3EF2CB0091AE97 /* EllisAS08.jpg */; };
 		CE824D7D1E3EF2CB0091AE97 /* NethercottTS04.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE824D751E3EF2CB0091AE97 /* NethercottTS04.jpg */; };
 		CE824D7F1E3EF2E40091AE97 /* Cheney.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE824D7E1E3EF2E40091AE97 /* Cheney.jpg */; };
+		CE915B6925A81A1100AECB6A /* message.png in Resources */ = {isa = PBXBuildFile; fileRef = CE915B6825A81A1100AECB6A /* message.png */; };
+		CE915B6B25A95DB200AECB6A /* PersonViewMessageCell-iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE915B6A25A95DB200AECB6A /* PersonViewMessageCell-iPhone.xib */; };
 		CECFF9071EF233D0007BEF92 /* RollCallListDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CECFF8F51EF233D0007BEF92 /* RollCallListDelegate.m */; };
 		CECFF9091EF233D0007BEF92 /* Tally.m in Sources */ = {isa = PBXBuildFile; fileRef = CECFF8FA1EF233D0007BEF92 /* Tally.m */; };
 		CECFF90A1EF233D0007BEF92 /* TallyGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = CECFF8FC1EF233D0007BEF92 /* TallyGroup.m */; };
@@ -299,6 +301,7 @@
 		CED78B79259BE61700A8E3AE /* Realm.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = CED78B78259BE61700A8E3AE /* Realm.xcframework */; };
 		CED78B7A259BE76D00A8E3AE /* Realm.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CED78B78259BE61700A8E3AE /* Realm.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CED78B7C259BF8C700A8E3AE /* AboutBackground_2021@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CED78B7B259BF8C600A8E3AE /* AboutBackground_2021@2x.jpg */; };
+		DFC05076515F9788C4A888E2 /* libPods-wrealeg.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A96B6C35ECD64B30033E31CD /* libPods-wrealeg.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -316,6 +319,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		072C84ED0C1AABE2EE53A02B /* Pods-wrealeg.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wrealeg.release.xcconfig"; path = "Target Support Files/Pods-wrealeg/Pods-wrealeg.release.xcconfig"; sourceTree = "<group>"; };
+		5530E9475775C0EC1B32D197 /* Pods-wrealeg.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wrealeg.debug.xcconfig"; path = "Target Support Files/Pods-wrealeg/Pods-wrealeg.debug.xcconfig"; sourceTree = "<group>"; };
+		A96B6C35ECD64B30033E31CD /* libPods-wrealeg.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-wrealeg.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF092D4015DA0FD100AA4B6B /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		AF092D4215DA0FDC00AA4B6B /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		AF14BD4E160E373A003D2052 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
@@ -591,6 +597,8 @@
 		CE824D731E3EF2CB0091AE97 /* EllisAS08.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = EllisAS08.jpg; sourceTree = "<group>"; };
 		CE824D751E3EF2CB0091AE97 /* NethercottTS04.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = NethercottTS04.jpg; sourceTree = "<group>"; };
 		CE824D7E1E3EF2E40091AE97 /* Cheney.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Cheney.jpg; sourceTree = "<group>"; };
+		CE915B6825A81A1100AECB6A /* message.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = message.png; sourceTree = "<group>"; };
+		CE915B6A25A95DB200AECB6A /* PersonViewMessageCell-iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "PersonViewMessageCell-iPhone.xib"; sourceTree = "<group>"; };
 		CECFF8F51EF233D0007BEF92 /* RollCallListDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RollCallListDelegate.m; sourceTree = "<group>"; };
 		CECFF8F81EF233D0007BEF92 /* RollCallListDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RollCallListDelegate.h; sourceTree = "<group>"; };
 		CECFF8F91EF233D0007BEF92 /* Tally.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tally.h; sourceTree = "<group>"; };
@@ -668,12 +676,22 @@
 				CED78B79259BE61700A8E3AE /* Realm.xcframework in Frameworks */,
 				AF2481A615BB6A260070924E /* Foundation.framework in Frameworks */,
 				AF2481A815BB6A260070924E /* CoreGraphics.framework in Frameworks */,
+				DFC05076515F9788C4A888E2 /* libPods-wrealeg.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		228B40ACD34F24EEB0A6451D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5530E9475775C0EC1B32D197 /* Pods-wrealeg.debug.xcconfig */,
+				072C84ED0C1AABE2EE53A02B /* Pods-wrealeg.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		AF24819415BB6A250070924E = {
 			isa = PBXGroup;
 			children = (
@@ -687,6 +705,7 @@
 				AF2B102D16AF9D0700A3A7F4 /* LegGuide */,
 				AF2481A215BB6A260070924E /* Frameworks */,
 				AF2481A015BB6A250070924E /* Products */,
+				228B40ACD34F24EEB0A6451D /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -708,6 +727,7 @@
 				AF2481A315BB6A260070924E /* UIKit.framework */,
 				AF2481A515BB6A260070924E /* Foundation.framework */,
 				AF2481A715BB6A260070924E /* CoreGraphics.framework */,
+				A96B6C35ECD64B30033E31CD /* libPods-wrealeg.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -930,6 +950,7 @@
 		AF2B119316AF9D0800A3A7F4 /* Social Meida Icons */ = {
 			isa = PBXGroup;
 			children = (
+				CE915B6825A81A1100AECB6A /* message.png */,
 				AF2B119416AF9D0800A3A7F4 /* browser.png */,
 				AF2B119516AF9D0800A3A7F4 /* email.png */,
 				AF2B119616AF9D0800A3A7F4 /* facebook.png */,
@@ -944,6 +965,7 @@
 		AF2B11A416AF9D0800A3A7F4 /* NIBs */ = {
 			isa = PBXGroup;
 			children = (
+				CE915B6A25A95DB200AECB6A /* PersonViewMessageCell-iPhone.xib */,
 				CECFF94A1EF23486007BEF92 /* CommitteeHeaderView-iPhone.xib */,
 				CECFF94B1EF23486007BEF92 /* OutlinkCell-iPhone.xib */,
 				CECFF94C1EF23486007BEF92 /* PersonViewBioCell-iPhone.xib */,
@@ -1217,6 +1239,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AF2481CB15BB6A260070924E /* Build configuration list for PBXNativeTarget "wrealeg" */;
 			buildPhases = (
+				9EFBB4645E168A53E67AF3C2 /* [CP] Check Pods Manifest.lock */,
 				AF24819B15BB6A250070924E /* Sources */,
 				AF24819C15BB6A250070924E /* Frameworks */,
 				AF24819D15BB6A250070924E /* Resources */,
@@ -1281,6 +1304,7 @@
 				CE04FA1B23E7B0E000B51AE0 /* WashutAH36.jpg in Resources */,
 				AF2B11D916AF9D0800A3A7F4 /* InfoPlist.strings in Resources */,
 				AFBEF3181A63ABDD00623B1A /* DockstaderDS16.jpg in Resources */,
+				CE915B6925A81A1100AECB6A /* message.png in Resources */,
 				AF2B11DA16AF9D0800A3A7F4 /* About.png in Resources */,
 				CE6E892920387444008EC7FA /* AboutBackground_2018.jpg in Resources */,
 				CE04FA2823E7B12E00B51AE0 /* SteinmetzCS03.jpg in Resources */,
@@ -1425,6 +1449,7 @@
 				CE824D651E3EF2AE0091AE97 /* HaleyWH46.jpg in Resources */,
 				CE824D671E3EF2AE0091AE97 /* HendersonWH41.jpg in Resources */,
 				CECFF9391EF23426007BEF92 /* BlankNay.png in Resources */,
+				CE915B6B25A95DB200AECB6A /* PersonViewMessageCell-iPhone.xib in Resources */,
 				AF2B130016AF9D0800A3A7F4 /* PeopleListCell-iPhone.xib in Resources */,
 				CE04FA1823E7B0E000B51AE0 /* WinterJH28.jpg in Resources */,
 				CECFF9451EF23426007BEF92 /* senateCommittee.png in Resources */,
@@ -1513,6 +1538,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9EFBB4645E168A53E67AF3C2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-wrealeg-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AF24819B15BB6A250070924E /* Sources */ = {
@@ -1612,7 +1662,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				ONLY_ACTIVE_ARCH = YES;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
@@ -1646,7 +1696,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PROVISIONING_PROFILE = "777C488B-C5F9-434B-AF1D-4D3CC5E189F7";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "777C488B-C5F9-434B-AF1D-4D3CC5E189F7";
@@ -1660,6 +1710,7 @@
 		};
 		AF2481CC15BB6A260070924E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5530E9475775C0EC1B32D197 /* Pods-wrealeg.debug.xcconfig */;
 			buildSettings = {
 				"ARCHS[sdk=*]" = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -1683,8 +1734,22 @@
 					"@executable_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				MARKETING_VERSION = 2.9;
+				MARKETING_VERSION = 3.0;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"iconv\"",
+					"-l\"z\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.wyomingrea.wrealeg;
 				PRODUCT_NAME = "WY 2021";
 				PROVISIONING_PROFILE = "";
@@ -1696,6 +1761,7 @@
 		};
 		AF2481CD15BB6A260070924E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 072C84ED0C1AABE2EE53A02B /* Pods-wrealeg.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -1718,8 +1784,22 @@
 					"@executable_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				MARKETING_VERSION = 2.9;
+				MARKETING_VERSION = 3.0;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"iconv\"",
+					"-l\"z\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.wyomingrea.wrealeg;
 				PRODUCT_NAME = "WY 2021";
 				PROVISIONING_PROFILE = "";

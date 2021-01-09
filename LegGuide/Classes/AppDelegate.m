@@ -13,6 +13,8 @@
 #import "NSDictionary+People.h"
 #import "NSString+Stuff.h"
 #import "Definitions.h"
+#import "AFURLSessionManager.h"
+#import "SSZipArchive.h"
 
 @implementation AppDelegate
 
@@ -58,12 +60,18 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    mapDataLoaded = NO;
-    NSString *dataFilename = [[NSBundle mainBundle] pathForResource:@"data" ofType:@"csv"];
+
+    return YES;
+}
+
+- (void)downloadImmediateData {
+    [self downloadSpreadsheet];
+    [self downloadPhotosZipFile];
+}
+
+- (void)populateSpreadsheetData {
     
     NSLog(@"start load");
-    self.all = [DataLoader loadCSVFile:dataFilename];
-
     
     self.stateSenate    = [self.all filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"Type=%@",STATE_SENATE]];
     self.stateHouse     = [self.all filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"Type=%@",STATE_HOUSE]];
@@ -106,9 +114,124 @@
     
     self.oaecMembers = [self.oaecMembers sortedArrayUsingDescriptors:sortDescriptors];
     
-    NSLog(@"finish load");
+}
 
-    return YES;
+
+
+- (void)downloadSpreadsheet {
+    
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSArray *dirPaths;
+    NSString *docsDir;
+    
+    
+    NSURL *URL = [NSURL URLWithString:@"https://www.dropbox.com/s/rm99ldi2pyyyea5/data.csv?raw=1"];
+    
+    NSURLRequest *request = [NSURLRequest requestWithURL:URL];
+    
+    dirPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
+                                                   NSUserDomainMask, YES);
+    docsDir = [dirPaths objectAtIndex:0];
+    
+    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
+    
+    NSString *csvFilename = [NSString stringWithFormat:@"%@/%@", docsDir, @"data.csv"];
+    if ([fileManager fileExistsAtPath:csvFilename ] == YES)
+    {
+        NSError *error;
+        [fileManager removeItemAtPath:csvFilename error:&error];
+        NSLog (@"File deleted");
+    }
+    else
+    {
+        NSLog (@"File not found");
+    }
+    
+    NSURLSessionDownloadTask *downloadTask = [manager downloadTaskWithRequest:request progress:nil destination:^NSURL *(NSURL *targetPath, NSURLResponse *response) {
+        NSURL *documentsDirectoryURL = [[NSFileManager defaultManager] URLForDirectory:NSDocumentDirectory inDomain:NSUserDomainMask appropriateForURL:nil create:NO error:nil];
+        return [documentsDirectoryURL URLByAppendingPathComponent:[response suggestedFilename]];
+    } completionHandler:^(NSURLResponse *response, NSURL *filePath, NSError *error) {
+        mapDataLoaded = NO;
+        NSString *harddataFilename = [[NSBundle mainBundle] pathForResource:@"data" ofType:@"csv"];
+        NSString *previousDataFilename = [NSString stringWithFormat:@"%@/%@", docsDir, @"previousdata.csv"];
+        NSString *csvFilename = [NSString stringWithFormat:@"%@/%@", docsDir, @"data.csv"];
+        if ([fileManager fileExistsAtPath:csvFilename] == YES) {
+            // Load from recently downloaded csvFilename
+            self.all = [DataLoader loadCSVFile:csvFilename];
+            // Remove previousDataFilename
+            [fileManager removeItemAtPath:previousDataFilename error:&error];
+            // Copy recently downloaded csvFilename to previousDataFilename
+            [fileManager copyItemAtPath:csvFilename toPath:previousDataFilename error:&error];
+            // Remove csvFilename in preparation for next download
+            [fileManager removeItemAtPath:csvFilename error:&error];
+        } else if ([fileManager fileExistsAtPath:previousDataFilename]) {
+            self.all = [DataLoader loadCSVFile:previousDataFilename];
+        } else {
+            self.all = [DataLoader loadCSVFile:harddataFilename];
+        }
+        [self populateSpreadsheetData];
+    }];
+    [downloadTask resume];
+    
+}
+
+
+- (void)downloadPhotosZipFile {
+    
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSArray *dirPaths;
+    NSString *docsDir;
+    
+    dirPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
+                                                   NSUserDomainMask, YES);
+    docsDir = [dirPaths objectAtIndex:0];
+    
+    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
+    
+    // Download photos
+    NSURL *PHOTOS_URL = [NSURL URLWithString:@"https://www.dropbox.com/s/91facx85r9llxh9/photos.zip?raw=1"];
+    
+    NSURLRequest *photo_file_request = [NSURLRequest requestWithURL:PHOTOS_URL];
+    
+    NSString *photosFilename = [NSString stringWithFormat:@"%@/%@", docsDir, @"photos.zip"];
+    if ([fileManager fileExistsAtPath:photosFilename ] == YES)
+    {
+        NSError *error;
+        [fileManager removeItemAtPath:photosFilename error:&error];
+        NSLog (@"File deleted");
+    }
+    else
+    {
+        NSLog (@"File not found");
+    }
+    
+    NSURLSessionDownloadTask *photosDownloadTask = [manager downloadTaskWithRequest:photo_file_request progress:nil destination:^NSURL *(NSURL *targetPath, NSURLResponse *response) {
+        NSURL *documentsDirectoryURL = [[NSFileManager defaultManager] URLForDirectory:NSDocumentDirectory inDomain:NSUserDomainMask appropriateForURL:nil create:NO error:nil];
+        return [documentsDirectoryURL URLByAppendingPathComponent:[response suggestedFilename]];
+    } completionHandler:^(NSURLResponse *response, NSURL *filePath, NSError *error) {
+        NSString *hardphotosFilename = [[NSBundle mainBundle] pathForResource:@"photos" ofType:@"zip"];
+        NSString *previousPhotosFilename = [NSString stringWithFormat:@"%@/%@", docsDir, @"previousphotos.zip"];
+        NSString *photosFilename = [NSString stringWithFormat:@"%@/%@", docsDir, @"photos.zip"];
+        if ([fileManager fileExistsAtPath:photosFilename] == YES) {
+            // Load from recently downloaded csvFilename
+            [DataLoader loadPhotosFile:photosFilename];
+            // Remove previousDataFilename
+            [fileManager removeItemAtPath:previousPhotosFilename error:&error];
+            // Copy recently downloaded csvFilename to previousDataFilename
+            [fileManager copyItemAtPath:photosFilename toPath:previousPhotosFilename error:&error];
+            // Remove csvFilename in preparation for next download
+            [fileManager removeItemAtPath:photosFilename error:&error];
+        } else if ([fileManager fileExistsAtPath:previousPhotosFilename]) {
+            [DataLoader loadPhotosFile:previousPhotosFilename];
+        } else {
+            [DataLoader loadPhotosFile:hardphotosFilename];
+        }
+        
+    }];
+    [photosDownloadTask resume];
+    
 }
 
 -(void) realLoadBoundaries {
@@ -275,6 +398,10 @@
 
     NSLog(@"Did become active");
     
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,
+                                             (unsigned long)NULL), ^(void) {
+        [self downloadImmediateData];
+    });
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
