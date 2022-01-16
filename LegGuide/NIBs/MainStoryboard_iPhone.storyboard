@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="4">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -118,7 +119,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" fixedFrame="YES" image="AboutBackground_2021.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Wte-gY-Ubc">
-                                <rect key="frame" x="28" y="0.0" width="320" height="600"/>
+                                <rect key="frame" x="27" y="0.0" width="320" height="600"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Bw-PO-Sg6">
@@ -225,7 +226,7 @@
                         <viewControllerLayoutGuide type="bottom" id="5ZH-4c-eh7"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="17">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" fixedFrame="YES" image="Background.png" translatesAutoresizingMaskIntoConstraints="NO" id="j2f-Ir-7ep">
@@ -248,7 +249,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Ex-Od-Msq">
-                                <rect key="frame" x="28" y="72" width="320" height="589"/>
+                                <rect key="frame" x="27" y="70" width="320" height="571"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="StateButtons.png" translatesAutoresizingMaskIntoConstraints="NO" id="o2B-T6-IU9">
@@ -331,6 +332,21 @@
                                             <segue destination="22R-1L-gKf" kind="push" id="99s-9G-rVH"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cB8-aW-Js8">
+                                        <rect key="frame" x="149" y="352" width="32" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.99994784589999997" green="1" blue="0.99987405539999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" backgroundImage="senate-chair.png"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SY9-Hj-a8q">
+                                        <rect key="frame" x="189" y="352" width="114" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.99994784589999997" green="1" blue="0.99987405539999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Senate Seating"/>
+                                        <connections>
+                                            <segue destination="egq-PI-7Oa" kind="push" id="GvJ-Yn-Tgk"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0oY-Md-rv9">
                                         <rect key="frame" x="171" y="250" width="160" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -344,6 +360,21 @@
                                         </state>
                                         <connections>
                                             <action selector="houseCommitteesButtonpressed:" destination="3" eventType="touchUpInside" id="Qll-ZU-Liv"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Cr-EY-6i9">
+                                        <rect key="frame" x="149" y="393" width="32" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.99994784589999997" green="1" blue="0.99987405539999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" backgroundImage="house-chair.png"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZoF-dj-ULz">
+                                        <rect key="frame" x="189" y="393" width="114" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.99994784589999997" green="1" blue="0.99987405539999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="House Seating"/>
+                                        <connections>
+                                            <segue destination="aWa-Zp-TTT" kind="push" id="nJm-RT-WUZ"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -750,7 +781,7 @@
                         <viewControllerLayoutGuide type="bottom" id="bJi-b8-l6L"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="y8y-IE-rFH">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" fixedFrame="YES" image="Background.png" translatesAutoresizingMaskIntoConstraints="NO" id="d3M-pM-mcr">
@@ -773,7 +804,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s6D-oF-NFw">
-                                <rect key="frame" x="39" y="49" width="320" height="589"/>
+                                <rect key="frame" x="38" y="48" width="320" height="571"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PJO-sV-TVo">
@@ -905,9 +936,140 @@
             </objects>
             <point key="canvasLocation" x="3575.1999999999998" y="513.19340329835086"/>
         </scene>
+        <!--Senate Seating View Controller-->
+        <scene sceneID="nc7-bo-iRX">
+            <objects>
+                <viewController id="egq-PI-7Oa" customClass="SenateSeatingViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="CYZ-Fm-j4W"/>
+                        <viewControllerLayoutGuide type="bottom" id="JLO-Hg-bSp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="c8h-GJ-bJC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView autoresizesSubviews="NO" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SenateSeatingChart.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="O3z-4v-MRD">
+                                <rect key="frame" x="0.0" y="60" width="375" height="587"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="4DO-SH-aSp" appends="YES" id="7l6-Fz-5sO"/>
+                                    <outletCollection property="gestureRecognizers" destination="19S-k0-6IK" appends="YES" id="znl-sJ-swi"/>
+                                </connections>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aDO-LQ-SbD">
+                                <rect key="frame" x="1" y="7" width="72" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="72" id="8nC-Id-qZt"/>
+                                    <constraint firstAttribute="height" constant="37" id="NZb-kB-Hk6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="  Back" backgroundImage="backButton.png">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="3" kind="push" id="iWX-Jl-ZK7"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="O3z-4v-MRD" firstAttribute="top" secondItem="aDO-LQ-SbD" secondAttribute="bottom" constant="16" id="55q-Mh-7rZ"/>
+                            <constraint firstItem="O3z-4v-MRD" firstAttribute="bottom" secondItem="JLO-Hg-bSp" secondAttribute="top" id="6q3-PP-TsO"/>
+                            <constraint firstItem="O3z-4v-MRD" firstAttribute="leading" secondItem="c8h-GJ-bJC" secondAttribute="leading" id="8MA-3w-7n0"/>
+                            <constraint firstAttribute="trailing" secondItem="O3z-4v-MRD" secondAttribute="trailing" id="Gxt-dK-ACj"/>
+                            <constraint firstItem="aDO-LQ-SbD" firstAttribute="leading" secondItem="c8h-GJ-bJC" secondAttribute="leadingMargin" constant="-15" id="a34-jR-vjU"/>
+                            <constraint firstItem="aDO-LQ-SbD" firstAttribute="top" secondItem="CYZ-Fm-j4W" secondAttribute="bottom" constant="7" id="cH1-dU-QVs"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="HK3-Hm-lPb"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m0g-4z-2lv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="4DO-SH-aSp">
+                    <connections>
+                        <action selector="PanHandler:" destination="egq-PI-7Oa" id="cD2-Ql-EEe"/>
+                    </connections>
+                </panGestureRecognizer>
+                <pinchGestureRecognizer id="19S-k0-6IK">
+                    <connections>
+                        <action selector="PinchHandler:" destination="egq-PI-7Oa" id="JfH-Nx-2b7"/>
+                    </connections>
+                </pinchGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="3575" y="1267"/>
+        </scene>
+        <!--House Seating View Controller-->
+        <scene sceneID="S5W-SK-I9z">
+            <objects>
+                <viewController id="aWa-Zp-TTT" customClass="HouseSeatingViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Wj7-6C-gxt"/>
+                        <viewControllerLayoutGuide type="bottom" id="QfV-bm-jd0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="UND-L7-9pK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView autoresizesSubviews="NO" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HouseSeatingChart.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="weY-6b-PUu">
+                                <rect key="frame" x="0.0" y="60" width="375" height="587"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="JqN-HI-8id" appends="YES" id="V5H-Ue-roq"/>
+                                    <outletCollection property="gestureRecognizers" destination="jLU-eJ-cgC" appends="YES" id="EjA-Sj-ML4"/>
+                                </connections>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d9m-Mm-ksG">
+                                <rect key="frame" x="1" y="7" width="72" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="72" id="DTT-WW-rYC"/>
+                                    <constraint firstAttribute="height" constant="37" id="Sul-fc-dsk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="  Back" backgroundImage="backButton.png">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="3" kind="push" id="M97-9h-EhG"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="d9m-Mm-ksG" firstAttribute="leading" secondItem="UND-L7-9pK" secondAttribute="leadingMargin" constant="-15" id="2oy-ZK-m2B"/>
+                            <constraint firstItem="weY-6b-PUu" firstAttribute="bottom" secondItem="QfV-bm-jd0" secondAttribute="top" id="WqM-gw-s7F"/>
+                            <constraint firstAttribute="trailing" secondItem="weY-6b-PUu" secondAttribute="trailing" id="agL-kw-DKW"/>
+                            <constraint firstItem="weY-6b-PUu" firstAttribute="top" secondItem="d9m-Mm-ksG" secondAttribute="bottom" constant="16" id="hMf-cf-NfX"/>
+                            <constraint firstItem="weY-6b-PUu" firstAttribute="leading" secondItem="UND-L7-9pK" secondAttribute="leading" id="p9K-bK-LWa"/>
+                            <constraint firstItem="d9m-Mm-ksG" firstAttribute="top" secondItem="Wj7-6C-gxt" secondAttribute="bottom" constant="7" id="wBT-ue-Pdc"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Tf0-bQ-SfG"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sew-vZ-YSt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="JqN-HI-8id">
+                    <connections>
+                        <action selector="PanHandler:" destination="aWa-Zp-TTT" id="ufH-lE-q3u"/>
+                    </connections>
+                </panGestureRecognizer>
+                <pinchGestureRecognizer id="jLU-eJ-cgC">
+                    <connections>
+                        <action selector="PinchHandler:" destination="aWa-Zp-TTT" id="DDf-73-3NL"/>
+                    </connections>
+                </pinchGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="3575" y="1962"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="T6U-YE-eeX"/>
+        <segue reference="M97-9h-EhG"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="About.png" width="14.399999618530273" height="14.399999618530273"/>
@@ -917,7 +1079,9 @@
         <image name="Background.png" width="320" height="600"/>
         <image name="Background2.png" width="320" height="600"/>
         <image name="Federal.png" width="14.399999618530273" height="14.399999618530273"/>
+        <image name="HouseSeatingChart.jpg" width="1584" height="1224"/>
         <image name="MapPin.png" width="14.399999618530273" height="14.399999618530273"/>
+        <image name="SenateSeatingChart.jpg" width="1584" height="1224"/>
         <image name="State.png" width="19.200000762939453" height="14.399999618530273"/>
         <image name="StateButtons.png" width="140" height="276"/>
         <image name="VoteTallyIcons_All.png" width="59.5" height="60"/>
@@ -927,6 +1091,11 @@
         <image name="VoteTallyIcons_SC.png" width="60" height="60"/>
         <image name="VoteTallyIcons_Vote.png" width="60" height="60"/>
         <image name="backButton.png" width="43" height="30"/>
+        <image name="house-chair.png" width="50" height="50"/>
         <image name="logo.png" width="320" height="50"/>
+        <image name="senate-chair.png" width="50" height="50"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

@@ -301,6 +301,13 @@
 		CED78B79259BE61700A8E3AE /* Realm.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = CED78B78259BE61700A8E3AE /* Realm.xcframework */; };
 		CED78B7A259BE76D00A8E3AE /* Realm.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CED78B78259BE61700A8E3AE /* Realm.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CED78B7C259BF8C700A8E3AE /* AboutBackground_2021@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CED78B7B259BF8C600A8E3AE /* AboutBackground_2021@2x.jpg */; };
+		CEEBF46A25EF37C000B0D440 /* senate-chair.png in Resources */ = {isa = PBXBuildFile; fileRef = CEEBF46925EF37C000B0D440 /* senate-chair.png */; };
+		CEEBF46C25EF37D100B0D440 /* house-chair.png in Resources */ = {isa = PBXBuildFile; fileRef = CEEBF46B25EF37D000B0D440 /* house-chair.png */; };
+		CEF30A5725EE750600D2A641 /* icons8-chair-50.png in Resources */ = {isa = PBXBuildFile; fileRef = CEF30A5625EE750600D2A641 /* icons8-chair-50.png */; };
+		CEF30A5D25F083B300D2A641 /* SenateSeatingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF30A5C25F083B300D2A641 /* SenateSeatingViewController.m */; };
+		CEF30A5F25F10BDC00D2A641 /* SenateSeatingChart.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CEF30A5E25F10BDC00D2A641 /* SenateSeatingChart.jpg */; };
+		CEF30A6125F10BEE00D2A641 /* HouseSeatingChart.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CEF30A6025F10BED00D2A641 /* HouseSeatingChart.jpg */; };
+		CEF30A6425F2695500D2A641 /* HouseSeatingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF30A6325F2695500D2A641 /* HouseSeatingViewController.m */; };
 		DFC05076515F9788C4A888E2 /* libPods-wrealeg.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A96B6C35ECD64B30033E31CD /* libPods-wrealeg.a */; };
 /* End PBXBuildFile section */
 
@@ -662,6 +669,15 @@
 		CECFF96D1EF38BF0007BEF92 /* VoteTallyIcons_All.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VoteTallyIcons_All.png; sourceTree = "<group>"; };
 		CED78B78259BE61700A8E3AE /* Realm.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = Realm.xcframework; sourceTree = "<group>"; };
 		CED78B7B259BF8C600A8E3AE /* AboutBackground_2021@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "AboutBackground_2021@2x.jpg"; sourceTree = "<group>"; };
+		CEEBF46925EF37C000B0D440 /* senate-chair.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "senate-chair.png"; sourceTree = "<group>"; };
+		CEEBF46B25EF37D000B0D440 /* house-chair.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "house-chair.png"; sourceTree = "<group>"; };
+		CEF30A5625EE750600D2A641 /* icons8-chair-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-chair-50.png"; sourceTree = "<group>"; };
+		CEF30A5B25F083B300D2A641 /* SenateSeatingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SenateSeatingViewController.h; sourceTree = "<group>"; };
+		CEF30A5C25F083B300D2A641 /* SenateSeatingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SenateSeatingViewController.m; sourceTree = "<group>"; };
+		CEF30A5E25F10BDC00D2A641 /* SenateSeatingChart.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = SenateSeatingChart.jpg; sourceTree = "<group>"; };
+		CEF30A6025F10BED00D2A641 /* HouseSeatingChart.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = HouseSeatingChart.jpg; sourceTree = "<group>"; };
+		CEF30A6225F2695500D2A641 /* HouseSeatingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HouseSeatingViewController.h; sourceTree = "<group>"; };
+		CEF30A6325F2695500D2A641 /* HouseSeatingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HouseSeatingViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -874,6 +890,10 @@
 				CECFF91B1EF233ED007BEF92 /* VoteCheckViewController.m */,
 				CECFF95B1EF23ACC007BEF92 /* VotingListViewController.h */,
 				CECFF95C1EF23ACC007BEF92 /* VotingListViewController.m */,
+				CEF30A5B25F083B300D2A641 /* SenateSeatingViewController.h */,
+				CEF30A5C25F083B300D2A641 /* SenateSeatingViewController.m */,
+				CEF30A6225F2695500D2A641 /* HouseSeatingViewController.h */,
+				CEF30A6325F2695500D2A641 /* HouseSeatingViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -881,6 +901,11 @@
 		AF2B107916AF9D0700A3A7F4 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				CEF30A6025F10BED00D2A641 /* HouseSeatingChart.jpg */,
+				CEF30A5E25F10BDC00D2A641 /* SenateSeatingChart.jpg */,
+				CEEBF46B25EF37D000B0D440 /* house-chair.png */,
+				CEEBF46925EF37C000B0D440 /* senate-chair.png */,
+				CEF30A5625EE750600D2A641 /* icons8-chair-50.png */,
 				CED78B7B259BF8C600A8E3AE /* AboutBackground_2021@2x.jpg */,
 				CE04FA3423E8578B00B51AE0 /* AboutBackground_2020@2x.jpg */,
 				CE2F312C21FE37C200F18CAE /* AboutBackground_2019.jpg */,
@@ -1297,6 +1322,7 @@
 				CE824D771E3EF2CB0091AE97 /* AgarWS20.jpg in Resources */,
 				CE04FA2723E7B12E00B51AE0 /* SchulerWS15.jpg in Resources */,
 				CE824D6D1E3EF2AE0091AE97 /* SweeneyPH58.jpg in Resources */,
+				CEEBF46C25EF37D100B0D440 /* house-chair.png in Resources */,
 				CE2F312221FD780200F18CAE /* KirkbrideH04.jpg in Resources */,
 				AFBEF2F41A63ABDD00623B1A /* LoucksH59.jpg in Resources */,
 				AFC926A61614408D009538FD /* Default-568h@2x.png in Resources */,
@@ -1339,6 +1365,7 @@
 				CE04FA1A23E7B0E000B51AE0 /* BurlingameSH44.jpg in Resources */,
 				CE39B2691C3756E700ABFD81 /* deseret.jpg in Resources */,
 				CE2F311221FD77EB00F18CAE /* GierauMH16.jpg in Resources */,
+				CEF30A5F25F10BDC00D2A641 /* SenateSeatingChart.jpg in Resources */,
 				AF2B11E716AF9D0800A3A7F4 /* backButton.png in Resources */,
 				CE04FA2923E7B12E00B51AE0 /* KostRS19.jpg in Resources */,
 				CE04FA3123E7B13F00B51AE0 /* GovGordonOfficialPortrait_small.jpg in Resources */,
@@ -1397,6 +1424,8 @@
 				AF2B12F116AF9D0800A3A7F4 /* twitter.png in Resources */,
 				CE824D6A1E3EF2AE0091AE97 /* ObermuellerJH56.jpg in Resources */,
 				AF2B12F416AF9D0800A3A7F4 /* State.png in Resources */,
+				CEEBF46A25EF37C000B0D440 /* senate-chair.png in Resources */,
+				CEF30A6125F10BEE00D2A641 /* HouseSeatingChart.jpg in Resources */,
 				AFBEF3041A63ABDD00623B1A /* SommersH20.jpg in Resources */,
 				CECFF9511EF23486007BEF92 /* OutlinkCell-iPhone.xib in Resources */,
 				AFBEF3081A63ABDD00623B1A /* WaltersH38.jpg in Resources */,
@@ -1407,6 +1436,7 @@
 				AF2B12FB16AF9D0800A3A7F4 /* CommitteeListCell-iPhone.xib in Resources */,
 				AFBEF2BC1A63ABDD00623B1A /* BVEA.jpg in Resources */,
 				AFBEF2E31A63ABDD00623B1A /* GreearH27.jpg in Resources */,
+				CEF30A5725EE750600D2A641 /* icons8-chair-50.png in Resources */,
 				AF2B12FC16AF9D0800A3A7F4 /* CommitteeListView-iPhone.xib in Resources */,
 				CE2F312F21FE37C400F18CAE /* AboutBackground_2019@2x.jpg in Resources */,
 				AFBEF2BF1A63ABDD00623B1A /* HPlogoR.jpg in Resources */,
@@ -1587,6 +1617,7 @@
 				AF2B11BD16AF9D0800A3A7F4 /* CommitteeMember.m in Sources */,
 				AF2B11BE16AF9D0800A3A7F4 /* CommitteeViewCell.m in Sources */,
 				AF2B11BF16AF9D0800A3A7F4 /* GradientButton.m in Sources */,
+				CEF30A6425F2695500D2A641 /* HouseSeatingViewController.m in Sources */,
 				AF334CC118ACAF0D00219F26 /* CustomTabBarController.m in Sources */,
 				AF2B11C016AF9D0800A3A7F4 /* ListSection.m in Sources */,
 				CECFF95D1EF23ACC007BEF92 /* VotingListViewController.m in Sources */,
@@ -1595,6 +1626,7 @@
 				AF2B11C316AF9D0800A3A7F4 /* NSString+Stuff.m in Sources */,
 				AF2B11C416AF9D0800A3A7F4 /* PeopleListDelegate.m in Sources */,
 				AF2B11C516AF9D0800A3A7F4 /* RedButton.m in Sources */,
+				CEF30A5D25F083B300D2A641 /* SenateSeatingViewController.m in Sources */,
 				AF2B11C616AF9D0800A3A7F4 /* SearchViewCell.m in Sources */,
 				AF2B11C716AF9D0800A3A7F4 /* UIColor-Expanded.m in Sources */,
 				AF2B11C816AF9D0800A3A7F4 /* AboutViewController.m in Sources */,
@@ -1718,7 +1750,7 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "Developer ID Application";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 0;
 				DEVELOPMENT_TEAM = 9FH8259N92;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1734,7 +1766,7 @@
 					"@executable_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				MARKETING_VERSION = 3.1;
+				MARKETING_VERSION = 3.2;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -1768,7 +1800,7 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "Developer ID Application";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 0;
 				DEVELOPMENT_TEAM = 9FH8259N92;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1784,7 +1816,7 @@
 					"@executable_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				MARKETING_VERSION = 3.1;
+				MARKETING_VERSION = 3.2;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
