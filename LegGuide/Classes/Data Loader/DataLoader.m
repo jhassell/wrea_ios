@@ -13,7 +13,7 @@
 #import "NSDictionary+People.h"
 #import "NSString+Stuff.h"
 #import "Definitions.h"
-#import "SSZipArchive.h"
+@import ZipArchive;
 
 @implementation DataLoader
 

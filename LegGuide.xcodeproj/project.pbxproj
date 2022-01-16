@@ -215,6 +215,8 @@
 		CE2F312B21FD780200F18CAE /* RoscoeJH22.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE2F311F21FD780100F18CAE /* RoscoeJH22.jpg */; };
 		CE2F312E21FE37C400F18CAE /* AboutBackground_2019.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE2F312C21FE37C200F18CAE /* AboutBackground_2019.jpg */; };
 		CE2F312F21FE37C400F18CAE /* AboutBackground_2019@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE2F312D21FE37C400F18CAE /* AboutBackground_2019@2x.jpg */; };
+		CE37B4EA2793CA1700D21501 /* AFNetworking in Frameworks */ = {isa = PBXBuildFile; productRef = CE37B4E92793CA1700D21501 /* AFNetworking */; };
+		CE37B4ED2793CCFB00D21501 /* ZipArchive in Frameworks */ = {isa = PBXBuildFile; productRef = CE37B4EC2793CCFB00D21501 /* ZipArchive */; };
 		CE39B2691C3756E700ABFD81 /* deseret.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE39B2681C3756E700ABFD81 /* deseret.jpg */; };
 		CE6E89222035D138008EC7FA /* SimpsonEH21.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE6E89202035D137008EC7FA /* SimpsonEH21.jpg */; };
 		CE6E89232035D138008EC7FA /* stithH48.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE6E89212035D137008EC7FA /* stithH48.jpg */; };
@@ -308,7 +310,6 @@
 		CEF30A5F25F10BDC00D2A641 /* SenateSeatingChart.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CEF30A5E25F10BDC00D2A641 /* SenateSeatingChart.jpg */; };
 		CEF30A6125F10BEE00D2A641 /* HouseSeatingChart.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CEF30A6025F10BED00D2A641 /* HouseSeatingChart.jpg */; };
 		CEF30A6425F2695500D2A641 /* HouseSeatingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF30A6325F2695500D2A641 /* HouseSeatingViewController.m */; };
-		DFC05076515F9788C4A888E2 /* libPods-wrealeg.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A96B6C35ECD64B30033E31CD /* libPods-wrealeg.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -326,9 +327,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		072C84ED0C1AABE2EE53A02B /* Pods-wrealeg.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wrealeg.release.xcconfig"; path = "Target Support Files/Pods-wrealeg/Pods-wrealeg.release.xcconfig"; sourceTree = "<group>"; };
-		5530E9475775C0EC1B32D197 /* Pods-wrealeg.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wrealeg.debug.xcconfig"; path = "Target Support Files/Pods-wrealeg/Pods-wrealeg.debug.xcconfig"; sourceTree = "<group>"; };
-		A96B6C35ECD64B30033E31CD /* libPods-wrealeg.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-wrealeg.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF092D4015DA0FD100AA4B6B /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		AF092D4215DA0FDC00AA4B6B /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		AF14BD4E160E373A003D2052 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
@@ -692,7 +690,8 @@
 				CED78B79259BE61700A8E3AE /* Realm.xcframework in Frameworks */,
 				AF2481A615BB6A260070924E /* Foundation.framework in Frameworks */,
 				AF2481A815BB6A260070924E /* CoreGraphics.framework in Frameworks */,
-				DFC05076515F9788C4A888E2 /* libPods-wrealeg.a in Frameworks */,
+				CE37B4EA2793CA1700D21501 /* AFNetworking in Frameworks */,
+				CE37B4ED2793CCFB00D21501 /* ZipArchive in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -702,8 +701,6 @@
 		228B40ACD34F24EEB0A6451D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				5530E9475775C0EC1B32D197 /* Pods-wrealeg.debug.xcconfig */,
-				072C84ED0C1AABE2EE53A02B /* Pods-wrealeg.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -743,7 +740,6 @@
 				AF2481A315BB6A260070924E /* UIKit.framework */,
 				AF2481A515BB6A260070924E /* Foundation.framework */,
 				AF2481A715BB6A260070924E /* CoreGraphics.framework */,
-				A96B6C35ECD64B30033E31CD /* libPods-wrealeg.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1264,7 +1260,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AF2481CB15BB6A260070924E /* Build configuration list for PBXNativeTarget "wrealeg" */;
 			buildPhases = (
-				9EFBB4645E168A53E67AF3C2 /* [CP] Check Pods Manifest.lock */,
 				AF24819B15BB6A250070924E /* Sources */,
 				AF24819C15BB6A250070924E /* Frameworks */,
 				AF24819D15BB6A250070924E /* Resources */,
@@ -1275,6 +1270,10 @@
 			dependencies = (
 			);
 			name = wrealeg;
+			packageProductDependencies = (
+				CE37B4E92793CA1700D21501 /* AFNetworking */,
+				CE37B4EC2793CCFB00D21501 /* ZipArchive */,
+			);
 			productName = OAECLegGuide;
 			productReference = AF24819F15BB6A250070924E /* WY 2021.app */;
 			productType = "com.apple.product-type.application";
@@ -1287,11 +1286,6 @@
 			attributes = {
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Architactile LLC";
-				TargetAttributes = {
-					AF24819E15BB6A250070924E = {
-						DevelopmentTeam = 9FH8259N92;
-					};
-				};
 			};
 			buildConfigurationList = AF24819915BB6A250070924E /* Build configuration list for PBXProject "LegGuide" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1302,6 +1296,10 @@
 				en,
 			);
 			mainGroup = AF24819415BB6A250070924E;
+			packageReferences = (
+				CE37B4E82793CA1700D21501 /* XCRemoteSwiftPackageReference "afnetworking" */,
+				CE37B4EB2793CA7800D21501 /* XCRemoteSwiftPackageReference "ZipArchive" */,
+			);
 			productRefGroup = AF2481A015BB6A250070924E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1569,31 +1567,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		9EFBB4645E168A53E67AF3C2 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-wrealeg-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		AF24819B15BB6A250070924E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -1678,6 +1651,7 @@
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				EXCLUDED_ARCHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -1719,6 +1693,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Wyoming Rural Electric Association (9FH8259N92)";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				EXCLUDED_ARCHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -1742,17 +1717,18 @@
 		};
 		AF2481CC15BB6A260070924E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5530E9475775C0EC1B32D197 /* Pods-wrealeg.debug.xcconfig */;
 			buildSettings = {
 				"ARCHS[sdk=*]" = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "Developer ID Application";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 0;
 				DEVELOPMENT_TEAM = 9FH8259N92;
 				ENABLE_BITCODE = NO;
+				EXCLUDED_ARCHS = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1768,20 +1744,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MARKETING_VERSION = 3.2;
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					"-ObjC",
-					"-l\"iconv\"",
-					"-l\"z\"",
-					"-framework",
-					"\"CoreGraphics\"",
-					"-framework",
-					"\"MobileCoreServices\"",
-					"-framework",
-					"\"Security\"",
-					"-framework",
-					"\"SystemConfiguration\"",
-				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = org.wyomingrea.wrealeg;
 				PRODUCT_NAME = "WY 2021";
 				PROVISIONING_PROFILE = "";
@@ -1793,16 +1756,17 @@
 		};
 		AF2481CD15BB6A260070924E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 072C84ED0C1AABE2EE53A02B /* Pods-wrealeg.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "Developer ID Application";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 0;
 				DEVELOPMENT_TEAM = 9FH8259N92;
 				ENABLE_BITCODE = NO;
+				EXCLUDED_ARCHS = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1818,20 +1782,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MARKETING_VERSION = 3.2;
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					"-ObjC",
-					"-l\"iconv\"",
-					"-l\"z\"",
-					"-framework",
-					"\"CoreGraphics\"",
-					"-framework",
-					"\"MobileCoreServices\"",
-					"-framework",
-					"\"Security\"",
-					"-framework",
-					"\"SystemConfiguration\"",
-				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = org.wyomingrea.wrealeg;
 				PRODUCT_NAME = "WY 2021";
 				PROVISIONING_PROFILE = "";
@@ -1864,6 +1815,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CE37B4E82793CA1700D21501 /* XCRemoteSwiftPackageReference "afnetworking" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/afnetworking/afnetworking";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+		CE37B4EB2793CA7800D21501 /* XCRemoteSwiftPackageReference "ZipArchive" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ZipArchive/ZipArchive";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CE37B4E92793CA1700D21501 /* AFNetworking */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE37B4E82793CA1700D21501 /* XCRemoteSwiftPackageReference "afnetworking" */;
+			productName = AFNetworking;
+		};
+		CE37B4EC2793CCFB00D21501 /* ZipArchive */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE37B4EB2793CA7800D21501 /* XCRemoteSwiftPackageReference "ZipArchive" */;
+			productName = ZipArchive;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = AF24819615BB6A250070924E /* Project object */;
 }
