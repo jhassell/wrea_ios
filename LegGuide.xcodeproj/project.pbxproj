@@ -251,6 +251,7 @@
 		CE824D7F1E3EF2E40091AE97 /* Cheney.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE824D7E1E3EF2E40091AE97 /* Cheney.jpg */; };
 		CE915B6925A81A1100AECB6A /* message.png in Resources */ = {isa = PBXBuildFile; fileRef = CE915B6825A81A1100AECB6A /* message.png */; };
 		CE915B6B25A95DB200AECB6A /* PersonViewMessageCell-iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE915B6A25A95DB200AECB6A /* PersonViewMessageCell-iPhone.xib */; };
+		CEC34369279666B100502753 /* AboutBackground_2022@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CEC34368279666B000502753 /* AboutBackground_2022@2x.jpg */; };
 		CECFF9071EF233D0007BEF92 /* RollCallListDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CECFF8F51EF233D0007BEF92 /* RollCallListDelegate.m */; };
 		CECFF9091EF233D0007BEF92 /* Tally.m in Sources */ = {isa = PBXBuildFile; fileRef = CECFF8FA1EF233D0007BEF92 /* Tally.m */; };
 		CECFF90A1EF233D0007BEF92 /* TallyGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = CECFF8FC1EF233D0007BEF92 /* TallyGroup.m */; };
@@ -333,7 +334,7 @@
 		AF1D28E118BDBE420093CE11 /* StateButtons.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StateButtons.png; sourceTree = "<group>"; };
 		AF1D28E218BDBE420093CE11 /* StateButtons@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "StateButtons@2x.png"; sourceTree = "<group>"; };
 		AF1D28FC18BF0C570093CE11 /* MemberSystems.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MemberSystems.json; sourceTree = "<group>"; };
-		AF24819F15BB6A250070924E /* WY 2021.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WY 2021.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF24819F15BB6A250070924E /* WY 2022.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WY 2022.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF2481A315BB6A260070924E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		AF2481A515BB6A260070924E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		AF2481A715BB6A260070924E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -604,6 +605,7 @@
 		CE824D7E1E3EF2E40091AE97 /* Cheney.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Cheney.jpg; sourceTree = "<group>"; };
 		CE915B6825A81A1100AECB6A /* message.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = message.png; sourceTree = "<group>"; };
 		CE915B6A25A95DB200AECB6A /* PersonViewMessageCell-iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "PersonViewMessageCell-iPhone.xib"; sourceTree = "<group>"; };
+		CEC34368279666B000502753 /* AboutBackground_2022@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "AboutBackground_2022@2x.jpg"; sourceTree = "<group>"; };
 		CECFF8F51EF233D0007BEF92 /* RollCallListDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RollCallListDelegate.m; sourceTree = "<group>"; };
 		CECFF8F81EF233D0007BEF92 /* RollCallListDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RollCallListDelegate.h; sourceTree = "<group>"; };
 		CECFF8F91EF233D0007BEF92 /* Tally.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tally.h; sourceTree = "<group>"; };
@@ -725,7 +727,7 @@
 		AF2481A015BB6A250070924E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AF24819F15BB6A250070924E /* WY 2021.app */,
+				AF24819F15BB6A250070924E /* WY 2022.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -897,6 +899,7 @@
 		AF2B107916AF9D0700A3A7F4 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				CEC34368279666B000502753 /* AboutBackground_2022@2x.jpg */,
 				CEF30A6025F10BED00D2A641 /* HouseSeatingChart.jpg */,
 				CEF30A5E25F10BDC00D2A641 /* SenateSeatingChart.jpg */,
 				CEEBF46B25EF37D000B0D440 /* house-chair.png */,
@@ -1275,7 +1278,7 @@
 				CE37B4EC2793CCFB00D21501 /* ZipArchive */,
 			);
 			productName = OAECLegGuide;
-			productReference = AF24819F15BB6A250070924E /* WY 2021.app */;
+			productReference = AF24819F15BB6A250070924E /* WY 2022.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1398,6 +1401,7 @@
 				CE2F310D21FD77EB00F18CAE /* steinmetzcH05.jpg in Resources */,
 				CECFF9421EF23426007BEF92 /* houseIcon.png in Resources */,
 				CECFF9381EF23426007BEF92 /* All_VoteTallyIcon.png in Resources */,
+				CEC34369279666B100502753 /* AboutBackground_2022@2x.jpg in Resources */,
 				AFBEF3021A63ABDD00623B1A /* schwartzaH23.jpg in Resources */,
 				AF2B11FF16AF9D0800A3A7F4 /* MapPin@2x.png in Resources */,
 				AF2B12EB16AF9D0800A3A7F4 /* browser.png in Resources */,
@@ -1726,7 +1730,7 @@
 				CODE_SIGN_IDENTITY = "Developer ID Application";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 0;
-				DEVELOPMENT_TEAM = 9FH8259N92;
+				DEVELOPMENT_TEAM = H4QR9NTX3Q;
 				ENABLE_BITCODE = NO;
 				EXCLUDED_ARCHS = "";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1742,11 +1746,11 @@
 					"@executable_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				MARKETING_VERSION = 3.2;
+				MARKETING_VERSION = 3.3;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = org.wyomingrea.wrealeg;
-				PRODUCT_NAME = "WY 2021";
+				PRODUCT_BUNDLE_IDENTIFIER = org.wyomingrea.wrealeg1;
+				PRODUCT_NAME = "WY 2022";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "armv7s armv7 arm64";
@@ -1764,7 +1768,7 @@
 				CODE_SIGN_IDENTITY = "Developer ID Application";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 0;
-				DEVELOPMENT_TEAM = 9FH8259N92;
+				DEVELOPMENT_TEAM = H4QR9NTX3Q;
 				ENABLE_BITCODE = NO;
 				EXCLUDED_ARCHS = "";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1780,11 +1784,11 @@
 					"@executable_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				MARKETING_VERSION = 3.2;
+				MARKETING_VERSION = 3.3;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = org.wyomingrea.wrealeg;
-				PRODUCT_NAME = "WY 2021";
+				PRODUCT_BUNDLE_IDENTIFIER = org.wyomingrea.wrealeg1;
+				PRODUCT_NAME = "WY 2022";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "";
