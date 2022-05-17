@@ -14,7 +14,7 @@
 #import "NSString+Stuff.h"
 #import "Definitions.h"
 #import "AFURLSessionManager.h"
-@import ZipArchive;
+#import "SSZipArchive.h"
 
 @implementation AppDelegate
 

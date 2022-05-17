@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 47;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		53ABDA83282A174100FB5585 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53ABDA82282A174100FB5585 /* Realm.framework */; };
 		AF092D4115DA0FD200AA4B6B /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = AF092D4015DA0FD100AA4B6B /* Default.png */; };
 		AF092D4315DA0FDC00AA4B6B /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF092D4215DA0FDC00AA4B6B /* Default@2x.png */; };
 		AF14BD4F160E373A003D2052 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF14BD4E160E373A003D2052 /* MessageUI.framework */; };
@@ -215,8 +216,6 @@
 		CE2F312B21FD780200F18CAE /* RoscoeJH22.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE2F311F21FD780100F18CAE /* RoscoeJH22.jpg */; };
 		CE2F312E21FE37C400F18CAE /* AboutBackground_2019.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE2F312C21FE37C200F18CAE /* AboutBackground_2019.jpg */; };
 		CE2F312F21FE37C400F18CAE /* AboutBackground_2019@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE2F312D21FE37C400F18CAE /* AboutBackground_2019@2x.jpg */; };
-		CE37B4EA2793CA1700D21501 /* AFNetworking in Frameworks */ = {isa = PBXBuildFile; productRef = CE37B4E92793CA1700D21501 /* AFNetworking */; };
-		CE37B4ED2793CCFB00D21501 /* ZipArchive in Frameworks */ = {isa = PBXBuildFile; productRef = CE37B4EC2793CCFB00D21501 /* ZipArchive */; };
 		CE39B2691C3756E700ABFD81 /* deseret.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE39B2681C3756E700ABFD81 /* deseret.jpg */; };
 		CE6E89222035D138008EC7FA /* SimpsonEH21.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE6E89202035D137008EC7FA /* SimpsonEH21.jpg */; };
 		CE6E89232035D138008EC7FA /* stithH48.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE6E89212035D137008EC7FA /* stithH48.jpg */; };
@@ -301,8 +300,6 @@
 		CECFF9771EF38BF0007BEF92 /* VoteTallyIcons_H.png in Resources */ = {isa = PBXBuildFile; fileRef = CECFF96B1EF38BF0007BEF92 /* VoteTallyIcons_H.png */; };
 		CECFF9781EF38BF0007BEF92 /* VoteTallyIcons_All@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CECFF96C1EF38BF0007BEF92 /* VoteTallyIcons_All@2x.png */; };
 		CECFF9791EF38BF0007BEF92 /* VoteTallyIcons_All.png in Resources */ = {isa = PBXBuildFile; fileRef = CECFF96D1EF38BF0007BEF92 /* VoteTallyIcons_All.png */; };
-		CED78B79259BE61700A8E3AE /* Realm.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = CED78B78259BE61700A8E3AE /* Realm.xcframework */; };
-		CED78B7A259BE76D00A8E3AE /* Realm.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CED78B78259BE61700A8E3AE /* Realm.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CED78B7C259BF8C700A8E3AE /* AboutBackground_2021@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CED78B7B259BF8C600A8E3AE /* AboutBackground_2021@2x.jpg */; };
 		CEEBF46A25EF37C000B0D440 /* senate-chair.png in Resources */ = {isa = PBXBuildFile; fileRef = CEEBF46925EF37C000B0D440 /* senate-chair.png */; };
 		CEEBF46C25EF37D100B0D440 /* house-chair.png in Resources */ = {isa = PBXBuildFile; fileRef = CEEBF46B25EF37D000B0D440 /* house-chair.png */; };
@@ -311,23 +308,13 @@
 		CEF30A5F25F10BDC00D2A641 /* SenateSeatingChart.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CEF30A5E25F10BDC00D2A641 /* SenateSeatingChart.jpg */; };
 		CEF30A6125F10BEE00D2A641 /* HouseSeatingChart.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CEF30A6025F10BED00D2A641 /* HouseSeatingChart.jpg */; };
 		CEF30A6425F2695500D2A641 /* HouseSeatingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF30A6325F2695500D2A641 /* HouseSeatingViewController.m */; };
+		EEFA5B9FCFC5CC99927F1BAF /* Pods_wrealeg.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFB57DDAE88994509C180FFF /* Pods_wrealeg.framework */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		CECFF8F31EF23307007BEF92 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				CED78B7A259BE76D00A8E3AE /* Realm.xcframework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
+		53ABDA82282A174100FB5585 /* Realm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Realm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		67D2E102ABC3F3DA319912D5 /* Pods-wrealeg.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wrealeg.debug.xcconfig"; path = "Target Support Files/Pods-wrealeg/Pods-wrealeg.debug.xcconfig"; sourceTree = "<group>"; };
+		950FC546C8FA74A11DA90293 /* Pods-wrealeg.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wrealeg.release.xcconfig"; path = "Target Support Files/Pods-wrealeg/Pods-wrealeg.release.xcconfig"; sourceTree = "<group>"; };
 		AF092D4015DA0FD100AA4B6B /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		AF092D4215DA0FDC00AA4B6B /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		AF14BD4E160E373A003D2052 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
@@ -457,6 +444,7 @@
 		AFA36F531A78BE9B00A5D2E6 /* PownallBH52.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = PownallBH52.jpg; sourceTree = "<group>"; };
 		AFA73A7416B33E7500D13F1E /* AppIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = AppIcon.png; path = LegGuide/AppIcon.png; sourceTree = "<group>"; };
 		AFA73A7516B33E7500D13F1E /* AppIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "AppIcon@2x.png"; path = "LegGuide/AppIcon@2x.png"; sourceTree = "<group>"; };
+		AFB57DDAE88994509C180FFF /* Pods_wrealeg.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wrealeg.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFBEF2301A63ABDD00623B1A /* Lummis.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Lummis.jpg; sourceTree = "<group>"; };
 		AFBEF2321A63ABDD00623B1A /* Barrasso.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Barrasso.jpg; sourceTree = "<group>"; };
 		AFBEF2331A63ABDD00623B1A /* Enzi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Enzi.jpg; sourceTree = "<group>"; };
@@ -685,15 +673,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53ABDA83282A174100FB5585 /* Realm.framework in Frameworks */,
 				AF14BD4F160E373A003D2052 /* MessageUI.framework in Frameworks */,
 				AF3DEE5215DD3AA500151661 /* CoreLocation.framework in Frameworks */,
 				AF2482DA15BDE2AE0070924E /* MapKit.framework in Frameworks */,
 				AF2481A415BB6A260070924E /* UIKit.framework in Frameworks */,
-				CED78B79259BE61700A8E3AE /* Realm.xcframework in Frameworks */,
 				AF2481A615BB6A260070924E /* Foundation.framework in Frameworks */,
 				AF2481A815BB6A260070924E /* CoreGraphics.framework in Frameworks */,
-				CE37B4EA2793CA1700D21501 /* AFNetworking in Frameworks */,
-				CE37B4ED2793CCFB00D21501 /* ZipArchive in Frameworks */,
+				EEFA5B9FCFC5CC99927F1BAF /* Pods_wrealeg.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -703,6 +690,8 @@
 		228B40ACD34F24EEB0A6451D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
+				67D2E102ABC3F3DA319912D5 /* Pods-wrealeg.debug.xcconfig */,
+				950FC546C8FA74A11DA90293 /* Pods-wrealeg.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -735,6 +724,7 @@
 		AF2481A215BB6A260070924E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				53ABDA82282A174100FB5585 /* Realm.framework */,
 				CED78B78259BE61700A8E3AE /* Realm.xcframework */,
 				AF14BD4E160E373A003D2052 /* MessageUI.framework */,
 				AF3DEE5115DD3AA500151661 /* CoreLocation.framework */,
@@ -742,6 +732,7 @@
 				AF2481A315BB6A260070924E /* UIKit.framework */,
 				AF2481A515BB6A260070924E /* Foundation.framework */,
 				AF2481A715BB6A260070924E /* CoreGraphics.framework */,
+				AFB57DDAE88994509C180FFF /* Pods_wrealeg.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1263,20 +1254,17 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AF2481CB15BB6A260070924E /* Build configuration list for PBXNativeTarget "wrealeg" */;
 			buildPhases = (
+				C91372641CC5E01BA7507F59 /* [CP] Check Pods Manifest.lock */,
 				AF24819B15BB6A250070924E /* Sources */,
 				AF24819C15BB6A250070924E /* Frameworks */,
 				AF24819D15BB6A250070924E /* Resources */,
-				CECFF8F31EF23307007BEF92 /* Embed Frameworks */,
+				47668E4CFE5A9B3C3D894998 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = wrealeg;
-			packageProductDependencies = (
-				CE37B4E92793CA1700D21501 /* AFNetworking */,
-				CE37B4EC2793CCFB00D21501 /* ZipArchive */,
-			);
 			productName = OAECLegGuide;
 			productReference = AF24819F15BB6A250070924E /* WY 2022.app */;
 			productType = "com.apple.product-type.application";
@@ -1287,21 +1275,25 @@
 		AF24819615BB6A250070924E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 1330;
 				ORGANIZATIONNAME = "Architactile LLC";
+				TargetAttributes = {
+					AF24819E15BB6A250070924E = {
+						DevelopmentTeam = 9FH8259N92;
+						ProvisioningStyle = Automatic;
+					};
+				};
 			};
 			buildConfigurationList = AF24819915BB6A250070924E /* Build configuration list for PBXProject "LegGuide" */;
-			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			compatibilityVersion = "Xcode 6.3";
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
 				en,
+				Base,
 			);
 			mainGroup = AF24819415BB6A250070924E;
 			packageReferences = (
-				CE37B4E82793CA1700D21501 /* XCRemoteSwiftPackageReference "afnetworking" */,
-				CE37B4EB2793CA7800D21501 /* XCRemoteSwiftPackageReference "ZipArchive" */,
 			);
 			productRefGroup = AF2481A015BB6A250070924E /* Products */;
 			projectDirPath = "";
@@ -1571,6 +1563,53 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		47668E4CFE5A9B3C3D894998 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-wrealeg/Pods-wrealeg-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/SSZipArchive/SSZipArchive.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SSZipArchive.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-wrealeg/Pods-wrealeg-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C91372641CC5E01BA7507F59 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-wrealeg-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		AF24819B15BB6A250070924E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -1642,12 +1681,22 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -1672,12 +1721,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				ONLY_ACTIVE_ARCH = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				ONLY_ACTIVE_ARCH = NO;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = Debug;
 		};
@@ -1685,12 +1735,22 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -1707,7 +1767,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PROVISIONING_PROFILE = "777C488B-C5F9-434B-AF1D-4D3CC5E189F7";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "777C488B-C5F9-434B-AF1D-4D3CC5E189F7";
@@ -1715,23 +1775,25 @@
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
-				VALID_ARCHS = "";
+				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = Release;
 		};
 		AF2481CC15BB6A260070924E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 67D2E102ABC3F3DA319912D5 /* Pods-wrealeg.debug.xcconfig */;
 			buildSettings = {
-				"ARCHS[sdk=*]" = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 0;
 				DEVELOPMENT_TEAM = 9FH8259N92;
 				ENABLE_BITCODE = NO;
+				ENABLE_ON_DEMAND_RESOURCES = NO;
 				EXCLUDED_ARCHS = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1740,36 +1802,37 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LegGuide/LegGuide-Prefix.pch";
 				INFOPLIST_FILE = "LegGuide/LegGuide-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				MARKETING_VERSION = 3.3;
-				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = "-ObjC";
+				MARKETING_VERSION = 3.4;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = org.wyomingrea.wrealeg;
 				PRODUCT_NAME = "WY 2022";
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "armv7s armv7 arm64";
+				"VALID_ARCHS[arch=*]" = "armv7s armv7 arm64";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
 		};
 		AF2481CD15BB6A260070924E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 950FC546C8FA74A11DA90293 /* Pods-wrealeg.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 0;
 				DEVELOPMENT_TEAM = 9FH8259N92;
 				ENABLE_BITCODE = NO;
+				ENABLE_ON_DEMAND_RESOURCES = NO;
 				EXCLUDED_ARCHS = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1778,21 +1841,18 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LegGuide/LegGuide-Prefix.pch";
 				INFOPLIST_FILE = "LegGuide/LegGuide-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				MARKETING_VERSION = 3.3;
-				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = "-ObjC";
+				MARKETING_VERSION = 3.4;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = org.wyomingrea.wrealeg;
 				PRODUCT_NAME = "WY 2022";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "";
-				"VALID_ARCHS[sdk=*]" = "armv7s armv7 arm64";
+				"VALID_ARCHS[sdk=iphoneos*]" = "armv7s armv7 arm64";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -1819,38 +1879,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		CE37B4E82793CA1700D21501 /* XCRemoteSwiftPackageReference "afnetworking" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/afnetworking/afnetworking";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 4.0.0;
-			};
-		};
-		CE37B4EB2793CA7800D21501 /* XCRemoteSwiftPackageReference "ZipArchive" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ZipArchive/ZipArchive";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		CE37B4E92793CA1700D21501 /* AFNetworking */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = CE37B4E82793CA1700D21501 /* XCRemoteSwiftPackageReference "afnetworking" */;
-			productName = AFNetworking;
-		};
-		CE37B4EC2793CCFB00D21501 /* ZipArchive */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = CE37B4EB2793CA7800D21501 /* XCRemoteSwiftPackageReference "ZipArchive" */;
-			productName = ZipArchive;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = AF24819615BB6A250070924E /* Project object */;
 }
