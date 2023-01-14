@@ -20,7 +20,9 @@
 - (id)initWithPolygons:(NSArray *) polygons name:(NSString *)name type:(NSString *)type metadata:(NSDictionary *)metadata set:(NSString *)set;
 
 + (Boundary *)boundaryWithBoundaryServiceDictionary:(NSDictionary *)boundaryServiceDictionary;
++ (Boundary *)boundaryWithBoundaryServiceDictionaryQGISFormat:(NSDictionary *)boundaryServiceDictionary andDistrictType:(NSString *)districtType;
 + (NSDictionary *) buildBoundaryDictionaryWithJSONFile:(NSString *)jsonFilename;
++ (NSDictionary *) buildBoundaryDictionaryWithJSONFileFromQGISExport:(NSString *)jsonFilename andDistrictType:(NSString *)districtType;
 
 -(void) addPolygons:(NSMutableArray *)polygons;
 -(BOOL)pointInside:(CLLocationCoordinate2D )point;

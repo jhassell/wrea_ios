@@ -70,6 +70,33 @@
     return boundariesDict;
 }
 
++(NSDictionary *) buildBoundaryDictionaryWithJSONFileFromQGISExport:(NSString *)jsonFilename andDistrictType:(NSString *)districtType {
+    NSError *error=nil;
+    
+    NSDictionary *jsonObject = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:jsonFilename] options:0 error:&error];
+    
+    NSArray *boundaryObjects = [jsonObject objectForKey:@"features"];
+    NSMutableDictionary *boundariesDict = [NSMutableDictionary dictionaryWithCapacity:77];
+    for(NSDictionary *boundaryObject in boundaryObjects) {
+        Boundary *boundary=[Boundary boundaryWithBoundaryServiceDictionaryQGISFormat:boundaryObject andDistrictType:districtType];
+        
+        NSString *boundaryKey = [boundary.name uppercaseString];
+        
+        if ([boundaryKey isOnlyNumbers]) {
+            boundaryKey = [NSString stringWithFormat:@"%i",[boundaryKey intValue]];
+        }
+        
+        Boundary *existingBoundary = [boundariesDict objectForKey:boundaryKey];
+        if (existingBoundary==nil) {
+            [boundariesDict setObject:boundary forKey:boundaryKey];
+        } else {
+            [existingBoundary addPolygons:boundary.polygons];
+        }
+    }
+    
+    return boundariesDict;
+}
+
 - (id)initWithPolygons:(NSMutableArray *) polygons name:(NSString *)name type:(NSString *)type metadata:(NSDictionary *)metadata set:(NSString *)set{
     self = [super init];
     if (self) {
@@ -168,6 +195,71 @@
     Boundary *boundary = [[Boundary alloc] initWithPolygons:multiPolygons
                           name:[boundaryServiceDictionary objectForKey:@"name"] 
                           type:[boundaryServiceDictionary objectForKey:@"kind"] 
+                          metadata:[boundaryServiceDictionary objectForKey:@"metadata"]
+                          set:set
+                          ];
+
+    return boundary;
+}
+
+
++ (Boundary *)boundaryWithBoundaryServiceDictionaryQGISFormat:(NSDictionary *)boundaryServiceDictionary andDistrictType:(NSString *)districtType{
+    NSDictionary *simple_shape = [boundaryServiceDictionary objectForKey:@"geometry"];
+    
+    NSString *type = [simple_shape objectForKey:@"type"];
+    if (![type isEqualToString:@"MultiPolygon"]) return nil;
+    
+    NSArray *coordinates = [simple_shape objectForKey:@"coordinates"];
+    if (coordinates==nil || [coordinates count]==0) return nil;
+        
+    NSMutableArray *multiPolygons = [NSMutableArray arrayWithCapacity:5];
+    
+    for (NSArray *polygonList in coordinates) {
+        
+        int index=0;
+        CLLocationCoordinate2D *outerPolygonCoordinates=NULL;
+        int outerPolygonPointCount = 0;
+        
+        NSMutableArray *innerPolygons = [NSMutableArray arrayWithCapacity:[coordinates count]];
+
+        for (NSArray *polygon in polygonList) {
+            if (polygon!=nil && [polygon count]>2) {
+                CLLocationCoordinate2D *polygonCoordinates = [Boundary makeCLLocationCoordinate2DArrayFrom:polygon];
+                if (index==0) {
+                    outerPolygonCoordinates = polygonCoordinates;
+                    outerPolygonPointCount = (int)[polygon count];
+                } else {
+                    MKPolygon *innerPolygon = [MKPolygon polygonWithCoordinates:polygonCoordinates count:[polygon count]];
+                    [innerPolygons addObject:innerPolygon];
+                    free(polygonCoordinates);
+                }
+            }
+            index++;
+        }
+        if (outerPolygonCoordinates==NULL) return nil;
+        
+        MKPolygon *polygon=nil;
+        if ([innerPolygons count]==0) {
+            //NSLog(@"outer only, %i points",outerPolygonPointCount);
+            polygon = [MKPolygon polygonWithCoordinates:outerPolygonCoordinates count:outerPolygonPointCount];
+        } else {
+            //NSLog(@"outer with %i points, %i inners",outerPolygonPointCount, [innerPolygons count]);
+            polygon = [MKPolygon polygonWithCoordinates:outerPolygonCoordinates count:outerPolygonPointCount interiorPolygons:innerPolygons];
+        }
+        free(outerPolygonCoordinates);
+        
+        BoundaryPolygon *boundaryPolygon = [[BoundaryPolygon alloc] init];
+        boundaryPolygon.boundary=nil;
+        boundaryPolygon.polygon=polygon;
+        [multiPolygons addObject:boundaryPolygon];
+    }
+
+    NSString *set = [[boundaryServiceDictionary objectForKey:@"set"] lastPathComponent];
+    NSDictionary *properties = [boundaryServiceDictionary objectForKey:@"properties"];
+    
+    Boundary *boundary = [[Boundary alloc] initWithPolygons:multiPolygons
+                          name:[properties objectForKey:@"DISTRICT"]
+                          type:districtType
                           metadata:[boundaryServiceDictionary objectForKey:@"metadata"]
                           set:set
                           ];

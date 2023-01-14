@@ -240,8 +240,8 @@
     self.countyBoundaries        = [Boundary buildBoundaryDictionaryWithJSONFile:[[NSBundle mainBundle] pathForResource:@"Counties" ofType:@"json"]]; // TULSA
     //self.municipalBoundaries     = [Boundary buildBoundaryDictionaryWithJSONFile:[[NSBundle mainBundle] pathForResource:@"Municipalities" ofType:@"json"]]; // Tulsa
     //self.congressionalBoundaries = [Boundary buildBoundaryDictionaryWithJSONFile:[[NSBundle mainBundle] pathForResource:@"CongressionalDistricts" ofType:@"json"]]; // 01
-    self.stateSenateBoundaries   = [Boundary buildBoundaryDictionaryWithJSONFile:[[NSBundle mainBundle] pathForResource:@"StateSenateDistricts" ofType:@"json"]];
-    self.stateHouseBoundaries    = [Boundary buildBoundaryDictionaryWithJSONFile:[[NSBundle mainBundle] pathForResource:@"StateHouseDistricts" ofType:@"json"]];
+    self.stateSenateBoundaries   = [Boundary buildBoundaryDictionaryWithJSONFileFromQGISExport:[[NSBundle mainBundle] pathForResource:@"StateSenateDistricts2023" ofType:@"json"] andDistrictType:@"State Senate District" ];
+    self.stateHouseBoundaries    = [Boundary buildBoundaryDictionaryWithJSONFileFromQGISExport:[[NSBundle mainBundle] pathForResource:@"StateHouseDistricts2023" ofType:@"json"] andDistrictType:@"State House District" ];
     self.coopBoundaries          = [Boundary buildBoundaryDictionaryWithJSONFile:[[NSBundle mainBundle] pathForResource:@"MemberSystems" ofType:@"json"]];
     
     NSLog(@"stop load");

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		535C932B296FB93200BA0E95 /* AboutBackground_2023@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 535C932A296FB93200BA0E95 /* AboutBackground_2023@2x.jpg */; };
+		535C932D2973062A00BA0E95 /* StateSenateDistricts2023.json in Resources */ = {isa = PBXBuildFile; fileRef = 535C932C2973062A00BA0E95 /* StateSenateDistricts2023.json */; };
+		535C932F29733CA200BA0E95 /* StateHouseDistricts2023.json in Resources */ = {isa = PBXBuildFile; fileRef = 535C932E29733CA200BA0E95 /* StateHouseDistricts2023.json */; };
 		53ABDA83282A174100FB5585 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53ABDA82282A174100FB5585 /* Realm.framework */; };
 		AF092D4115DA0FD200AA4B6B /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = AF092D4015DA0FD100AA4B6B /* Default.png */; };
 		AF092D4315DA0FDC00AA4B6B /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF092D4215DA0FDC00AA4B6B /* Default@2x.png */; };
@@ -89,8 +92,6 @@
 		AF2B151516AFBC9200A3A7F4 /* Counties.json in Resources */ = {isa = PBXBuildFile; fileRef = AF2B150E16AFBC9200A3A7F4 /* Counties.json */; };
 		AF2B151616AFBC9200A3A7F4 /* data.csv in Resources */ = {isa = PBXBuildFile; fileRef = AF2B150F16AFBC9200A3A7F4 /* data.csv */; };
 		AF2B151816AFBC9200A3A7F4 /* getdata.sh in Resources */ = {isa = PBXBuildFile; fileRef = AF2B151116AFBC9200A3A7F4 /* getdata.sh */; };
-		AF2B151916AFBC9200A3A7F4 /* StateHouseDistricts.json in Resources */ = {isa = PBXBuildFile; fileRef = AF2B151216AFBC9200A3A7F4 /* StateHouseDistricts.json */; };
-		AF2B151A16AFBC9200A3A7F4 /* StateSenateDistricts.json in Resources */ = {isa = PBXBuildFile; fileRef = AF2B151316AFBC9200A3A7F4 /* StateSenateDistricts.json */; };
 		AF334CBD18ACA1C400219F26 /* IOS7AdjustmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF334CBC18ACA1C400219F26 /* IOS7AdjustmentViewController.m */; };
 		AF334CC118ACAF0D00219F26 /* CustomTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF334CC018ACAF0D00219F26 /* CustomTabBarController.m */; };
 		AF334CCB18AE586A00219F26 /* AppIcon-120.png in Resources */ = {isa = PBXBuildFile; fileRef = AF334CCA18AE586A00219F26 /* AppIcon-120.png */; };
@@ -312,6 +313,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		535C932A296FB93200BA0E95 /* AboutBackground_2023@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "AboutBackground_2023@2x.jpg"; sourceTree = "<group>"; };
+		535C932C2973062A00BA0E95 /* StateSenateDistricts2023.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = StateSenateDistricts2023.json; sourceTree = "<group>"; };
+		535C932E29733CA200BA0E95 /* StateHouseDistricts2023.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = StateHouseDistricts2023.json; sourceTree = "<group>"; };
 		53ABDA82282A174100FB5585 /* Realm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Realm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		67D2E102ABC3F3DA319912D5 /* Pods-wrealeg.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wrealeg.debug.xcconfig"; path = "Target Support Files/Pods-wrealeg/Pods-wrealeg.debug.xcconfig"; sourceTree = "<group>"; };
 		950FC546C8FA74A11DA90293 /* Pods-wrealeg.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wrealeg.release.xcconfig"; path = "Target Support Files/Pods-wrealeg/Pods-wrealeg.release.xcconfig"; sourceTree = "<group>"; };
@@ -321,7 +325,7 @@
 		AF1D28E118BDBE420093CE11 /* StateButtons.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StateButtons.png; sourceTree = "<group>"; };
 		AF1D28E218BDBE420093CE11 /* StateButtons@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "StateButtons@2x.png"; sourceTree = "<group>"; };
 		AF1D28FC18BF0C570093CE11 /* MemberSystems.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MemberSystems.json; sourceTree = "<group>"; };
-		AF24819F15BB6A250070924E /* WY 2022.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WY 2022.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF24819F15BB6A250070924E /* WY 2023.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WY 2023.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF2481A315BB6A260070924E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		AF2481A515BB6A260070924E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		AF2481A715BB6A260070924E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -427,8 +431,6 @@
 		AF2B150E16AFBC9200A3A7F4 /* Counties.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Counties.json; sourceTree = "<group>"; };
 		AF2B150F16AFBC9200A3A7F4 /* data.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = data.csv; sourceTree = "<group>"; };
 		AF2B151116AFBC9200A3A7F4 /* getdata.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = getdata.sh; sourceTree = "<group>"; };
-		AF2B151216AFBC9200A3A7F4 /* StateHouseDistricts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = StateHouseDistricts.json; sourceTree = "<group>"; };
-		AF2B151316AFBC9200A3A7F4 /* StateSenateDistricts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = StateSenateDistricts.json; sourceTree = "<group>"; };
 		AF2B151B16B0024A00A3A7F4 /* Definitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Definitions.h; sourceTree = "<group>"; };
 		AF334CBB18ACA1C400219F26 /* IOS7AdjustmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOS7AdjustmentViewController.h; sourceTree = "<group>"; };
 		AF334CBC18ACA1C400219F26 /* IOS7AdjustmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IOS7AdjustmentViewController.m; sourceTree = "<group>"; };
@@ -716,7 +718,7 @@
 		AF2481A015BB6A250070924E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AF24819F15BB6A250070924E /* WY 2022.app */,
+				AF24819F15BB6A250070924E /* WY 2023.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -890,6 +892,7 @@
 		AF2B107916AF9D0700A3A7F4 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				535C932A296FB93200BA0E95 /* AboutBackground_2023@2x.jpg */,
 				CEC34368279666B000502753 /* AboutBackground_2022@2x.jpg */,
 				CEF30A6025F10BED00D2A641 /* HouseSeatingChart.jpg */,
 				CEF30A5E25F10BDC00D2A641 /* SenateSeatingChart.jpg */,
@@ -1018,12 +1021,12 @@
 		AF2B150C16AFBC9200A3A7F4 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				535C932E29733CA200BA0E95 /* StateHouseDistricts2023.json */,
+				535C932C2973062A00BA0E95 /* StateSenateDistricts2023.json */,
 				AF1D28FC18BF0C570093CE11 /* MemberSystems.json */,
 				AF2B150E16AFBC9200A3A7F4 /* Counties.json */,
 				AF2B150F16AFBC9200A3A7F4 /* data.csv */,
 				AF2B151116AFBC9200A3A7F4 /* getdata.sh */,
-				AF2B151216AFBC9200A3A7F4 /* StateHouseDistricts.json */,
-				AF2B151316AFBC9200A3A7F4 /* StateSenateDistricts.json */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -1266,7 +1269,7 @@
 			);
 			name = wrealeg;
 			productName = OAECLegGuide;
-			productReference = AF24819F15BB6A250070924E /* WY 2022.app */;
+			productReference = AF24819F15BB6A250070924E /* WY 2023.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1486,6 +1489,7 @@
 				AF2B130216AF9D0800A3A7F4 /* PeopleListView-iPhone.xib in Resources */,
 				AFBEF2C71A63ABDD00623B1A /* silhouette_head_small.png in Resources */,
 				CE2F312E21FE37C400F18CAE /* AboutBackground_2019.jpg in Resources */,
+				535C932F29733CA200BA0E95 /* StateHouseDistricts2023.json in Resources */,
 				AF2B130316AF9D0800A3A7F4 /* PersonView-iPhone.xib in Resources */,
 				CE04FA3223E7B13F00B51AE0 /* Auditor Racines Small.jpg in Resources */,
 				CECFF93C1EF23426007BEF92 /* CheckNay.png in Resources */,
@@ -1511,9 +1515,11 @@
 				AFBEF2BA1A63ABDD00623B1A /* m.csv in Resources */,
 				CE824D7F1E3EF2E40091AE97 /* Cheney.jpg in Resources */,
 				AFBEF30F1A63ABDD00623B1A /* AndersonS28.jpg in Resources */,
+				535C932D2973062A00BA0E95 /* StateSenateDistricts2023.json in Resources */,
 				CE2F312721FD780200F18CAE /* StyvarH12.jpg in Resources */,
 				AFBEF2F21A63ABDD00623B1A /* lindholmtH01.jpg in Resources */,
 				CE2F310B21FD77EB00F18CAE /* Schuler.jpg in Resources */,
+				535C932B296FB93200BA0E95 /* AboutBackground_2023@2x.jpg in Resources */,
 				CECFF93F1EF23426007BEF92 /* houseCommittee.png in Resources */,
 				AFBEF2C41A63ABDD00623B1A /* Wheatland.jpg in Resources */,
 				AF2B151516AFBC9200A3A7F4 /* Counties.json in Resources */,
@@ -1533,8 +1539,6 @@
 				CE2F312121FD780200F18CAE /* Newsome.jpg in Resources */,
 				CE2F310E21FD77EB00F18CAE /* BaldwinFS14.jpg in Resources */,
 				AFBEF2C21A63ABDD00623B1A /* NEA.jpg in Resources */,
-				AF2B151916AFBC9200A3A7F4 /* StateHouseDistricts.json in Resources */,
-				AF2B151A16AFBC9200A3A7F4 /* StateSenateDistricts.json in Resources */,
 				CE2F310921FD77EB00F18CAE /* MonizGS10.jpg in Resources */,
 				CE04FA2F23E7B13F00B51AE0 /* JBalow1 Sup of Pub Instruction.png in Resources */,
 				CECFF9551EF23486007BEF92 /* VotingListCell-iPhone.xib in Resources */,
@@ -1802,14 +1806,16 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LegGuide/LegGuide-Prefix.pch";
 				INFOPLIST_FILE = "LegGuide/LegGuide-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "WY 2023";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.reference";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				MARKETING_VERSION = 3.4;
+				MARKETING_VERSION = 3.6.0;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = org.wyomingrea.wrealeg;
-				PRODUCT_NAME = "WY 2022";
+				PRODUCT_NAME = "WY 2023";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1841,14 +1847,16 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LegGuide/LegGuide-Prefix.pch";
 				INFOPLIST_FILE = "LegGuide/LegGuide-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "WY 2023";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.reference";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				MARKETING_VERSION = 3.4;
+				MARKETING_VERSION = 3.6.0;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = org.wyomingrea.wrealeg;
-				PRODUCT_NAME = "WY 2022";
+				PRODUCT_NAME = "WY 2023";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "";
