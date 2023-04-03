@@ -1,0 +1,25 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "AFNetworking",
+        "repositoryURL": "https://github.com/afnetworking/afnetworking",
+        "state": {
+          "branch": null,
+          "revision": "ffae2391ab0c29dc88eb0a58d2f5b2c2c27cadbf",
+          "version": "4.0.1"
+        }
+      },
+      {
+        "package": "ZipArchive",
+        "repositoryURL": "https://github.com/ZipArchive/ZipArchive",
+        "state": {
+          "branch": "master",
+          "revision": "825ff12a74a94c54e737e279604c27e6740e8a2c",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}

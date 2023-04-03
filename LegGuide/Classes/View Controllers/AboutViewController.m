@@ -27,6 +27,7 @@
 - (IBAction)backButtonPressed:(id)sender;
 - (IBAction)legislatureButtonPressed:(id)sender;
 - (IBAction)memberSystemsButtonPressed:(id)sender;
+- (IBAction)quizButtonPressed:(id)sender;
 - (IBAction)legContactsButtonPressed:(id)sender;
 - (IBAction)websiteButtonPressed:(id)sender;
 - (IBAction)phoneNumberButtonPressed:(id)sender;
@@ -59,6 +60,13 @@
     [self.navigationController pushViewController:plvc animated:YES];
     
 }
+
+- (IBAction)quizButtonPressed:(UITapGestureRecognizer *)sender {
+    NSURL *url = [NSURL URLWithString:@"https://www.proprofs.com/quiz-school/ugc/story.php?title=wreas-knowyourlegislator-quiz"];
+    [[UIApplication sharedApplication] openURL:url options:@{} completionHandler:nil];
+}
+
+
 
 - (IBAction)legContactsButtonPressed:(id)sender {
         
