@@ -19,6 +19,8 @@
 #ifndef REALM_INDEX_SET_HPP
 #define REALM_INDEX_SET_HPP
 
+#include <realm/util/features.h>
+
 #include <cstddef>
 #include <initializer_list>
 #include <iterator>
@@ -58,9 +60,9 @@ public:
     }
 
     template <typename Other>
-    bool operator==(Other const& it) const noexcept;
+    bool operator==(ChunkedRangeVectorIterator<Other> const& it) const noexcept;
     template <typename Other>
-    bool operator!=(Other const& it) const noexcept;
+    bool operator!=(ChunkedRangeVectorIterator<Other> const& it) const noexcept;
 
     ChunkedRangeVectorIterator& operator++() noexcept;
     ChunkedRangeVectorIterator operator++(int) noexcept;
@@ -332,14 +334,16 @@ std::reverse_iterator<Iterator> make_reverse_iterator(Iterator it) noexcept
 namespace _impl {
 template <typename T>
 template <typename OtherIterator>
-inline bool ChunkedRangeVectorIterator<T>::operator==(OtherIterator const& it) const noexcept
+inline bool
+ChunkedRangeVectorIterator<T>::operator==(ChunkedRangeVectorIterator<OtherIterator> const& it) const noexcept
 {
     return m_outer == it.outer() && m_inner == it.operator->();
 }
 
 template <typename T>
 template <typename OtherIterator>
-inline bool ChunkedRangeVectorIterator<T>::operator!=(OtherIterator const& it) const noexcept
+inline bool
+ChunkedRangeVectorIterator<T>::operator!=(ChunkedRangeVectorIterator<OtherIterator> const& it) const noexcept
 {
     return !(*this == it);
 }
@@ -383,7 +387,12 @@ inline ChunkedRangeVectorIterator<T> ChunkedRangeVectorIterator<T>::operator--(i
 }
 
 template <typename T>
-inline void ChunkedRangeVectorIterator<T>::next_chunk() noexcept
+#if REALM_WINDOWS && REALM_ARCHITECTURE_ARM64
+// Inlining this function crashes msvc when targeting arm64 in as of 19.39.33523
+__declspec(noinline)
+#endif
+inline void
+ChunkedRangeVectorIterator<T>::next_chunk() noexcept
 {
     ++m_outer;
     m_inner = m_outer != m_end ? &m_outer->data[0] : nullptr;

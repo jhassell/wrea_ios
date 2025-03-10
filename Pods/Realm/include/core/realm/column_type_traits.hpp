@@ -23,6 +23,8 @@
 #include <realm/column_type.hpp>
 #include <realm/data_type.hpp>
 #include <realm/array.hpp>
+#include <realm/object_id.hpp>
+#include <realm/uuid.hpp>
 #include <realm/keys.hpp>
 
 namespace realm {
@@ -30,10 +32,8 @@ namespace realm {
 struct ObjKey;
 struct ObjLink;
 class Decimal128;
-class ObjectId;
 class Mixed;
 class Timestamp;
-class UUID;
 class ArraySmallBlobs;
 class ArrayString;
 class ArrayStringShort;
@@ -67,24 +67,8 @@ struct SizeOfList;
 template <class T>
 struct ColumnTypeTraits;
 
-template <class T, Action action>
-struct AggregateResultType {
-    using result_type = T;
-};
-
-template <class T, Action action>
-struct AggregateResultType<util::Optional<T>, action> {
-    using result_type = T;
-};
-
-template <>
-struct AggregateResultType<float, act_Sum> {
-    using result_type = double;
-};
-
 template <>
 struct ColumnTypeTraits<int64_t> {
-    using leaf_type = ArrayInteger;
     using cluster_leaf_type = ArrayInteger;
     using sum_type = int64_t;
     using minmax_type = int64_t;
@@ -103,7 +87,6 @@ struct ColumnTypeTraits<ref_type> {
 
 template <>
 struct ColumnTypeTraits<util::Optional<int64_t>> {
-    using leaf_type = ArrayIntNull;
     using cluster_leaf_type = ArrayIntNull;
     using sum_type = int64_t;
     using minmax_type = int64_t;
@@ -137,6 +120,9 @@ struct ColumnTypeTraits<ObjKey> {
 template <>
 struct ColumnTypeTraits<Mixed> {
     using cluster_leaf_type = ArrayMixed;
+    using sum_type = Decimal128;
+    using minmax_type = Mixed;
+    using average_type = Decimal128;
     static constexpr const DataType id = type_Mixed;
     static constexpr const ColumnType column_id = col_type_Mixed;
 };
@@ -228,7 +214,6 @@ struct ColumnTypeTraits<StringData> {
 
 template <>
 struct ColumnTypeTraits<BinaryData> {
-    using leaf_type = ArraySmallBlobs;
     using cluster_leaf_type = ArrayBinary;
     static constexpr const DataType id = type_Binary;
     static constexpr const ColumnType column_id = col_type_Binary;

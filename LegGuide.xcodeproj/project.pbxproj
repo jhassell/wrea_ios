@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2428386F11A1014F2EB5ED27 /* Pods_wrealeg.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A970321799D552D847E1B1B1 /* Pods_wrealeg.framework */; };
 		5349E7DE2980EA1000805CAA /* Rothfuss-9.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5349E7BF2980EA0F00805CAA /* Rothfuss-9.jpg */; };
 		5349E7DF2980EA1000805CAA /* Jones-13.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5349E7C02980EA0F00805CAA /* Jones-13.jpg */; };
 		5349E7E02980EA1000805CAA /* Landen-27.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5349E7C12980EA0F00805CAA /* Landen-27.jpg */; };
@@ -104,6 +105,7 @@
 		535C932D2973062A00BA0E95 /* StateSenateDistricts2023.json in Resources */ = {isa = PBXBuildFile; fileRef = 535C932C2973062A00BA0E95 /* StateSenateDistricts2023.json */; };
 		535C932F29733CA200BA0E95 /* StateHouseDistricts2023.json in Resources */ = {isa = PBXBuildFile; fileRef = 535C932E29733CA200BA0E95 /* StateHouseDistricts2023.json */; };
 		53ABDA83282A174100FB5585 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53ABDA82282A174100FB5585 /* Realm.framework */; };
+		53AE84612D2DAC0E001BE3D0 /* AboutBackground_2025@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 53AE84602D2DAC0E001BE3D0 /* AboutBackground_2025@2x.jpg */; };
 		AF092D4115DA0FD200AA4B6B /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = AF092D4015DA0FD100AA4B6B /* Default.png */; };
 		AF092D4315DA0FDC00AA4B6B /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF092D4215DA0FDC00AA4B6B /* Default@2x.png */; };
 		AF14BD4F160E373A003D2052 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF14BD4E160E373A003D2052 /* MessageUI.framework */; };
@@ -296,7 +298,6 @@
 		CEF30A5F25F10BDC00D2A641 /* SenateSeatingChart.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CEF30A5E25F10BDC00D2A641 /* SenateSeatingChart.jpg */; };
 		CEF30A6125F10BEE00D2A641 /* HouseSeatingChart.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CEF30A6025F10BED00D2A641 /* HouseSeatingChart.jpg */; };
 		CEF30A6425F2695500D2A641 /* HouseSeatingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF30A6325F2695500D2A641 /* HouseSeatingViewController.m */; };
-		EEFA5B9FCFC5CC99927F1BAF /* Pods_wrealeg.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFB57DDAE88994509C180FFF /* Pods_wrealeg.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -397,8 +398,10 @@
 		535C932C2973062A00BA0E95 /* StateSenateDistricts2023.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = StateSenateDistricts2023.json; sourceTree = "<group>"; };
 		535C932E29733CA200BA0E95 /* StateHouseDistricts2023.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = StateHouseDistricts2023.json; sourceTree = "<group>"; };
 		53ABDA82282A174100FB5585 /* Realm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Realm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		67D2E102ABC3F3DA319912D5 /* Pods-wrealeg.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wrealeg.debug.xcconfig"; path = "Target Support Files/Pods-wrealeg/Pods-wrealeg.debug.xcconfig"; sourceTree = "<group>"; };
-		950FC546C8FA74A11DA90293 /* Pods-wrealeg.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wrealeg.release.xcconfig"; path = "Target Support Files/Pods-wrealeg/Pods-wrealeg.release.xcconfig"; sourceTree = "<group>"; };
+		53AE84602D2DAC0E001BE3D0 /* AboutBackground_2025@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "AboutBackground_2025@2x.jpg"; sourceTree = "<group>"; };
+		8772611E8A1FAA8FBE8683A7 /* Pods-wrealeg.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wrealeg.release.xcconfig"; path = "Target Support Files/Pods-wrealeg/Pods-wrealeg.release.xcconfig"; sourceTree = "<group>"; };
+		A970321799D552D847E1B1B1 /* Pods_wrealeg.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wrealeg.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AEF5ACC2EF34159D02675D04 /* Pods-wrealeg.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wrealeg.debug.xcconfig"; path = "Target Support Files/Pods-wrealeg/Pods-wrealeg.debug.xcconfig"; sourceTree = "<group>"; };
 		AF092D4015DA0FD100AA4B6B /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		AF092D4215DA0FDC00AA4B6B /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		AF14BD4E160E373A003D2052 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
@@ -524,7 +527,6 @@
 		AF866C4216B6F85300E9DF01 /* PersonViewPhoneCell-iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "PersonViewPhoneCell-iPhone.xib"; sourceTree = "<group>"; };
 		AFA73A7416B33E7500D13F1E /* AppIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = AppIcon.png; path = LegGuide/AppIcon.png; sourceTree = "<group>"; };
 		AFA73A7516B33E7500D13F1E /* AppIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "AppIcon@2x.png"; path = "LegGuide/AppIcon@2x.png"; sourceTree = "<group>"; };
-		AFB57DDAE88994509C180FFF /* Pods_wrealeg.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wrealeg.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFBEF2301A63ABDD00623B1A /* Lummis.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Lummis.jpg; sourceTree = "<group>"; };
 		AFBEF2321A63ABDD00623B1A /* Barrasso.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Barrasso.jpg; sourceTree = "<group>"; };
 		AFBEF2331A63ABDD00623B1A /* Enzi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Enzi.jpg; sourceTree = "<group>"; };
@@ -656,7 +658,7 @@
 				AF2481A415BB6A260070924E /* UIKit.framework in Frameworks */,
 				AF2481A615BB6A260070924E /* Foundation.framework in Frameworks */,
 				AF2481A815BB6A260070924E /* CoreGraphics.framework in Frameworks */,
-				EEFA5B9FCFC5CC99927F1BAF /* Pods_wrealeg.framework in Frameworks */,
+				2428386F11A1014F2EB5ED27 /* Pods_wrealeg.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -666,8 +668,8 @@
 		228B40ACD34F24EEB0A6451D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				67D2E102ABC3F3DA319912D5 /* Pods-wrealeg.debug.xcconfig */,
-				950FC546C8FA74A11DA90293 /* Pods-wrealeg.release.xcconfig */,
+				AEF5ACC2EF34159D02675D04 /* Pods-wrealeg.debug.xcconfig */,
+				8772611E8A1FAA8FBE8683A7 /* Pods-wrealeg.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -708,7 +710,7 @@
 				AF2481A315BB6A260070924E /* UIKit.framework */,
 				AF2481A515BB6A260070924E /* Foundation.framework */,
 				AF2481A715BB6A260070924E /* CoreGraphics.framework */,
-				AFB57DDAE88994509C180FFF /* Pods_wrealeg.framework */,
+				A970321799D552D847E1B1B1 /* Pods_wrealeg.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -866,6 +868,7 @@
 		AF2B107916AF9D0700A3A7F4 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				53AE84602D2DAC0E001BE3D0 /* AboutBackground_2025@2x.jpg */,
 				535C932A296FB93200BA0E95 /* AboutBackground_2023@2x.jpg */,
 				CEC34368279666B000502753 /* AboutBackground_2022@2x.jpg */,
 				CEF30A6025F10BED00D2A641 /* HouseSeatingChart.jpg */,
@@ -1218,11 +1221,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AF2481CB15BB6A260070924E /* Build configuration list for PBXNativeTarget "wrealeg" */;
 			buildPhases = (
-				C91372641CC5E01BA7507F59 /* [CP] Check Pods Manifest.lock */,
+				49A8217CE200798E0F1EE76A /* [CP] Check Pods Manifest.lock */,
 				AF24819B15BB6A250070924E /* Sources */,
 				AF24819C15BB6A250070924E /* Frameworks */,
 				AF24819D15BB6A250070924E /* Resources */,
-				47668E4CFE5A9B3C3D894998 /* [CP] Embed Pods Frameworks */,
+				19D0198B6F78C4E447F5EE58 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1257,8 +1260,6 @@
 				Base,
 			);
 			mainGroup = AF24819415BB6A250070924E;
-			packageReferences = (
-			);
 			productRefGroup = AF2481A015BB6A250070924E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1404,6 +1405,7 @@
 				CE2F312F21FE37C400F18CAE /* AboutBackground_2019@2x.jpg in Resources */,
 				AFBEF2BF1A63ABDD00623B1A /* HPlogoR.jpg in Resources */,
 				CECFF9731EF38BF0007BEF92 /* VoteTallyIcons_S.png in Resources */,
+				53AE84612D2DAC0E001BE3D0 /* AboutBackground_2025@2x.jpg in Resources */,
 				5349E8542980EA6A00805CAA /* Pendergraft-29.jpg in Resources */,
 				AFBEF2B81A63ABDD00623B1A /* Barrasso.jpg in Resources */,
 				CECFF9601EF35380007BEF92 /* BackgroundLight.png in Resources */,
@@ -1516,7 +1518,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		47668E4CFE5A9B3C3D894998 /* [CP] Embed Pods Frameworks */ = {
+		19D0198B6F78C4E447F5EE58 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1538,7 +1540,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-wrealeg/Pods-wrealeg-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C91372641CC5E01BA7507F59 /* [CP] Check Pods Manifest.lock */ = {
+		49A8217CE200798E0F1EE76A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1733,7 +1735,7 @@
 		};
 		AF2481CC15BB6A260070924E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 67D2E102ABC3F3DA319912D5 /* Pods-wrealeg.debug.xcconfig */;
+			baseConfigurationReference = AEF5ACC2EF34159D02675D04 /* Pods-wrealeg.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -1754,12 +1756,12 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LegGuide/LegGuide-Prefix.pch";
 				INFOPLIST_FILE = "LegGuide/LegGuide-Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "WY 2023";
+				INFOPLIST_KEY_CFBundleDisplayName = "WY 2025";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.reference";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				MARKETING_VERSION = 3.6.2;
+				MARKETING_VERSION = 3.7.0;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = org.wyomingrea.wrealeg;
@@ -1775,7 +1777,7 @@
 		};
 		AF2481CD15BB6A260070924E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 950FC546C8FA74A11DA90293 /* Pods-wrealeg.release.xcconfig */;
+			baseConfigurationReference = 8772611E8A1FAA8FBE8683A7 /* Pods-wrealeg.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -1795,12 +1797,12 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LegGuide/LegGuide-Prefix.pch";
 				INFOPLIST_FILE = "LegGuide/LegGuide-Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "WY 2023";
+				INFOPLIST_KEY_CFBundleDisplayName = "WY 2025";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.reference";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				MARKETING_VERSION = 3.6.2;
+				MARKETING_VERSION = 3.7.0;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = org.wyomingrea.wrealeg;

@@ -46,8 +46,7 @@ public:
     explicit UUID(StringData);
 
     /// Constructs a  UUID with all zero bytes
-    UUID()
-    noexcept
+    UUID() noexcept
         : m_bytes{}
     {
     }
@@ -82,6 +81,7 @@ public:
         return m_bytes <= other.m_bytes;
     }
     std::string to_string() const;
+    std::string to_base64() const;
     UUIDBytes to_bytes() const
     {
         return m_bytes;

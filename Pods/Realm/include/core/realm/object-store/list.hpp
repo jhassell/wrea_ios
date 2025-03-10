@@ -20,7 +20,6 @@
 #define REALM_OS_LIST_HPP
 
 #include <realm/object-store/collection.hpp>
-#include <realm/object-store/object.hpp>
 
 #include <realm/decimal128.hpp>
 #include <realm/list.hpp>
@@ -33,17 +32,17 @@
 namespace realm {
 class Obj;
 class Query;
-class SortDescriptor;
 class ThreadSafeReference;
 struct ColKey;
 struct ObjKey;
 
 class List : public object_store::Collection {
 public:
-    List() noexcept;
-    List(std::shared_ptr<Realm> r, const Obj& parent_obj, ColKey col);
-    List(std::shared_ptr<Realm> r, const LstBase& list);
-    ~List() override;
+    using object_store::Collection::Collection;
+    List()
+        : Collection(PropertyType::Array)
+    {
+    }
 
     List(const List&);
     List& operator=(const List&);
@@ -62,6 +61,7 @@ public:
 
     template <typename T = Obj>
     T get(size_t row_ndx) const;
+
     template <typename T>
     size_t find(T const& value) const;
 
@@ -80,25 +80,11 @@ public:
     Mixed get_any(size_t list_ndx) const final;
     size_t find_any(Mixed value) const final;
 
-    Results sort(SortDescriptor order) const;
-    Results sort(std::vector<std::pair<std::string, bool>> const& keypaths) const;
     Results filter(Query q) const;
 
-    // Return a Results representing a snapshot of this List.
-    Results snapshot() const;
-
-    // Returns a frozen copy of this result
-    List freeze(std::shared_ptr<Realm> const& realm) const;
-
-    // Get the min/max/average/sum of the given column
-    // All but sum() returns none when there are zero matching rows
-    // sum() returns 0,
-    // Throws UnsupportedColumnTypeException for sum/average on timestamp or non-numeric column
-    // Throws OutOfBoundsIndexException for an out-of-bounds column
-    util::Optional<Mixed> max(ColKey column = {}) const;
-    util::Optional<Mixed> min(ColKey column = {}) const;
-    util::Optional<Mixed> average(ColKey column = {}) const;
-    Mixed sum(ColKey column = {}) const;
+    // Returns a frozen copy of this List.
+    // Equivalent to producing a thread-safe reference and resolving it in the frozen realm.
+    List freeze(std::shared_ptr<Realm> const& frozen_realm) const;
 
     bool operator==(List const& rgt) const noexcept;
 
@@ -118,55 +104,54 @@ public:
     Obj set_embedded(size_t list_ndx);
     Obj insert_embedded(size_t list_ndx);
 
+    Obj get_object(size_t list_ndx);
+
     // Replace the values in this list with the values from an enumerable object
     template <typename T, typename Context>
     void assign(Context&, T&& value, CreatePolicy = CreatePolicy::SetLink);
 
-    // The object being added to the list is already a managed embedded object
-    struct InvalidEmbeddedOperationException : public std::logic_error {
-        InvalidEmbeddedOperationException()
-            : std::logic_error("Cannot add an existing managed embedded object to a List.")
-        {
-        }
-    };
-
 private:
-    std::shared_ptr<LstBase> m_list_base;
-    bool m_is_embedded = false;
+    const char* type_name() const noexcept override
+    {
+        return "List";
+    }
 
-    template <typename T, typename Context>
-    void validate_embedded(Context& ctx, T&& value, CreatePolicy policy) const;
+    LstBase& list_base() const noexcept
+    {
+        REALM_ASSERT_DEBUG(dynamic_cast<LstBase*>(m_coll_base.get()));
+        return static_cast<LstBase&>(*m_coll_base);
+    }
 
     template <typename Fn>
     auto dispatch(Fn&&) const;
     template <typename T>
     auto& as() const;
 
-    template <typename T, typename Context>
-    void set_if_different(Context&, size_t row_ndx, T&& value, CreatePolicy);
-
     friend struct std::hash<List>;
 };
+
+template <>
+Obj List::get(size_t row_ndx) const;
 
 template <typename T>
 auto& List::as() const
 {
-    REALM_ASSERT(dynamic_cast<Lst<T>*>(&*m_list_base));
-    return static_cast<Lst<T>&>(*m_list_base);
+    REALM_ASSERT_DEBUG(dynamic_cast<Lst<T>*>(m_coll_base.get()));
+    return static_cast<Lst<T>&>(*m_coll_base);
 }
 
 template <>
 inline auto& List::as<Obj>() const
 {
-    REALM_ASSERT(dynamic_cast<LnkLst*>(&*m_list_base));
-    return static_cast<LnkLst&>(*m_list_base);
+    REALM_ASSERT_DEBUG(dynamic_cast<LnkLst*>(m_coll_base.get()));
+    return static_cast<LnkLst&>(*m_coll_base);
 }
 
 template <>
 inline auto& List::as<ObjKey>() const
 {
-    REALM_ASSERT(dynamic_cast<LnkLst*>(&*m_list_base));
-    return static_cast<LnkLst&>(*m_list_base);
+    REALM_ASSERT_DEBUG(dynamic_cast<LnkLst*>(m_coll_base.get()));
+    return static_cast<LnkLst&>(*m_coll_base);
 }
 
 template <typename Fn>
@@ -176,127 +161,6 @@ auto List::dispatch(Fn&& fn) const
     return switch_on_type(get_type(), std::forward<Fn>(fn));
 }
 
-template <typename Context>
-auto List::get(Context& ctx, size_t row_ndx) const
-{
-    return dispatch([&](auto t) {
-        return ctx.box(this->get<std::decay_t<decltype(*t)>>(row_ndx));
-    });
-}
-
-template <typename T, typename Context>
-size_t List::find(Context& ctx, T&& value) const
-{
-    return dispatch([&](auto t) {
-        return this->find(ctx.template unbox<std::decay_t<decltype(*t)>>(value, CreatePolicy::Skip));
-    });
-}
-
-template <typename T, typename Context>
-void List::validate_embedded(Context& ctx, T&& value, CreatePolicy policy) const
-{
-    if (!policy.copy && ctx.template unbox<Obj>(value, CreatePolicy::Skip).is_valid())
-        throw InvalidEmbeddedOperationException();
-}
-
-template <typename T, typename Context>
-void List::add(Context& ctx, T&& value, CreatePolicy policy)
-{
-    if (m_is_embedded) {
-        validate_embedded(ctx, value, policy);
-        auto key = as<Obj>().create_and_insert_linked_object(size()).get_key();
-        ctx.template unbox<Obj>(value, policy, key);
-        return;
-    }
-    dispatch([&](auto t) {
-        this->add(ctx.template unbox<std::decay_t<decltype(*t)>>(value, policy));
-    });
-}
-
-template <typename T, typename Context>
-void List::insert(Context& ctx, size_t list_ndx, T&& value, CreatePolicy policy)
-{
-    if (m_is_embedded) {
-        validate_embedded(ctx, value, policy);
-        auto key = as<Obj>().create_and_insert_linked_object(list_ndx).get_key();
-        ctx.template unbox<Obj>(value, policy, key);
-        return;
-    }
-    dispatch([&](auto t) {
-        this->insert(list_ndx, ctx.template unbox<std::decay_t<decltype(*t)>>(value, policy));
-    });
-}
-
-template <typename T, typename Context>
-void List::set(Context& ctx, size_t list_ndx, T&& value, CreatePolicy policy)
-{
-    if (m_is_embedded) {
-        validate_embedded(ctx, value, policy);
-
-        auto& list = as<Obj>();
-        auto key = policy.diff ? list.get(list_ndx) : list.create_and_set_linked_object(list_ndx).get_key();
-        ctx.template unbox<Obj>(value, policy, key);
-        return;
-    }
-    dispatch([&](auto t) {
-        this->set(list_ndx, ctx.template unbox<std::decay_t<decltype(*t)>>(value, policy));
-    });
-}
-
-template <typename T, typename Context>
-void List::set_if_different(Context& ctx, size_t row_ndx, T&& value, CreatePolicy policy)
-{
-    if (m_is_embedded) {
-        validate_embedded(ctx, value, policy);
-        auto key = policy.diff ? this->get<Obj>(row_ndx) : as<Obj>().create_and_set_linked_object(row_ndx);
-        ctx.template unbox<Obj>(value, policy, key.get_key());
-        return;
-    }
-    dispatch([&](auto t) {
-        using U = std::decay_t<decltype(*t)>;
-        if constexpr (std::is_same_v<U, Obj>) {
-            auto old_value = this->get<U>(row_ndx);
-            auto new_value = ctx.template unbox<U>(value, policy, old_value.get_key());
-            if (new_value.get_key() != old_value.get_key())
-                this->set(row_ndx, new_value);
-        }
-        else {
-            auto old_value = this->get<U>(row_ndx);
-            auto new_value = ctx.template unbox<U>(value, policy);
-            if (old_value != new_value)
-                this->set(row_ndx, new_value);
-        }
-    });
-}
-
-template <typename T, typename Context>
-void List::assign(Context& ctx, T&& values, CreatePolicy policy)
-{
-    if (ctx.is_same_list(*this, values))
-        return;
-
-    if (ctx.is_null(values)) {
-        remove_all();
-        return;
-    }
-
-    if (!policy.diff)
-        remove_all();
-
-    size_t sz = size();
-    size_t index = 0;
-    ctx.enumerate_collection(values, [&](auto&& element) {
-        if (index >= sz)
-            this->add(ctx, element, policy);
-        else if (policy.diff)
-            this->set_if_different(ctx, index, element, policy);
-        else
-            this->set(ctx, index, element, policy);
-        index++;
-    });
-    while (index < sz)
-        remove(--sz);
-}
 } // namespace realm
 
 namespace std {

@@ -22,24 +22,22 @@
 #include <realm/object-store/impl/collection_notifier.hpp>
 
 #include <realm/keys.hpp>
+#include <realm/table.hpp>
 
-namespace realm {
-
-namespace _impl {
+namespace realm::_impl {
 class ObjectNotifier : public CollectionNotifier {
 public:
-    ObjectNotifier(std::shared_ptr<Realm> realm, TableKey table, ObjKey obj);
+    ObjectNotifier(std::shared_ptr<Realm> realm, const Obj&);
 
 private:
-    TableKey m_table;
-    ObjKey m_obj;
-    TransactionChangeInfo* m_info;
+    TableRef m_table;
+    ObjKey m_obj_key;
+    TransactionChangeInfo* m_info = nullptr;
 
-    void run() override;
-
+    void run() override REQUIRES(!m_callback_mutex);
+    void reattach() override;
     bool do_add_required_change_info(TransactionChangeInfo& info) override;
 };
-} // namespace _impl
-} // namespace realm
+} // namespace realm::_impl
 
 #endif // REALM_OS_OBJECT_NOTIFIER_HPP

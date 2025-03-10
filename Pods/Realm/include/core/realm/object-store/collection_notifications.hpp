@@ -19,6 +19,7 @@
 #ifndef REALM_COLLECTION_NOTIFICATIONS_HPP
 #define REALM_COLLECTION_NOTIFICATIONS_HPP
 
+#include <realm/path.hpp>
 #include <realm/object-store/index_set.hpp>
 #include <realm/object-store/util/atomic_shared_ptr.hpp>
 
@@ -27,6 +28,7 @@
 #include <type_traits>
 #include <unordered_map>
 #include <vector>
+#include <set>
 
 namespace realm {
 namespace _impl {
@@ -44,6 +46,10 @@ struct NotificationToken {
 
     NotificationToken(NotificationToken const&) = delete;
     NotificationToken& operator=(NotificationToken const&) = delete;
+
+    // Stop sending notifications for the callback associated with this token.
+    // This is equivalent to (*this) = {};
+    void unregister();
 
     void suppress_next();
 
@@ -89,21 +95,31 @@ struct CollectionChangeSet {
     // unreported moves which show up only as a delete/insert pair.
     std::vector<Move> moves;
 
+    // This flag indicates whether the underlying object which is the source of this
+    // collection was deleted. This applies to lists, dictionaries and sets.
+    // This enables notifiers to report a change on empty collections that have been deleted.
+    bool collection_root_was_deleted = false;
+
+    // This flag indicates if the collection was cleared.
+    bool collection_was_cleared = false;
+
     // Per-column version of `modifications`
     std::unordered_map<int64_t, IndexSet> columns;
+
+    std::set<StableIndex> paths;
 
     bool empty() const noexcept
     {
         return deletions.empty() && insertions.empty() && modifications.empty() && modifications_new.empty() &&
-               moves.empty();
+               moves.empty() && !collection_root_was_deleted && !collection_was_cleared;
     }
 };
 
 // A type-erasing wrapper for the callback for collection notifications. Can be
 // constructed with either any callable compatible with the signature
-// `void (CollectionChangeSet, std::exception_ptr)`, an object with member
+// `void (CollectionChangeSet)`, an object with member
 // functions `void before(CollectionChangeSet)`, `void after(CollectionChangeSet)`,
-// `void error(std::exception_ptr)`, or a pointer to such an object. If a pointer
+// or a pointer to such an object. If a pointer
 // is given, the caller is responsible for ensuring that the pointed-to object
 // outlives the collection.
 class CollectionChangeCallback {
@@ -137,10 +153,6 @@ public:
     {
         m_impl->after(c);
     }
-    void error(std::exception_ptr e)
-    {
-        m_impl->error(e);
-    }
 
     explicit operator bool() const
     {
@@ -152,11 +164,9 @@ private:
         virtual ~Base() {}
         virtual void before(CollectionChangeSet const&) = 0;
         virtual void after(CollectionChangeSet const&) = 0;
-        virtual void error(std::exception_ptr) = 0;
     };
 
-    template <typename Callback,
-              typename = decltype(std::declval<Callback>()(CollectionChangeSet(), std::exception_ptr()))>
+    template <typename Callback, typename = decltype(std::declval<Callback>()(CollectionChangeSet()))>
     std::shared_ptr<Base> make_impl(Callback cb)
     {
         return std::make_shared<Impl<Callback>>(std::move(cb));
@@ -186,11 +196,7 @@ private:
         void before(CollectionChangeSet const&) override {}
         void after(CollectionChangeSet const& change) override
         {
-            impl(change, {});
-        }
-        void error(std::exception_ptr error) override
-        {
-            impl({}, error);
+            impl(change);
         }
     };
     template <typename T>
@@ -208,10 +214,6 @@ private:
         {
             impl.after(c);
         }
-        void error(std::exception_ptr error) override
-        {
-            impl.error(error);
-        }
     };
     template <typename T>
     struct Impl3 : public Base {
@@ -227,10 +229,6 @@ private:
         void after(CollectionChangeSet const& c) override
         {
             impl->after(c);
-        }
-        void error(std::exception_ptr error) override
-        {
-            impl->error(error);
         }
     };
 

@@ -1,32 +1,26 @@
 PODS:
-  - AFNetworking (2.7.0):
-    - AFNetworking/NSURLConnection (= 2.7.0)
-    - AFNetworking/NSURLSession (= 2.7.0)
-    - AFNetworking/Reachability (= 2.7.0)
-    - AFNetworking/Security (= 2.7.0)
-    - AFNetworking/Serialization (= 2.7.0)
-    - AFNetworking/UIKit (= 2.7.0)
-  - AFNetworking/NSURLConnection (2.7.0):
+  - AFNetworking (4.0.1):
+    - AFNetworking/NSURLSession (= 4.0.1)
+    - AFNetworking/Reachability (= 4.0.1)
+    - AFNetworking/Security (= 4.0.1)
+    - AFNetworking/Serialization (= 4.0.1)
+    - AFNetworking/UIKit (= 4.0.1)
+  - AFNetworking/NSURLSession (4.0.1):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/NSURLSession (2.7.0):
-    - AFNetworking/Reachability
-    - AFNetworking/Security
-    - AFNetworking/Serialization
-  - AFNetworking/Reachability (2.7.0)
-  - AFNetworking/Security (2.7.0)
-  - AFNetworking/Serialization (2.7.0)
-  - AFNetworking/UIKit (2.7.0):
-    - AFNetworking/NSURLConnection
+  - AFNetworking/Reachability (4.0.1)
+  - AFNetworking/Security (4.0.1)
+  - AFNetworking/Serialization (4.0.1)
+  - AFNetworking/UIKit (4.0.1):
     - AFNetworking/NSURLSession
-  - Realm (10.5.2):
-    - Realm/Headers (= 10.5.2)
-  - Realm/Headers (10.5.2)
-  - SSZipArchive (2.2.2)
+  - Realm (20.0.1):
+    - Realm/Headers (= 20.0.1)
+  - Realm/Headers (20.0.1)
+  - SSZipArchive (2.4.3)
 
 DEPENDENCIES:
-  - AFNetworking (~> 2.5)
+  - AFNetworking (~> 4.0)
   - Realm
   - SSZipArchive
 
@@ -37,10 +31,10 @@ SPEC REPOS:
     - SSZipArchive
 
 SPEC CHECKSUMS:
-  AFNetworking: 8dd5f9b9691e09186393069a12cc3b5ed7c8b511
-  Realm: 2e1bc0d28301006176692da234deff51f867d5ae
-  SSZipArchive: fa16b8cc4cdeceb698e5e5d9f67e9558532fbf23
+  AFNetworking: 3bd23d814e976cd148d7d44c3ab78017b744cd58
+  Realm: 9572204903ef28caeb3c03bb30c1147f354ee3e7
+  SSZipArchive: fe6a26b2a54d5a0890f2567b5cc6de5caa600aef
 
-PODFILE CHECKSUM: e851480c3538414f64703adca46d4bfff6285966
+PODFILE CHECKSUM: 775a1620e50e1fb191cfaaa88b3536124cd3bd7c
 
-COCOAPODS: 1.11.3
+COCOAPODS: 1.16.2

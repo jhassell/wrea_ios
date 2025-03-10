@@ -3,7 +3,7 @@ This application makes use of the following third party libraries:
 
 ## AFNetworking
 
-Copyright (c) 2011–2015 Alamofire Software Foundation (http://alamofire.org/)
+Copyright (c) 2011-2020 Alamofire Software Foundation (http://alamofire.org/)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -25,13 +25,6 @@ THE SOFTWARE.
 
 
 ## Realm
-
-TABLE OF CONTENTS
-
-1. Apache License version 2.0
-2. Export Compliance
-
-1. -------------------------------------------------------------------------------
 
                                  Apache License
                            Version 2.0, January 2004
@@ -208,33 +201,13 @@ TABLE OF CONTENTS
       incurred by, or claims asserted against, such Contributor by reason
       of your accepting any such warranty or additional liability.
 
-2. -------------------------------------------------------------------------------
+   END OF TERMS AND CONDITIONS
 
-EXPORT COMPLIANCE
-
-You understand that the Software may contain cryptographic functions that may be
-subject to export restrictions, and you represent and warrant that you are not
-(i) located in a jurisdiction that is subject to United States economic
-sanctions (“Prohibited Jurisdiction”), including Cuba, Iran, North Korea,
-Sudan, Syria or the Crimea region, (ii) a person listed on any U.S. government
-blacklist (to include the List of Specially Designated Nationals and Blocked
-Persons or the Consolidated Sanctions List administered by the U.S. Department
-of the Treasury’s Office of Foreign Assets Control, or the Denied Persons List
-or Entity List administered by the U.S. Department of Commerce)
-(“Sanctioned Person”), or (iii) controlled or 50% or more owned by a Sanctioned
-Person.
-
-You agree to comply with all export, re-export and import restrictions and
-regulations of the U.S. Department of Commerce or other agency or authority of
-the United States or other applicable countries. You also agree not to transfer,
-or authorize the transfer of, directly or indirectly, of the Software to any
-Prohibited Jurisdiction, or otherwise in violation of any such restrictions or
-regulations.
 
 
 ## SSZipArchive
 
-Copyright (c) 2010-2015, Sam Soffes, https://soff.es
+Copyright (c) 2013-2021, ZipArchive, https://github.com/ZipArchive
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the

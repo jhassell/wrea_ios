@@ -23,25 +23,70 @@
 #include <realm/bplustree.hpp>
 #include <realm/array_key.hpp>
 
-#include <numeric> // std::iota
-
 namespace realm {
-
 class SetBase : public CollectionBase {
 public:
     using CollectionBase::CollectionBase;
+    SetBase(const SetBase& other);
+    SetBase(SetBase&& other) noexcept;
+    SetBase& operator=(const SetBase& other);
+    SetBase& operator=(SetBase&& other) noexcept;
 
-    virtual ~SetBase() {}
     virtual SetBasePtr clone() const = 0;
     virtual std::pair<size_t, bool> insert_null() = 0;
     virtual std::pair<size_t, bool> erase_null() = 0;
     virtual std::pair<size_t, bool> insert_any(Mixed value) = 0;
     virtual std::pair<size_t, bool> erase_any(Mixed value) = 0;
 
+    bool is_subset_of(const CollectionBase&) const;
+    bool is_strict_subset_of(const CollectionBase& rhs) const;
+    bool is_superset_of(const CollectionBase& rhs) const;
+    bool is_strict_superset_of(const CollectionBase& rhs) const;
+    bool intersects(const CollectionBase& rhs) const;
+    bool set_equals(const CollectionBase& rhs) const;
+    void assign_union(const CollectionBase&);
+    void assign_intersection(const CollectionBase&);
+    void assign_difference(const CollectionBase&);
+    void assign_symmetric_difference(const CollectionBase&);
+
 protected:
+    static constexpr CollectionType s_collection_type = CollectionType::Set;
+    mutable std::unique_ptr<BPlusTreeBase> m_tree;
+
     void insert_repl(Replication* repl, size_t index, Mixed value) const;
     void erase_repl(Replication* repl, size_t index, Mixed value) const;
     void clear_repl(Replication* repl) const;
+    static std::vector<Mixed> convert_to_mixed_set(const CollectionBase& rhs);
+
+    void resort_range(size_t from, size_t to);
+
+    REALM_COLD REALM_NORETURN void throw_invalid_null()
+    {
+        throw InvalidArgument(ErrorCodes::PropertyNotNullable,
+                              util::format("Set: %1", CollectionBase::get_property_name()));
+    }
+
+private:
+    template <class It1, class It2>
+    bool is_subset_of(It1, It2) const;
+
+    template <class It1, class It2>
+    bool is_superset_of(It1, It2) const;
+
+    template <class It1, class It2>
+    bool intersects(It1, It2) const;
+
+    template <class It1, class It2>
+    void assign_union(It1, It2);
+
+    template <class It1, class It2>
+    void assign_intersection(It1, It2);
+
+    template <class It1, class It2>
+    void assign_difference(It1, It2);
+
+    template <class It1, class It2>
+    void assign_symmetric_difference(It1, It2);
 };
 
 template <class T>
@@ -52,13 +97,25 @@ public:
     using iterator = CollectionIterator<Set<T>>;
 
     Set() = default;
-    Set(const Obj& owner, ColKey col_key);
+    Set(const Obj& owner, ColKey col_key)
+        : Set<T>(col_key)
+    {
+        this->set_owner(owner, col_key);
+    }
+
+    Set(ColKey col_key, size_t = 0)
+        : Base(col_key)
+    {
+        if (!col_key.is_set()) {
+            throw InvalidArgument(ErrorCodes::TypeMismatch, "Property not a set");
+        }
+
+        check_column_type<value_type>(m_col_key);
+    }
     Set(const Set& other);
     Set(Set&& other) noexcept;
     Set& operator=(const Set& other);
     Set& operator=(Set&& other) noexcept;
-    using Base::operator==;
-    using Base::operator!=;
 
     SetBasePtr clone() const final
     {
@@ -68,10 +125,8 @@ public:
     T get(size_t ndx) const
     {
         const auto current_size = size();
-        if (ndx >= current_size) {
-            throw std::out_of_range("Index out of range");
-        }
-        return m_tree->get(ndx);
+        CollectionBase::validate_index("get()", ndx, current_size);
+        return tree().get(ndx);
     }
 
     iterator begin() const noexcept
@@ -98,48 +153,6 @@ public:
         }
     }
 
-    template <class Rhs>
-    bool is_subset_of(const Rhs&) const;
-
-    template <class It1, class It2>
-    bool is_subset_of(It1, It2) const;
-
-    template <class Rhs>
-    bool is_superset_of(const Rhs&) const;
-
-    template <class It1, class It2>
-    bool is_superset_of(It1, It2) const;
-
-    template <class Rhs>
-    bool intersects(const Rhs&) const;
-
-    template <class It1, class It2>
-    bool intersects(It1, It2) const;
-
-    template <class Rhs>
-    void assign_union(const Rhs&);
-
-    template <class It1, class It2>
-    void assign_union(It1, It2);
-
-    template <class Rhs>
-    void assign_intersection(const Rhs&);
-
-    template <class It1, class It2>
-    void assign_intersection(It1, It2);
-
-    template <class Rhs>
-    void assign_difference(const Rhs&);
-
-    template <class It1, class It2>
-    void assign_difference(It1, It2);
-
-    template <class Rhs>
-    void assign_symmetric_difference(const Rhs&);
-
-    template <class It1, class It2>
-    void assign_symmetric_difference(It1, It2);
-
     /// Insert a value into the set if it does not already exist, returning the index of the inserted value,
     /// or the index of the already-existing value.
     std::pair<size_t, bool> insert(T value);
@@ -158,11 +171,11 @@ public:
         return get(ndx);
     }
     void clear() final;
-    Mixed min(size_t* return_ndx = nullptr) const final;
-    Mixed max(size_t* return_ndx = nullptr) const final;
-    Mixed sum(size_t* return_cnt = nullptr) const final;
-    Mixed avg(size_t* return_cnt = nullptr) const final;
-    std::unique_ptr<CollectionBase> clone_collection() const final
+    util::Optional<Mixed> min(size_t* return_ndx = nullptr) const final;
+    util::Optional<Mixed> max(size_t* return_ndx = nullptr) const final;
+    util::Optional<Mixed> sum(size_t* return_cnt = nullptr) const final;
+    util::Optional<Mixed> avg(size_t* return_cnt = nullptr) const final;
+    CollectionBasePtr clone_collection() const final
     {
         return std::make_unique<Set<T>>(*this);
     }
@@ -178,38 +191,45 @@ public:
 
     const BPlusTree<T>& get_tree() const
     {
-        return *m_tree;
+        return tree();
     }
+
+    UpdateStatus update_if_needed() const final;
+    void ensure_created();
+
+    void migrate();
+    void migration_resort();
 
 private:
-    mutable std::unique_ptr<BPlusTree<T>> m_tree;
+    // Friend because it needs access to `m_tree` in the implementation of
+    // `ObjCollectionBase::get_mutable_tree()`.
+    friend class LnkSet;
+
+    using Base::bump_content_version;
+    using Base::get_alloc;
     using Base::m_col_key;
-    using Base::m_obj;
-    using Base::m_valid;
+    using Base::m_nullable;
 
-    void create()
+    BPlusTree<T>& tree() const
     {
-        m_tree->create();
-        m_valid = true;
+        return static_cast<BPlusTree<T>&>(*m_tree);
     }
 
-    bool init_from_parent() const final
+    UpdateStatus init_from_parent(bool allow_create) const;
+
+    /// Update the accessor and return true if it is attached after the update.
+    inline bool update() const
     {
-        m_valid = m_tree->init_from_parent();
-        update_content_version();
-        return m_valid;
+        return update_if_needed() != UpdateStatus::Detached;
     }
 
-    void ensure_created()
-    {
-        if (!m_valid && m_obj.is_valid()) {
-            create();
-        }
-    }
+    // `do_` methods here perform the action after preconditions have been
+    // checked (bounds check, writability, etc.).
     void do_insert(size_t ndx, T value);
     void do_erase(size_t ndx);
+    void do_clear();
 
-    friend class LnkSet;
+    iterator find_impl(const T& value) const;
 };
 
 class LnkSet final : public ObjCollectionBase<SetBase> {
@@ -222,8 +242,12 @@ public:
     LnkSet(const Obj& owner, ColKey col_key)
         : m_set(owner, col_key)
     {
-        update_unresolved();
     }
+    LnkSet(ColKey col_key)
+        : m_set(col_key)
+    {
+    }
+
 
     LnkSet(const LnkSet&) = default;
     LnkSet(LnkSet&&) = default;
@@ -238,37 +262,9 @@ public:
     std::pair<size_t, bool> insert(ObjKey);
     std::pair<size_t, bool> erase(ObjKey);
 
-    template <class Rhs>
-    void assign_union(const Rhs&);
-
-    template <class It1, class It2>
-    void assign_union(It1, It2);
-
-    template <class Rhs>
-    void assign_intersection(const Rhs&);
-
-    template <class It1, class It2>
-    void assign_intersection(It1, It2);
-
-    template <class Rhs>
-    void assign_difference(const Rhs&);
-
-    template <class It1, class It2>
-    void assign_difference(It1, It2);
-
-    template <class Rhs>
-    void assign_symmetric_difference(const Rhs&);
-
-    template <class It1, class It2>
-    void assign_symmetric_difference(It1, It2);
-
-    bool is_subset_of(const LnkSet& rhs) const;
-    bool is_superset_of(const LnkSet& rhs) const;
-    bool intersects(const LnkSet& rhs) const;
-
     // Overriding members of CollectionBase:
-    using CollectionBase::get_key;
-    CollectionBasePtr clone_collection() const
+    using CollectionBase::get_owner_key;
+    CollectionBasePtr clone_collection() const override
     {
         return clone_linkset();
     }
@@ -276,19 +272,43 @@ public:
     bool is_null(size_t ndx) const final;
     Mixed get_any(size_t ndx) const final;
     void clear() final;
-    Mixed min(size_t* return_ndx = nullptr) const final;
-    Mixed max(size_t* return_ndx = nullptr) const final;
-    Mixed sum(size_t* return_cnt = nullptr) const final;
-    Mixed avg(size_t* return_cnt = nullptr) const final;
+    util::Optional<Mixed> min(size_t* return_ndx = nullptr) const final;
+    util::Optional<Mixed> max(size_t* return_ndx = nullptr) const final;
+    util::Optional<Mixed> sum(size_t* return_cnt = nullptr) const final;
+    util::Optional<Mixed> avg(size_t* return_cnt = nullptr) const final;
     void sort(std::vector<size_t>& indices, bool ascending = true) const final;
     void distinct(std::vector<size_t>& indices, util::Optional<bool> sort_order = util::none) const final;
     const Obj& get_obj() const noexcept final;
-    bool is_attached() const final;
-    bool has_changed() const final;
+    bool is_attached() const noexcept final;
+    bool has_changed() const noexcept final;
     ColKey get_col_key() const noexcept final;
+    CollectionType get_collection_type() const noexcept override
+    {
+        return CollectionType::Set;
+    }
+
+    FullPath get_path() const noexcept final
+    {
+        return m_set.get_path();
+    }
+
+    Path get_short_path() const noexcept final
+    {
+        return m_set.get_short_path();
+    }
+
+    StablePath get_stable_path() const noexcept final
+    {
+        return m_set.get_stable_path();
+    }
 
     // Overriding members of SetBase:
-    SetBasePtr clone() const
+    SetBasePtr clone() const override
+    {
+        return clone_linkset();
+    }
+    // Overriding members of ObjList:
+    LinkCollectionPtr clone_obj_list() const final
     {
         return clone_linkset();
     }
@@ -299,7 +319,6 @@ public:
     std::pair<size_t, bool> erase_any(Mixed value) final;
 
     // Overriding members of ObjList:
-    bool is_obj_valid(size_t) const noexcept final;
     Obj get_object(size_t ndx) const final;
     ObjKey get_key(size_t ndx) const final;
 
@@ -339,22 +358,30 @@ public:
         return iterator{this, size()};
     }
 
+    void set_owner(const Obj& obj, ColKey ck) override
+    {
+        m_set.set_owner(obj, ck);
+    }
+
+    void set_owner(std::shared_ptr<CollectionParent> parent, CollectionParent::Index index) override
+    {
+        m_set.set_owner(std::move(parent), index);
+    }
+
+    void to_json(std::ostream&, JSONOutputMode, util::FunctionRef<void(const Mixed&)>) const override;
+
 private:
     Set<ObjKey> m_set;
 
-    bool do_update_if_needed() const final
+    // Overriding members of ObjCollectionBase:
+    UpdateStatus do_update_if_needed() const final
     {
         return m_set.update_if_needed();
     }
 
-    bool do_init_from_parent() const final
+    BPlusTree<ObjKey>* get_mutable_tree() const final
     {
-        return m_set.init_from_parent();
-    }
-
-    BPlusTree<ObjKey>& get_mutable_tree() const final
-    {
-        return *m_set.m_tree;
+        return &m_set.tree();
     }
 };
 
@@ -362,6 +389,8 @@ template <>
 void Set<ObjKey>::do_insert(size_t, ObjKey);
 template <>
 void Set<ObjKey>::do_erase(size_t);
+template <>
+void Set<ObjKey>::do_clear();
 
 template <>
 void Set<ObjLink>::do_insert(size_t, ObjLink);
@@ -372,178 +401,61 @@ template <>
 void Set<Mixed>::do_insert(size_t, Mixed);
 template <>
 void Set<Mixed>::do_erase(size_t);
-
-/// Compare set elements.
-///
-/// We cannot use `std::less<>` directly, because the ordering of set elements
-/// impacts the file format. For primitive types this is trivial (and can indeed
-/// be just `std::less<>`), but for example `Mixed` has specialized comparison
-/// that defines equality of numeric types.
-template <class T>
-struct SetElementLessThan {
-    bool operator()(const T& a, const T& b) const noexcept
-    {
-        // CAUTION: This routine is technically part of the file format, because
-        // it determines the storage order of Set elements.
-        return a < b;
-    }
-};
-
-template <class T>
-struct SetElementEquals {
-    bool operator()(const T& a, const T& b) const noexcept
-    {
-        // CAUTION: This routine is technically part of the file format, because
-        // it determines the storage order of Set elements.
-        return a == b;
-    }
-};
-
 template <>
-struct SetElementLessThan<Mixed> {
-    bool operator()(const Mixed& a, const Mixed& b) const noexcept
-    {
-        // CAUTION: This routine is technically part of the file format, because
-        // it determines the storage order of Set elements.
-
-        if (a.is_null() != b.is_null()) {
-            // If a is NULL but not b, a < b.
-            return a.is_null();
-        }
-        else if (a.is_null()) {
-            // NULLs are equal.
-            return false;
-        }
-
-        if (a.get_type() != b.get_type()) {
-            return a.get_type() < b.get_type();
-        }
-
-        switch (a.get_type()) {
-            case type_Int:
-                return a.get<int64_t>() < b.get<int64_t>();
-            case type_Bool:
-                return a.get<bool>() < b.get<bool>();
-            case type_String:
-                return a.get<StringData>() < b.get<StringData>();
-            case type_Binary:
-                return a.get<BinaryData>() < b.get<BinaryData>();
-            case type_Timestamp:
-                return a.get<Timestamp>() < b.get<Timestamp>();
-            case type_Float:
-                return a.get<float>() < b.get<float>();
-            case type_Double:
-                return a.get<double>() < b.get<double>();
-            case type_Decimal:
-                return a.get<Decimal128>() < b.get<Decimal128>();
-            case type_ObjectId:
-                return a.get<ObjectId>() < b.get<ObjectId>();
-            case type_UUID:
-                return a.get<UUID>() < b.get<UUID>();
-            case type_TypedLink:
-                return a.get<ObjLink>() < b.get<ObjLink>();
-            case type_Mixed:
-                [[fallthrough]];
-            case type_Link:
-                [[fallthrough]];
-            case type_LinkList:
-                REALM_TERMINATE("Invalid Mixed payload in Set.");
-        }
-        return false;
-    }
-};
-
+void Set<Mixed>::do_clear();
 template <>
-struct SetElementEquals<Mixed> {
-    bool operator()(const Mixed& a, const Mixed& b) const noexcept
-    {
-        // CAUTION: This routine is technically part of the file format, because
-        // it determines the storage order of Set elements.
+void Set<Mixed>::migrate();
+template <>
+void Set<Mixed>::migration_resort();
+template <>
+void Set<StringData>::migration_resort();
+template <>
+void Set<BinaryData>::migration_resort();
 
-        if (a.is_null() != b.is_null()) {
-            return false;
-        }
-        else if (a.is_null()) {
-            return true;
-        }
-
-        if (a.get_type() != b.get_type()) {
-            return false;
-        }
-
-        switch (a.get_type()) {
-            case type_Int:
-                return a.get<int64_t>() == b.get<int64_t>();
-            case type_Bool:
-                return a.get<bool>() == b.get<bool>();
-            case type_String:
-                return a.get<StringData>() == b.get<StringData>();
-            case type_Binary:
-                return a.get<BinaryData>() == b.get<BinaryData>();
-            case type_Timestamp:
-                return a.get<Timestamp>() == b.get<Timestamp>();
-            case type_Float:
-                return a.get<float>() == b.get<float>();
-            case type_Double:
-                return a.get<double>() == b.get<double>();
-            case type_Decimal:
-                return a.get<Decimal128>() == b.get<Decimal128>();
-            case type_ObjectId:
-                return a.get<ObjectId>() == b.get<ObjectId>();
-            case type_UUID:
-                return a.get<UUID>() == b.get<UUID>();
-            case type_TypedLink:
-                return a.get<ObjLink>() == b.get<ObjLink>();
-            case type_Mixed:
-                [[fallthrough]];
-            case type_Link:
-                [[fallthrough]];
-            case type_LinkList:
-                REALM_TERMINATE("Invalid Mixed payload in Set.");
-        }
-        return false;
-    }
-};
-
-template <class T>
-inline Set<T>::Set(const Obj& obj, ColKey col_key)
-    : Base(obj, col_key)
-    , m_tree(new BPlusTree<value_type>(obj.get_alloc()))
+inline SetBase::SetBase(const SetBase& other)
+    : CollectionBase(other)
 {
-    if (!col_key.is_set()) {
-        throw LogicError(LogicError::collection_type_mismatch);
+    // Note: does not copy m_tree and instead that's initialized on demand
+}
+
+inline SetBase::SetBase(SetBase&& other) noexcept
+    : CollectionBase(std::move(other))
+    , m_tree(std::exchange(other.m_tree, nullptr))
+{
+}
+
+inline SetBase& SetBase::operator=(const SetBase& other)
+{
+    if (this != &other) {
+        // Just reset the pointer and rely on init_from_parent() being called
+        // when the accessor is actually used.
+        m_tree.reset();
     }
 
-    check_column_type<value_type>(m_col_key);
+    return *this;
+}
 
-    m_tree->set_parent(this, 0); // ndx not used, implicit in m_owner
-    if (m_obj) {
-        // Fine because init_from_parent() is final.
-        this->init_from_parent();
+inline SetBase& SetBase::operator=(SetBase&& other) noexcept
+{
+    if (this != &other) {
+        m_tree = std::exchange(other.m_tree, nullptr);
     }
+
+    return *this;
 }
 
 template <class T>
 inline Set<T>::Set(const Set& other)
     : Base(static_cast<const Base&>(other))
 {
-    // FIXME: If the other side needed an update, we could be using a stale ref
-    // below.
-    REALM_ASSERT(!other.update_if_needed());
-
-    if (other.m_tree) {
-        Allocator& alloc = other.m_tree->get_alloc();
-        m_tree = std::make_unique<BPlusTree<T>>(alloc);
-        m_tree->set_parent(this, 0);
-        if (m_valid)
-            m_tree->init_from_ref(other.m_tree->get_ref());
-    }
+    // Reset the content version so we can rely on init_from_parent() being
+    // called lazily when the accessor is used.
+    Base::reset_content_version();
 }
 
 template <class T>
 inline Set<T>::Set(Set&& other) noexcept
     : Base(static_cast<Base&&>(other))
-    , m_tree(std::exchange(other.m_tree, nullptr))
 {
     if (m_tree) {
         m_tree->set_parent(this, 0);
@@ -556,15 +468,9 @@ inline Set<T>& Set<T>::operator=(const Set& other)
     Base::operator=(static_cast<const Base&>(other));
 
     if (this != &other) {
-        m_tree.reset();
-        if (other.m_tree) {
-            Allocator& alloc = other.m_tree->get_alloc();
-            m_tree = std::make_unique<BPlusTree<T>>(alloc);
-            m_tree->set_parent(this, 0);
-            if (m_valid) {
-                m_tree->init_from_ref(other.m_tree->get_ref());
-            }
-        }
+        // Just reset the pointer and rely on init_from_parent() being called
+        // when the accessor is actually used.
+        Base::reset_content_version();
     }
 
     return *this;
@@ -576,13 +482,58 @@ inline Set<T>& Set<T>::operator=(Set&& other) noexcept
     Base::operator=(static_cast<Base&&>(other));
 
     if (this != &other) {
-        m_tree = std::exchange(other.m_tree, nullptr);
         if (m_tree) {
             m_tree->set_parent(this, 0);
+            // Note: We do not need to call reset_content_version(), because we
+            // took both `m_tree` and `m_content_version` from `other`.
         }
     }
 
     return *this;
+}
+
+template <typename T>
+UpdateStatus Set<T>::update_if_needed() const
+{
+    switch (get_update_status()) {
+        case UpdateStatus::Detached: {
+            m_tree.reset();
+            return UpdateStatus::Detached;
+        }
+        case UpdateStatus::NoChange:
+            if (m_tree && tree().is_attached()) {
+                return UpdateStatus::NoChange;
+            }
+            // The tree has not been initialized yet for this accessor, so
+            // perform lazy initialization by treating it as an update.
+            [[fallthrough]];
+        case UpdateStatus::Updated:
+            return init_from_parent(false);
+    }
+    REALM_UNREACHABLE();
+}
+
+template <typename T>
+void Set<T>::ensure_created()
+{
+    if (Base::should_update() || !(m_tree && tree().is_attached())) {
+        // When allow_create is true, init_from_parent will always succeed
+        // In case of errors, an exception is thrown.
+        constexpr bool allow_create = true;
+        init_from_parent(allow_create); // Throws
+    }
+}
+
+template <typename T>
+UpdateStatus Set<T>::init_from_parent(bool allow_create) const
+{
+    Base::update_content_version();
+    if (!m_tree) {
+        m_tree.reset(new BPlusTree<T>(get_alloc()));
+        const ArrayParent* parent = this;
+        m_tree->set_parent(const_cast<ArrayParent*>(parent), 0);
+    }
+    return do_init_from_parent(m_tree.get(), Base::get_collection_ref(), allow_create);
 }
 
 template <typename U>
@@ -591,9 +542,20 @@ Set<U> Obj::get_set(ColKey col_key) const
     return Set<U>(*this, col_key);
 }
 
+template <typename U>
+inline SetPtr<U> Obj::get_set_ptr(ColKey col_key) const
+{
+    return std::make_unique<Set<U>>(*this, col_key);
+}
+
 inline LnkSet Obj::get_linkset(ColKey col_key) const
 {
     return LnkSet{*this, col_key};
+}
+
+inline LnkSet Obj::get_linkset(StringData col_name) const
+{
+    return get_linkset(get_column_key(col_name));
 }
 
 inline LnkSetPtr Obj::get_linkset_ptr(ColKey col_key) const
@@ -604,10 +566,8 @@ inline LnkSetPtr Obj::get_linkset_ptr(ColKey col_key) const
 template <class T>
 size_t Set<T>::find(T value) const
 {
-    auto b = this->begin();
-    auto e = this->end();
-    auto it = std::lower_bound(b, e, value, SetElementLessThan<T>{});
-    if (it != e && SetElementEquals<T>{}(*it, value)) {
+    auto it = find_impl(value);
+    if (it != end() && *it == value) {
         return it.index();
     }
     return npos;
@@ -633,21 +593,27 @@ size_t Set<T>::find_any(Mixed value) const
 }
 
 template <class T>
+REALM_NOINLINE auto Set<T>::find_impl(const T& value) const -> iterator
+{
+    auto b = this->begin();
+    auto e = this->end(); // Note: This ends up calling `update_if_needed()`.
+    return std::lower_bound(b, e, value);
+}
+
+template <class T>
 std::pair<size_t, bool> Set<T>::insert(T value)
 {
-    update_if_needed();
-
     ensure_created();
-    this->ensure_writeable();
-    auto b = this->begin();
-    auto e = this->end();
-    auto it = std::lower_bound(b, e, value, SetElementLessThan<T>{});
 
-    if (it != e && SetElementEquals<T>{}(*it, value)) {
+    if (!m_nullable && value_is_null(value))
+        throw_invalid_null();
+
+    auto it = find_impl(value);
+    if (it != this->end() && *it == value) {
         return {it.index(), false};
     }
 
-    if (Replication* repl = m_obj.get_replication()) {
+    if (Replication* repl = Base::get_replication()) {
         // FIXME: We should emit an instruction regardless of element presence for the purposes of conflict
         // resolution in synchronized databases. The reason is that the new insertion may come at a later time
         // than an interleaving erase instruction, so emitting the instruction ensures that last "write" wins.
@@ -678,18 +644,13 @@ std::pair<size_t, bool> Set<T>::insert_any(Mixed value)
 template <class T>
 std::pair<size_t, bool> Set<T>::erase(T value)
 {
-    update_if_needed();
-    this->ensure_writeable();
+    auto it = find_impl(value); // Note: This ends up calling `update_if_needed()`.
 
-    auto b = this->begin();
-    auto e = this->end();
-    auto it = std::lower_bound(b, e, value, SetElementLessThan<T>{});
-
-    if (it == e || !SetElementEquals<T>{}(*it, value)) {
+    if (it == end() || *it != value) {
         return {npos, false};
     }
 
-    if (Replication* repl = m_obj.get_replication()) {
+    if (Replication* repl = Base::get_replication()) {
         this->erase_repl(repl, it.index(), value);
     }
     do_erase(it.index());
@@ -726,15 +687,9 @@ std::pair<size_t, bool> Set<T>::erase_null()
 }
 
 template <class T>
-size_t Set<T>::size() const
+REALM_NOINLINE size_t Set<T>::size() const
 {
-    if (!is_attached())
-        return 0;
-    update_if_needed();
-    if (!m_valid) {
-        return 0;
-    }
-    return m_tree->size();
+    return update() ? m_tree->size() : 0;
 }
 
 template <class T>
@@ -746,219 +701,88 @@ inline bool Set<T>::is_null(size_t ndx) const
 template <class T>
 inline void Set<T>::clear()
 {
-    ensure_created();
-    update_if_needed();
-    this->ensure_writeable();
     if (size() > 0) {
-        if (Replication* repl = this->m_obj.get_replication()) {
+        if (Replication* repl = Base::get_replication()) {
             this->clear_repl(repl);
         }
-        m_tree->clear();
+        do_clear();
         bump_content_version();
-
-        // For Set<ObjKey>, we are sure that there are no longer any unresolved
-        // links.
-        m_tree->set_context_flag(false);
     }
 }
 
 template <class T>
-inline Mixed Set<T>::min(size_t* return_ndx) const
+inline util::Optional<Mixed> Set<T>::min(size_t* return_ndx) const
 {
-    update_if_needed();
-    return MinHelper<T>::eval(*m_tree, return_ndx);
+    if (update()) {
+        return MinHelper<T>::eval(tree(), return_ndx);
+    }
+    return MinHelper<T>::not_found(return_ndx);
 }
 
 template <class T>
-inline Mixed Set<T>::max(size_t* return_ndx) const
+inline util::Optional<Mixed> Set<T>::max(size_t* return_ndx) const
 {
-    update_if_needed();
-    return MaxHelper<T>::eval(*m_tree, return_ndx);
+    if (update()) {
+        return MaxHelper<T>::eval(tree(), return_ndx);
+    }
+    return MaxHelper<T>::not_found(return_ndx);
 }
 
 template <class T>
-inline Mixed Set<T>::sum(size_t* return_cnt) const
+inline util::Optional<Mixed> Set<T>::sum(size_t* return_cnt) const
 {
-    update_if_needed();
-    return SumHelper<T>::eval(*m_tree, return_cnt);
+    if (update()) {
+        return SumHelper<T>::eval(tree(), return_cnt);
+    }
+    return SumHelper<T>::not_found(return_cnt);
 }
 
 template <class T>
-inline Mixed Set<T>::avg(size_t* return_cnt) const
+inline util::Optional<Mixed> Set<T>::avg(size_t* return_cnt) const
 {
-    update_if_needed();
-    return AverageHelper<T>::eval(*m_tree, return_cnt);
+    if (update()) {
+        return AverageHelper<T>::eval(tree(), return_cnt);
+    }
+    return AverageHelper<T>::not_found(return_cnt);
 }
+
+REALM_NOINLINE void set_sorted_indices(size_t sz, std::vector<size_t>& indices, bool ascending);
 
 template <class T>
 inline void Set<T>::sort(std::vector<size_t>& indices, bool ascending) const
 {
     auto sz = size();
-    indices.resize(sz);
-    if (ascending) {
-        std::iota(indices.begin(), indices.end(), 0);
-    }
-    else {
-        std::iota(indices.rbegin(), indices.rend(), 0);
-    }
+    set_sorted_indices(sz, indices, ascending);
 }
 
 template <class T>
-inline void Set<T>::distinct(std::vector<size_t>& indices, util::Optional<bool> sort_order) const
+void Set<T>::distinct(std::vector<size_t>& indices, util::Optional<bool> sort_order) const
 {
     auto ascending = !sort_order || *sort_order;
-    sort(indices, ascending);
+    set_sorted_indices(size(), indices, ascending);
 }
 
 template <class T>
-void Set<T>::do_insert(size_t ndx, T value)
+inline void Set<T>::do_insert(size_t ndx, T value)
 {
-    m_tree->insert(ndx, value);
+    tree().insert(ndx, value);
 }
 
 template <class T>
-void Set<T>::do_erase(size_t ndx)
+inline void Set<T>::do_erase(size_t ndx)
 {
-    m_tree->erase(ndx);
+    tree().erase(ndx);
 }
 
 template <class T>
-template <class Rhs>
-bool Set<T>::is_subset_of(const Rhs& rhs) const
+inline void Set<T>::do_clear()
 {
-    return is_subset_of(std::begin(rhs), std::end(rhs));
+    tree().clear();
 }
 
 template <class T>
-template <class It1, class It2>
-bool Set<T>::is_subset_of(It1 first, It2 last) const
+inline void Set<T>::migration_resort()
 {
-    return std::includes(first, last, begin(), end(), SetElementLessThan<T>{});
-}
-
-template <class T>
-template <class Rhs>
-bool Set<T>::is_superset_of(const Rhs& rhs) const
-{
-    return is_superset_of(std::begin(rhs), std::end(rhs));
-}
-
-template <class T>
-template <class It1, class It2>
-bool Set<T>::is_superset_of(It1 first, It2 last) const
-{
-    return std::includes(begin(), end(), first, last, SetElementLessThan<T>{});
-}
-
-template <class T>
-template <class Rhs>
-bool Set<T>::intersects(const Rhs& rhs) const
-{
-    return intersects(std::begin(rhs), std::end(rhs));
-}
-
-template <class T>
-template <class It1, class It2>
-bool Set<T>::intersects(It1 first, It2 last) const
-{
-    SetElementLessThan<T> less;
-    auto it = begin();
-    while (it != end() && first != last) {
-        if (less(*it, *first)) {
-            ++it;
-        }
-        else if (less(*first, *it)) {
-            ++first;
-        }
-        else {
-            return true;
-        }
-    }
-    return false;
-}
-
-template <class T>
-template <class Rhs>
-inline void Set<T>::assign_union(const Rhs& rhs)
-{
-    assign_union(std::begin(rhs), std::end(rhs));
-}
-
-template <class T>
-template <class It1, class It2>
-void Set<T>::assign_union(It1 first, It2 last)
-{
-    std::vector<T> the_diff;
-    std::set_difference(first, last, begin(), end(), std::back_inserter(the_diff), SetElementLessThan<T>{});
-    // 'the_diff' now contains all the elements that are in foreign set, but not in 'this'
-    // Now insert those elements
-    for (auto value : the_diff) {
-        insert(value);
-    }
-}
-
-template <class T>
-template <class Rhs>
-inline void Set<T>::assign_intersection(const Rhs& rhs)
-{
-    assign_intersection(std::begin(rhs), std::end(rhs));
-}
-
-template <class T>
-template <class It1, class It2>
-void Set<T>::assign_intersection(It1 first, It2 last)
-{
-    std::vector<T> intersection;
-    std::set_intersection(first, last, begin(), end(), std::back_inserter(intersection), SetElementLessThan<T>{});
-    clear();
-    // Elements in intersection comes from foreign set, so ok to use here
-    for (auto value : intersection) {
-        insert(value);
-    }
-}
-
-template <class T>
-template <class Rhs>
-inline void Set<T>::assign_difference(const Rhs& rhs)
-{
-    assign_difference(std::begin(rhs), std::end(rhs));
-}
-
-template <class T>
-template <class It1, class It2>
-void Set<T>::assign_difference(It1 first, It2 last)
-{
-    std::vector<T> intersection;
-    std::set_intersection(first, last, begin(), end(), std::back_inserter(intersection), SetElementLessThan<T>{});
-    // 'intersection' now contains all the elements that are in both foreign set and 'this'.
-    // Remove those elements. The elements comes from the foreign set, so ok to refer to.
-    for (auto value : intersection) {
-        erase(value);
-    }
-}
-
-template <class T>
-template <class Rhs>
-inline void Set<T>::assign_symmetric_difference(const Rhs& rhs)
-{
-    assign_symmetric_difference(std::begin(rhs), std::end(rhs));
-}
-
-template <class T>
-template <class It1, class It2>
-void Set<T>::assign_symmetric_difference(It1 first, It2 last)
-{
-    std::vector<T> difference;
-    std::set_difference(first, last, begin(), end(), std::back_inserter(difference), SetElementLessThan<T>{});
-    std::vector<T> intersection;
-    std::set_intersection(first, last, begin(), end(), std::back_inserter(intersection), SetElementLessThan<T>{});
-    // Now remove the common elements and add the differences
-    for (auto value : intersection) {
-        erase(value);
-    }
-    for (auto value : difference) {
-        insert(value);
-    }
 }
 
 inline bool LnkSet::operator==(const LnkSet& other) const
@@ -973,17 +797,21 @@ inline bool LnkSet::operator!=(const LnkSet& other) const
 
 inline ObjKey LnkSet::get(size_t ndx) const
 {
-    update_if_needed();
-    return m_set.get(virtual2real(ndx));
+    const auto current_size = size();
+    if (ndx >= current_size) {
+        throw OutOfBounds(util::format("Invalid index into set: %1", CollectionBase::get_property_name()), ndx,
+                          current_size);
+    }
+    return m_set.tree().get(virtual2real(ndx));
 }
 
 inline size_t LnkSet::find(ObjKey value) const
 {
-    update_if_needed();
-
     if (value.is_unresolved()) {
         return not_found;
     }
+
+    update_if_needed();
 
     size_t ndx = m_set.find(value);
     if (ndx == not_found) {
@@ -1009,6 +837,9 @@ inline std::pair<size_t, bool> LnkSet::insert(ObjKey value)
     update_if_needed();
 
     auto [ndx, inserted] = m_set.insert(value);
+    if (inserted) {
+        update_unresolved(UpdateStatus::Updated);
+    }
     return {real2virtual(ndx), inserted};
 }
 
@@ -1019,6 +850,7 @@ inline std::pair<size_t, bool> LnkSet::erase(ObjKey value)
 
     auto [ndx, removed] = m_set.erase(value);
     if (removed) {
+        update_unresolved(UpdateStatus::Updated);
         ndx = real2virtual(ndx);
     }
     return {ndx, removed};
@@ -1033,13 +865,17 @@ inline bool LnkSet::is_null(size_t ndx) const
 inline Mixed LnkSet::get_any(size_t ndx) const
 {
     update_if_needed();
-    return m_set.get_any(virtual2real(ndx));
+    auto obj_key = m_set.get(virtual2real(ndx));
+    return ObjLink{get_target_table()->get_key(), obj_key};
 }
 
 inline std::pair<size_t, bool> LnkSet::insert_null()
 {
     update_if_needed();
     auto [ndx, inserted] = m_set.insert_null();
+    if (inserted) {
+        update_unresolved(UpdateStatus::Updated);
+    }
     return {real2virtual(ndx), inserted};
 }
 
@@ -1048,6 +884,7 @@ inline std::pair<size_t, bool> LnkSet::erase_null()
     update_if_needed();
     auto [ndx, erased] = m_set.erase_null();
     if (erased) {
+        update_unresolved(UpdateStatus::Updated);
         ndx = real2virtual(ndx);
     }
     return {ndx, erased};
@@ -1057,6 +894,9 @@ inline std::pair<size_t, bool> LnkSet::insert_any(Mixed value)
 {
     update_if_needed();
     auto [ndx, inserted] = m_set.insert_any(value);
+    if (inserted) {
+        update_unresolved(UpdateStatus::Updated);
+    }
     return {real2virtual(ndx), inserted};
 }
 
@@ -1064,6 +904,7 @@ inline std::pair<size_t, bool> LnkSet::erase_any(Mixed value)
 {
     auto [ndx, erased] = m_set.erase_any(value);
     if (erased) {
+        update_unresolved(UpdateStatus::Updated);
         ndx = real2virtual(ndx);
     }
     return {ndx, erased};
@@ -1071,12 +912,15 @@ inline std::pair<size_t, bool> LnkSet::erase_any(Mixed value)
 
 inline void LnkSet::clear()
 {
+    // Note: Explicit call to `ensure_writable()` not needed, because we
+    // explicitly call `clear_unresolved()`.
     m_set.clear();
     clear_unresolved();
 }
 
-inline Mixed LnkSet::min(size_t* return_ndx) const
+inline util::Optional<Mixed> LnkSet::min(size_t* return_ndx) const
 {
+    update_if_needed();
     size_t found = not_found;
     auto value = m_set.min(&found);
     if (found != not_found && return_ndx) {
@@ -1085,8 +929,9 @@ inline Mixed LnkSet::min(size_t* return_ndx) const
     return value;
 }
 
-inline Mixed LnkSet::max(size_t* return_ndx) const
+inline util::Optional<Mixed> LnkSet::max(size_t* return_ndx) const
 {
+    update_if_needed();
     size_t found = not_found;
     auto value = m_set.max(&found);
     if (found != not_found && return_ndx) {
@@ -1095,13 +940,13 @@ inline Mixed LnkSet::max(size_t* return_ndx) const
     return value;
 }
 
-inline Mixed LnkSet::sum(size_t* return_cnt) const
+inline util::Optional<Mixed> LnkSet::sum(size_t* return_cnt) const
 {
     static_cast<void>(return_cnt);
     REALM_TERMINATE("Not implemented");
 }
 
-inline Mixed LnkSet::avg(size_t* return_cnt) const
+inline util::Optional<Mixed> LnkSet::avg(size_t* return_cnt) const
 {
     static_cast<void>(return_cnt);
     REALM_TERMINATE("Not implemented");
@@ -1117,6 +962,14 @@ inline void LnkSet::sort(std::vector<size_t>& indices, bool ascending) const
     });
 
     m_set.sort(indices, ascending);
+
+    if (has_unresolved()) {
+        indices.erase(std::remove_if(indices.begin(), indices.end(),
+                                     [&](size_t ndx) {
+                                         return real_is_unresolved(ndx);
+                                     }),
+                      indices.end());
+    }
 
     // Map the output indices to virtual indices.
     std::transform(indices.begin(), indices.end(), indices.begin(), [this](size_t ndx) {
@@ -1135,6 +988,14 @@ inline void LnkSet::distinct(std::vector<size_t>& indices, util::Optional<bool> 
 
     m_set.distinct(indices, sort_order);
 
+    if (has_unresolved()) {
+        indices.erase(std::remove_if(indices.begin(), indices.end(),
+                                     [&](size_t ndx) {
+                                         return real_is_unresolved(ndx);
+                                     }),
+                      indices.end());
+    }
+
     // Map the output indices to virtual indices.
     std::transform(indices.begin(), indices.end(), indices.begin(), [this](size_t ndx) {
         return real2virtual(ndx);
@@ -1146,12 +1007,12 @@ inline const Obj& LnkSet::get_obj() const noexcept
     return m_set.get_obj();
 }
 
-inline bool LnkSet::is_attached() const
+inline bool LnkSet::is_attached() const noexcept
 {
     return m_set.is_attached();
 }
 
-inline bool LnkSet::has_changed() const
+inline bool LnkSet::has_changed() const noexcept
 {
     return m_set.has_changed();
 }
@@ -1165,19 +1026,18 @@ inline size_t LnkSet::find_any(Mixed value) const
 {
     if (value.is_null())
         return not_found;
-    if (value.get_type() != type_Link)
-        return not_found;
-    size_t found = find(value.get<ObjKey>());
-    if (found != not_found) {
-        found = real2virtual(found);
-    }
-    return found;
-}
 
-inline bool LnkSet::is_obj_valid(size_t) const noexcept
-{
-    // LnkSet cannot contain NULL links.
-    return true;
+    const auto type = value.get_type();
+    if (type == type_Link) {
+        return find(value.get<ObjKey>());
+    }
+    if (type == type_TypedLink) {
+        auto link = value.get_link();
+        if (link.get_table_key() == get_target_table()->get_key()) {
+            return find(link.get_obj_key());
+        }
+    }
+    return not_found;
 }
 
 inline Obj LnkSet::get_object(size_t ndx) const
@@ -1189,58 +1049,6 @@ inline Obj LnkSet::get_object(size_t ndx) const
 inline ObjKey LnkSet::get_key(size_t ndx) const
 {
     return get(ndx);
-}
-
-template <class Rhs>
-inline void LnkSet::assign_union(const Rhs& rhs)
-{
-    assign_union(std::begin(rhs), std::end(rhs));
-}
-
-template <class It1, class It2>
-inline void LnkSet::assign_union(It1 first, It2 last)
-{
-    m_set.assign_union(first, last);
-    update_unresolved();
-}
-
-template <class Rhs>
-inline void LnkSet::assign_intersection(const Rhs& rhs)
-{
-    assign_intersection(std::begin(rhs), std::end(rhs));
-}
-
-template <class It1, class It2>
-inline void LnkSet::assign_intersection(It1 first, It2 last)
-{
-    m_set.assign_intersection(first, last);
-    update_unresolved();
-}
-
-template <class Rhs>
-inline void LnkSet::assign_difference(const Rhs& rhs)
-{
-    assign_difference(std::begin(rhs), std::end(rhs));
-}
-
-template <class It1, class It2>
-inline void LnkSet::assign_difference(It1 first, It2 last)
-{
-    m_set.assign_difference(first, last);
-    update_unresolved();
-}
-
-template <class Rhs>
-inline void LnkSet::assign_symmetric_difference(const Rhs& rhs)
-{
-    assign_symmetric_difference(std::begin(rhs), std::end(rhs));
-}
-
-template <class It1, class It2>
-inline void LnkSet::assign_symmetric_difference(It1 first, It2 last)
-{
-    m_set.assign_symmetric_difference(first, last);
-    update_unresolved();
 }
 
 } // namespace realm

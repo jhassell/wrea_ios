@@ -20,12 +20,14 @@
 #define REALM_OBJECT_STORE_HPP
 
 #include <realm/object-store/property.hpp>
+#include <realm/exceptions.hpp>
 
 #include <realm/table_ref.hpp>
 #include <realm/util/optional.hpp>
 
 #include <functional>
 #include <string>
+#include <unordered_set>
 #include <vector>
 #include <limits>
 
@@ -46,9 +48,6 @@ class ObjectStore {
 public:
     // Schema version used for uninitialized Realms
     static constexpr uint64_t NotVersioned = std::numeric_limits<uint64_t>::max();
-
-    // Column name used for subtables which store an array
-    static constexpr const char* const ArrayColumnName = "!ARRAY_VALUE";
 
     // get the last set schema version
     static uint64_t get_schema_version(Group const& group);
@@ -86,7 +85,7 @@ public:
     // NOTE: must be performed within a write transaction
     static void apply_schema_changes(Transaction& group, uint64_t schema_version, Schema& target_schema,
                                      uint64_t target_schema_version, SchemaMode mode,
-                                     std::vector<SchemaChange> const& changes,
+                                     std::vector<SchemaChange> const& changes, bool handle_automatically_backlinks,
                                      std::function<void()> migration_function = {});
 
     static void apply_additive_changes(Group&, std::vector<SchemaChange> const&, bool update_indexes);
@@ -97,10 +96,6 @@ public:
 
     // get existing Schema from a group
     static Schema schema_from_group(Group const& group);
-
-    // get the property for a existing column in the given table. return none if the column is reserved internally.
-    // NOTE: is_primary won't be set for the returned property.
-    static util::Optional<Property> property_for_column_key(ConstTableRef& table, ColKey column_key);
 
     static void set_schema_keys(Group const& group, Schema& schema);
 
@@ -114,13 +109,6 @@ public:
     static void rename_property(Group& group, Schema& schema, StringData object_type, StringData old_name,
                                 StringData new_name);
 
-    // get primary key property name for object type
-    static StringData get_primary_key_for_object(Group const& group, StringData object_type);
-
-    // sets primary key property for object type
-    // must be in write transaction to set
-    static void set_primary_key_for_object(Group& group, StringData object_type, StringData primary_key);
-
     static std::string table_name_for_object_type(StringData class_name);
     static StringData object_type_for_table_name(StringData table_name);
 
@@ -128,9 +116,9 @@ private:
     friend class ObjectSchema;
 };
 
-class InvalidSchemaVersionException : public std::logic_error {
+class InvalidSchemaVersionException : public LogicError {
 public:
-    InvalidSchemaVersionException(uint64_t old_version, uint64_t new_version);
+    InvalidSchemaVersionException(uint64_t old_version, uint64_t new_version, bool must_exactly_equal);
     uint64_t old_version() const
     {
         return m_old_version;
@@ -145,35 +133,36 @@ private:
 };
 
 // Schema validation exceptions
-struct ObjectSchemaValidationException : public std::logic_error {
+struct ObjectSchemaValidationException {
     ObjectSchemaValidationException(std::string message)
-        : logic_error(std::move(message))
+        : m_message(std::move(message))
     {
     }
 
     template <typename... Args>
     ObjectSchemaValidationException(const char* fmt, Args&&... args)
-        : std::logic_error(util::format(fmt, std::forward<Args>(args)...))
+        : m_message(util::format(fmt, std::forward<Args>(args)...))
     {
     }
+    std::string m_message;
 };
 
-struct SchemaValidationException : public std::logic_error {
+struct SchemaValidationException : public LogicError {
     SchemaValidationException(std::vector<ObjectSchemaValidationException> const& errors);
 };
 
-struct SchemaMismatchException : public std::logic_error {
+struct SchemaMismatchException : public LogicError {
     SchemaMismatchException(std::vector<ObjectSchemaValidationException> const& errors);
 };
 
-struct InvalidAdditiveSchemaChangeException : public std::logic_error {
+struct InvalidAdditiveSchemaChangeException : public LogicError {
     InvalidAdditiveSchemaChangeException(std::vector<ObjectSchemaValidationException> const& errors);
 };
-struct InvalidReadOnlySchemaChangeException : public std::logic_error {
+struct InvalidReadOnlySchemaChangeException : public LogicError {
     InvalidReadOnlySchemaChangeException(std::vector<ObjectSchemaValidationException> const& errors);
 };
 
-struct InvalidExternalSchemaChangeException : public std::logic_error {
+struct InvalidExternalSchemaChangeException : public LogicError {
     InvalidExternalSchemaChangeException(std::vector<ObjectSchemaValidationException> const& errors);
 };
 } // namespace realm

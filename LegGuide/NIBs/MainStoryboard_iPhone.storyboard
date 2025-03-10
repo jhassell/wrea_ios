@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="4">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -118,7 +118,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" fixedFrame="YES" image="AboutBackground_2023.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Wte-gY-Ubc">
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" fixedFrame="YES" image="AboutBackground_2025.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Wte-gY-Ubc">
                                 <rect key="frame" x="27" y="0.0" width="320" height="600"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -1084,7 +1084,7 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="About.png" width="14.399999618530273" height="14.399999618530273"/>
-        <image name="AboutBackground_2023.jpg" width="153.60000610351562" height="241.91999816894531"/>
+        <image name="AboutBackground_2025.jpg" width="153.60000610351562" height="241.91999816894531"/>
         <image name="Arrow_Left.png" width="28.91566276550293" height="27.469879150390625"/>
         <image name="Arrow_Right.png" width="28.91566276550293" height="27.469879150390625"/>
         <image name="Background.png" width="320" height="600"/>
