@@ -295,8 +295,8 @@
 		CEEBF46C25EF37D100B0D440 /* house-chair.png in Resources */ = {isa = PBXBuildFile; fileRef = CEEBF46B25EF37D000B0D440 /* house-chair.png */; };
 		CEF30A5725EE750600D2A641 /* icons8-chair-50.png in Resources */ = {isa = PBXBuildFile; fileRef = CEF30A5625EE750600D2A641 /* icons8-chair-50.png */; };
 		CEF30A5D25F083B300D2A641 /* SenateSeatingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF30A5C25F083B300D2A641 /* SenateSeatingViewController.m */; };
-		CEF30A5F25F10BDC00D2A641 /* SenateSeatingChart.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CEF30A5E25F10BDC00D2A641 /* SenateSeatingChart.jpg */; };
-		CEF30A6125F10BEE00D2A641 /* HouseSeatingChart.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CEF30A6025F10BED00D2A641 /* HouseSeatingChart.jpg */; };
+		CEF30A5F25F10BDC00D2A641 /* SenateSeatingChart.png in Resources */ = {isa = PBXBuildFile; fileRef = CEF30A5E25F10BDC00D2A641 /* SenateSeatingChart.png */; };
+		CEF30A6125F10BEE00D2A641 /* HouseSeatingChart.png in Resources */ = {isa = PBXBuildFile; fileRef = CEF30A6025F10BED00D2A641 /* HouseSeatingChart.png */; };
 		CEF30A6425F2695500D2A641 /* HouseSeatingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF30A6325F2695500D2A641 /* HouseSeatingViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -640,8 +640,8 @@
 		CEF30A5625EE750600D2A641 /* icons8-chair-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-chair-50.png"; sourceTree = "<group>"; };
 		CEF30A5B25F083B300D2A641 /* SenateSeatingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SenateSeatingViewController.h; sourceTree = "<group>"; };
 		CEF30A5C25F083B300D2A641 /* SenateSeatingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SenateSeatingViewController.m; sourceTree = "<group>"; };
-		CEF30A5E25F10BDC00D2A641 /* SenateSeatingChart.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = SenateSeatingChart.jpg; sourceTree = "<group>"; };
-		CEF30A6025F10BED00D2A641 /* HouseSeatingChart.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = HouseSeatingChart.jpg; sourceTree = "<group>"; };
+		CEF30A5E25F10BDC00D2A641 /* SenateSeatingChart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SenateSeatingChart.png; sourceTree = "<group>"; };
+		CEF30A6025F10BED00D2A641 /* HouseSeatingChart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HouseSeatingChart.png; sourceTree = "<group>"; };
 		CEF30A6225F2695500D2A641 /* HouseSeatingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HouseSeatingViewController.h; sourceTree = "<group>"; };
 		CEF30A6325F2695500D2A641 /* HouseSeatingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HouseSeatingViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -871,8 +871,8 @@
 				53AE84602D2DAC0E001BE3D0 /* AboutBackground_2025@2x.jpg */,
 				535C932A296FB93200BA0E95 /* AboutBackground_2023@2x.jpg */,
 				CEC34368279666B000502753 /* AboutBackground_2022@2x.jpg */,
-				CEF30A6025F10BED00D2A641 /* HouseSeatingChart.jpg */,
-				CEF30A5E25F10BDC00D2A641 /* SenateSeatingChart.jpg */,
+				CEF30A6025F10BED00D2A641 /* HouseSeatingChart.png */,
+				CEF30A5E25F10BDC00D2A641 /* SenateSeatingChart.png */,
 				CEEBF46B25EF37D000B0D440 /* house-chair.png */,
 				CEEBF46925EF37C000B0D440 /* senate-chair.png */,
 				CEF30A5625EE750600D2A641 /* icons8-chair-50.png */,
@@ -1317,7 +1317,7 @@
 				CE39B2691C3756E700ABFD81 /* deseret.jpg in Resources */,
 				5349E84F2980EA6A00805CAA /* Smith-5.jpg in Resources */,
 				5349E8642980EA6A00805CAA /* Winter -28.jpg in Resources */,
-				CEF30A5F25F10BDC00D2A641 /* SenateSeatingChart.jpg in Resources */,
+				CEF30A5F25F10BDC00D2A641 /* SenateSeatingChart.png in Resources */,
 				5349E8652980EA6A00805CAA /* Neiman-01.jpg in Resources */,
 				AF2B11E716AF9D0800A3A7F4 /* backButton.png in Resources */,
 				CE04FA3123E7B13F00B51AE0 /* GovGordonOfficialPortrait_small.jpg in Resources */,
@@ -1379,7 +1379,7 @@
 				5349E8402980EA6A00805CAA /* Trujillo-44.jpg in Resources */,
 				5349E8622980EA6A00805CAA /* Penn-33.jpg in Resources */,
 				5349E8472980EA6A00805CAA /* Yin-16.jpg in Resources */,
-				CEF30A6125F10BEE00D2A641 /* HouseSeatingChart.jpg in Resources */,
+				CEF30A6125F10BEE00D2A641 /* HouseSeatingChart.png in Resources */,
 				CECFF9511EF23486007BEF92 /* OutlinkCell-iPhone.xib in Resources */,
 				5349E7ED2980EA1000805CAA /* Brennan-31.jpg in Resources */,
 				5349E83E2980EA6A00805CAA /* Ottman-34.jpg in Resources */,

@@ -358,6 +358,179 @@
     self.navigationController.navigationBarHidden=YES;
 }
 
+- (void)collectButtonsFromView:(UIView *)view into:(NSMutableArray *)buttons
+{
+    for (UIView *subview in view.subviews) {
+        if ([subview isKindOfClass:[UIButton class]]) {
+            [buttons addObject:subview];
+        }
+        if ([subview.subviews count] > 0) {
+            [self collectButtonsFromView:subview into:buttons];
+        }
+    }
+}
+
+- (NSArray *)allButtonsInView:(UIView *)view
+{
+    NSMutableArray *buttons = [NSMutableArray array];
+    [self collectButtonsFromView:view into:buttons];
+    return buttons;
+}
+
+- (void)styleSeatingRowButton:(UIButton *)button title:(NSString *)title fontSize:(CGFloat)fontSize
+{
+    NSString *styledTitle = title;
+    [button setTitle:styledTitle forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor blackColor] forState:UIControlStateHighlighted];
+    button.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+    button.contentEdgeInsets = UIEdgeInsetsMake(0.0, 10.0, 0.0, 8.0);
+    button.titleLabel.font = [UIFont systemFontOfSize:fontSize];
+    button.titleLabel.lineBreakMode = NSLineBreakByClipping;
+    button.titleLabel.adjustsFontSizeToFitWidth = NO;
+    
+    // Expand legacy fixed-width button so full title fits (avoid truncation),
+    // but keep the left edge fixed so it doesn't encroach on the chair icon.
+    CGSize textSize = [styledTitle sizeWithAttributes:@{NSFontAttributeName: button.titleLabel.font}];
+    CGFloat targetWidth = MAX(142.0, ceil(textSize.width) + button.contentEdgeInsets.left + button.contentEdgeInsets.right);
+    CGRect frame = button.frame;
+    CGFloat leftEdge = frame.origin.x;
+    frame.size.width = targetWidth;
+    frame.origin.x = leftEdge;
+    
+    // Keep full row inside panel bounds.
+    UIView *container = button.superview;
+    if (container) {
+        CGFloat rightMargin = 2.0;
+        CGFloat maxWidth = CGRectGetWidth(container.bounds) - frame.origin.x - rightMargin;
+        frame.size.width = MIN(frame.size.width, maxWidth);
+    }
+    button.frame = frame;
+    
+    button.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.78];
+    button.layer.cornerRadius = 14.0;
+    button.layer.borderWidth = 1.0;
+    button.layer.borderColor = [UIColor colorWithWhite:1.0 alpha:0.95].CGColor;
+    button.layer.shadowColor = [UIColor colorWithWhite:0.0 alpha:1.0].CGColor;
+    button.layer.shadowOpacity = 0.14;
+    button.layer.shadowRadius = 6.0;
+    button.layer.shadowOffset = CGSizeMake(0.0, 2.0);
+}
+
+- (void)styleSeatingIconButton:(UIButton *)iconButton alignedTo:(UIButton *)rowButton
+{
+    if (!iconButton || !rowButton) {
+        return;
+    }
+    
+    CGRect frame = iconButton.frame;
+    frame.origin.y = rowButton.frame.origin.y - 1.0;
+    frame.size.width = 32.0;
+    frame.size.height = 32.0;
+    iconButton.frame = frame;
+    
+    iconButton.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.78];
+    iconButton.layer.cornerRadius = 16.0;
+    iconButton.layer.borderWidth = 1.0;
+    iconButton.layer.borderColor = [UIColor colorWithWhite:1.0 alpha:0.95].CGColor;
+    iconButton.layer.shadowColor = [UIColor colorWithWhite:0.0 alpha:1.0].CGColor;
+    iconButton.layer.shadowOpacity = 0.12;
+    iconButton.layer.shadowRadius = 4.0;
+    iconButton.layer.shadowOffset = CGSizeMake(0.0, 1.0);
+    [iconButton.superview bringSubviewToFront:iconButton];
+}
+
+- (UIButton *)nearestIconButtonForRow:(UIButton *)rowButton fromButtons:(NSArray *)buttons
+{
+    UIButton *best = nil;
+    CGFloat bestDistance = CGFLOAT_MAX;
+    
+    for (UIButton *candidate in buttons) {
+        if (candidate == rowButton) {
+            continue;
+        }
+        
+        CGRect frame = candidate.frame;
+        BOOL looksLikeIcon = frame.size.width <= 50.0 && frame.size.height <= 50.0 && frame.origin.x < rowButton.frame.origin.x;
+        if (!looksLikeIcon) {
+            continue;
+        }
+        
+        CGFloat yDistance = fabs(CGRectGetMidY(frame) - CGRectGetMidY(rowButton.frame));
+        if (yDistance < bestDistance) {
+            bestDistance = yDistance;
+            best = candidate;
+        }
+    }
+    
+    return bestDistance <= 14.0 ? best : nil;
+}
+
+- (void)styleSeatingRows
+{
+    NSArray *buttons = [self allButtonsInView:self.view];
+    UIButton *senateRow = nil;
+    UIButton *houseRow = nil;
+    UIButton *voteTallyRow = nil;
+    
+    for (UIButton *button in buttons) {
+        NSString *title = [button titleForState:UIControlStateNormal];
+        if (!title) {
+            continue;
+        }
+        if ([title rangeOfString:@"Senate Seating"].location != NSNotFound) {
+            senateRow = button;
+        } else if ([title rangeOfString:@"House Seating"].location != NSNotFound) {
+            houseRow = button;
+        } else if ([title rangeOfString:@"Vote Tally"].location != NSNotFound) {
+            voteTallyRow = button;
+        }
+    }
+    
+    CGFloat seatingFontSize = 16.0;
+    if (voteTallyRow.titleLabel.font.pointSize > 0.0) {
+        seatingFontSize = voteTallyRow.titleLabel.font.pointSize;
+    }
+    
+    if (senateRow) {
+        UIButton *senateIcon = [self nearestIconButtonForRow:senateRow fromButtons:buttons];
+        [self styleSeatingRowButton:senateRow title:@"Senate Seating" fontSize:seatingFontSize];
+        [self styleSeatingIconButton:senateIcon alignedTo:senateRow];
+        if (senateIcon) {
+            CGRect rowFrame = senateRow.frame;
+            CGFloat minRowX = CGRectGetMaxX(senateIcon.frame) + 4.0;
+            rowFrame.origin.x = MAX(rowFrame.origin.x, minRowX);
+            UIView *container = senateRow.superview;
+            if (container) {
+                CGFloat rightMargin = 2.0;
+                rowFrame.size.width = MIN(rowFrame.size.width, CGRectGetWidth(container.bounds) - rowFrame.origin.x - rightMargin);
+            }
+            senateRow.frame = rowFrame;
+        }
+    }
+    if (houseRow) {
+        UIButton *houseIcon = [self nearestIconButtonForRow:houseRow fromButtons:buttons];
+        [self styleSeatingRowButton:houseRow title:@"House Seating" fontSize:seatingFontSize];
+        [self styleSeatingIconButton:houseIcon alignedTo:houseRow];
+        if (houseIcon) {
+            CGRect rowFrame = houseRow.frame;
+            CGFloat minRowX = CGRectGetMaxX(houseIcon.frame) + 4.0;
+            rowFrame.origin.x = MAX(rowFrame.origin.x, minRowX);
+            UIView *container = houseRow.superview;
+            if (container) {
+                CGFloat rightMargin = 2.0;
+                rowFrame.size.width = MIN(rowFrame.size.width, CGRectGetWidth(container.bounds) - rowFrame.origin.x - rightMargin);
+            }
+            houseRow.frame = rowFrame;
+        }
+    }
+    
+    if (voteTallyRow) {
+        [voteTallyRow setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [voteTallyRow setTitleColor:[UIColor blackColor] forState:UIControlStateHighlighted];
+    }
+}
+
 - (void)viewDidLayoutSubviews
 {
     [super viewDidLayoutSubviews];
@@ -401,6 +574,8 @@
         
         subview.frame = frame;
     }
+    
+    [self styleSeatingRows];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

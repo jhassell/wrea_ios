@@ -959,7 +959,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView autoresizesSubviews="NO" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SenateSeatingChart.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="O3z-4v-MRD">
+                            <imageView autoresizesSubviews="NO" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SenateSeatingChart.png" translatesAutoresizingMaskIntoConstraints="NO" id="O3z-4v-MRD">
                                 <rect key="frame" x="0.0" y="60" width="375" height="587"/>
                                 <gestureRecognizers/>
                                 <connections>
@@ -1024,7 +1024,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView autoresizesSubviews="NO" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HouseSeatingChart.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="weY-6b-PUu">
+                            <imageView autoresizesSubviews="NO" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HouseSeatingChart.png" translatesAutoresizingMaskIntoConstraints="NO" id="weY-6b-PUu">
                                 <rect key="frame" x="0.0" y="60" width="375" height="587"/>
                                 <gestureRecognizers/>
                                 <connections>
@@ -1090,9 +1090,9 @@
         <image name="Background.png" width="320" height="600"/>
         <image name="Background2.png" width="320" height="600"/>
         <image name="Federal.png" width="14.399999618530273" height="14.399999618530273"/>
-        <image name="HouseSeatingChart.jpg" width="1210" height="934"/>
+        <image name="HouseSeatingChart.png" width="2420" height="1870"/>
         <image name="MapPin.png" width="14.399999618530273" height="14.399999618530273"/>
-        <image name="SenateSeatingChart.jpg" width="1210" height="934"/>
+        <image name="SenateSeatingChart.png" width="2420" height="1870"/>
         <image name="State.png" width="19.200000762939453" height="14.399999618530273"/>
         <image name="StateButtons.png" width="140" height="276"/>
         <image name="VoteTallyIcons_All.png" width="59.5" height="60"/>
