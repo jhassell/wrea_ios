@@ -358,6 +358,51 @@
     self.navigationController.navigationBarHidden=YES;
 }
 
+- (void)viewDidLayoutSubviews
+{
+    [super viewDidLayoutSubviews];
+    
+    // The legacy storyboard uses fixed frames. Keep the large State content panels
+    // above the tab bar across device sizes by shifting/compressing as needed.
+    CGFloat availableBottom = CGRectGetHeight(self.view.bounds);
+    if (self.tabBarController && !self.tabBarController.tabBar.hidden) {
+        CGRect tabBarFrameInSelf = [self.view convertRect:self.tabBarController.tabBar.frame
+                                                 fromView:self.tabBarController.view];
+        availableBottom = MIN(availableBottom, CGRectGetMinY(tabBarFrameInSelf));
+    }
+    
+    CGFloat desiredBottom = availableBottom - 8.0;
+    CGFloat minimumTop = 52.0;
+    
+    for (UIView *subview in self.view.subviews) {
+        CGRect frame = subview.frame;
+        BOOL isStateContentPanel = (
+            frame.size.height > 540.0 &&
+            frame.size.width > 300.0 &&
+            frame.origin.x >= 20.0 &&
+            frame.origin.x <= 40.0
+        );
+        
+        if (!isStateContentPanel) {
+            continue;
+        }
+        
+        CGFloat overlap = CGRectGetMaxY(frame) - desiredBottom;
+        if (overlap > 0.0) {
+            frame.origin.y -= overlap;
+        }
+        
+        // If we hit the top guardrail, trim panel height a bit to preserve bottom clearance.
+        if (frame.origin.y < minimumTop) {
+            CGFloat extra = minimumTop - frame.origin.y;
+            frame.origin.y = minimumTop;
+            frame.size.height = MAX(400.0, frame.size.height - extra);
+        }
+        
+        subview.frame = frame;
+    }
+}
+
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
