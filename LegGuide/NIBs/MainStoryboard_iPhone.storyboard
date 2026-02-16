@@ -261,7 +261,7 @@
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Ex-Od-Msq">
                                 <rect key="frame" x="27" y="25" width="320" height="569"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="StateButtons.png" translatesAutoresizingMaskIntoConstraints="NO" id="o2B-T6-IU9">
                                         <rect key="frame" x="181" y="27" width="140" height="276"/>
