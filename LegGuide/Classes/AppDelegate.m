@@ -13,7 +13,6 @@
 #import "NSDictionary+People.h"
 #import "NSString+Stuff.h"
 #import "Definitions.h"
-#import "AFURLSessionManager.h"
 #import "SSZipArchive.h"
 
 @implementation AppDelegate
@@ -134,7 +133,7 @@
     docsDir = [dirPaths objectAtIndex:0];
     
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
-    AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
     
     NSString *csvFilename = [NSString stringWithFormat:@"%@/%@", docsDir, @"data.csv"];
     if ([fileManager fileExistsAtPath:csvFilename ] == YES)
@@ -148,14 +147,16 @@
         NSLog (@"File not found");
     }
     
-    NSURLSessionDownloadTask *downloadTask = [manager downloadTaskWithRequest:request progress:nil destination:^NSURL *(NSURL *targetPath, NSURLResponse *response) {
-        NSURL *documentsDirectoryURL = [[NSFileManager defaultManager] URLForDirectory:NSDocumentDirectory inDomain:NSUserDomainMask appropriateForURL:nil create:NO error:nil];
-        return [documentsDirectoryURL URLByAppendingPathComponent:[response suggestedFilename]];
-    } completionHandler:^(NSURLResponse *response, NSURL *filePath, NSError *error) {
+    NSURLSessionDownloadTask *downloadTask = [session downloadTaskWithRequest:request completionHandler:^(NSURL *location, NSURLResponse *response, NSError *error) {
         mapDataLoaded = NO;
         NSString *harddataFilename = [[NSBundle mainBundle] pathForResource:@"data" ofType:@"csv"];
         NSString *previousDataFilename = [NSString stringWithFormat:@"%@/%@", docsDir, @"previousdata.csv"];
         NSString *csvFilename = [NSString stringWithFormat:@"%@/%@", docsDir, @"data.csv"];
+        if (location != nil) {
+            NSURL *destURL = [NSURL fileURLWithPath:csvFilename];
+            [fileManager removeItemAtURL:destURL error:nil];
+            [fileManager copyItemAtURL:location toURL:destURL error:nil];
+        }
         if ([fileManager fileExistsAtPath:csvFilename] == YES) {
             // Load from recently downloaded csvFilename
             self.all = [DataLoader loadCSVFile:csvFilename];
@@ -188,7 +189,7 @@
     docsDir = [dirPaths objectAtIndex:0];
     
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
-    AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
     
     // Download photos
     NSURL *PHOTOS_URL = [NSURL URLWithString:@"https://www.dropbox.com/s/91facx85r9llxh9/photos.zip?raw=1"];
@@ -207,13 +208,15 @@
         NSLog (@"File not found");
     }
     
-    NSURLSessionDownloadTask *photosDownloadTask = [manager downloadTaskWithRequest:photo_file_request progress:nil destination:^NSURL *(NSURL *targetPath, NSURLResponse *response) {
-        NSURL *documentsDirectoryURL = [[NSFileManager defaultManager] URLForDirectory:NSDocumentDirectory inDomain:NSUserDomainMask appropriateForURL:nil create:NO error:nil];
-        return [documentsDirectoryURL URLByAppendingPathComponent:[response suggestedFilename]];
-    } completionHandler:^(NSURLResponse *response, NSURL *filePath, NSError *error) {
+    NSURLSessionDownloadTask *photosDownloadTask = [session downloadTaskWithRequest:photo_file_request completionHandler:^(NSURL *location, NSURLResponse *response, NSError *error) {
         NSString *hardphotosFilename = [[NSBundle mainBundle] pathForResource:@"photos" ofType:@"zip"];
         NSString *previousPhotosFilename = [NSString stringWithFormat:@"%@/%@", docsDir, @"previousphotos.zip"];
         NSString *photosFilename = [NSString stringWithFormat:@"%@/%@", docsDir, @"photos.zip"];
+        if (location != nil) {
+            NSURL *destURL = [NSURL fileURLWithPath:photosFilename];
+            [fileManager removeItemAtURL:destURL error:nil];
+            [fileManager copyItemAtURL:location toURL:destURL error:nil];
+        }
         if ([fileManager fileExistsAtPath:photosFilename] == YES) {
             // Load from recently downloaded csvFilename
             [DataLoader loadPhotosFile:photosFilename];

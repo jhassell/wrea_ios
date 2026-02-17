@@ -1,40 +1,22 @@
 PODS:
-  - AFNetworking (4.0.1):
-    - AFNetworking/NSURLSession (= 4.0.1)
-    - AFNetworking/Reachability (= 4.0.1)
-    - AFNetworking/Security (= 4.0.1)
-    - AFNetworking/Serialization (= 4.0.1)
-    - AFNetworking/UIKit (= 4.0.1)
-  - AFNetworking/NSURLSession (4.0.1):
-    - AFNetworking/Reachability
-    - AFNetworking/Security
-    - AFNetworking/Serialization
-  - AFNetworking/Reachability (4.0.1)
-  - AFNetworking/Security (4.0.1)
-  - AFNetworking/Serialization (4.0.1)
-  - AFNetworking/UIKit (4.0.1):
-    - AFNetworking/NSURLSession
   - Realm (20.0.1):
     - Realm/Headers (= 20.0.1)
   - Realm/Headers (20.0.1)
   - SSZipArchive (2.4.3)
 
 DEPENDENCIES:
-  - AFNetworking (~> 4.0)
   - Realm
   - SSZipArchive
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
-    - AFNetworking
     - Realm
     - SSZipArchive
 
 SPEC CHECKSUMS:
-  AFNetworking: 3bd23d814e976cd148d7d44c3ab78017b744cd58
   Realm: 9572204903ef28caeb3c03bb30c1147f354ee3e7
   SSZipArchive: fe6a26b2a54d5a0890f2567b5cc6de5caa600aef
 
-PODFILE CHECKSUM: 775a1620e50e1fb191cfaaa88b3536124cd3bd7c
+PODFILE CHECKSUM: 0c7d5bd9a3f1ea17710840ca7e99a97a53cba1f1
 
 COCOAPODS: 1.16.2

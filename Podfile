@@ -9,6 +9,5 @@ target 'wrealeg' do
 
   # Pods for sd2014leg
   pod 'Realm'
-  pod 'AFNetworking', '~> 4.0'
   pod 'SSZipArchive'
 end
