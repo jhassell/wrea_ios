@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-#define SEARCH_VIEW_HEIGHT 88.0f
+#define SEARCH_VIEW_HEIGHT 128.0f
 
 @interface PeopleListDelegate : NSObject <UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate>
 
