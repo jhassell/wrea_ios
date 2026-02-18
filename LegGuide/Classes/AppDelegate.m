@@ -188,6 +188,13 @@
                                                    NSUserDomainMask, YES);
     docsDir = [dirPaths objectAtIndex:0];
     
+    // Extract bundled photos immediately so they're available before async download completes.
+    // This fixes missing photos on first launch, when network is slow, or when previousPhotos is stale.
+    NSString *bundledPhotosPath = [[NSBundle mainBundle] pathForResource:@"photos" ofType:@"zip"];
+    if (bundledPhotosPath != nil) {
+        [DataLoader loadPhotosFile:bundledPhotosPath];
+    }
+    
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
     NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
     

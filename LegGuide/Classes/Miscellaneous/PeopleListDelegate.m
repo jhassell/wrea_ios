@@ -362,13 +362,13 @@
         
         if (CELL_HEADSHOT.image==nil)
         {
-            //Attempt retrieve for photo in device Documents folder
+            //Attempt retrieve for photo in device Documents folder (extracted from photos.zip)
             NSArray *dirPaths;
             NSString *docsDir;
             dirPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
             docsDir = [dirPaths objectAtIndex:0];
             NSString *docsPhotoFilename = [NSString stringWithFormat:@"%@/%@", docsDir, person.photo];
-            CELL_HEADSHOT.image=[UIImage imageNamed:docsPhotoFilename];
+            CELL_HEADSHOT.image=[UIImage imageWithContentsOfFile:docsPhotoFilename];
         }
 
         if (CELL_HEADSHOT.image!=nil) hasPhoto=YES;

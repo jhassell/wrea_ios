@@ -719,12 +719,13 @@ RLM_ARRAY_TYPE(Realm_tally)
     
     BOOL hasPhoto=NO;
     if (person.photo!=nil && [person.photo length]>0) {
-        
-        
         CELL_HEADSHOT.image=[UIImage imageNamed:person.photo];
-        
-        //NSLog(@"Attempt to load photo %@ %@",person.photo,(CELL_HEADSHOT.image==nil?@"FAILED":@"SUCCEEDED"));
-        
+        if (CELL_HEADSHOT.image==nil) {
+            NSArray *dirPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+            NSString *docsDir = [dirPaths objectAtIndex:0];
+            NSString *docsPhotoFilename = [NSString stringWithFormat:@"%@/%@", docsDir, person.photo];
+            CELL_HEADSHOT.image=[UIImage imageWithContentsOfFile:docsPhotoFilename];
+        }
         if (CELL_HEADSHOT.image!=nil) hasPhoto=YES;
     }
     

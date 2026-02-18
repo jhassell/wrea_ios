@@ -555,6 +555,12 @@
         
         if (self.person.photo!=nil && [self.person.photo length]>0) {
             self.personImageView.image=[UIImage imageNamed:self.person.photo];
+            if (self.personImageView.image==nil) {
+                NSArray *dirPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+                NSString *docsDir = [dirPaths objectAtIndex:0];
+                NSString *docsPhotoFilename = [NSString stringWithFormat:@"%@/%@", docsDir, self.person.photo];
+                self.personImageView.image=[UIImage imageWithContentsOfFile:docsPhotoFilename];
+            }
             if (self.personImageView.image!=nil) hasPhoto=YES;
         }
         

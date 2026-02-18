@@ -826,17 +826,17 @@
                 self.headshotImageView.image=[UIImage imageNamed:self.person.photo];
                 self.headshotButton.enabled=YES;
         } else {
-            //Attempt retrieve for photo in device Documents folder
+            //Attempt retrieve for photo in device Documents folder (extracted from photos.zip)
             NSArray *dirPaths;
             NSString *docsDir;
             dirPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
             docsDir = [dirPaths objectAtIndex:0];
             NSString *docsPhotoFilename = [NSString stringWithFormat:@"%@/%@", docsDir, self.person.photo];
-            self.headshotView.image = [UIImage imageNamed:docsPhotoFilename];
+            self.headshotView.image = [UIImage imageWithContentsOfFile:docsPhotoFilename];
             
             if (self.headshotView.image != nil) {
                 hasPhoto=YES;
-                self.headshotImageView.image = [UIImage imageNamed:docsPhotoFilename];
+                self.headshotImageView.image = [UIImage imageWithContentsOfFile:docsPhotoFilename];
                 self.headshotButton.enabled=YES;
             } else {
                 hasPhoto=NO;

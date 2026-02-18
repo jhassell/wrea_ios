@@ -101,6 +101,8 @@
 		5349E8762980EA6A00805CAA /* Provenza-45.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5349E8382980EA6A00805CAA /* Provenza-45.jpg */; };
 		5349E8772980EA6A00805CAA /* Singh-61.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5349E8392980EA6A00805CAA /* Singh-61.jpg */; };
 		5349E8782980EA6A00805CAA /* Larson, JT-17.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5349E83A2980EA6A00805CAA /* Larson, JT-17.jpg */; };
+		535031DF2F45559F00584A2C /* data.csv in Resources */ = {isa = PBXBuildFile; fileRef = 535031DD2F45559F00584A2C /* data.csv */; };
+		535031E02F45559F00584A2C /* photos.zip in Resources */ = {isa = PBXBuildFile; fileRef = 535031DE2F45559F00584A2C /* photos.zip */; };
 		535C932B296FB93200BA0E95 /* AboutBackground_2023@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 535C932A296FB93200BA0E95 /* AboutBackground_2023@2x.jpg */; };
 		535C932D2973062A00BA0E95 /* StateSenateDistricts2023.json in Resources */ = {isa = PBXBuildFile; fileRef = 535C932C2973062A00BA0E95 /* StateSenateDistricts2023.json */; };
 		535C932F29733CA200BA0E95 /* StateHouseDistricts2023.json in Resources */ = {isa = PBXBuildFile; fileRef = 535C932E29733CA200BA0E95 /* StateHouseDistricts2023.json */; };
@@ -185,7 +187,6 @@
 		AF2B130516AF9D0800A3A7F4 /* PersonViewAddressLACell-iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF2B11AF16AF9D0800A3A7F4 /* PersonViewAddressLACell-iPhone.xib */; };
 		AF2B130616AF9D0800A3A7F4 /* PersonViewCommitteeCell-iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF2B11B016AF9D0800A3A7F4 /* PersonViewCommitteeCell-iPhone.xib */; };
 		AF2B151516AFBC9200A3A7F4 /* Counties.json in Resources */ = {isa = PBXBuildFile; fileRef = AF2B150E16AFBC9200A3A7F4 /* Counties.json */; };
-		AF2B151616AFBC9200A3A7F4 /* data.csv in Resources */ = {isa = PBXBuildFile; fileRef = AF2B150F16AFBC9200A3A7F4 /* data.csv */; };
 		AF2B151816AFBC9200A3A7F4 /* getdata.sh in Resources */ = {isa = PBXBuildFile; fileRef = AF2B151116AFBC9200A3A7F4 /* getdata.sh */; };
 		AF334CBD18ACA1C400219F26 /* IOS7AdjustmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF334CBC18ACA1C400219F26 /* IOS7AdjustmentViewController.m */; };
 		AF334CC118ACAF0D00219F26 /* CustomTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF334CC018ACAF0D00219F26 /* CustomTabBarController.m */; };
@@ -394,6 +395,8 @@
 		5349E8382980EA6A00805CAA /* Provenza-45.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Provenza-45.jpg"; sourceTree = "<group>"; };
 		5349E8392980EA6A00805CAA /* Singh-61.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Singh-61.jpg"; sourceTree = "<group>"; };
 		5349E83A2980EA6A00805CAA /* Larson, JT-17.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Larson, JT-17.jpg"; sourceTree = "<group>"; };
+		535031DD2F45559F00584A2C /* data.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = data.csv; sourceTree = "<group>"; };
+		535031DE2F45559F00584A2C /* photos.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = photos.zip; sourceTree = "<group>"; };
 		535C932A296FB93200BA0E95 /* AboutBackground_2023@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "AboutBackground_2023@2x.jpg"; sourceTree = "<group>"; };
 		535C932C2973062A00BA0E95 /* StateSenateDistricts2023.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = StateSenateDistricts2023.json; sourceTree = "<group>"; };
 		535C932E29733CA200BA0E95 /* StateHouseDistricts2023.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = StateHouseDistricts2023.json; sourceTree = "<group>"; };
@@ -512,7 +515,6 @@
 		AF2B11B116AF9D0800A3A7F4 /* LegGuide-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "LegGuide-Info.plist"; sourceTree = "<group>"; };
 		AF2B11B216AF9D0800A3A7F4 /* LegGuide-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LegGuide-Prefix.pch"; sourceTree = "<group>"; };
 		AF2B150E16AFBC9200A3A7F4 /* Counties.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Counties.json; sourceTree = "<group>"; };
-		AF2B150F16AFBC9200A3A7F4 /* data.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = data.csv; sourceTree = "<group>"; };
 		AF2B151116AFBC9200A3A7F4 /* getdata.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = getdata.sh; sourceTree = "<group>"; };
 		AF2B151B16B0024A00A3A7F4 /* Definitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Definitions.h; sourceTree = "<group>"; };
 		AF334CBB18ACA1C400219F26 /* IOS7AdjustmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOS7AdjustmentViewController.h; sourceTree = "<group>"; };
@@ -1001,8 +1003,9 @@
 				535C932E29733CA200BA0E95 /* StateHouseDistricts2023.json */,
 				535C932C2973062A00BA0E95 /* StateSenateDistricts2023.json */,
 				AF1D28FC18BF0C570093CE11 /* MemberSystems.json */,
+				535031DD2F45559F00584A2C /* data.csv */,
+				535031DE2F45559F00584A2C /* photos.zip */,
 				AF2B150E16AFBC9200A3A7F4 /* Counties.json */,
-				AF2B150F16AFBC9200A3A7F4 /* data.csv */,
 				AF2B151116AFBC9200A3A7F4 /* getdata.sh */,
 			);
 			path = Data;
@@ -1400,6 +1403,8 @@
 				5349E8582980EA6A00805CAA /* Harshman-37.jpg in Resources */,
 				CEF30A5725EE750600D2A641 /* icons8-chair-50.png in Resources */,
 				AF2B12FC16AF9D0800A3A7F4 /* CommitteeListView-iPhone.xib in Resources */,
+				535031DF2F45559F00584A2C /* data.csv in Resources */,
+				535031E02F45559F00584A2C /* photos.zip in Resources */,
 				5349E7F22980EA1000805CAA /* Steinmetz-3.jpg in Resources */,
 				5349E7E42980EA1000805CAA /* Case-25.jpg in Resources */,
 				CE2F312F21FE37C400F18CAE /* AboutBackground_2019@2x.jpg in Resources */,
@@ -1489,7 +1494,6 @@
 				CECFF9611EF35380007BEF92 /* BackgroundLight@2x.png in Resources */,
 				5349E7E82980EA1000805CAA /* Nethercott-4.jpg in Resources */,
 				5349E7E72980EA1000805CAA /* Kinskey-22.jpg in Resources */,
-				AF2B151616AFBC9200A3A7F4 /* data.csv in Resources */,
 				CECFF9531EF23486007BEF92 /* VoteListView-iPhone.xib in Resources */,
 				5349E7EA2980EA1000805CAA /* Scott-30.jpg in Resources */,
 				AF2B151816AFBC9200A3A7F4 /* getdata.sh in Resources */,
@@ -1754,7 +1758,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LegGuide/LegGuide-Prefix.pch";
 				INFOPLIST_FILE = "LegGuide/LegGuide-Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "WY 2025";
+				INFOPLIST_KEY_CFBundleDisplayName = "WY 2026";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.reference";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1795,7 +1799,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LegGuide/LegGuide-Prefix.pch";
 				INFOPLIST_FILE = "LegGuide/LegGuide-Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "WY 2025";
+				INFOPLIST_KEY_CFBundleDisplayName = "WY 2026";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.reference";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
