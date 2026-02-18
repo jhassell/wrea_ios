@@ -14,7 +14,7 @@
 #define FEDERAL_SENATE  @"US Senate"
 #define FEDERAL_HOUSE   @"US House"
 #define STATEWIDE       @"Statewide"
-#define WREA_MEMBER    @"OAEC Member System"
+/* WREA_MEMBER defined in Definitions.h */
 #define LEGISLATIVE_CONTACT @"WREA Leadership"
 
 //#define STANDING        @"Standing Committee"

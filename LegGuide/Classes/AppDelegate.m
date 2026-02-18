@@ -148,7 +148,7 @@
     }
     
     NSURLSessionDownloadTask *downloadTask = [session downloadTaskWithRequest:request completionHandler:^(NSURL *location, NSURLResponse *response, NSError *error) {
-        mapDataLoaded = NO;
+        self->mapDataLoaded = NO;
         NSString *harddataFilename = [[NSBundle mainBundle] pathForResource:@"data" ofType:@"csv"];
         NSString *previousDataFilename = [NSString stringWithFormat:@"%@/%@", docsDir, @"previousdata.csv"];
         NSString *csvFilename = [NSString stringWithFormat:@"%@/%@", docsDir, @"data.csv"];
@@ -189,7 +189,6 @@
     docsDir = [dirPaths objectAtIndex:0];
     
     // Extract bundled photos immediately so they're available before async download completes.
-    // This fixes missing photos on first launch, when network is slow, or when previousPhotos is stale.
     NSString *bundledPhotosPath = [[NSBundle mainBundle] pathForResource:@"photos" ofType:@"zip"];
     if (bundledPhotosPath != nil) {
         [DataLoader loadPhotosFile:bundledPhotosPath];

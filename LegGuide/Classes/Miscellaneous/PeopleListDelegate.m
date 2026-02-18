@@ -204,6 +204,13 @@
         _searchViewCell.searchBar.showsCancelButton=NO;
         _searchViewCell.searchBar.showsScopeBar = YES;
         [_searchViewCell.searchBar sizeToFit];
+
+        // Keep the scope controls visible on modern iOS where sizeToFit can shrink this view.
+        CGRect searchBarFrame = _searchViewCell.searchBar.frame;
+        searchBarFrame.origin.y = 0.0f;
+        searchBarFrame.size.width = _searchViewCell.contentView.bounds.size.width;
+        searchBarFrame.size.height = SEARCH_VIEW_HEIGHT;
+        _searchViewCell.searchBar.frame = searchBarFrame;
     }
     
     return _searchViewCell;

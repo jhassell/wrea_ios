@@ -10,7 +10,7 @@
 #import "CustomTableViewHeaderCell.h"
 
 
-#define SEARCH_VIEW_HEIGHT 128.0f
+#define SEARCH_VIEW_HEIGHT 104.0f
 
 @class Committee;
 

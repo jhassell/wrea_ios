@@ -258,6 +258,14 @@ RLM_ARRAY_TYPE(Realm_tally)
         _searchViewCell = [[[[NSBundle mainBundle] loadNibNamed:@"PeopleListSearchCell-iPhone" owner:self options:nil] objectAtIndex:0] retain];
         _searchViewCell.searchBar.delegate=self;
         _searchViewCell.searchBar.showsCancelButton=NO;
+        _searchViewCell.searchBar.showsScopeBar = YES;
+        [_searchViewCell.searchBar sizeToFit];
+
+        CGRect searchBarFrame = _searchViewCell.searchBar.frame;
+        searchBarFrame.origin.y = 0.0f;
+        searchBarFrame.size.width = _searchViewCell.contentView.bounds.size.width;
+        searchBarFrame.size.height = SEARCH_VIEW_HEIGHT;
+        _searchViewCell.searchBar.frame = searchBarFrame;
     }
     
     return _searchViewCell;
