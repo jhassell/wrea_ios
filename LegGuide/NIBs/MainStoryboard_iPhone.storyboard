@@ -769,6 +769,8 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="jhP-vz-PDz"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="headerLogoImageView" destination="fWT-3w-fNh" id="Maps-headerLogo"/>
+                        <outlet property="headerWebButton" destination="2f8-wA-d5x" id="Maps-headerWeb"/>
                         <outlet property="leftArrowButton" destination="BZL-tV-6tf" id="9z5-ju-HZO"/>
                         <outlet property="mapTitleBackgroundView" destination="K0o-TG-wMG" id="PcP-OX-oYa"/>
                         <outlet property="mapTitleLabel" destination="MBs-QO-X0J" id="cRC-gi-IEB"/>

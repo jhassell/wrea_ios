@@ -32,6 +32,8 @@
 }
 
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
+@property (strong, nonatomic) IBOutlet UIImageView *headerLogoImageView;
+@property (strong, nonatomic) IBOutlet UIButton *headerWebButton;
 @property (strong, nonatomic) IBOutlet UILabel *personNameLabel;
 @property (strong, nonatomic) IBOutlet UILabel *personTitleLabel;
 @property (strong, nonatomic) IBOutlet UIImageView *personImageView;
@@ -832,6 +834,43 @@
 - (void)viewDidLayoutSubviews
 {
     [super viewDidLayoutSubviews];
+    
+    // Position header and title bar below safe area (avoid status bar overlap).
+    CGFloat safeTop = 20.0f;
+    if (@available(iOS 11.0, *)) {
+        safeTop = self.view.safeAreaInsets.top;
+    }
+    CGFloat logoHeight = 52.0f;
+    CGFloat titleBarHeight = 46.0f;
+    CGFloat headerTotal = logoHeight + titleBarHeight;
+    
+    if (self.headerLogoImageView) {
+        CGRect f = self.headerLogoImageView.frame;
+        f.origin.y = safeTop;
+        f.size.width = self.view.bounds.size.width;
+        f.size.height = logoHeight;
+        self.headerLogoImageView.frame = f;
+    }
+    if (self.headerWebButton) {
+        CGRect f = self.headerWebButton.frame;
+        f.origin.y = safeTop;
+        f.size.height = logoHeight;
+        self.headerWebButton.frame = f;
+    }
+    if (self.mapTitleBackgroundView) {
+        CGRect f = self.mapTitleBackgroundView.frame;
+        f.origin.y = safeTop + logoHeight;
+        f.size.width = self.view.bounds.size.width;
+        f.size.height = titleBarHeight;
+        self.mapTitleBackgroundView.frame = f;
+    }
+    if (self.mapView) {
+        CGRect f = self.mapView.frame;
+        f.origin.y = safeTop + headerTotal;
+        f.size.width = self.view.bounds.size.width;
+        f.size.height = self.view.bounds.size.height - f.origin.y;
+        self.mapView.frame = f;
+    }
     
     NSArray *trackedViews = [self bottomInfoViewsForTabBarAvoidance];
     if ([trackedViews count] == 0) {

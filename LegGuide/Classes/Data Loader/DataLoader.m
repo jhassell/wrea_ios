@@ -24,11 +24,24 @@
     
 	if (!csvString)
 	{
-		printf("Couldn't read file at path %s\n. Error: %s",
-               [csvPath UTF8String],
-               [[error localizedDescription] ? [error localizedDescription] : [error description] UTF8String]);
+		NSLog(@"DataLoader: Could not read file at %@. Error: %@",
+              csvPath, error ? error.localizedDescription : @"unknown");
         return nil;
 	}
+    
+    if ([csvString stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]].length == 0) {
+        NSLog(@"DataLoader: CSV file is empty or whitespace-only: %@", csvPath);
+        return nil;
+    }
+    
+    // Strip UTF-8 BOM if present. Excel and some exporters add BOM; it causes the first
+    // header key to be "\uFEFFType" instead of "Type", breaking parsing and key lookups.
+    // Files downloaded from Dropbox or other sources may retain BOM while bundle copies might not.
+    static NSString * const kBOM = @"\uFEFF";
+    if ([csvString hasPrefix:kBOM]) {
+        csvString = [csvString substringFromIndex:kBOM.length];
+        NSLog(@"DataLoader: Stripped UTF-8 BOM from %@", csvPath);
+    }
 	
 	
 	CSVParser *parser =
@@ -39,6 +52,39 @@
       fieldNames:nil];
     
     NSArray *rows = [parser arrayOfParsedRows];
+    
+    if (!rows || rows.count == 0) {
+        NSString *preview = csvString.length > 200 ? [csvString substringToIndex:200] : csvString;
+        NSLog(@"DataLoader: CSV parsed to no data rows (empty or invalid): %@. First 200 chars: %@",
+              csvPath, [preview stringByReplacingOccurrencesOfString:@"\n" withString:@"\\n"]);
+        return nil;
+    }
+    
+    // Validate header row: required columns must be present and correctly formed.
+    // Rejects files with BOM-corrupted headers, wrong encoding, or non-CSV content (e.g. HTML).
+    static NSArray *requiredHeaders = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        requiredHeaders = @[ @"Type", @"Photo", @"Last Name", @"First Name", @"District #" ];
+    });
+    NSDictionary *firstRow = rows.firstObject;
+    NSArray *actualKeys = firstRow.allKeys;
+    NSMutableArray *missing = [NSMutableArray array];
+    for (NSString *required in requiredHeaders) {
+        if (![actualKeys containsObject:required]) {
+            [missing addObject:required];
+        }
+    }
+    if (missing.count > 0) {
+        NSString *sampleKey = @"(no keys)";
+        if (actualKeys.count > 0) {
+            NSString *k = actualKeys.firstObject;
+            sampleKey = (k.length > 0) ? [NSString stringWithFormat:@"'%@' (first char U+%04X)", k, (unsigned)[k characterAtIndex:0]] : @"'(empty)'";
+        }
+        NSLog(@"DataLoader: Invalid header row in %@ - missing required columns: %@. Sample key: %@",
+              csvPath, missing, sampleKey);
+        return nil;
+    }
     
     for (NSDictionary *row in rows) {
         if (row.lastName!=nil) {

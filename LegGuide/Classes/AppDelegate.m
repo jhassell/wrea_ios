@@ -135,13 +135,19 @@ static void OpenExternalURLWithLogging(NSURL *url) {
 }
 
 - (void)downloadImmediateData {
+    NSLog(@"Spreadsheet: Load pending - initiating download");
     [self downloadSpreadsheet];
     [self downloadPhotosZipFile];
 }
 
 - (void)populateSpreadsheetData {
     
-    NSLog(@"start load");
+    if (self.all == nil) {
+        NSLog(@"Spreadsheet: populateSpreadsheetData called with nil all; using empty array");
+        self.all = @[];
+    }
+    
+    NSLog(@"Spreadsheet: populateSpreadsheetData start (%lu rows)", (unsigned long)self.all.count);
     
     self.stateSenate    = [self.all filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"Type=%@",STATE_SENATE]];
     self.stateHouse     = [self.all filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"Type=%@",STATE_HOUSE]];
@@ -190,6 +196,8 @@ static void OpenExternalURLWithLogging(NSURL *url) {
 
 - (void)downloadSpreadsheet {
     
+    NSLog(@"Spreadsheet: Load attempt started - fetching from Dropbox URL");
+    
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSArray *dirPaths;
     NSString *docsDir;
@@ -215,33 +223,65 @@ static void OpenExternalURLWithLogging(NSURL *url) {
     }
     else
     {
-        NSLog (@"File not found");
+        NSLog (@"csv File not found");
     }
     
     NSURLSessionDownloadTask *downloadTask = [session downloadTaskWithRequest:request completionHandler:^(NSURL *location, NSURLResponse *response, NSError *error) {
+        NSLog(@"Spreadsheet: Download completed - processing result (location=%@, error=%@)",
+              location != nil ? @"present" : @"nil",
+              error ? error.localizedDescription : @"none");
         self->mapDataLoaded = NO;
+        NSError *fmError = nil;
         NSString *harddataFilename = [[NSBundle mainBundle] pathForResource:@"data" ofType:@"csv"];
         NSString *previousDataFilename = [NSString stringWithFormat:@"%@/%@", docsDir, @"previousdata.csv"];
         NSString *csvFilename = [NSString stringWithFormat:@"%@/%@", docsDir, @"data.csv"];
+        
         if (location != nil) {
             NSURL *destURL = [NSURL fileURLWithPath:csvFilename];
             [fileManager removeItemAtURL:destURL error:nil];
             [fileManager copyItemAtURL:location toURL:destURL error:nil];
         }
+        
+        BOOL usedDownloaded = NO;
+        BOOL usedPrevious = NO;
+        BOOL usedBundle = NO;
+        
         if ([fileManager fileExistsAtPath:csvFilename] == YES) {
-            // Load from recently downloaded csvFilename
             self.all = [DataLoader loadCSVFile:csvFilename];
-            // Remove previousDataFilename
-            [fileManager removeItemAtPath:previousDataFilename error:&error];
-            // Copy recently downloaded csvFilename to previousDataFilename
-            [fileManager copyItemAtPath:csvFilename toPath:previousDataFilename error:&error];
-            // Remove csvFilename in preparation for next download
-            [fileManager removeItemAtPath:csvFilename error:&error];
-        } else if ([fileManager fileExistsAtPath:previousDataFilename]) {
-            self.all = [DataLoader loadCSVFile:previousDataFilename];
-        } else {
-            self.all = [DataLoader loadCSVFile:harddataFilename];
+            if (self.all != nil && self.all.count > 0) {
+                usedDownloaded = YES;
+                NSLog(@"Spreadsheet: Loaded via Dropbox URL (%lu rows)", (unsigned long)self.all.count);
+                [fileManager removeItemAtPath:previousDataFilename error:&fmError];
+                [fileManager copyItemAtPath:csvFilename toPath:previousDataFilename error:&fmError];
+                [fileManager removeItemAtPath:csvFilename error:&fmError];
+            } else {
+                NSLog(@"Spreadsheet: Downloaded data.csv is empty or invalid; will not overwrite previousdata.csv");
+            }
         }
+        
+        if (!usedDownloaded && [fileManager fileExistsAtPath:previousDataFilename]) {
+            self.all = [DataLoader loadCSVFile:previousDataFilename];
+            if (self.all != nil && self.all.count > 0) {
+                usedPrevious = YES;
+                NSLog(@"Spreadsheet: Not loaded via Dropbox - using previousdata.csv (%lu rows)", (unsigned long)self.all.count);
+            } else {
+                NSLog(@"Spreadsheet: previousdata.csv exists but is empty or invalid; falling back to bundle");
+            }
+        }
+        
+        if (!usedDownloaded && !usedPrevious && harddataFilename != nil) {
+            self.all = [DataLoader loadCSVFile:harddataFilename];
+            if (self.all != nil && self.all.count > 0) {
+                usedBundle = YES;
+                NSLog(@"Spreadsheet: Not loaded via Dropbox - using bundled data.csv (%lu rows)", (unsigned long)self.all.count);
+            }
+        }
+        
+        if (self.all == nil || self.all.count == 0) {
+            NSLog(@"Spreadsheet: Not loaded via Dropbox - no valid data from any source. Using empty array.");
+            self.all = @[];
+        }
+        
         [self populateSpreadsheetData];
     }];
     [downloadTask resume];
