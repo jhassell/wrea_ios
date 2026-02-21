@@ -10,7 +10,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import "SSZipCommon.h"
+#import <SSZipArchive/SSZipCommon.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

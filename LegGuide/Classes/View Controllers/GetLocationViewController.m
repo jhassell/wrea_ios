@@ -116,11 +116,8 @@ See LICENSE.txt for this sample’s licensing information
     [self.tableView reloadData];
 }
 
-// We want to get and store a location measurement that meets the desired accuracy.
-// For this example, we are going to use horizontal accuracy as the deciding factor.
-// In other cases, you may wish to use vertical accuracy, or both together.
-//
-- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {
+- (void)handleUpdatedLocation:(CLLocation *)newLocation
+{
     // store all of the measurements, just so we can see what kind of data we might receive
     [self.locationMeasurements addObject:newLocation];
     
@@ -143,24 +140,26 @@ See LICENSE.txt for this sample’s licensing information
         _bestEffortAtLocation = newLocation;
         
         // test the measurement to see if it meets the desired accuracy
-        //
-        // IMPORTANT!!! kCLLocationAccuracyBest should not be used for comparison with location coordinate or altitidue 
-        // accuracy because it is a negative value. Instead, compare against some predetermined "real" measure of 
-        // acceptable accuracy, or depend on the timeout to stop updating. This sample depends on the timeout.
-        //
         if (newLocation.horizontalAccuracy <= self.locationManager.desiredAccuracy) {
-            // we have a measurement that meets our requirements, so we can stop updating the location
-            // 
-            // IMPORTANT!!! Minimize power usage by stopping the location manager as soon as possible.
-            //
             [self stopUpdatingLocationWithMessage:NSLocalizedString(@"Acquired Location", @"Acquired Location")];
-            // we can also cancel our previous performSelector:withObject:afterDelay: - it's no longer necessary
             [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(stopUpdatingLocationWithMessage:) object:nil];
         }
     }
     
     // update the display with the new location data
-    [self.tableView reloadData];    
+    [self.tableView reloadData];
+}
+
+// We want to get and store a location measurement that meets the desired accuracy.
+// For this example, we are going to use horizontal accuracy as the deciding factor.
+// In other cases, you may wish to use vertical accuracy, or both together.
+//
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations {
+    CLLocation *newLocation = locations.lastObject;
+    if (!newLocation) {
+        return;
+    }
+    [self handleUpdatedLocation:newLocation];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
@@ -250,7 +249,14 @@ See LICENSE.txt for this sample’s licensing information
             if (cell == nil) {
                 cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:kStatusCellID];
                 cell.selectionStyle = UITableViewCellSelectionStyleNone;
-                activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+                if (@available(iOS 13.0, *)) {
+                    activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleMedium];
+                } else {
+                    activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+                }
+#pragma clang diagnostic pop
                 CGRect frame = activityIndicator.frame;
                 frame.origin = CGPointMake(290.0, 12.0);
                 activityIndicator.frame = frame;

@@ -29,8 +29,8 @@
 #define CELL_YEA_VOTE       ((UIButton *)[cell viewWithTag:106])
 #define CELL_NAY_VOTE       ((UIButton *)[cell viewWithTag:107])
 
-RLM_ARRAY_TYPE(Realm_vote)
-RLM_ARRAY_TYPE(Realm_tally)
+RLM_COLLECTION_TYPE(Realm_vote)
+RLM_COLLECTION_TYPE(Realm_tally)
 
 @interface Realm_vote : RLMObject
 @property (nonatomic, strong) NSString *status;

@@ -43,6 +43,9 @@
 
 @property (strong, nonatomic) IBOutlet UIButton *backButton;
 @property (strong, nonatomic) IBOutlet UITableView *table;
+@property (strong, nonatomic) IBOutlet UIImageView *backgroundArtworkImageView;
+@property (strong, nonatomic) IBOutlet UIImageView *headerLogoImageView;
+@property (strong, nonatomic) IBOutlet UIButton *headerWebButton;
 @property (strong, nonatomic) IBOutlet UIView *personHeaderView;
 @property (strong, nonatomic) IBOutlet UILabel *officeLabel;
 @property (strong, nonatomic) IBOutlet UILabel *nameLabel;
@@ -80,6 +83,7 @@
 @property (strong, nonatomic) IBOutlet UIView *headshotModalView;
 @property (strong, nonatomic) IBOutlet UIImageView *headshotImageView;
 @property (strong, nonatomic) IBOutlet UIButton *headshotButton;
+@property (strong, nonatomic) IBOutlet UIButton *headshotCloseButton;
 
 @property (strong, nonatomic) IBOutlet BlueButton *bioButton;
 
@@ -102,6 +106,7 @@
 - (IBAction)districtMapButtonPressed:(id)sender;
 - (IBAction)bioButtonPressed:(id)sender;
 - (IBAction)bioModalCloseButtonPressed:(id)sender;
+- (NSString *)formattedCityStateZipForAddress:(Address *)address;
 
 @end
 
@@ -281,6 +286,30 @@ static void OpenExternalURLWithLogging(NSURL *url) {
 
 - (IBAction)backButtonPressed:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (NSString *)formattedCityStateZipForAddress:(Address *)address
+{
+    NSMutableArray<NSString *> *cityStateParts = [NSMutableArray array];
+    NSString *city = [address.city trim];
+    NSString *state = [address.state trim];
+    NSString *zip = [address.zip trim];
+    
+    if (city.length > 0) {
+        [cityStateParts addObject:city];
+    }
+    if (state.length > 0) {
+        [cityStateParts addObject:state];
+    }
+    
+    NSString *cityState = [cityStateParts componentsJoinedByString:@", "];
+    if (zip.length > 0) {
+        if (cityState.length > 0) {
+            return [NSString stringWithFormat:@"%@ %@", cityState, zip];
+        }
+        return zip;
+    }
+    return cityState;
 }
 
 - (IBAction)emailButtonPressed:(id)sender {
@@ -497,12 +526,7 @@ static void OpenExternalURLWithLogging(NSURL *url) {
         addressCell.pvc=self;
         addressCell.name.text = address.name;
         addressCell.addressLine1.text = [NSString stringWithFormat:@"%@%@%@",address.address,([NSString isBlankOrNil:address.roomNumber]?@"":@", "),([NSString isBlankOrNil:address.roomNumber]?@"":address.roomNumber)];
-        
-        if (address.city==nil || [[address.city trim] length]==0) {
-            addressCell.addressLine2.text = [NSString stringWithFormat:@"%@ %@",address.state,address.zip];
-        } else {
-            addressCell.addressLine2.text = [NSString stringWithFormat:@"%@, %@ %@",address.city,address.state,address.zip];
-        }
+        addressCell.addressLine2.text = [self formattedCityStateZipForAddress:address];
         
         if ([NSString isBlankOrNil:address.email]) {
             addressCell.emailAddress.text=nil;
@@ -668,6 +692,16 @@ static void OpenExternalURLWithLogging(NSURL *url) {
 -(CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     ListSection *listSection = [self.sections objectAtIndex:indexPath.section];
+    if ([listSection.title isEqualToString:SECTION_COUNTIES]) {
+        NSString *formattedCounties = [self addNewLineForStates:[self.person.countiesCovered stringByReplacingOccurrencesOfString:@"~" withString:@","]];
+        CGSize labelSize = [formattedCounties boundingRectWithSize:CGSizeMake(262.0f, CGFLOAT_MAX)
+                                                           options:NSStringDrawingUsesLineFragmentOrigin
+                                                        attributes:@{NSFontAttributeName: self.countiesListLabel.font ?: [UIFont systemFontOfSize:16.0f]}
+                                                           context:nil].size;
+        CGFloat textHeight = MAX(34.0f, labelSize.height > 1.0f ? labelSize.height : 34.0f);
+        CGFloat desired = 44.0f + textHeight;
+        return MIN(165.0f, MAX(96.0f, desired));
+    }
     
     if (indexPath.row==0 && listSection.firstRowHeight>0.5) {
         return listSection.firstRowHeight;
@@ -1039,6 +1073,83 @@ static void OpenExternalURLWithLogging(NSURL *url) {
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [self.backButton setBackgroundImage:nil forState:UIControlStateNormal];
+    [self.backButton setTitle:@"" forState:UIControlStateNormal];
+    self.backButton.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.35];
+    self.backButton.layer.cornerRadius = 10.0f;
+    self.backButton.layer.masksToBounds = YES;
+    if (@available(iOS 13.0, *)) {
+        UIImageSymbolConfiguration *symbolConfig = [UIImageSymbolConfiguration configurationWithPointSize:24.0 weight:UIImageSymbolWeightHeavy];
+        UIImage *chevron = [UIImage systemImageNamed:@"chevron.left" withConfiguration:symbolConfig];
+        [self.backButton setImage:chevron forState:UIControlStateNormal];
+        [self.backButton setTintColor:[UIColor whiteColor]];
+    } else {
+        [self.backButton setTitle:@"<" forState:UIControlStateNormal];
+        [self.backButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        self.backButton.titleLabel.font = [UIFont boldSystemFontOfSize:30.0f];
+    }
+    self.backButton.accessibilityLabel = @"Back";
+    
+    // Replace legacy modal "X" with the same chevron style used elsewhere.
+    UIButton *closeButton = self.headshotCloseButton;
+    if (closeButton != nil) {
+        [closeButton setTitle:@"" forState:UIControlStateNormal];
+        closeButton.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.35];
+        closeButton.layer.cornerRadius = 10.0f;
+        closeButton.layer.masksToBounds = YES;
+        if (@available(iOS 13.0, *)) {
+            UIImageSymbolConfiguration *symbolConfig = [UIImageSymbolConfiguration configurationWithPointSize:20.0 weight:UIImageSymbolWeightSemibold];
+            UIImage *chevron = [UIImage systemImageNamed:@"chevron.left" withConfiguration:symbolConfig];
+            [closeButton setImage:chevron forState:UIControlStateNormal];
+            [closeButton setTintColor:[UIColor whiteColor]];
+        } else {
+            [closeButton setTitle:@"<" forState:UIControlStateNormal];
+            [closeButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+            closeButton.titleLabel.font = [UIFont boldSystemFontOfSize:28.0f];
+        }
+    }
+}
+
+- (void)viewDidLayoutSubviews
+{
+    [super viewDidLayoutSubviews];
+    CGFloat safeTop = 20.0f;
+    if (@available(iOS 11.0, *)) {
+        safeTop = self.view.safeAreaInsets.top;
+    }
+    
+    CGFloat headerHeight = 52.0f;
+    CGRect logoFrame = self.headerLogoImageView.frame;
+    logoFrame.origin.y = safeTop;
+    logoFrame.size.width = self.view.bounds.size.width;
+    logoFrame.size.height = headerHeight;
+    self.headerLogoImageView.frame = logoFrame;
+    
+    CGRect webFrame = self.headerWebButton.frame;
+    webFrame.origin.y = safeTop;
+    webFrame.size.height = headerHeight;
+    self.headerWebButton.frame = webFrame;
+    
+    CGRect backFrame = self.backButton.frame;
+    backFrame.origin.x = 8.0f;
+    backFrame.origin.y = safeTop + 4.0f;
+    backFrame.size.width = 44.0f;
+    backFrame.size.height = 44.0f;
+    self.backButton.frame = backFrame;
+    
+    CGRect backgroundFrame = self.backgroundArtworkImageView.frame;
+    CGFloat headerCardHeight = CGRectGetHeight(self.personHeaderView.frame);
+    backgroundFrame.origin.y = safeTop + headerHeight + headerCardHeight;
+    backgroundFrame.size.width = self.view.bounds.size.width;
+    backgroundFrame.size.height = self.view.bounds.size.height - backgroundFrame.origin.y;
+    self.backgroundArtworkImageView.frame = backgroundFrame;
+    
+    CGRect tableFrame = self.table.frame;
+    tableFrame.origin.y = safeTop + headerHeight;
+    tableFrame.size.height = self.view.bounds.size.height - tableFrame.origin.y;
+    tableFrame.size.width = self.view.bounds.size.width;
+    self.table.frame = tableFrame;
 }
 
 - (UIInterfaceOrientationMask)supportedInterfaceOrientations

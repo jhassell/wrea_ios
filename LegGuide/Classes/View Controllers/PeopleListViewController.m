@@ -161,6 +161,7 @@ static void OpenExternalURL(NSURL *url) {
     self.headerBackButton.frame = backFrame;
     
     CGRect messageFrame = self.committeeMessageButton.frame;
+    messageFrame.origin.x = self.view.bounds.size.width - messageFrame.size.width - 4.0f;
     messageFrame.origin.y = safeTop + 7.0f;
     self.committeeMessageButton.frame = messageFrame;
     
@@ -200,7 +201,6 @@ static void OpenExternalURL(NSURL *url) {
         self.peopleListDelegate.sections = self.sections;   
         self.peopleTable.delegate=self.peopleListDelegate;
         self.peopleTable.dataSource=self.peopleListDelegate;
-        self.peopleTable.contentOffset = CGPointMake(0, SEARCH_VIEW_HEIGHT);
         self.peopleListDelegate.peopleTable=self.peopleTable;
 
     }

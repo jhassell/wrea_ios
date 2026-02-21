@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 47;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -108,6 +108,7 @@
 		535C932F29733CA200BA0E95 /* StateHouseDistricts2023.json in Resources */ = {isa = PBXBuildFile; fileRef = 535C932E29733CA200BA0E95 /* StateHouseDistricts2023.json */; };
 		53ABDA83282A174100FB5585 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53ABDA82282A174100FB5585 /* Realm.framework */; };
 		53AE84612D2DAC0E001BE3D0 /* AboutBackground_2025@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 53AE84602D2DAC0E001BE3D0 /* AboutBackground_2025@2x.png */; };
+		53F101011234ABCD00AA0001 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53F101001234ABCD00AA0001 /* LaunchScreen.storyboard */; };
 		AF092D4115DA0FD200AA4B6B /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = AF092D4015DA0FD100AA4B6B /* Default.png */; };
 		AF092D4315DA0FDC00AA4B6B /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF092D4215DA0FDC00AA4B6B /* Default@2x.png */; };
 		AF14BD4F160E373A003D2052 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF14BD4E160E373A003D2052 /* MessageUI.framework */; };
@@ -132,7 +133,6 @@
 		AF2B11BE16AF9D0800A3A7F4 /* CommitteeViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AF2B104A16AF9D0700A3A7F4 /* CommitteeViewCell.m */; };
 		AF2B11BF16AF9D0800A3A7F4 /* GradientButton.m in Sources */ = {isa = PBXBuildFile; fileRef = AF2B104C16AF9D0700A3A7F4 /* GradientButton.m */; };
 		AF2B11C016AF9D0800A3A7F4 /* ListSection.m in Sources */ = {isa = PBXBuildFile; fileRef = AF2B104E16AF9D0700A3A7F4 /* ListSection.m */; };
-		AF2B11C116AF9D0800A3A7F4 /* ModalAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = AF2B105016AF9D0700A3A7F4 /* ModalAlert.m */; };
 		AF2B11C216AF9D0800A3A7F4 /* NSDictionary+People.m in Sources */ = {isa = PBXBuildFile; fileRef = AF2B105216AF9D0700A3A7F4 /* NSDictionary+People.m */; };
 		AF2B11C316AF9D0800A3A7F4 /* NSString+Stuff.m in Sources */ = {isa = PBXBuildFile; fileRef = AF2B105416AF9D0700A3A7F4 /* NSString+Stuff.m */; };
 		AF2B11C416AF9D0800A3A7F4 /* PeopleListDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AF2B105616AF9D0700A3A7F4 /* PeopleListDelegate.m */; };
@@ -178,7 +178,6 @@
 		AF2B12FC16AF9D0800A3A7F4 /* CommitteeListView-iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF2B11A616AF9D0800A3A7F4 /* CommitteeListView-iPhone.xib */; };
 		AF2B12FD16AF9D0800A3A7F4 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF2B11A716AF9D0800A3A7F4 /* MainStoryboard_iPad.storyboard */; };
 		AF2B12FE16AF9D0800A3A7F4 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF2B11A816AF9D0800A3A7F4 /* MainStoryboard_iPhone.storyboard */; };
-		53F101011234ABCD00AA0001 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53F101001234ABCD00AA0001 /* LaunchScreen.storyboard */; };
 		AF2B12FF16AF9D0800A3A7F4 /* MapView-iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF2B11A916AF9D0800A3A7F4 /* MapView-iPhone.xib */; };
 		AF2B130016AF9D0800A3A7F4 /* PeopleListCell-iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF2B11AA16AF9D0800A3A7F4 /* PeopleListCell-iPhone.xib */; };
 		AF2B130116AF9D0800A3A7F4 /* PeopleListSearchCell-iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF2B11AB16AF9D0800A3A7F4 /* PeopleListSearchCell-iPhone.xib */; };
@@ -403,6 +402,7 @@
 		535C932E29733CA200BA0E95 /* StateHouseDistricts2023.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = StateHouseDistricts2023.json; sourceTree = "<group>"; };
 		53ABDA82282A174100FB5585 /* Realm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Realm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		53AE84602D2DAC0E001BE3D0 /* AboutBackground_2025@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AboutBackground_2025@2x.png"; sourceTree = "<group>"; };
+		53F101001234ABCD00AA0001 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8772611E8A1FAA8FBE8683A7 /* Pods-wrealeg.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wrealeg.release.xcconfig"; path = "Target Support Files/Pods-wrealeg/Pods-wrealeg.release.xcconfig"; sourceTree = "<group>"; };
 		A970321799D552D847E1B1B1 /* Pods_wrealeg.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wrealeg.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEF5ACC2EF34159D02675D04 /* Pods-wrealeg.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wrealeg.debug.xcconfig"; path = "Target Support Files/Pods-wrealeg/Pods-wrealeg.debug.xcconfig"; sourceTree = "<group>"; };
@@ -445,8 +445,6 @@
 		AF2B104C16AF9D0700A3A7F4 /* GradientButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GradientButton.m; sourceTree = "<group>"; };
 		AF2B104D16AF9D0700A3A7F4 /* ListSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListSection.h; sourceTree = "<group>"; };
 		AF2B104E16AF9D0700A3A7F4 /* ListSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListSection.m; sourceTree = "<group>"; };
-		AF2B104F16AF9D0700A3A7F4 /* ModalAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModalAlert.h; sourceTree = "<group>"; };
-		AF2B105016AF9D0700A3A7F4 /* ModalAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModalAlert.m; sourceTree = "<group>"; };
 		AF2B105116AF9D0700A3A7F4 /* NSDictionary+People.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+People.h"; sourceTree = "<group>"; };
 		AF2B105216AF9D0700A3A7F4 /* NSDictionary+People.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+People.m"; sourceTree = "<group>"; };
 		AF2B105316AF9D0700A3A7F4 /* NSString+Stuff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Stuff.h"; sourceTree = "<group>"; };
@@ -505,7 +503,6 @@
 		AF2B11A616AF9D0800A3A7F4 /* CommitteeListView-iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "CommitteeListView-iPhone.xib"; sourceTree = "<group>"; };
 		AF2B11A716AF9D0800A3A7F4 /* MainStoryboard_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		AF2B11A816AF9D0800A3A7F4 /* MainStoryboard_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
-		53F101001234ABCD00AA0001 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AF2B11A916AF9D0800A3A7F4 /* MapView-iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "MapView-iPhone.xib"; sourceTree = "<group>"; };
 		AF2B11AA16AF9D0800A3A7F4 /* PeopleListCell-iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "PeopleListCell-iPhone.xib"; sourceTree = "<group>"; };
 		AF2B11AB16AF9D0800A3A7F4 /* PeopleListSearchCell-iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "PeopleListSearchCell-iPhone.xib"; sourceTree = "<group>"; };
@@ -799,8 +796,6 @@
 				AF2B104C16AF9D0700A3A7F4 /* GradientButton.m */,
 				AF2B104D16AF9D0700A3A7F4 /* ListSection.h */,
 				AF2B104E16AF9D0700A3A7F4 /* ListSection.m */,
-				AF2B104F16AF9D0700A3A7F4 /* ModalAlert.h */,
-				AF2B105016AF9D0700A3A7F4 /* ModalAlert.m */,
 				AF2B105116AF9D0700A3A7F4 /* NSDictionary+People.h */,
 				AF2B105216AF9D0700A3A7F4 /* NSDictionary+People.m */,
 				AF2B105316AF9D0700A3A7F4 /* NSString+Stuff.h */,
@@ -1248,7 +1243,8 @@
 		AF24819615BB6A250070924E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1330;
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 2620;
 				ORGANIZATIONNAME = "Architactile LLC";
 				TargetAttributes = {
 					AF24819E15BB6A250070924E = {
@@ -1597,7 +1593,6 @@
 				AF334CC118ACAF0D00219F26 /* CustomTabBarController.m in Sources */,
 				AF2B11C016AF9D0800A3A7F4 /* ListSection.m in Sources */,
 				CECFF95D1EF23ACC007BEF92 /* VotingListViewController.m in Sources */,
-				AF2B11C116AF9D0800A3A7F4 /* ModalAlert.m in Sources */,
 				AF2B11C216AF9D0800A3A7F4 /* NSDictionary+People.m in Sources */,
 				AF2B11C316AF9D0800A3A7F4 /* NSString+Stuff.m in Sources */,
 				AF2B11C416AF9D0800A3A7F4 /* PeopleListDelegate.m in Sources */,
@@ -1662,8 +1657,10 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = 9FH8259N92;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				EXCLUDED_ARCHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -1682,9 +1679,10 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				ONLY_ACTIVE_ARCH = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "armv7 armv7s arm64";
@@ -1716,7 +1714,9 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Wyoming Rural Electric Association (9FH8259N92)";
 				COPY_PHASE_STRIP = YES;
+				DEVELOPMENT_TEAM = 9FH8259N92;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				EXCLUDED_ARCHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -1732,6 +1732,7 @@
 				PROVISIONING_PROFILE = "777C488B-C5F9-434B-AF1D-4D3CC5E189F7";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "777C488B-C5F9-434B-AF1D-4D3CC5E189F7";
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -1750,7 +1751,6 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 0;
-				DEVELOPMENT_TEAM = 9FH8259N92;
 				ENABLE_BITCODE = NO;
 				ENABLE_ON_DEMAND_RESOURCES = NO;
 				EXCLUDED_ARCHS = "";
@@ -1764,8 +1764,11 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "WY 2026";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.reference";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MARKETING_VERSION = 3.7.4;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "$(inherited)";
@@ -1790,7 +1793,6 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 0;
-				DEVELOPMENT_TEAM = 9FH8259N92;
 				ENABLE_BITCODE = NO;
 				ENABLE_ON_DEMAND_RESOURCES = NO;
 				EXCLUDED_ARCHS = "";
@@ -1804,8 +1806,11 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "WY 2026";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.reference";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MARKETING_VERSION = 3.7.4;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "$(inherited)";

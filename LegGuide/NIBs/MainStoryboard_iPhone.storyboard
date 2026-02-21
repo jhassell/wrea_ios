@@ -787,7 +787,7 @@
         <!--Second-->
         <scene sceneID="fca-qw-Rbo">
             <objects>
-                <viewController title="Second" id="22R-1L-gKf" customClass="StateTabViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StateVoteTallyViewController" title="Second" id="22R-1L-gKf" customClass="StateTabViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zXU-aU-OIE"/>
                         <viewControllerLayoutGuide type="bottom" id="bJi-b8-l6L"/>
@@ -971,7 +971,7 @@
         <!--Senate Seating View Controller-->
         <scene sceneID="nc7-bo-iRX">
             <objects>
-                <viewController id="egq-PI-7Oa" customClass="SenateSeatingViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SenateSeatingViewController" id="egq-PI-7Oa" customClass="SenateSeatingViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="CYZ-Fm-j4W"/>
                         <viewControllerLayoutGuide type="bottom" id="JLO-Hg-bSp"/>
@@ -1036,7 +1036,7 @@
         <!--House Seating View Controller-->
         <scene sceneID="S5W-SK-I9z">
             <objects>
-                <viewController id="aWa-Zp-TTT" customClass="HouseSeatingViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HouseSeatingViewController" id="aWa-Zp-TTT" customClass="HouseSeatingViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Wj7-6C-gxt"/>
                         <viewControllerLayoutGuide type="bottom" id="QfV-bm-jd0"/>

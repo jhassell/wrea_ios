@@ -32,6 +32,20 @@
 - (IBAction)allButtonPressed:(id)sender;
 - (IBAction)allVoteButtonPressed:(id)sender;
 - (IBAction)voteTallyButtonPressed:(id)sender;
+@property (nonatomic, strong) UIScrollView *modernStateScrollView;
+@property (nonatomic, strong) UIView *modernStateContentView;
+@property (nonatomic, assign) BOOL modernStateUIBuilt;
+- (BOOL)isStateLandingScreen;
+- (void)setupModernStateLandingUIIfNeeded;
+- (UIView *)modernSectionViewWithTitle:(NSString *)title rows:(NSArray<UIView *> *)rows;
+- (UIButton *)modernRowButtonWithBadgeText:(NSString *)badgeText
+                                badgeColor:(UIColor *)badgeColor
+                                     title:(NSString *)title
+                                  subtitle:(NSString *)subtitle
+                                    action:(SEL)action;
+- (void)openVoteTallyScreenFromModernLayout:(id)sender;
+- (void)openSenateSeatingFromModernLayout:(id)sender;
+- (void)openHouseSeatingFromModernLayout:(id)sender;
 
 @end
 
@@ -325,6 +339,271 @@
     
 }
 
+- (BOOL)isStateLandingScreen
+{
+    NSArray *buttons = [self allButtonsInView:self.view];
+    for (UIButton *button in buttons) {
+        NSArray<NSString *> *actions = [button actionsForTarget:self forControlEvent:UIControlEventTouchUpInside];
+        if ([actions containsObject:@"statewideButtonPressed:"]) {
+            return YES;
+        }
+    }
+    return NO;
+}
+
+- (void)openVoteTallyScreenFromModernLayout:(id)sender
+{
+    UIViewController *voteTallyVC = [self.storyboard instantiateViewControllerWithIdentifier:@"StateVoteTallyViewController"];
+    [self.navigationController pushViewController:voteTallyVC animated:YES];
+}
+
+- (void)openSenateSeatingFromModernLayout:(id)sender
+{
+    UIViewController *senateSeatingVC = [self.storyboard instantiateViewControllerWithIdentifier:@"SenateSeatingViewController"];
+    [self.navigationController pushViewController:senateSeatingVC animated:YES];
+}
+
+- (void)openHouseSeatingFromModernLayout:(id)sender
+{
+    UIViewController *houseSeatingVC = [self.storyboard instantiateViewControllerWithIdentifier:@"HouseSeatingViewController"];
+    [self.navigationController pushViewController:houseSeatingVC animated:YES];
+}
+
+- (UIButton *)modernRowButtonWithBadgeText:(NSString *)badgeText
+                                badgeColor:(UIColor *)badgeColor
+                                     title:(NSString *)title
+                                  subtitle:(NSString *)subtitle
+                                    action:(SEL)action
+{
+    UIButton *row = [UIButton buttonWithType:UIButtonTypeCustom];
+    row.translatesAutoresizingMaskIntoConstraints = NO;
+    row.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.88];
+    row.layer.cornerRadius = 15.0;
+    row.layer.borderWidth = 1.0;
+    row.layer.borderColor = [UIColor colorWithWhite:1.0 alpha:0.95].CGColor;
+    row.layer.shadowColor = [UIColor colorWithWhite:0.0 alpha:1.0].CGColor;
+    row.layer.shadowOpacity = 0.08;
+    row.layer.shadowRadius = 6.0;
+    row.layer.shadowOffset = CGSizeMake(0.0, 2.0);
+    [row.heightAnchor constraintEqualToConstant:56.0].active = YES;
+    [row addTarget:self action:action forControlEvents:UIControlEventTouchUpInside];
+    
+    UIView *badge = [[UIView alloc] init];
+    badge.translatesAutoresizingMaskIntoConstraints = NO;
+    badge.backgroundColor = badgeColor;
+    badge.layer.cornerRadius = 14.0;
+    [row addSubview:badge];
+    
+    UILabel *badgeLabel = [[UILabel alloc] init];
+    badgeLabel.translatesAutoresizingMaskIntoConstraints = NO;
+    badgeLabel.text = badgeText;
+    badgeLabel.textColor = [UIColor whiteColor];
+    badgeLabel.font = [UIFont boldSystemFontOfSize:12.0];
+    badgeLabel.textAlignment = NSTextAlignmentCenter;
+    [badge addSubview:badgeLabel];
+    
+    UILabel *titleLabel = [[UILabel alloc] init];
+    titleLabel.translatesAutoresizingMaskIntoConstraints = NO;
+    titleLabel.text = title;
+    titleLabel.textColor = [UIColor colorWithRed:0.12 green:0.14 blue:0.18 alpha:1.0];
+    titleLabel.font = [UIFont systemFontOfSize:20.0 weight:UIFontWeightSemibold];
+    [row addSubview:titleLabel];
+    
+    UILabel *subtitleLabel = nil;
+    if (subtitle.length > 0) {
+        subtitleLabel = [[UILabel alloc] init];
+        subtitleLabel.translatesAutoresizingMaskIntoConstraints = NO;
+        subtitleLabel.text = subtitle;
+        subtitleLabel.textColor = [UIColor colorWithWhite:0.35 alpha:1.0];
+        subtitleLabel.font = [UIFont systemFontOfSize:15.0 weight:UIFontWeightRegular];
+        subtitleLabel.textAlignment = NSTextAlignmentRight;
+        [row addSubview:subtitleLabel];
+    }
+    
+    UILabel *chevron = [[UILabel alloc] init];
+    chevron.translatesAutoresizingMaskIntoConstraints = NO;
+    chevron.text = @"›";
+    chevron.textColor = [UIColor colorWithWhite:0.55 alpha:1.0];
+    chevron.font = [UIFont systemFontOfSize:28.0 weight:UIFontWeightRegular];
+    chevron.textAlignment = NSTextAlignmentCenter;
+    [row addSubview:chevron];
+    
+    [NSLayoutConstraint activateConstraints:@[
+        [badge.leadingAnchor constraintEqualToAnchor:row.leadingAnchor constant:14.0],
+        [badge.centerYAnchor constraintEqualToAnchor:row.centerYAnchor],
+        [badge.widthAnchor constraintEqualToConstant:28.0],
+        [badge.heightAnchor constraintEqualToConstant:28.0],
+        
+        [badgeLabel.leadingAnchor constraintEqualToAnchor:badge.leadingAnchor],
+        [badgeLabel.trailingAnchor constraintEqualToAnchor:badge.trailingAnchor],
+        [badgeLabel.topAnchor constraintEqualToAnchor:badge.topAnchor],
+        [badgeLabel.bottomAnchor constraintEqualToAnchor:badge.bottomAnchor],
+        
+        [chevron.trailingAnchor constraintEqualToAnchor:row.trailingAnchor constant:-12.0],
+        [chevron.centerYAnchor constraintEqualToAnchor:row.centerYAnchor],
+        [chevron.widthAnchor constraintEqualToConstant:12.0],
+        
+        [titleLabel.leadingAnchor constraintEqualToAnchor:badge.trailingAnchor constant:12.0],
+        [titleLabel.centerYAnchor constraintEqualToAnchor:row.centerYAnchor],
+    ]];
+    
+    if (subtitleLabel) {
+        [NSLayoutConstraint activateConstraints:@[
+            [subtitleLabel.centerYAnchor constraintEqualToAnchor:row.centerYAnchor],
+            [subtitleLabel.trailingAnchor constraintEqualToAnchor:chevron.leadingAnchor constant:-12.0],
+            [subtitleLabel.leadingAnchor constraintGreaterThanOrEqualToAnchor:titleLabel.trailingAnchor constant:8.0],
+        ]];
+    } else {
+        [NSLayoutConstraint activateConstraints:@[
+            [titleLabel.trailingAnchor constraintLessThanOrEqualToAnchor:chevron.leadingAnchor constant:-12.0],
+        ]];
+    }
+    
+    return row;
+}
+
+- (UIView *)modernSectionViewWithTitle:(NSString *)title rows:(NSArray<UIView *> *)rows
+{
+    UIView *section = [[UIView alloc] init];
+    section.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    UILabel *titleLabel = [[UILabel alloc] init];
+    titleLabel.translatesAutoresizingMaskIntoConstraints = NO;
+    titleLabel.text = title;
+    titleLabel.textColor = [UIColor colorWithRed:0.15 green:0.18 blue:0.22 alpha:1.0];
+    titleLabel.font = [UIFont systemFontOfSize:34.0 weight:UIFontWeightSemibold];
+    [section addSubview:titleLabel];
+    
+    UIStackView *rowsStack = [[UIStackView alloc] initWithArrangedSubviews:rows];
+    rowsStack.translatesAutoresizingMaskIntoConstraints = NO;
+    rowsStack.axis = UILayoutConstraintAxisVertical;
+    rowsStack.spacing = 10.0;
+    [section addSubview:rowsStack];
+    
+    [NSLayoutConstraint activateConstraints:@[
+        [titleLabel.topAnchor constraintEqualToAnchor:section.topAnchor],
+        [titleLabel.leadingAnchor constraintEqualToAnchor:section.leadingAnchor],
+        [titleLabel.trailingAnchor constraintEqualToAnchor:section.trailingAnchor],
+        
+        [rowsStack.topAnchor constraintEqualToAnchor:titleLabel.bottomAnchor constant:10.0],
+        [rowsStack.leadingAnchor constraintEqualToAnchor:section.leadingAnchor],
+        [rowsStack.trailingAnchor constraintEqualToAnchor:section.trailingAnchor],
+        [rowsStack.bottomAnchor constraintEqualToAnchor:section.bottomAnchor],
+    ]];
+    
+    return section;
+}
+
+- (void)setupModernStateLandingUIIfNeeded
+{
+    if (self.modernStateUIBuilt || ![self isStateLandingScreen]) {
+        return;
+    }
+    
+    self.modernStateUIBuilt = YES;
+    for (UIView *subview in self.view.subviews) {
+        subview.hidden = YES;
+    }
+    
+    self.view.backgroundColor = [UIColor colorWithWhite:0.95 alpha:1.0];
+    
+    UIScrollView *scrollView = [[UIScrollView alloc] init];
+    scrollView.translatesAutoresizingMaskIntoConstraints = NO;
+    scrollView.alwaysBounceVertical = YES;
+    scrollView.showsVerticalScrollIndicator = NO;
+    [self.view addSubview:scrollView];
+    self.modernStateScrollView = scrollView;
+    
+    UIView *contentView = [[UIView alloc] init];
+    contentView.translatesAutoresizingMaskIntoConstraints = NO;
+    [scrollView addSubview:contentView];
+    self.modernStateContentView = contentView;
+    
+    UIView *heroView = [[UIView alloc] init];
+    heroView.translatesAutoresizingMaskIntoConstraints = NO;
+    heroView.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.75];
+    heroView.layer.cornerRadius = 18.0;
+    heroView.layer.masksToBounds = YES;
+    [contentView addSubview:heroView];
+    
+    UIImageView *heroImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Background.png"]];
+    heroImage.translatesAutoresizingMaskIntoConstraints = NO;
+    heroImage.contentMode = UIViewContentModeScaleAspectFill;
+    heroImage.alpha = 0.52;
+    [heroView addSubview:heroImage];
+    
+    UILabel *wyomingLabel = [[UILabel alloc] init];
+    wyomingLabel.translatesAutoresizingMaskIntoConstraints = NO;
+    wyomingLabel.text = @"Wyoming\nState\nGovernment";
+    wyomingLabel.textColor = [UIColor colorWithRed:0.36 green:0.18 blue:0.07 alpha:1.0];
+    wyomingLabel.font = [UIFont systemFontOfSize:32.0 weight:UIFontWeightSemibold];
+    wyomingLabel.textAlignment = NSTextAlignmentCenter;
+    wyomingLabel.numberOfLines = 3;
+    [heroView addSubview:wyomingLabel];
+    
+    
+    UIStackView *stack = [[UIStackView alloc] init];
+    stack.translatesAutoresizingMaskIntoConstraints = NO;
+    stack.axis = UILayoutConstraintAxisVertical;
+    stack.spacing = 20.0;
+    [contentView addSubview:stack];
+    
+    UIView *peopleSection = [self modernSectionViewWithTitle:@"People" rows:@[
+        [self modernRowButtonWithBadgeText:@"O" badgeColor:[UIColor colorWithRed:0.73 green:0.56 blue:0.20 alpha:1.0] title:@"Statewide Officials" subtitle:nil action:@selector(statewideButtonPressed:)],
+        [self modernRowButtonWithBadgeText:@"S" badgeColor:[UIColor colorWithRed:0.20 green:0.47 blue:0.67 alpha:1.0] title:@"Senate" subtitle:nil action:@selector(senateButtonPressed:)],
+        [self modernRowButtonWithBadgeText:@"H" badgeColor:[UIColor colorWithRed:0.35 green:0.57 blue:0.36 alpha:1.0] title:@"House" subtitle:nil action:@selector(houseButtonPressed:)],
+    ]];
+    
+    UIView *committeesSection = [self modernSectionViewWithTitle:@"Committees" rows:@[
+        [self modernRowButtonWithBadgeText:@"SC" badgeColor:[UIColor colorWithRed:0.20 green:0.47 blue:0.67 alpha:1.0] title:@"Senate Committees" subtitle:nil action:@selector(senateCommitteesButtonPressed:)],
+        [self modernRowButtonWithBadgeText:@"HC" badgeColor:[UIColor colorWithRed:0.35 green:0.57 blue:0.36 alpha:1.0] title:@"House Committees" subtitle:nil action:@selector(houseCommitteesButtonpressed:)],
+    ]];
+    
+    UIView *toolsSection = [self modernSectionViewWithTitle:@"Tools" rows:@[
+        [self modernRowButtonWithBadgeText:@"V" badgeColor:[UIColor colorWithRed:0.73 green:0.56 blue:0.20 alpha:1.0] title:@"Vote Tally" subtitle:nil action:@selector(openVoteTallyScreenFromModernLayout:)],
+        [self modernRowButtonWithBadgeText:@"S" badgeColor:[UIColor colorWithRed:0.20 green:0.47 blue:0.67 alpha:1.0] title:@"Seating Charts" subtitle:@"Senate" action:@selector(openSenateSeatingFromModernLayout:)],
+        [self modernRowButtonWithBadgeText:@"H" badgeColor:[UIColor colorWithRed:0.35 green:0.57 blue:0.36 alpha:1.0] title:@"Seating Charts" subtitle:@"House" action:@selector(openHouseSeatingFromModernLayout:)],
+    ]];
+    
+    [stack addArrangedSubview:peopleSection];
+    [stack addArrangedSubview:committeesSection];
+    [stack addArrangedSubview:toolsSection];
+    
+    UILayoutGuide *safe = self.view.safeAreaLayoutGuide;
+    [NSLayoutConstraint activateConstraints:@[
+        [scrollView.topAnchor constraintEqualToAnchor:safe.topAnchor],
+        [scrollView.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor],
+        [scrollView.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor],
+        [scrollView.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor],
+        
+        [contentView.topAnchor constraintEqualToAnchor:scrollView.contentLayoutGuide.topAnchor],
+        [contentView.leadingAnchor constraintEqualToAnchor:scrollView.contentLayoutGuide.leadingAnchor],
+        [contentView.trailingAnchor constraintEqualToAnchor:scrollView.contentLayoutGuide.trailingAnchor],
+        [contentView.bottomAnchor constraintEqualToAnchor:scrollView.contentLayoutGuide.bottomAnchor],
+        [contentView.widthAnchor constraintEqualToAnchor:scrollView.frameLayoutGuide.widthAnchor],
+        
+        [heroView.topAnchor constraintEqualToAnchor:contentView.topAnchor constant:10.0],
+        [heroView.leadingAnchor constraintEqualToAnchor:contentView.leadingAnchor constant:12.0],
+        [heroView.trailingAnchor constraintEqualToAnchor:contentView.trailingAnchor constant:-12.0],
+        [heroView.heightAnchor constraintEqualToConstant:195.0],
+        
+        [heroImage.topAnchor constraintEqualToAnchor:heroView.topAnchor],
+        [heroImage.leadingAnchor constraintEqualToAnchor:heroView.leadingAnchor],
+        [heroImage.trailingAnchor constraintEqualToAnchor:heroView.trailingAnchor],
+        [heroImage.bottomAnchor constraintEqualToAnchor:heroView.bottomAnchor],
+        
+        [wyomingLabel.centerXAnchor constraintEqualToAnchor:heroView.centerXAnchor],
+        [wyomingLabel.centerYAnchor constraintEqualToAnchor:heroView.centerYAnchor],
+        [wyomingLabel.leadingAnchor constraintEqualToAnchor:heroView.leadingAnchor constant:20.0],
+        [wyomingLabel.trailingAnchor constraintEqualToAnchor:heroView.trailingAnchor constant:-20.0],
+        
+        [stack.topAnchor constraintEqualToAnchor:heroView.bottomAnchor constant:18.0],
+        [stack.leadingAnchor constraintEqualToAnchor:contentView.leadingAnchor constant:12.0],
+        [stack.trailingAnchor constraintEqualToAnchor:contentView.trailingAnchor constant:-12.0],
+        [stack.bottomAnchor constraintEqualToAnchor:contentView.bottomAnchor constant:-18.0],
+    ]];
+}
+
 
 
 
@@ -345,7 +624,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    [self setupModernStateLandingUIIfNeeded];
 }
 
 
@@ -376,11 +655,12 @@
 - (void)styleSeatingRowButton:(UIButton *)button title:(NSString *)title fontSize:(CGFloat)fontSize
 {
     NSString *styledTitle = title;
+    const CGFloat leftPadding = 10.0f;
+    const CGFloat rightPadding = 8.0f;
     [button setTitle:styledTitle forState:UIControlStateNormal];
     [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [button setTitleColor:[UIColor blackColor] forState:UIControlStateHighlighted];
     button.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
-    button.contentEdgeInsets = UIEdgeInsetsMake(0.0, 10.0, 0.0, 8.0);
     button.titleLabel.font = [UIFont systemFontOfSize:fontSize];
     button.titleLabel.lineBreakMode = NSLineBreakByClipping;
     button.titleLabel.adjustsFontSizeToFitWidth = NO;
@@ -388,7 +668,7 @@
     // Expand legacy fixed-width button so full title fits (avoid truncation),
     // but keep the left edge fixed so it doesn't encroach on the chair icon.
     CGSize textSize = [styledTitle sizeWithAttributes:@{NSFontAttributeName: button.titleLabel.font}];
-    CGFloat targetWidth = MAX(142.0, ceil(textSize.width) + button.contentEdgeInsets.left + button.contentEdgeInsets.right);
+    CGFloat targetWidth = MAX(142.0, ceil(textSize.width) + leftPadding + rightPadding);
     CGRect frame = button.frame;
     CGFloat leftEdge = frame.origin.x;
     frame.size.width = targetWidth;
@@ -647,6 +927,10 @@
 - (void)viewDidLayoutSubviews
 {
     [super viewDidLayoutSubviews];
+    [self setupModernStateLandingUIIfNeeded];
+    if ([self isStateLandingScreen]) {
+        return;
+    }
     
     // The legacy storyboard uses fixed frames. Keep the large State content panels
     // above the tab bar across device sizes by shifting/compressing as needed.

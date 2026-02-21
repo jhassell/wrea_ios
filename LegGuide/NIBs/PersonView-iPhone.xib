@@ -15,6 +15,7 @@
                 <outlet property="bioLabel" destination="169" id="174"/>
                 <outlet property="bioView" destination="167" id="172"/>
                 <outlet property="bioWebView" destination="168" id="173"/>
+                <outlet property="backgroundArtworkImageView" destination="105" id="Wg5-2n-V8A"/>
                 <outlet property="boardMembersCell" destination="176" id="182"/>
                 <outlet property="boardMembersTextView" destination="177" id="184"/>
                 <outlet property="boardMembersTitleLabel" destination="179" id="183"/>
@@ -25,7 +26,10 @@
                 <outlet property="countiesListTitleLabel" destination="43" id="106"/>
                 <outlet property="countyMapButton" destination="42" id="110"/>
                 <outlet property="facebookButton" destination="16" id="82"/>
+                <outlet property="headerLogoImageView" destination="4" id="c9W-9B-gfJ"/>
+                <outlet property="headerWebButton" destination="157" id="nJa-kM-rfX"/>
                 <outlet property="headshotButton" destination="154" id="156"/>
+                <outlet property="headshotCloseButton" destination="150" id="pQh-SK-r3m"/>
                 <outlet property="headshotImageView" destination="149" id="152"/>
                 <outlet property="headshotModalView" destination="148" id="151"/>
                 <outlet property="headshotView" destination="7" id="95"/>
@@ -53,9 +57,9 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="Background2.png" id="105">
+                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.55000000000000004" contentMode="scaleToFill" image="Background2.png" id="105">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="600"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                 </imageView>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="3">
                     <rect key="frame" x="0.0" y="52" width="320" height="428"/>

@@ -31,6 +31,12 @@
     [super viewDidLoad];
     self.delegate=self;
     
+    UIColor *wyomingBrown = [UIColor colorWithRed:0.36 green:0.18 blue:0.07 alpha:1.0];
+    self.tabBar.tintColor = wyomingBrown;
+    if (@available(iOS 10.0, *)) {
+        self.tabBar.unselectedItemTintColor = wyomingBrown;
+    }
+    
     self.navControllers = [NSMutableArray arrayWithCapacity:5];
     
     for (IOS7AdjustmentViewController *vc in self.viewControllers) {

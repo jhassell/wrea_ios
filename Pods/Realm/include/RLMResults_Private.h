@@ -18,7 +18,7 @@
 
 #import <Realm/RLMResults.h>
 
-#import "RLMRealm_Private.h"
+#import <Realm/RLMRealm_Private.h>
 
 @class RLMObjectSchema;
 

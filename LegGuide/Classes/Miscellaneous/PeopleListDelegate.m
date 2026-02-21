@@ -30,6 +30,8 @@
 
 -(void) buildDisplaySections;
 -(void) buildDisplaySectionsWithFilterType:(int)filterType filterText:(NSString *) filterText;
+- (NSInteger)totalCardsCount;
+- (BOOL)shouldShowSearchPane;
 
 @end
 
@@ -398,9 +400,23 @@
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if (indexPath.section==0 && indexPath.row==0) {
-        return SEARCH_VIEW_HEIGHT;
+        return [self shouldShowSearchPane] ? SEARCH_VIEW_HEIGHT : 0.0f;
     }
     return 104.0f;
+}
+
+- (NSInteger)totalCardsCount
+{
+    NSInteger total = 0;
+    for (ListSection *section in self.sections) {
+        total += section.children.count;
+    }
+    return total;
+}
+
+- (BOOL)shouldShowSearchPane
+{
+    return [self totalCardsCount] >= 6;
 }
 
 -(NSIndexPath *) tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
