@@ -11,6 +11,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VotingListViewController">
             <connections>
+                <outlet property="backgroundArtworkImageView" destination="15" id="Mh5-N6-tGg"/>
+                <outlet property="headerBackButton" destination="8" id="eYG-6m-3Vr"/>
+                <outlet property="headerBackgroundView" destination="7" id="G9I-Uw-Y1k"/>
+                <outlet property="headerLogoImageView" destination="3" id="MGR-Y8-35a"/>
+                <outlet property="headerWebButton" destination="16" id="UJw-6j-Lmb"/>
                 <outlet property="rc_peopleTable" destination="4" id="QR1-ph-to4"/>
                 <outlet property="view" destination="1" id="caK-03-2eE"/>
             </connections>

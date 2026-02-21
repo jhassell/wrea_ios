@@ -348,10 +348,6 @@
 	// Do any additional setup after loading the view.
 }
 
-- (void)viewDidUnload
-{
-    [super viewDidUnload];
-}
 
 - (void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
@@ -531,6 +527,123 @@
     }
 }
 
+- (void)styleVoteTallyActionButtonsIfNeeded
+{
+    BOOL isVoteTallyScreen = NO;
+    for (UIView *subview in self.view.subviews) {
+        for (UIView *nested in subview.subviews) {
+            if ([nested isKindOfClass:[UILabel class]]) {
+                UILabel *label = (UILabel *)nested;
+                if ([label.text isEqualToString:@"Vote Tally"]) {
+                    isVoteTallyScreen = YES;
+                    break;
+                }
+            }
+        }
+        if (isVoteTallyScreen) break;
+    }
+    if (!isVoteTallyScreen) {
+        return;
+    }
+    
+    NSArray *buttons = [self allButtonsInView:self.view];
+    NSMutableArray<UIButton *> *voteActionButtons = [NSMutableArray array];
+    UIButton *backButton = nil;
+    CGFloat safeTop = 20.0f;
+    if (@available(iOS 11.0, *)) {
+        safeTop = self.view.safeAreaInsets.top;
+    }
+    
+    for (UIButton *button in buttons) {
+        NSArray<NSString *> *actions = [button actionsForTarget:self forControlEvent:UIControlEventTouchUpInside];
+        if (actions.count == 0) {
+            continue;
+        }
+        NSString *action = actions.firstObject;
+        if ([action isEqualToString:@"backButtonPressed:"]) {
+            backButton = button;
+            continue;
+        }
+        BOOL isVoteAction = (
+            [action isEqualToString:@"senateVoteButtonPressed:"] ||
+            [action isEqualToString:@"senateVoteCommitteesButtonPressed:"] ||
+            [action isEqualToString:@"houseVoteButtonPressed:"] ||
+            [action isEqualToString:@"houseVoteCommitteesButtonPressed:"] ||
+            [action isEqualToString:@"allVoteButtonPressed:"]
+        );
+        if (!isVoteAction) {
+            continue;
+        }
+        [voteActionButtons addObject:button];
+        
+        button.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.82];
+        button.layer.cornerRadius = 14.0f;
+        button.layer.borderWidth = 1.0f;
+        button.layer.borderColor = [UIColor colorWithWhite:1.0 alpha:0.96].CGColor;
+        button.layer.shadowColor = [UIColor colorWithWhite:0.0 alpha:1.0].CGColor;
+        button.layer.shadowOpacity = 0.14f;
+        button.layer.shadowRadius = 5.0f;
+        button.layer.shadowOffset = CGSizeMake(0.0f, 2.0f);
+    }
+    
+    // Replace legacy "State" back badge with the same modern chevron treatment.
+    if (backButton) {
+        [backButton setBackgroundImage:nil forState:UIControlStateNormal];
+        [backButton setTitle:@"" forState:UIControlStateNormal];
+        backButton.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.88];
+        backButton.layer.cornerRadius = 10.0f;
+        backButton.layer.masksToBounds = YES;
+        if (@available(iOS 13.0, *)) {
+            UIImageSymbolConfiguration *symbolConfig = [UIImageSymbolConfiguration configurationWithPointSize:24.0 weight:UIImageSymbolWeightHeavy];
+            UIImage *chevron = [UIImage systemImageNamed:@"chevron.left" withConfiguration:symbolConfig];
+            [backButton setImage:chevron forState:UIControlStateNormal];
+            [backButton setTintColor:[UIColor colorWithRed:0.13 green:0.17 blue:0.22 alpha:1.0]];
+        } else {
+            [backButton setTitle:@"<" forState:UIControlStateNormal];
+            [backButton setTitleColor:[UIColor colorWithRed:0.13 green:0.17 blue:0.22 alpha:1.0] forState:UIControlStateNormal];
+            backButton.titleLabel.font = [UIFont boldSystemFontOfSize:30.0f];
+        }
+        backButton.accessibilityLabel = @"Back";
+        CGRect frame = backButton.frame;
+        frame.origin.x = 8.0f;
+        frame.origin.y = safeTop + 4.0f;
+        frame.size.width = 44.0f;
+        frame.size.height = 44.0f;
+        backButton.frame = frame;
+    }
+    
+    // Move vote tally action buttons down by ~5% of screen height.
+    if (voteActionButtons.count > 0) {
+        [voteActionButtons sortUsingComparator:^NSComparisonResult(UIButton *a, UIButton *b) {
+            if (a.frame.origin.y < b.frame.origin.y) return NSOrderedAscending;
+            if (a.frame.origin.y > b.frame.origin.y) return NSOrderedDescending;
+            return NSOrderedSame;
+        }];
+        CGFloat offsetY = floor(self.view.bounds.size.height * 0.05f);
+        CGFloat maxBottom = CGRectGetHeight(self.view.bounds) - 14.0f;
+        if (self.tabBarController && !self.tabBarController.tabBar.hidden) {
+            CGRect tabBarFrameInSelf = [self.view convertRect:self.tabBarController.tabBar.frame fromView:self.tabBarController.view];
+            maxBottom = CGRectGetMinY(tabBarFrameInSelf) - 8.0f;
+        }
+        
+        for (UIButton *button in voteActionButtons) {
+            CGRect frame = button.frame;
+            frame.origin.y += offsetY;
+            button.frame = frame;
+        }
+        
+        UIButton *lastButton = [voteActionButtons lastObject];
+        CGFloat overflow = CGRectGetMaxY(lastButton.frame) - maxBottom;
+        if (overflow > 0.0f) {
+            for (UIButton *button in voteActionButtons) {
+                CGRect frame = button.frame;
+                frame.origin.y -= overflow;
+                button.frame = frame;
+            }
+        }
+    }
+}
+
 - (void)viewDidLayoutSubviews
 {
     [super viewDidLayoutSubviews];
@@ -576,11 +689,12 @@
     }
     
     [self styleSeatingRows];
+    [self styleVoteTallyActionButtonsIfNeeded];
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations
 {
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    return UIInterfaceOrientationMaskPortrait;
 }
 
 

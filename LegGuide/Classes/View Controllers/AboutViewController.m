@@ -32,6 +32,8 @@
 - (IBAction)websiteButtonPressed:(id)sender;
 - (IBAction)phoneNumberButtonPressed:(id)sender;
 - (IBAction)mixMattersButtonPressed:(id)sender;
+- (void)configurePrimaryActionButtons;
+- (void)layoutPrimaryActionButtons;
 
 @end
 
@@ -89,7 +91,8 @@
     
     UIDevice *device = [UIDevice currentDevice];
     if ([[device model] isEqualToString:@"iPhone"] ) {
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"tel:%@",phoneButton.titleLabel.text]]];
+        NSURL *phoneURL = [NSURL URLWithString:[NSString stringWithFormat:@"tel:%@",phoneButton.titleLabel.text]];
+        [[UIApplication sharedApplication] openURL:phoneURL options:@{} completionHandler:nil];
     }
 }
 
@@ -99,11 +102,7 @@
 
 -(void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:YES];
-    
-    self.websiteButton.backgroundColor=[UIColor clearColor];
-    self.ourMembersButton.backgroundColor=[UIColor clearColor];
-    self.ourStaffButton.backgroundColor=[UIColor clearColor];
-    self.electedOfficialsButton.backgroundColor=[UIColor clearColor];
+    [self configurePrimaryActionButtons];
 }
 
 -(void) viewDidAppear:(BOOL)animated {
@@ -128,22 +127,84 @@
 {
     [super viewDidLoad];
     firstLaunch=YES;
+    [self configurePrimaryActionButtons];
 }
 
-- (void)viewDidUnload
+- (void)viewDidLayoutSubviews
 {
-    [self setBackgroundImage:nil];
-    [self setElectedOfficialsButton:nil];
-    [self setOurMembersButton:nil];
-    [self setOurStaffButton:nil];
-    [self setWebsiteButton:nil];
-    [super viewDidUnload];
+    [super viewDidLayoutSubviews];
+    [self layoutPrimaryActionButtons];
 }
 
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations
 {
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    return UIInterfaceOrientationMaskPortrait;
+}
+
+- (void)configurePrimaryActionButtons
+{
+    NSMutableArray<UIButton *> *buttons = [NSMutableArray array];
+    NSMutableArray<NSString *> *titles = [NSMutableArray array];
+    if (self.electedOfficialsButton != nil) {
+        [buttons addObject:self.electedOfficialsButton];
+        [titles addObject:@"Elected Officials"];
+    }
+    if (self.ourMembersButton != nil) {
+        [buttons addObject:self.ourMembersButton];
+        [titles addObject:@"Our Members"];
+    }
+    if (self.quizButtonPressed != nil) {
+        [buttons addObject:self.quizButtonPressed];
+        [titles addObject:@"Quiz"];
+    }
+    UIColor *buttonColor = [UIColor colorWithRed:0.36 green:0.18 blue:0.07 alpha:1.0];
+    
+    // Keep legacy tappable overlays non-visual.
+    self.websiteButton.backgroundColor = [UIColor clearColor];
+    [self.websiteButton setTitle:@"" forState:UIControlStateNormal];
+    self.ourStaffButton.hidden = YES;
+    self.ourStaffButton.backgroundColor = [UIColor clearColor];
+    
+    for (NSInteger idx = 0; idx < buttons.count; idx++) {
+        UIButton *button = buttons[idx];
+        if (button == nil) {
+            continue;
+        }
+        [button setTitle:titles[idx] forState:UIControlStateNormal];
+        [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        button.titleLabel.font = [UIFont boldSystemFontOfSize:24.0];
+        button.backgroundColor = buttonColor;
+        button.layer.cornerRadius = 8.0f;
+        button.layer.masksToBounds = YES;
+        button.alpha = 0.95f;
+        [self.view bringSubviewToFront:button];
+    }
+    for (UIButton *button in buttons) {
+        [self.view bringSubviewToFront:button];
+    }
+}
+
+- (void)layoutPrimaryActionButtons
+{
+    NSMutableArray<UIButton *> *buttons = [NSMutableArray array];
+    if (self.electedOfficialsButton != nil) [buttons addObject:self.electedOfficialsButton];
+    if (self.ourMembersButton != nil) [buttons addObject:self.ourMembersButton];
+    if (self.quizButtonPressed != nil) [buttons addObject:self.quizButtonPressed];
+    CGFloat viewWidth = self.view.bounds.size.width;
+    CGFloat width = MIN(220.0f, viewWidth * 0.56f);
+    CGFloat height = 52.0f;
+    CGFloat spacing = 12.0f;
+    CGFloat x = viewWidth - width - 24.0f;
+    CGFloat startY = self.view.bounds.size.height * 0.44f;
+    
+    for (NSInteger idx = 0; idx < buttons.count; idx++) {
+        UIButton *button = buttons[idx];
+        if (button == nil) {
+            continue;
+        }
+        CGFloat y = startY + ((height + spacing) * idx);
+        button.frame = CGRectMake(x, y, width, height);
+    }
 }
 
 

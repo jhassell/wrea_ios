@@ -51,7 +51,7 @@
 @property (nonatomic, strong) NSDictionary *stateHouseBoundaries;
 @property (nonatomic, strong) NSDictionary *coopBoundaries;
 
-@property (nonatomic, strong) UIAlertView *alertView;
+@property (nonatomic, strong) UIAlertController *alertView;
 
 @property (nonatomic, strong) NSArray *message;
 

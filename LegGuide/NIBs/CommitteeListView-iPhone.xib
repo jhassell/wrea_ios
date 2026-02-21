@@ -7,6 +7,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CommitteeListViewController">
             <connections>
+                <outlet property="backgroundArtworkImageView" destination="13" id="xk0-R1-lS0"/>
+                <outlet property="headerBackButton" destination="11" id="Nvx-Lj-fet"/>
+                <outlet property="headerBackgroundView" destination="7" id="fT6-pq-3Xh"/>
+                <outlet property="headerLogoImageView" destination="3" id="5Dm-04-q0Q"/>
+                <outlet property="headerWebButton" destination="14" id="c8h-z2-gwM"/>
                 <outlet property="table" destination="4" id="10"/>
                 <outlet property="view" destination="1" id="5"/>
             </connections>
@@ -16,9 +21,9 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="Background2.png" id="13">
+                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="Background2.png" id="13">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="600"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="bottomRight" image="logo.png" id="3">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="52"/>

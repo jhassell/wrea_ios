@@ -86,7 +86,7 @@
 @property (strong, nonatomic) NSMutableArray *sections;
 
 @property (strong, nonatomic) IBOutlet UIView *bioView;
-@property (strong, nonatomic) IBOutlet UIWebView *bioWebView;
+@property (strong, nonatomic) IBOutlet UITextView *bioWebView;
 @property (strong, nonatomic) IBOutlet UILabel *bioLabel;
 
 @property (strong, nonatomic) IBOutlet UILabel *boardMembersTitleLabel;
@@ -106,6 +106,18 @@
 @end
 
 @implementation PersonViewController
+
+static void OpenExternalURLWithLogging(NSURL *url) {
+    if (url == nil) {
+        return;
+    }
+    UIApplication *application = [UIApplication sharedApplication];
+    [application openURL:url options:@{} completionHandler:^(BOOL success) {
+        if (!success) {
+            NSLog(@"Failed to open url: %@", [url description]);
+        }
+    }];
+}
 
 @synthesize backButton=_backButton;
 @synthesize table=_table;
@@ -239,13 +251,13 @@
     self.headshotModalView.alpha=0.0;
     self.headshotModalView.hidden = NO;
     
-    [UIView beginAnimations:nil context:nil];
-    [UIView setAnimationDuration:0.5];
-    [UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
-    
-    self.headshotModalView.alpha = 1.0;
-    
-    [UIView commitAnimations];
+    [UIView animateWithDuration:0.5
+                          delay:0.0
+                        options:UIViewAnimationOptionCurveEaseOut
+                     animations:^{
+                         self.headshotModalView.alpha = 1.0;
+                     }
+                     completion:nil];
     
 }
 
@@ -255,11 +267,13 @@
 
 - (IBAction)headshotModelCloseButtonPressed:(id)sender {
     
-    [UIView beginAnimations:nil context:nil];
-    [UIView setAnimationDuration:0.5];
-    [UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
-    self.headshotModalView.alpha = 0.0;
-    [UIView commitAnimations];
+    [UIView animateWithDuration:0.5
+                          delay:0.0
+                        options:UIViewAnimationOptionCurveEaseOut
+                     animations:^{
+                         self.headshotModalView.alpha = 0.0;
+                     }
+                     completion:nil];
     
     [self performSelector:@selector(hideHeadhotModal) withObject:nil afterDelay:0.6];
     
@@ -273,8 +287,7 @@
     
     if ([[[[self.person.email trim] lowercaseString] substringToIndex:4] isEqualToString:@"http"]) {
         NSURL *url = [NSURL URLWithString:[self.person.email trim]];
-        if (![[UIApplication sharedApplication] openURL:url])
-            NSLog(@"%@%@",@"Failed to open url:",[url description]);
+        OpenExternalURLWithLogging(url);
         return;
     } else if ([MFMailComposeViewController canSendMail])
     {
@@ -292,38 +305,33 @@
     }
     else
     {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Can't Send Mail"
-                                                        message:@"Sorry, your device doesn't support sending email."
-                                                       delegate:nil
-                                              cancelButtonTitle:@"OK"
-                                              otherButtonTitles:nil];
-        [alert show];
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Can't Send Mail"
+                                                                       message:@"Sorry, your device doesn't support sending email."
+                                                                preferredStyle:UIAlertControllerStyleAlert];
+        [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
+        [self presentViewController:alert animated:YES completion:nil];
     }
     
 }
 
 - (IBAction)facebookButtonPressed:(id)sender {
     NSURL *url = [NSURL URLWithString:[self.person.facebook trim]];
-    if (![[UIApplication sharedApplication] openURL:url])
-        NSLog(@"%@%@",@"Failed to open url:",[url description]);
+    OpenExternalURLWithLogging(url);
 }
 
 - (IBAction)twitterButtonPressed:(id)sender {
     NSURL *url = [NSURL URLWithString:[self.person.twitter trim]];
-    if (![[UIApplication sharedApplication] openURL:url])
-        NSLog(@"%@%@",@"Failed to open url:",[url description]);
+    OpenExternalURLWithLogging(url);
 }
 
 - (IBAction)linkedInButtonPressed:(id)sender {
     NSURL *url = [NSURL URLWithString:[self.person.linkedIn trim]];
-    if (![[UIApplication sharedApplication] openURL:url])
-        NSLog(@"%@%@",@"Failed to open url:",[url description]);
+    OpenExternalURLWithLogging(url);
 }
 
 - (IBAction)webButtonPressed:(id)sender {
     NSURL *url = [NSURL URLWithString:[self.person.webpage trim]];
-    if (![[UIApplication sharedApplication] openURL:url])
-        NSLog(@"%@%@",@"Failed to open url:",[url description]);
+    OpenExternalURLWithLogging(url);
 }
 
 - (IBAction)districtMapButtonPressed:(id)sender {
@@ -349,7 +357,23 @@
     NSString *html = [self.person.bio stringByReplacingOccurrencesOfString:@"<br" withString:@"<br /><br" options:NSCaseInsensitiveSearch range:NSMakeRange(0, [self.person.bio length]-1)];
     html = [html stringByReplacingOccurrencesOfString:@"â€™" withString:@"'"];
     
-    [self.bioWebView loadHTMLString:[NSString stringWithFormat:@"<html>%@</html>",html] baseURL:nil];
+    NSData *htmlData = [[NSString stringWithFormat:@"<html>%@</html>", html] dataUsingEncoding:NSUTF8StringEncoding];
+    NSDictionary *options = @{
+        NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType,
+        NSCharacterEncodingDocumentAttribute: @(NSUTF8StringEncoding)
+    };
+    NSError *htmlError = nil;
+    NSAttributedString *attributedBio = [[NSAttributedString alloc] initWithData:htmlData
+                                                                          options:options
+                                                               documentAttributes:nil
+                                                                            error:&htmlError];
+    if (attributedBio != nil) {
+        self.bioWebView.attributedText = attributedBio;
+    } else {
+        // Fallback to plain text if malformed HTML content is provided.
+        self.bioWebView.text = [self.person.bio trim];
+        NSLog(@"Bio HTML parse failed: %@", htmlError);
+    }
 
     [self.view addSubview:self.bioView];
     self.bioView.frame=buttonFrame;
@@ -1017,22 +1041,9 @@
     [super viewDidLoad];
 }
 
-- (void)viewDidUnload
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations
 {
-    [self setBioButtonCell:nil];
-    [self setBioButton:nil];
-    [self setBioView:nil];
-    [self setBioWebView:nil];
-    [self setBioLabel:nil];
-    [self setBoardMembersCell:nil];
-    [self setBoardMembersTitleLabel:nil];
-    [self setBoardMembersTextView:nil];
-    [super viewDidUnload];
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    return UIInterfaceOrientationMaskPortrait;
 }
 
 

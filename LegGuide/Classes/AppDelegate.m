@@ -9,7 +9,6 @@
 #import "AppDelegate.h"
 #import "DataLoader.h"
 #import "Boundary.h"
-#import "ModalAlert.h"
 #import "NSDictionary+People.h"
 #import "NSString+Stuff.h"
 #import "Definitions.h"
@@ -43,17 +42,89 @@
 @synthesize coopBoundaries=_coopBoundaries;
 @synthesize alertView=_alertView;
 
+static void OpenExternalURLWithLogging(NSURL *url) {
+    if (url == nil) {
+        return;
+    }
+    UIApplication *application = [UIApplication sharedApplication];
+    [application openURL:url options:@{} completionHandler:^(BOOL success) {
+        if (!success) {
+            NSLog(@"Failed to open url: %@", [url description]);
+        }
+    }];
+}
+
+- (UIViewController *)topPresentedViewController {
+    UIViewController *viewController = self.window.rootViewController;
+    while (viewController.presentedViewController != nil) {
+        viewController = viewController.presentedViewController;
+    }
+    return viewController;
+}
+
+- (void)presentLoadingAlert {
+    UIViewController *presenter = [self topPresentedViewController];
+    if (presenter == nil || self.alertView != nil) {
+        return;
+    }
+    UIAlertController *loadingAlert = [UIAlertController alertControllerWithTitle:@"Loading Map Data"
+                                                                           message:@"\n\nPlease wait..."
+                                                                    preferredStyle:UIAlertControllerStyleAlert];
+    UIActivityIndicatorView *activity = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleMedium];
+    activity.translatesAutoresizingMaskIntoConstraints = NO;
+    [loadingAlert.view addSubview:activity];
+    [NSLayoutConstraint activateConstraints:@[
+        [activity.centerXAnchor constraintEqualToAnchor:loadingAlert.view.centerXAnchor],
+        [activity.topAnchor constraintEqualToAnchor:loadingAlert.view.topAnchor constant:52.0f]
+    ]];
+    [activity startAnimating];
+    self.alertView = loadingAlert;
+    [presenter presentViewController:loadingAlert animated:YES completion:nil];
+}
+
+- (void)dismissLoadingAlertIfNeeded {
+    if (self.alertView == nil) {
+        return;
+    }
+    [self.alertView dismissViewControllerAnimated:YES completion:nil];
+    self.alertView = nil;
+}
+
+- (void)presentUpdateMessageWithTitle:(NSString *)messageTitle
+                              message:(NSString *)messageText
+                                  url:(NSString *)messageURL
+                     actionButtonText:(NSString *)buttonText {
+    UIViewController *presenter = [self topPresentedViewController];
+    if (presenter == nil) {
+        return;
+    }
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:messageTitle
+                                                                   message:messageText
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    if (buttonText != nil && buttonText.length > 0) {
+        UIAlertAction *action = [UIAlertAction actionWithTitle:buttonText
+                                                         style:UIAlertActionStyleDefault
+                                                       handler:^(__unused UIAlertAction * _Nonnull action) {
+            NSURL *url = [NSURL URLWithString:messageURL];
+            OpenExternalURLWithLogging(url);
+        }];
+        [alert addAction:action];
+        [alert addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil]];
+    } else {
+        [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
+    }
+    [presenter presentViewController:alert animated:YES completion:nil];
+}
+
 
 - (void)weblink {
     NSURL *url = [NSURL URLWithString:WEB_ADDRESS];
-    if (![[UIApplication sharedApplication] openURL:url])
-        NSLog(@"%@%@",@"Failed to open url:",[url description]);
+    OpenExternalURLWithLogging(url);
 }
 
 - (void)otherLink1 {
     NSURL *url = [NSURL URLWithString:OTHER_WEB_1];
-    if (![[UIApplication sharedApplication] openURL:url])
-        NSLog(@"%@%@",@"Failed to open url:",[url description]);
+    OpenExternalURLWithLogging(url);
 }
 
 
@@ -296,15 +367,16 @@
         
     }
     
-    [self.alertView dismissWithClickedButtonIndex:0 animated:YES];
-    self.alertView=nil;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self dismissLoadingAlertIfNeeded];
+    });
 }
 
 -(void) loadBoundaries {
     if (mapDataLoaded) return;
 
     mapDataLoaded = YES;
-    self.alertView = [ModalAlert noButtonAlertWithTitle:@"Loading Map Data" message:@"Please wait..."];
+    [self presentLoadingAlert];
     [self performSelector:@selector(realLoadBoundaries) withObject:nil afterDelay:0.01];
 }
 
@@ -321,21 +393,10 @@
     NSString *messageURL = [self.message objectAtIndex:2];
     NSString *buttonText = [self.message objectAtIndex:3];
     
-    NSString *button2Text = @"Cancel";
-    
     if (messageText==nil || [messageText length]==0) {
         buttonText=nil;
-        button2Text=@"Ok";
     }
-    
-    int answer = (int)[ModalAlert queryWith:messageText title:messageTitle button1:buttonText button2:button2Text];
-    
-    NSLog(@"Answer == %i",answer);
-
-    if (answer==0 && buttonText!=nil) {
-        NSURL *url = [NSURL URLWithString:messageURL];
-        [[UIApplication sharedApplication] openURL:url];
-    }
+    [self presentUpdateMessageWithTitle:messageTitle message:messageText url:messageURL actionButtonText:buttonText];
 }
 
 -(void) startTheTimer {
@@ -355,29 +416,27 @@
     
     NSURL  *url = [NSURL URLWithString:stringURL];
     
-    NSURLRequest * urlRequest = [NSURLRequest requestWithURL:url];
-    NSURLResponse * response = nil;
-    NSError * error = nil;
-    NSData * data = [NSURLConnection sendSynchronousRequest:urlRequest returningResponse:&response error:&error];
-    
-    NSHTTPURLResponse* httpResponse = (NSHTTPURLResponse*)response;
-    int code = (int)[httpResponse statusCode];
-    
-    if (code==200) {
-        
-        NSLog(@"Yulp.");
-        error = nil;
-        self.message = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
-        
-
-        if (error == nil && self.message !=nil && [self.message count]==4) {
-        
-            NSLog(@"Yulp!");
-
-            [self performSelectorOnMainThread:@selector(startTheTimer) withObject:nil waitUntilDone:NO];
+    NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
+    NSURLSessionDataTask *task = [[NSURLSession sharedSession] dataTaskWithRequest:urlRequest
+                                                                 completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
+        int code = (int)[httpResponse statusCode];
+        if (error != nil || code != 200 || data == nil) {
+            return;
         }
         
-    }
+        NSLog(@"Yulp.");
+        NSError *jsonError = nil;
+        NSArray *message = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&jsonError];
+        if (jsonError == nil && message != nil && [message count] == 4) {
+            self.message = message;
+            NSLog(@"Yulp!");
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self startTheTimer];
+            });
+        }
+    }];
+    [task resume];
 }
 
 

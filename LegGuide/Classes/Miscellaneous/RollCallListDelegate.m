@@ -558,24 +558,16 @@ RLM_ARRAY_TYPE(Realm_tally)
 
 
 - (void) sharingCompleted {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Clear Tally?"
-                                                    message:@""
-                                                   delegate:self
-                                          cancelButtonTitle:@"Retain"
-                                          otherButtonTitles:@"Clear", nil];
-    [alert show];
-}
-
-
-- (void)alertView:(UIAlertView *)alert clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-    NSString *title = [alert buttonTitleAtIndex:buttonIndex];
-    
-    if([title isEqualToString:@"Clear"])
-    {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Clear Tally?"
+                                                                   message:@""
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    [alert addAction:[UIAlertAction actionWithTitle:@"Retain" style:UIAlertActionStyleCancel handler:nil]];
+    [alert addAction:[UIAlertAction actionWithTitle:@"Clear"
+                                              style:UIAlertActionStyleDestructive
+                                            handler:^(__unused UIAlertAction * _Nonnull action) {
         [self clearCurrentTally];
-    }
-
+    }]];
+    [self.rc_viewController presentViewController:alert animated:YES completion:nil];
 }
 
 - (void) clearCurrentTally {
@@ -916,7 +908,7 @@ RLM_ARRAY_TYPE(Realm_tally)
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
         if (self.rc_committee.website!=nil && [self.rc_committee.website trim].length>0) {
             NSURL *url = [NSURL URLWithString:[self.rc_committee.website trim]];
-            [[UIApplication sharedApplication] openURL:url];
+            [[UIApplication sharedApplication] openURL:url options:@{} completionHandler:nil];
         }
         return;
     }

@@ -14,12 +14,6 @@
 
 @class Committee;
 
-
-@interface rc_alert : UIViewController <UIAlertViewDelegate> {
-}
-@end
-
-
 @interface RollCallListDelegate : NSObject <UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate>
 
 

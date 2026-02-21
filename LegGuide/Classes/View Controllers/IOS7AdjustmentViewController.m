@@ -63,6 +63,7 @@
     [super viewDidLoad];
     [self addChildViewController:self.navController];
     self.navController.view.frame=self.adjustmentContainerView.bounds;
+    self.navController.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [self.adjustmentContainerView addSubview:self.navController.view];
     [self.navController didMoveToParentViewController:self];
 }
@@ -73,8 +74,9 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)viewDidUnload {
-    [self setAdjustmentContainerView:nil];
-    [super viewDidUnload];
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+    // Keep the embedded navigation controller sized to the live container bounds on modern devices.
+    self.navController.view.frame = self.adjustmentContainerView.bounds;
 }
 @end

@@ -9,7 +9,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PeopleListViewController">
             <connections>
+                <outlet property="backgroundArtworkImageView" destination="15" id="RvI-Vm-fbx"/>
                 <outlet property="committeeMessageButton" destination="Vcg-bR-eaE" id="cWR-FT-Dp8"/>
+                <outlet property="headerBackButton" destination="8" id="OXM-Pu-D0d"/>
+                <outlet property="headerBackgroundView" destination="7" id="N3s-Rl-f7R"/>
+                <outlet property="headerLogoImageView" destination="3" id="2Xk-Mf-VWQ"/>
+                <outlet property="headerWebButton" destination="16" id="G9s-rF-H8A"/>
                 <outlet property="listTable" destination="4" id="I62-yA-Vdo"/>
                 <outlet property="peopleTable" destination="4" id="6"/>
                 <outlet property="view" destination="1" id="5"/>

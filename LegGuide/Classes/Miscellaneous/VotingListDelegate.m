@@ -770,7 +770,7 @@ RLM_ARRAY_TYPE(Realm_tally)
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
         if (self.committee.website!=nil && [self.committee.website trim].length>0) {
             NSURL *url = [NSURL URLWithString:[self.committee.website trim]];
-            [[UIApplication sharedApplication] openURL:url];
+            [[UIApplication sharedApplication] openURL:url options:@{} completionHandler:nil];
         }
         return;
     }

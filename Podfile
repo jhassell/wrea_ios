@@ -17,5 +17,12 @@ post_install do |installer|
     target.build_configurations.each do |config|
       config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '12.0'
     end
+    if target.name == 'Realm'
+      target.shell_script_build_phases.each do |phase|
+        if phase.name == 'Create Symlinks to Header Folders'
+          phase.always_out_of_date = '1'
+        end
+      end
+    end
   end
 end

@@ -107,7 +107,7 @@
 		535C932D2973062A00BA0E95 /* StateSenateDistricts2023.json in Resources */ = {isa = PBXBuildFile; fileRef = 535C932C2973062A00BA0E95 /* StateSenateDistricts2023.json */; };
 		535C932F29733CA200BA0E95 /* StateHouseDistricts2023.json in Resources */ = {isa = PBXBuildFile; fileRef = 535C932E29733CA200BA0E95 /* StateHouseDistricts2023.json */; };
 		53ABDA83282A174100FB5585 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53ABDA82282A174100FB5585 /* Realm.framework */; };
-		53AE84612D2DAC0E001BE3D0 /* AboutBackground_2025@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 53AE84602D2DAC0E001BE3D0 /* AboutBackground_2025@2x.jpg */; };
+		53AE84612D2DAC0E001BE3D0 /* AboutBackground_2025@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 53AE84602D2DAC0E001BE3D0 /* AboutBackground_2025@2x.png */; };
 		AF092D4115DA0FD200AA4B6B /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = AF092D4015DA0FD100AA4B6B /* Default.png */; };
 		AF092D4315DA0FDC00AA4B6B /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF092D4215DA0FDC00AA4B6B /* Default@2x.png */; };
 		AF14BD4F160E373A003D2052 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF14BD4E160E373A003D2052 /* MessageUI.framework */; };
@@ -178,6 +178,7 @@
 		AF2B12FC16AF9D0800A3A7F4 /* CommitteeListView-iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF2B11A616AF9D0800A3A7F4 /* CommitteeListView-iPhone.xib */; };
 		AF2B12FD16AF9D0800A3A7F4 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF2B11A716AF9D0800A3A7F4 /* MainStoryboard_iPad.storyboard */; };
 		AF2B12FE16AF9D0800A3A7F4 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF2B11A816AF9D0800A3A7F4 /* MainStoryboard_iPhone.storyboard */; };
+		53F101011234ABCD00AA0001 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53F101001234ABCD00AA0001 /* LaunchScreen.storyboard */; };
 		AF2B12FF16AF9D0800A3A7F4 /* MapView-iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF2B11A916AF9D0800A3A7F4 /* MapView-iPhone.xib */; };
 		AF2B130016AF9D0800A3A7F4 /* PeopleListCell-iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF2B11AA16AF9D0800A3A7F4 /* PeopleListCell-iPhone.xib */; };
 		AF2B130116AF9D0800A3A7F4 /* PeopleListSearchCell-iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF2B11AB16AF9D0800A3A7F4 /* PeopleListSearchCell-iPhone.xib */; };
@@ -401,7 +402,7 @@
 		535C932C2973062A00BA0E95 /* StateSenateDistricts2023.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = StateSenateDistricts2023.json; sourceTree = "<group>"; };
 		535C932E29733CA200BA0E95 /* StateHouseDistricts2023.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = StateHouseDistricts2023.json; sourceTree = "<group>"; };
 		53ABDA82282A174100FB5585 /* Realm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Realm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		53AE84602D2DAC0E001BE3D0 /* AboutBackground_2025@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "AboutBackground_2025@2x.jpg"; sourceTree = "<group>"; };
+		53AE84602D2DAC0E001BE3D0 /* AboutBackground_2025@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AboutBackground_2025@2x.png"; sourceTree = "<group>"; };
 		8772611E8A1FAA8FBE8683A7 /* Pods-wrealeg.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wrealeg.release.xcconfig"; path = "Target Support Files/Pods-wrealeg/Pods-wrealeg.release.xcconfig"; sourceTree = "<group>"; };
 		A970321799D552D847E1B1B1 /* Pods_wrealeg.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wrealeg.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEF5ACC2EF34159D02675D04 /* Pods-wrealeg.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wrealeg.debug.xcconfig"; path = "Target Support Files/Pods-wrealeg/Pods-wrealeg.debug.xcconfig"; sourceTree = "<group>"; };
@@ -504,6 +505,7 @@
 		AF2B11A616AF9D0800A3A7F4 /* CommitteeListView-iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "CommitteeListView-iPhone.xib"; sourceTree = "<group>"; };
 		AF2B11A716AF9D0800A3A7F4 /* MainStoryboard_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		AF2B11A816AF9D0800A3A7F4 /* MainStoryboard_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		53F101001234ABCD00AA0001 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AF2B11A916AF9D0800A3A7F4 /* MapView-iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "MapView-iPhone.xib"; sourceTree = "<group>"; };
 		AF2B11AA16AF9D0800A3A7F4 /* PeopleListCell-iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "PeopleListCell-iPhone.xib"; sourceTree = "<group>"; };
 		AF2B11AB16AF9D0800A3A7F4 /* PeopleListSearchCell-iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "PeopleListSearchCell-iPhone.xib"; sourceTree = "<group>"; };
@@ -870,7 +872,7 @@
 		AF2B107916AF9D0700A3A7F4 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				53AE84602D2DAC0E001BE3D0 /* AboutBackground_2025@2x.jpg */,
+				53AE84602D2DAC0E001BE3D0 /* AboutBackground_2025@2x.png */,
 				535C932A296FB93200BA0E95 /* AboutBackground_2023@2x.jpg */,
 				CEC34368279666B000502753 /* AboutBackground_2022@2x.jpg */,
 				CEF30A6025F10BED00D2A641 /* HouseSeatingChart.png */,
@@ -974,6 +976,7 @@
 				AF2B11A616AF9D0800A3A7F4 /* CommitteeListView-iPhone.xib */,
 				AF2B11A716AF9D0800A3A7F4 /* MainStoryboard_iPad.storyboard */,
 				AF2B11A816AF9D0800A3A7F4 /* MainStoryboard_iPhone.storyboard */,
+				53F101001234ABCD00AA0001 /* LaunchScreen.storyboard */,
 				AF2B11A916AF9D0800A3A7F4 /* MapView-iPhone.xib */,
 				AF2B11AA16AF9D0800A3A7F4 /* PeopleListCell-iPhone.xib */,
 				AF2B11AB16AF9D0800A3A7F4 /* PeopleListSearchCell-iPhone.xib */,
@@ -1410,7 +1413,7 @@
 				CE2F312F21FE37C400F18CAE /* AboutBackground_2019@2x.jpg in Resources */,
 				AFBEF2BF1A63ABDD00623B1A /* HPlogoR.jpg in Resources */,
 				CECFF9731EF38BF0007BEF92 /* VoteTallyIcons_S.png in Resources */,
-				53AE84612D2DAC0E001BE3D0 /* AboutBackground_2025@2x.jpg in Resources */,
+				53AE84612D2DAC0E001BE3D0 /* AboutBackground_2025@2x.png in Resources */,
 				5349E8542980EA6A00805CAA /* Pendergraft-29.jpg in Resources */,
 				AFBEF2B81A63ABDD00623B1A /* Barrasso.jpg in Resources */,
 				CECFF9601EF35380007BEF92 /* BackgroundLight.png in Resources */,
@@ -1420,6 +1423,7 @@
 				AF1D28E418BDBE420093CE11 /* StateButtons@2x.png in Resources */,
 				CECFF9711EF38BF0007BEF92 /* VoteTallyIcons_SC.png in Resources */,
 				AF2B12FD16AF9D0800A3A7F4 /* MainStoryboard_iPad.storyboard in Resources */,
+				53F101011234ABCD00AA0001 /* LaunchScreen.storyboard in Resources */,
 				CECFF9471EF23426007BEF92 /* SenateCommittees__VoteTallyIcon.png in Resources */,
 				CE04FA3023E7B13F00B51AE0 /* Treasurer Meier.jpg in Resources */,
 				AF2B12FE16AF9D0800A3A7F4 /* MainStoryboard_iPhone.storyboard in Resources */,
@@ -1740,7 +1744,6 @@
 			baseConfigurationReference = AEF5ACC2EF34159D02675D04 /* Pods-wrealeg.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
@@ -1763,7 +1766,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				MARKETING_VERSION = 3.7.3;
+				MARKETING_VERSION = 3.7.4;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = org.wyomingrea.wrealeg;
@@ -1782,7 +1785,6 @@
 			baseConfigurationReference = 8772611E8A1FAA8FBE8683A7 /* Pods-wrealeg.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
@@ -1804,7 +1806,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				MARKETING_VERSION = 3.7.3;
+				MARKETING_VERSION = 3.7.4;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = org.wyomingrea.wrealeg;

@@ -16,7 +16,6 @@
 #import "NSDictionary+People.h"
 #import "NSString+Stuff.h"
 #import "PersonViewController.h"
-#import "ModalAlert.h"
 
 #import "GetLocationViewController.h"
 #import "LocationDetailViewController.h"
@@ -56,7 +55,6 @@
 @property (nonatomic, strong) SetupViewController* setupViewController;
 @property (nonatomic, copy) NSString *stateString;
 
-@property (strong, nonatomic) UIAlertView *instructionView;
 
 - (IBAction)rightArrowButtonPressed:(id)sender;
 - (IBAction)leftArrowButtonPressed:(id)sender;
@@ -83,7 +81,6 @@
 @synthesize districtBoundary=_districtBoundary;
 @synthesize districtBoundaries=_districtBoundaries;
 @synthesize mapSelectIndex=_mapSelectIndex;
-@synthesize instructionView=_instructionView;
 @synthesize person=_person;
 
 
@@ -113,15 +110,14 @@
 
 - (MKAnnotationView *)mapView:(MKMapView *)map viewForAnnotation:(id <MKAnnotation>)annotation
 {
-    MKPinAnnotationView* pinView = (MKPinAnnotationView *)[self.mapView dequeueReusableAnnotationViewWithIdentifier:@"pin"];
+    MKMarkerAnnotationView *pinView = (MKMarkerAnnotationView *)[self.mapView dequeueReusableAnnotationViewWithIdentifier:@"pin"];
     
     if (!pinView)
     {
         // if an existing pin view was not available, create one
-        MKPinAnnotationView* customPinView = [[MKPinAnnotationView alloc]
-                                               initWithAnnotation:annotation reuseIdentifier:@"pin"];
-        customPinView.pinColor = MKPinAnnotationColorGreen;            
-        customPinView.animatesDrop = YES;
+        MKMarkerAnnotationView *customPinView = [[MKMarkerAnnotationView alloc]
+                                                 initWithAnnotation:annotation reuseIdentifier:@"pin"];
+        customPinView.markerTintColor = [UIColor systemGreenColor];
         customPinView.canShowCallout = NO;        
         return customPinView;
     } else {
@@ -132,7 +128,7 @@
 }
 
 
-- (MKPolygonRenderer *)mapView:(MKMapView *)mapView viewForOverlay:(id <MKOverlay>)overlay
+- (MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id <MKOverlay>)overlay
 {
     BoundaryPolygon *boundaryPolygon = (BoundaryPolygon *) overlay;
     
@@ -677,7 +673,11 @@
 // For this example, we are going to use horizontal accuracy as the deciding factor.
 // In other cases, you may wish to use vertical accuracy, or both together.
 //
-- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations {
+    CLLocation *newLocation = [locations lastObject];
+    if (newLocation == nil) {
+        return;
+    }
     // store all of the measurements, just so we can see what kind of data we might receive
     [self.locationMeasurements addObject:newLocation];
     
@@ -865,14 +865,9 @@
     }
 }
 
-- (void)viewDidUnload
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations
 {
-    [super viewDidUnload];
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    return UIInterfaceOrientationMaskPortrait;
 }
 
 
