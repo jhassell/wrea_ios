@@ -63,6 +63,8 @@
 - (void) displayCurrentMapOverlays;
 - (void) getPinFor:(CLLocation *)location;
 - (IBAction)personInfoButtonPressed:(id)sender;
+- (UIButton *)personInfoOverlayButton;
+- (NSArray *)bottomInfoViewsForTabBarAvoidance;
 
 @end
 
@@ -775,6 +777,92 @@
     firstLoad=YES;
     didDismissInstruction=NO;
 	// Do any additional setup after loading the view.
+}
+
+- (UIButton *)personInfoOverlayButton
+{
+    if (self.nameBackgroundView == nil) {
+        return nil;
+    }
+    
+    for (UIView *subview in self.view.subviews) {
+        if (![subview isKindOfClass:[UIButton class]]) {
+            continue;
+        }
+        
+        CGRect frame = subview.frame;
+        BOOL similarSize = fabs(frame.size.width - self.nameBackgroundView.frame.size.width) < 2.0f &&
+        fabs(frame.size.height - self.nameBackgroundView.frame.size.height) < 2.0f;
+        BOOL similarOrigin = fabs(frame.origin.x - self.nameBackgroundView.frame.origin.x) < 2.0f &&
+        fabs(frame.origin.y - self.nameBackgroundView.frame.origin.y) < 2.0f;
+        
+        if (similarSize && similarOrigin) {
+            return (UIButton *)subview;
+        }
+    }
+    
+    return nil;
+}
+
+- (NSArray *)bottomInfoViewsForTabBarAvoidance
+{
+    NSMutableArray *views = [NSMutableArray arrayWithCapacity:5];
+    
+    if (self.nameBackgroundView) {
+        [views addObject:self.nameBackgroundView];
+    }
+    if (self.personNameLabel) {
+        [views addObject:self.personNameLabel];
+    }
+    if (self.personTitleLabel) {
+        [views addObject:self.personTitleLabel];
+    }
+    if (self.personImageView) {
+        [views addObject:self.personImageView];
+    }
+    
+    UIButton *overlayButton = [self personInfoOverlayButton];
+    if (overlayButton) {
+        [views addObject:overlayButton];
+    }
+    
+    return views;
+}
+
+- (void)viewDidLayoutSubviews
+{
+    [super viewDidLayoutSubviews];
+    
+    NSArray *trackedViews = [self bottomInfoViewsForTabBarAvoidance];
+    if ([trackedViews count] == 0) {
+        return;
+    }
+    
+    CGFloat availableBottom = CGRectGetHeight(self.view.bounds);
+    if (self.tabBarController && !self.tabBarController.tabBar.hidden) {
+        CGRect tabBarFrameInSelf = [self.view convertRect:self.tabBarController.tabBar.frame
+                                                 fromView:self.tabBarController.view];
+        availableBottom = MIN(availableBottom, CGRectGetMinY(tabBarFrameInSelf));
+    }
+    
+    // Keep a small visual gap above the tab bar/home-indicator area.
+    CGFloat desiredBottom = availableBottom - 2.0f;
+    CGFloat currentBottom = -CGFLOAT_MAX;
+    
+    for (UIView *trackedView in trackedViews) {
+        currentBottom = MAX(currentBottom, CGRectGetMaxY(trackedView.frame));
+    }
+    
+    if (currentBottom <= desiredBottom) {
+        return;
+    }
+    
+    CGFloat deltaY = desiredBottom - currentBottom;
+    for (UIView *trackedView in trackedViews) {
+        CGRect frame = trackedView.frame;
+        frame.origin.y += deltaY;
+        trackedView.frame = frame;
+    }
 }
 
 - (void)viewDidUnload
